@@ -11,10 +11,8 @@
         => Page = await ContentStore.GetAsync<RealisationsPage>("references"); // Content/references.json
 }
 
-<Seo Title="Références clients – COOSSI"
-     Description="Ils nous ont confié leurs projets de sécurité incendie. Exemples de missions, secteurs, témoignages."
-     Canonical="https://www.coossi-securite-incendie.eu/references"
-     OgImage="images/og-references.webp" />
+
+<SeoFromJson Id="references" />
 
 @if (Page is null)
 {
