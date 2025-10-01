@@ -1,19 +1,41 @@
 @page "/"
+@page "/home"
 @using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @inject IContentStore ContentStore
 
 @code {
+
+    private readonly string JsonLdLocalBusiness = @"{
+        ""@context"": ""https://schema.org"",
+        ""@type"": ""LocalBusiness"",
+        ""name"": ""COOSSI"",
+        ""image"": ""https://www.coossi-securite-incendie.eu/images/og-home.webp"",
+        ""telephone"": ""+33685752775"",
+        ""url"": ""https://www.coossi-securite-incendie.eu/"",
+        ""address"": {
+            ""@type"": ""PostalAddress"",
+            ""addressLocality"": ""Villers-Pol"",
+            ""addressRegion"": ""Hauts-de-France"",
+            ""addressCountry"": ""FR""
+        },
+        ""areaServed"": [""Nord"", ""Pas-de-Calais"", ""Somme"", ""Aisne""]
+        }";
+
     private HomePage? Page;
     protected override async Task OnInitializedAsync()
         => Page = await ContentStore.GetAsync<HomePage>("home");
 }
 
 
-<Seo Title="Accueil – COOSSI" 
-    Description="Bureau d'études et Coordination SSI à Villers Pol (Nord). Avis favorable garanti." 
-    Canonical="https://.../" />
+<Seo Title="COOSSI – Coordinateur SSI à Villers-Pol (Nord)"
+     Description="Bureau d’études et coordination SSI : conception, réalisation, réception. ERP, ERT, IGH. Avis favorable obtenu."
+     Canonical="https://www.coossi-securite-incendie.eu/" 
+     OgImage="images/og-home.webp" />
+
+
+<JsonLd Payload="@JsonLdLocalBusiness" />
 
 @if (Page is null)
 {
