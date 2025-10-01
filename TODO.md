@@ -6,31 +6,31 @@
 - [ ] Breadcrumb + SEO sur chaque page
 
 ## Breadcrumb global
-- [ ] Composant `<Breadcrumb>` réutilisable
+- [x] Composant `<Breadcrumb>` réutilisable
 - [ ] Intégration sur toutes les pages (Accueil, Services, Prestations*, Références, Confiance, Contact, Mentions, Confidentialité)
 
 ## Composants Avis
-- [ ] `TestimonialCard` + `TestimonialsGrid`
-- [ ] Emplacements: Accueil, Références, Prestations (bas de page)
+- [x] `TestimonialCard` + `TestimonialsGrid`
+- [x] Emplacements: Accueil, Références, Prestations (bas de page)
 
 ## SEO
-- [ ] Composant `<Seo>` (PageTitle + meta description + OG/Twitter + canonical)
-- [ ] Balises complétées sur toutes les pages
-- [ ] Images OG (WebP ou PNG) par page
+- [x] Composant `<Seo>` (PageTitle + meta description + OG/Twitter + canonical)
+- [x] Balises complétées sur toutes les pages
+- [x] Images OG (WebP ou PNG) par page
 - [ ] Minifier css
 - [ ] Ooutil Crawler en local
 
 ## Bonus utilitaires (tech/SEO)
 - [ ] `sitemap.xml` (statiques principales)
 - [ ] `robots.txt` (inclut lien vers sitemap)
-- [ ] **Structured data**: `LocalBusiness`, `BreadcrumbList`, `WebSite` (SearchAction si besoin)
+- [x] **Structured data**: `LocalBusiness`, `BreadcrumbList`, `WebSite` (SearchAction si besoin)
 - [ ] Pages **404** et **500** dédiées
-- [ ] Logos/illustrations en **WebP/SVG**, favicons en PNG multiples tailles
+- [x] Logos/illustrations en **WebP/SVG**, favicons en PNG multiples tailles
 
 ## Mettre sur Git
-- [ ] Init repo + `.gitignore` (.vs, bin/, obj/, wwwroot/lib…)
-- [ ] Branch `main` + `dev`
-- [ ] Commits init + README (build, run, structure Content/)
+- [x] Init repo + `.gitignore` (.vs, bin/, obj/, wwwroot/lib…)
+- [x] Branch `main` + `dev`
+- [x] Commits init + README (build, run, structure Content/)
 
 ## Crawler local
 - [ ] Crawl interne (liens cassés / 404 / redirections)
@@ -47,12 +47,12 @@
 - [ ] Regrouper styles de pages dynamiques (Services, Réal., Confiance, Contact)
 
 ## Factoriser composants
-- [ ] `PageHeader`, `Section`, `IconBadge`, `InfoBox`, `AlertInfo`
-- [ ] `List/FeatureList`, `CardsGrid`, `CTA`
-- [ ] `PageShell` (header + breadcrumb + container)
+- [x] `PageHeader`, `Section`, `IconBadge`, `InfoBox`, `AlertInfo`
+- [x] `List/FeatureList`, `CardsGrid`, `CTA` (remplacé par `CtaBar`)
+- [x] `PageShell` (header + breadcrumb + container)
 
 ## Contenus 100% JSON
-- [ ] Vérifier que TOUT le texte des pages vient d’un `*.json`
+- [x] Vérifier que TOUT le texte des pages vient d’un `*.json`
 - [ ] Tests de désérialisation (unit) pour éviter les régressions
 - [ ] Schéma minimal (types/kind) documenté
 
