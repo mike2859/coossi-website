@@ -1,0 +1,218 @@
+@page "/contact"
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject IContentStore ContentStore
+
+@code {
+    private ContactPage? Page;
+    private EditContext? EditCtx;
+    protected override async Task OnInitializedAsync()
+    {
+         Page = await ContentStore.GetAsync<ContactPage>("contact");
+        // EditForm a besoin d'un modèle ou d'un EditContext ; on lui donne un contexte "neutre"
+        EditCtx = new EditContext(new object());
+    }
+}
+
+
+@if (Page is null)
+{
+    <section class="section-padding" style="margin-top:76px">
+        <div class="container text-center text-muted">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="mt-3">Chargement…</p>
+        </div>
+    </section>
+}
+else
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">@Page.Title</h1>
+                    <p class="lead">@Page.Lead</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                @foreach (var h in Page.Highlights)
+                {
+                    <div class="col-md-4">
+                        <div class="@HighlightClass(h.Variant)">
+                            <i class="fas @h.Icon display-4 mb-3"></i>
+                            <h5 class="fw-bold">@h.Title</h5>
+                            @if (!string.IsNullOrWhiteSpace(h.Phone) && !string.IsNullOrWhiteSpace(h.PhoneHref))
+                            { <a href="@h.PhoneHref" class="@(h.Variant=="warning" ? "text-white" : "text-white") text-decoration-none fw-bold fs-5">@h.Phone</a> }
+                            @if (!string.IsNullOrWhiteSpace(h.Text)) { <p class="mt-2 mb-0 small">@h.Text</p> }
+                            @if (h.Lines is not null) { foreach(var line in h.Lines) { <p class="mb-1">@line</p> } }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row g-4">
+                @foreach (var c in Page.Cards)
+                {
+                    <div class="col-lg-3 col-md-6">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas @c.Icon"></i></div>
+                            <h5 class="fw-bold">@c.Title</h5>
+                            @((MarkupString)c.Html)
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Form + Map/Zone -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h3 class="fw-bold mb-4"><i class="fas fa-envelope text-danger me-3"></i>@Page.Form.Title</h3>
+                        <EditForm EditContext="EditCtx" OnValidSubmit="@OnSubmit">
+                            <div class="row g-3">
+                                @foreach (var f in Page.Form.Fields.Where(x => x.Type=="text" || x.Type=="email" || x.Type=="tel").Chunk(2))
+                                {
+                                    <div class="col-md-6">
+                                        @foreach (var field in f)
+                                        {
+                                            <div class="form-floating mb-3">
+                                                <input type="@field.Type" class="form-control" id="@field.Id" placeholder="@field.Label" required="@field.Required" />
+                                                <label for="@field.Id">@field.Label</label>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+
+                            @foreach (var field in Page.Form.Fields.Where(x => x.Type=="select"))
+                            {
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="@field.Id" required="@field.Required">
+                                        <option value="">Choisissez le type de projet</option>
+                                        @if (field.Options is not null) { foreach (var opt in field.Options) { <option value="@opt.ToLowerInvariant().Replace(' ','-')">@opt</option> } }
+                                    </select>
+                                    <label for="@field.Id">@field.Label</label>
+                                </div>
+                            }
+
+                            @foreach (var field in Page.Form.Fields.Where(x => x.Type=="textarea"))
+                            {
+                                <div class="form-floating mb-4">
+                                    <textarea class="form-control" id="@field.Id" style="height:@($"{(field.Rows ?? 5)*24}px")" placeholder="@field.Label" required="@field.Required"></textarea>
+                                    <label for="@field.Id">@field.Label</label>
+                                </div>
+                            }
+
+                            @foreach (var field in Page.Form.Fields.Where(x => x.Type=="checkbox"))
+                            {
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="@field.Id" required="@field.Required" />
+                                    <label class="form-check-label text-muted" for="@field.Id">@field.Label</label>
+                                </div>
+                            }
+
+                            <button type="submit" class="btn btn-custom btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>@Page.Form.SubmitText
+                            </button>
+
+                            <div class="text-center mt-3">
+                                <small class="text-muted">
+                                    @Page.Form.FallbackPhoneText
+                                    <a href="@Page.Form.FallbackPhoneHref" class="text-danger fw-bold">@Page.Form.FallbackPhone</a>
+                                </small>
+                            </div>
+                        </EditForm>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="map-container mb-4">
+                        <div class="map-placeholder text-center">
+                            <i class="fas @Page.Map.Icon display-1 mb-3"></i>
+                            <h5>@Page.Map.Title</h5>
+                            <p class="text-muted">@Page.Map.Subtitle</p>
+                            <small class="text-muted">@Page.Map.Small</small>
+                        </div>
+                    </div>
+
+                    <div class="zone-intervention">
+                        <i class="fas fa-map display-4 mb-3"></i>
+                        <h5 class="fw-bold">@Page.Zone.Title</h5>
+                        <div class="text-start">
+                            <p class="mb-2">
+                                <strong>Zone principale :</strong><br />
+                                • @string.Join(", ", Page.Zone.Areas.Principale)<br />
+                                • @string.Join(", ", Page.Zone.Areas.Villes)
+                            </p>
+                            <p class="mb-0"><strong>Projets d'envergure :</strong><br />• @Page.Zone.Note</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-6 fw-bold mb-3">@Page.Faq.Title</h2>
+                    <p class="lead">@Page.Faq.Lead</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        @for (var i=0; i<Page.Faq.Items.Count; i++)
+                        {
+                            var item = Page.Faq.Items[i];
+                            var open = i==0 ? "show" : "";
+                            <div class="accordion-item mb-3 border-0 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button @(i==0?"" :"collapsed")" type="button" data-bs-toggle="collapse" data-bs-target="@($"#faq{i}")">
+                                        <i class="fas @item.Icon text-danger me-3"></i>@item.Q
+                                    </button>
+                                </h2>
+                                <div id="@($"faq{i}")" class="accordion-collapse collapse @open" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">@item.A</div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@code {
+    private string HighlightClass(string variant) => variant switch
+    {
+        "warning" => "urgency-contact",
+        "dark"    => "service-hours",
+        _         => "contact-highlight"
+    };
+
+    private void OnSubmit()
+    {
+        // Ici tu brancheras l’envoi réel (API / email).
+        // Pour l’instant, on laisse l’UI telle quelle.
+    }
+}

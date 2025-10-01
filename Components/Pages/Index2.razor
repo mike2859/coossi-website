@@ -1,0 +1,231 @@
+@page "/index2"
+@using Coossi.Blazor.Components.Services
+@using Coossi.Blazor.Components.Shared
+@inject NavigationManager Nav
+
+
+
+<section class="hero-section" style="background:linear-gradient(135deg,#dc3545,#b02a37);color:white;padding:100px 0">
+  <div class="container">
+    <div class="row align-items-center hero-content">
+          <div class="col-lg-8">
+              <h1 class="display-4 fw-bold mb-4">
+                  COOSSI - Coordinateur en Système de Sécurité Incendie
+              </h1>
+              <p class="lead mb-4 text-seo">
+                  <strong>COOSSI ( COOrdinateur en Système de Sécurité Incendie) est un Bureau d'études basé à Villers Pol, dans le département du Nord, à proximité de Valenciennes.</strong>
+              </p>
+              <p class="mb-4 text-seo">
+                  <strong>Notre seul objectif:</strong> Votre satisfaction avec un avis favorable à l'exploitation de votre (vos) bâtiment (s), par les autorités compétentes.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                  <a href="tel:0685752775" class="btn btn-custom btn-lg">
+                      <i class="fas fa-phone me-2"></i>06 85 75 27 75
+                  </a>
+                  <a href="contact" class="btn btn-outline-custom btn-lg">
+                      <i class="fas fa-envelope me-2"></i>Nous contacter
+                  </a>
+              </div>
+          </div>
+          <div class="col-lg-4 text-center">
+              <div class="display-1 text-white-50">
+                  <i class="fas fa-shield-alt"></i>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-10 mx-auto">
+              <div class="text-center mb-5">
+                  <h2 class="display-6 fw-bold mb-4">Vous recherchez un Coordinateur en Systèmes de Sécurité Incendie ?</h2>
+                  <p class="lead text-seo">
+                      COOSSI vous accompagne dans la mise en sécurité incendie des personnes et des biens de votre établissement (ERP, ERT, IGH, Etablissements spéciaux), conformément à vos demandes et obligations règlementaires.
+                  </p>
+                  <p class="text-seo">
+                      <strong>Nous vous proposons de gérer votre sécurité incendie dans la conception, la réalisation, la réception avec une prestation clé en main.</strong><br>
+                      <strong>Votre avantage, un seul interlocuteur du début à la fin de la mission.</strong>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<ServicesGrid />
+
+ <!-- Expertise technique -->
+    <section class="expertise-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-6 fw-bold mb-3">Notre Expertise Technique</h2>
+                    <p class="lead">
+                        Des prestations complètes pour vos projets de sécurité incendie
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h5 class="fw-bold">Audit Sécurité Incendie</h5>
+                        <p>Analyse complète de vos installations et mise en conformité réglementaire</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h5 class="fw-bold">Notice de Sécurité</h5>
+                        <p>Rédaction des notices de sécurité et accessibilité conformes aux normes</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h5 class="fw-bold">Coordination SSI</h5>
+                        <p>Mission de coordination des Systèmes de Sécurité Incendie</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <h5 class="fw-bold">Plans & Dossiers</h5>
+                        <p>Plans de zones, synoptiques et dossiers d'identité SSI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Processus -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-6 fw-bold mb-3">Notre Processus</h2>
+                    <p class="lead">Prestation clé en main : Conception, Réalisation, Réception</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h5 class="fw-bold">Conception</h5>
+                        <p class="text-muted">
+                            Analyse des besoins, élaboration des plans et conception des systèmes de sécurité
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h5 class="fw-bold">Réalisation</h5>
+                        <p class="text-muted">
+                            Coordination des travaux, suivi des installations et contrôles de conformité
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h5 class="fw-bold">Réception</h5>
+                        <p class="text-muted">
+                            Accompagnement jusqu'à l'avis favorable des autorités compétentes
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Villes / Zones d'intervention -->
+    @* <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-4">
+                    <h2 class="display-6 fw-bold mb-3">Zones d'Intervention</h2>
+                    <p class="lead">
+                        COOSSI intervient dans toute la France pour vos projets de sécurité incendie
+                    </p>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <span class="badge bg-danger fs-6 py-2 px-3">Valenciennes</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Lille</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Maubeuge</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Cambrai</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Amiens</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Calais</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Arras</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Lens</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Dunkerque</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Roubaix</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Tourcoing</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Paris</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Lyon</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Marseille</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Toulouse</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Bordeaux</span>
+                    <span class="badge bg-danger fs-6 py-2 px-3">Nantes</span>
+                    <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">Strasbourg</span>
+                </div>
+                <div class="mt-4">
+                    <a href="rus.html" class="btn btn-outline-dark">
+                        <i class="fas fa-map-marker-alt me-2"></i>Voir toutes les zones d'intervention
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> *@
+<!-- expertise + processus: colle tes sections HTML -->
+
+
+<TagCloud Id="home-cities" Alternate="true" UseWeightThreshold="false" />
+
+
+<CTA Title="Pour prendre rendez-vous ou un complément d'information"
+                       Subtitle="Contactez COOSSI dès aujourd'hui pour votre projet de sécurité incendie" />
+
+
+
+@* 
+<Seo Title="Sécurité Incendie & Coordination SSI | COOSSI"
+     Description="COOSSI : coordination SSI, dossier SSI, audits, DUERP, notices, RUS, signalétique."
+     Canonical="@(Nav.Uri)" OgImage="/images/og/home.jpg" />
+
+<div class="hero mb-4">
+  <picture>
+    <source srcset="/images/slider-images/categories/coordination-ssi-service.webp" type="image/webp">
+    <img src="/images/slider-images/categories/coordination-ssi-service.png" alt="Coordination SSI" class="w-100">
+  </picture>
+  <div class="overlay"></div>
+  <div class="body container">
+    <div class="col-12 col-lg-8">
+      <h1 class="display-5">Sécurité incendie, conformité & coordination SSI</h1>
+      <p class="lead mb-4">Accompagnement complet partout en France.</p>
+      <a class="btn btn-primary btn-lg" href="/prestations">Découvrir nos prestations</a>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mb-5">
+  <div class="col-6 col-md-3"><div class="p-4 bg-light rounded-3 text-center"><div class="h4 mb-1">+250</div><div class="text-muted small">Dossiers & missions</div></div></div>
+  <div class="col-6 col-md-3"><div class="p-4 bg-light rounded-3 text-center"><div class="h4 mb-1">+10 ans</div><div class="text-muted small">d'expertise</div></div></div>
+  <div class="col-6 col-md-3"><div class="p-4 bg-light rounded-3 text-center"><div class="h6 mb-1">Partout en France</div><div class="text-muted small">Coordination & audit</div></div></div>
+  <div class="col-6 col-md-3"><div class="p-4 bg-light rounded-3 text-center"><div class="h6 mb-1">Réactivité</div><div class="text-muted small">Devis sous 48h</div></div></div>
+</div> *@

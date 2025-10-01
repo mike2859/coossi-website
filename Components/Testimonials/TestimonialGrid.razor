@@ -1,0 +1,44 @@
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
+
+@code {
+    [Parameter] public string JsonId { get; set; } = "testimonials"; // Content/testimonials.json
+    private TestimonialsPage? Data;
+
+    protected override async Task OnParametersSetAsync()
+        => Data = await ContentStore.GetAsync<TestimonialsPage>(JsonId);
+}
+
+@if (Data is null)
+{
+    <div class="text-center text-muted"><div class="spinner-border text-danger"></div></div>
+}
+else
+{
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center mb-5">
+            <h2 class="display-6 fw-bold mb-3">@Data.Title</h2>
+            @if (!string.IsNullOrWhiteSpace(Data.Lead)) { <p class="lead">@Data.Lead</p> }
+        </div>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var t in Data.Items)
+        {
+            <div class="col-lg-4">
+                <div class="testimonial-card h-100">
+                    <div class="rating-stars">
+                        @for (int i = 0; i < t.Rating; i++) { <i class="fas fa-star"></i> }
+                    </div>
+                    <p>@t.Content</p>
+                    <div class="client-name">@t.ClientName</div>
+                    @if (!string.IsNullOrWhiteSpace(t.ClientCompany))
+                    {
+                        <div class="client-company">@t.ClientCompany</div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,43 @@
+@page "/prestation2/{slug}"
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IPrestationStore Store
+
+@code {
+  [Parameter] public string slug { get; set; } = "";
+  private PrestationDto? Item;
+  protected override async Task OnParametersSetAsync() =>
+      Item = (await Store.ListAsync()).FirstOrDefault(x => x.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
+}
+
+@if (Item is null)
+{
+  <PageHeader Title="Prestation introuvable" Lead="La page demandée n'existe pas." />
+}
+else
+{
+  <PageHeader Title="@Item.HeroTitle" Lead="@Item.HeroLead" />
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="row"><div class="col-lg-10 mx-auto">
+        <h2 class="h3 fw-bold mb-3">Notre approche</h2>
+        <p class="lead">@Item.IntroHtml</p>
+
+        @if (Item.Bullets?.Any() == true)
+        {
+          <div class="mt-4">
+            <h5 class="text-danger">Missions réalisées :</h5>
+            <ul class="list-unstyled">
+              @foreach (var b in Item.Bullets) { <li class="mb-1">• @b</li> }
+            </ul>
+          </div>
+        }
+      </div></div>
+    </div>
+  </section>
+
+  <CTA Title="Besoin d'un expert ?" Subtitle="Parlez-nous de votre projet de sécurité incendie" />
+
+}

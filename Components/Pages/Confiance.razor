@@ -1,0 +1,144 @@
+@page "/ils-nous-font-confiance"
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
+
+@code {
+    private TrustPage? Page;
+
+    protected override async Task OnInitializedAsync()
+        => Page = await ContentStore.GetAsync<TrustPage>("confiance");
+}
+
+@if (Page is null)
+{
+    <section class="section-padding" style="margin-top:76px">
+        <div class="container text-center text-muted">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="mt-3">Chargement des références…</p>
+        </div>
+    </section>
+}
+else
+{
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">@Page.Title</h1>
+                    <p class="lead">@Page.Lead</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- On scope les styles "stats sombres" via .trust-page -->
+    <div class="trust-page">
+
+        @foreach (var s in Page.Sections)
+        {
+            if (s.Kind == "intro")
+            {
+                <section class="section-padding">
+                    <div class="container">
+                        <div class="trust-intro text-center">
+                            @if (!string.IsNullOrWhiteSpace(s.Title)) { <h2 class="fw-bold mb-3">@s.Title</h2> }
+                            @if (!string.IsNullOrWhiteSpace(s.Html)) { @((MarkupString)s.Html) }
+                        </div>
+                    </div>
+                </section>
+            }
+            else if (s.Kind == "stats" && s.Items is not null)
+            {
+                <section class="stats-section section-padding">
+                    <div class="container">
+                        <div class="row">
+                            @foreach (var it in s.Items)
+                            {
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="stat-item text-center">
+                                        <span class="stat-number">@it.Number</span>
+                                        <h5>@it.Title</h5>
+                                        <p class="text-light">@it.Text</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+            }
+            else if (s.Kind == "sector" && s.Cards is not null)
+            {
+                <section class="sector-section section-padding bg-light">
+                    <div class="container">
+
+                        <div class="sector-header">
+                            <h3><i class="fas @(s.Icon ?? "fa-briefcase") me-2"></i>@s.Title</h3>
+                            @if (!string.IsNullOrWhiteSpace(s.Subtitle)) { <p>@s.Subtitle</p> }
+                        </div>
+
+                        <div class="row g-4">
+                            @foreach (var c in s.Cards)
+                            {
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="client-logo">
+                                        <i class="fas @c.Icon"></i>
+                                    </div>
+                                    <div class="client-name">@c.Name</div>
+                                    <div class="client-sector">@c.Sector</div>
+                                    <div class="mission-highlight">@c.Highlight</div>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </section>
+            }
+            else if (s.Kind == "partners" && s.Badges is not null)
+            {
+                <section class="section-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <h2 class="display-6 fw-bold mb-4">@s.Title</h2>
+                                @if (!string.IsNullOrWhiteSpace(s.Lead)) { <p class="lead mb-5">@s.Lead</p> }
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            @foreach (var b in s.Badges)
+                            {
+                                <div class="col-lg-4">
+                                    <div class="partnership-badge">
+                                        <i class="fas @b.Icon display-4 mb-3"></i>
+                                        <h5 class="fw-bold">@b.Title</h5>
+                                        <p class="mb-0">@b.Text</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+            }
+            else if (s.Kind == "cta")
+            {
+                <section class="section-padding bg-dark text-white">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h2 class="display-6 fw-bold mb-3">@s.Title</h2>
+                                <p class="lead mb-0">@s.Text</p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end">
+                                @if (!string.IsNullOrWhiteSpace(s.Phone) && !string.IsNullOrWhiteSpace(s.PhoneHref))
+                                { <a href="@s.PhoneHref" class="btn btn-custom btn-lg me-3"><i class="fas fa-phone me-2"></i>@s.Phone</a> }
+                                @if (!string.IsNullOrWhiteSpace(s.ContactHref))
+                                { <a href="@s.ContactHref" class="btn btn-outline-light btn-lg"><i class="fas fa-envelope me-2"></i>Nous contacter</a> }
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            }
+        }
+    </div>
+}

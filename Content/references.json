@@ -1,0 +1,34 @@
+{
+  "id": "references",
+  "title": "Références",
+  "lead": "Ils nous ont confié la mise en sécurité incendie de leurs établissements",
+  "sections": [
+    {
+      "kind": "stats",
+      "items": [
+        { "number": "500+", "title": "Clients", "text": "Partout en France" },
+        { "number": "100%", "title": "Avis favorables", "text": "Obtenus en commission" },
+        { "number": "15+", "title": "Années", "text": "d'expérience" },
+        { "number": "24h", "title": "Réponse", "text": "Sous 24 heures" }
+      ]
+    },
+    {
+      "kind": "missions",
+      "title": "Missions Réalisées",
+      "lead": "Coordination SSI, notices, audits, plans et dossiers",
+      "cards2": [
+        { "type": "ERP", "title": "Optical Center", "bullets": ["Audit", "Dossier AT", "Coordination SSI"], "note": "Ouverture & conformité", "noteIcon": "fa-check-circle", "noteClass": "text-success" },
+        { "type": "EHPAD", "title": "Marie Blaise", "bullets": ["Coordination SSI", "Désenfumage"], "note": "Signy-le-Petit", "noteIcon": "fa-map-marker-alt" },
+        { "type": "Patrimoine", "title": "Château Paris-Jardin", "bullets": ["Coordination SSI"], "note": "Validation sans remarque", "noteIcon": "fa-check-circle", "noteClass": "text-success" }
+      ]
+    },
+    {
+      "kind": "cta",
+      "title": "Vous voulez rejoindre nos références ?",
+      "text": "Parlons de votre projet",
+      "phone": "06 85 75 27 75",
+      "phoneHref": "tel:0685752775",
+      "contactHref": "/contact"
+    }
+  ]
+}

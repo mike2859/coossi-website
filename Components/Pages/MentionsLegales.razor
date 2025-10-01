@@ -1,0 +1,107 @@
+@page "/mentions-legales"
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject ILegalStore Store
+
+@code {
+    private LegalPageDto? _page;
+
+    protected override async Task OnInitializedAsync()
+        => _page = await Store.GetAsync("mentions-legales");
+}
+
+@if (_page is null)
+{
+    <div class="container py-5"><div class="alert alert-warning">Contenu indisponible.</div></div>
+}
+else
+{
+    <Breadcrumb Current="Mentions légales" />
+
+    <section class="page-header">
+        <div class="container hero-content text-center">
+            <h1 class="display-5 fw-bold mb-3">@_page.Title</h1>
+            <p class="lead mb-0">@_page.Lead</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row"><div class="col-lg-10 mx-auto">
+
+                @foreach (var s in _page.Sections)
+                {
+                    <div class="legal-section mb-4">
+                        @if (!string.IsNullOrWhiteSpace(s.Heading))
+                        {
+                            <h2 class="h4 fw-bold mb-3">
+                                @if (!string.IsNullOrWhiteSpace(s.Icon))
+                                {
+                                    <i class="fas @s.Icon me-2 text-danger"></i>
+                                }
+                                @s.Heading
+                            </h2>
+                        }
+
+                        @switch (s.Kind?.ToLowerInvariant())
+                        {
+                            case "box":
+                                <div class="info-box">
+                                    @if (s.Lines is not null)
+                                    {
+                                        foreach (var line in s.Lines) { <p class="mb-2">@line</p> }
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(s.Html))
+                                    {
+                                        @((MarkupString)s.Html)
+                                    }
+                                </div>
+                                break;
+
+                            case "alert":
+                                <div class="alert-info">
+                                    @if (!string.IsNullOrWhiteSpace(s.Html))
+                                    {
+                                        @((MarkupString)s.Html)
+                                    }
+                                    @if (s.Lines is not null)
+                                    {
+                                        foreach (var line in s.Lines) { <p class="mb-0">@line</p> }
+                                    }
+                                </div>
+                                break;
+
+                            case "contact":
+                                <div class="contact-info">
+                                    @if (s.Lines is not null)
+                                    {
+                                        foreach (var line in s.Lines) { <p class="mb-2">@((MarkupString)line)</p> }
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(s.Html))
+                                    {
+                                        @((MarkupString)s.Html)
+                                    }
+                                </div>
+                                break;
+
+                            default: // "section"
+                                @if (!string.IsNullOrWhiteSpace(s.Html))
+                                {
+                                    @((MarkupString)s.Html)
+                                }
+                                if (s.Lines is not null)
+                                {
+                                    <ul class="mb-0">
+                                        @foreach (var line in s.Lines) { <li>@line</li> }
+                                    </ul>
+                                }
+                                break;
+                        }
+                    </div>
+                }
+
+            </div></div>
+        </div>
+    </section>
+}

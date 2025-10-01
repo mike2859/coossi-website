@@ -1,0 +1,13 @@
+{
+  "id": "keywords-coordination-ssi-service",
+  "title": "Autour de la Coordination SSI",
+  "items": [
+    { "text": "Système de Sécurité Incendie", "weight": 5 },
+    { "text": "Scénarios d'asservissement", "weight": 4 },
+    { "text": "Bureau de contrôle", "weight": 3 },
+    { "text": "MOA / MOE", "weight": 3 },
+    { "text": "Essais de réception", "weight": 4 },
+    { "text": "ERP / ERT / IGH", "weight": 3 },
+    { "text": "Conformité", "weight": 4, "url": "/prestations" }
+  ]
+}

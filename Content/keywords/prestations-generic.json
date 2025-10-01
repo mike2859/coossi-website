@@ -1,0 +1,12 @@
+{
+  "id": "prestations-generic",
+  "title": "Mots-clés recherchés",
+  "items": [
+    { "text": "Coordination SSI", "weight": 5, "url": "/prestation/coordination-ssi-service" },
+    { "text": "Dossier SSI", "weight": 4, "url": "/prestation/creation-dossier-ssi" },
+    { "text": "Notice sécurité", "weight": 3, "url": "/prestation/notice-securite-accessibilite" },
+    { "text": "Audit & Diagnostic", "weight": 3, "url": "/prestation/audit-diagnostic" },
+    { "text": "RUS", "weight": 2, "url": "/prestation/responsable-unique-securite" },
+    { "text": "Signalétique", "weight": 2, "url": "/prestation/service-signaletique" }
+  ]
+}

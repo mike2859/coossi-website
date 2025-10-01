@@ -1,0 +1,42 @@
+@page "/prestation/{slug}"
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Interfaces
+@inject IPrestationStore Store
+@inject NavigationManager Nav
+
+@code {
+  [Parameter] public string? slug { get; set; }
+  Coossi.Blazor.Data.Models.PrestationDto? item;
+  protected override async Task OnParametersSetAsync()
+  {
+    if (!string.IsNullOrWhiteSpace(slug))
+      item = await Store.GetBySlugAsync(slug);
+  }
+}
+
+@if (item is null)
+{
+  <div class="text-muted">Introuvable.</div>
+}
+else
+{
+  <Seo Title="@(item.MetaTitle ?? item.Title + " | COOSSI")"
+       Description="@(item.MetaDescription ?? item.IntroHtml)"
+       Canonical="@(Nav.Uri)" OgImage="@item.HeroImageWebp" />
+
+
+
+     <!-- Breadcrumb -->
+  <Breadcrumb Current="@item.Title" Parents="@(new Dictionary<string,string>{{"Prestations","/prestations"}})" />
+
+<PageHeader Title="@item.Title"
+                              Lead="@item.HeroLead" />
+
+    <section class="section-padding">
+        <div class="container">
+    @((MarkupString)item.BodyHtml)
+  </div>
+    </section>
+
+    <WeightedCloud Id="@($"keywords-{slug}")" Title="Mots-clés liés" />
+}

@@ -1,0 +1,202 @@
+@page "/services"
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
+@inject NavigationManager Nav
+
+@code {
+    private ServicesPage? Page;
+
+    protected override async Task OnInitializedAsync()
+        => Page = await ContentStore.GetAsync<ServicesPage>("services"); // Content/services.json
+
+    private static string AnchorOf(string heading)
+    {
+        if (string.IsNullOrWhiteSpace(heading)) return string.Empty;
+        var normalized = heading.ToLowerInvariant().Normalize(System.Text.NormalizationForm.FormD);
+        var sb = new System.Text.StringBuilder(); bool prevDash = false;
+        foreach (var c in normalized)
+        {
+            if (char.IsLetterOrDigit(c)) { sb.Append(c); prevDash = false; }
+            else if (char.IsWhiteSpace(c) || c=='-' || c=='\'' || c=='’') { if (!prevDash){ sb.Append('-'); prevDash = true; } }
+        }
+        return sb.ToString().Trim('-');
+    }
+}
+
+@if (Page is null)
+{
+    <section class="section-padding" style="margin-top:76px">
+        <div class="container text-center text-muted">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="mt-3">Chargement des prestations…</p>
+        </div>
+    </section>
+}
+else
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">@Page.Title</h1>
+                    <p class="lead">@Page.Lead</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @foreach (var s in Page.Sections)
+    {
+        var bg = s.Bg?.ToLowerInvariant() == "light" ? "bg-light"
+               : s.Bg?.ToLowerInvariant() == "dark" ? "bg-dark text-white" : null;
+
+        if (s.Kind == "service")
+        {
+            <section id="@s.Id" class="@($"section-padding service-section {(bg ?? "")}")">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 @(s.Reverse == true ? "order-lg-2" : "")">
+                            <h2 class="display-6 fw-bold mb-4">
+                                <i class="fas @(s.Icon ?? "fa-gear") text-danger me-3"></i>@s.Title
+                            </h2>
+
+                            @if (!string.IsNullOrWhiteSpace(s.LeadHtml))
+                            { <p class="lead text-seo mb-4">@((MarkupString)s.LeadHtml)</p> }
+
+                            @if (!string.IsNullOrWhiteSpace(s.FeaturesTitle)
+                                 || (s.Features?.Count ?? 0) > 0
+                                 || (s.ZoneTags?.Count ?? 0) > 0)
+                            {
+                                <div class="technical-specs">
+                                    @if (!string.IsNullOrWhiteSpace(s.FeaturesTitle))
+                                    { <h6 class="fw-bold text-danger">@s.FeaturesTitle</h6> }
+
+                                    @if ((s.ZoneTags?.Count ?? 0) > 0)
+                                    {
+                                        <div class="row g-2 mb-3">
+                                            @foreach (var tag in s.ZoneTags!)
+                                            { <div class="col-auto"><span class="zone-tag">@tag</span></div> }
+                                        </div>
+                                    }
+
+                                    @if ((s.Features?.Count ?? 0) > 0)
+                                    {
+                                        <ul class="feature-list">
+                                            @foreach (var f in s.Features!)
+                                            {
+                                                <li>
+                                                    <strong>@f.Split(':')[0]</strong>
+                                                    @(f.Contains(":") ? " " + f[(f.IndexOf(':')+1)..] : "")
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                        <div class="col-lg-6 @(s.Reverse == true ? "order-lg-1" : "")">
+                            @if ((s.LeftBoxes?.Count ?? 0) > 0)
+                            {
+                                <div class="row g-3">
+                                    @foreach (var b in s.LeftBoxes!)
+                                    {
+                                        <div class="col-6">
+                                            <div class="text-center p-3 bg-white rounded shadow-sm">
+                                                <i class="fas @b.Icon display-4 text-danger mb-2"></i>
+                                                <h6 class="fw-bold">@b.Title</h6>
+                                                @if (!string.IsNullOrWhiteSpace(b.Text))
+                                                { <small class="text-muted">@b.Text</small> }
+                                                @if ((b.Bullets?.Count ?? 0) > 0)
+                                                {
+                                                    <div class="text-start mt-2">
+                                                        @foreach (var it in b.Bullets!) { <small>• @it</small><br /> }
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else if (s.RightBox is not null)
+                            {
+                                <div class="text-center">
+                                    @if (!string.IsNullOrWhiteSpace(s.RightBox.Icon))
+                                    { <i class="fas @s.RightBox.Icon display-1 text-danger mb-4"></i> }
+
+                                    <div class="regulation-box">
+                                        <h5 class="fw-bold">@s.RightBox.Title</h5>
+                                        <p class="mb-3">@s.RightBox.Text</p>
+                                        @if ((s.RightBox.Bullets?.Count ?? 0) > 0)
+                                        {
+                                            <div class="text-start">
+                                                @foreach (var it in s.RightBox.Bullets!) { <small>• @it</small><br /> }
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+        else if (s.Kind == "types")
+        {
+           <section class="@($"section-padding {(bg ?? "")}")">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto text-center mb-5">
+                            <h2 class="display-6 fw-bold mb-3">@s.Title</h2>
+                            @if (!string.IsNullOrWhiteSpace(s.Subtitle)) { <p class="lead">@s.Subtitle</p> }
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        @if (s.Cards is not null)
+                        {
+                            @foreach (var c in s.Cards)
+                            {
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="text-center">
+                                        <i class="fas @c.Icon display-4 text-danger mb-3"></i>
+                                        <h5 class="fw-bold">@c.Title</h5>
+                                        <p>@c.Text</p>
+                                        @if (!string.IsNullOrWhiteSpace(c.Small)) { <small class="text-muted">@c.Small</small> }
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </section>
+        }
+        else if (s.Kind == "cta")
+        {
+            <section class="section-padding">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h2 class="display-6 fw-bold mb-3">@s.Title</h2>
+                            <p class="lead mb-0">@s.Text</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            @if (!string.IsNullOrWhiteSpace(s.Phone) && !string.IsNullOrWhiteSpace(s.PhoneHref))
+                            {
+                                <a href="@s.PhoneHref" class="btn btn-custom btn-lg me-3">
+                                    <i class="fas fa-phone me-2"></i>@s.Phone
+                                </a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(s.ContactHref))
+                            {
+                                <a href="@s.ContactHref" class="btn btn-outline-dark btn-lg">
+                                    <i class="fas fa-envelope me-2"></i>Contact
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+    }
+}

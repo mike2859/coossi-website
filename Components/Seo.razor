@@ -1,0 +1,29 @@
+@using Microsoft.AspNetCore.Components.Web
+@code {
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public string? Description { get; set; }
+    [Parameter] public string? Canonical { get; set; }
+    [Parameter] public string? OgImage { get; set; }
+}
+
+<HeadContent>
+    @if (!string.IsNullOrWhiteSpace(Title))
+    {
+        <title>@Title</title>
+        <meta property="og:title" content="@Title" />
+    }
+    @if (!string.IsNullOrWhiteSpace(Description))
+    {
+        <meta name="description" content="@Description" />
+        <meta property="og:description" content="@Description" />
+    }
+    @if (!string.IsNullOrWhiteSpace(Canonical))
+    {
+        <link rel="canonical" href="@Canonical" />
+        <meta property="og:url" content="@Canonical" />
+    }
+    @if (!string.IsNullOrWhiteSpace(OgImage))
+    {
+        <meta property="og:image" content="@OgImage" />
+    }
+</HeadContent>

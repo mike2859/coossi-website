@@ -1,0 +1,18 @@
+@code {
+  [Parameter] public string Title { get; set; } = "";
+  [Parameter] public string Subtitle { get; set; } = "";
+}
+<section class="section-padding" style="background:linear-gradient(135deg,#6c757d,#212529);color:white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="display-6 fw-bold mb-3">@Title</h2>
+        <p class="lead mb-0">@Subtitle</p>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <a href="tel:0685752775" class="btn btn-danger btn-lg me-3"><i class="fas fa-phone me-2"></i>06 85 75 27 75</a>
+        <NavLink class="btn btn-outline-light btn-lg" href="contact"><i class="fas fa-envelope me-2"></i>Formulaire</NavLink>
+      </div>
+    </div>
+  </div>
+</section>

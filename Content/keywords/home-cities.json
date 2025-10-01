@@ -1,0 +1,16 @@
+{
+  "id": "home-cities",
+  "title": "Zones d'intervention & mots-clés",
+  "items": [
+    { "text": "Valenciennes", "weight": 5 },
+    { "text": "Lille", "weight": 3},
+    { "text": "Cambrai", "weight": 5 },
+    { "text": "Douai", "weight": 5 },
+    { "text": "Dunkerque", "weight": 3 },
+    { "text": "Nord (59)", "weight": 5 },
+    { "text": "Hauts-de-France", "weight": 3 },
+    { "text": "ERP", "weight": 4, "url": "/prestations" },
+    { "text": "Coordination SSI", "weight": 5, "url": "/prestation/coordination-ssi-service" },
+    { "text": "DUERP", "weight": 3, "url": "/prestation/document-unique-evaluation" }
+  ]
+}

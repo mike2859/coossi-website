@@ -1,0 +1,138 @@
+{
+  "id": "realisations",
+  "title": "Nos Références",
+  "lead": "Témoignages clients et missions réalisées en coordination SSI",
+  "sections": [
+    {
+      "kind": "stats",
+      "items": [
+        { "number": "100%", "title": "Clients Satisfaits", "text": "Avis favorables obtenus" },
+        { "number": "15+", "title": "Années d'Expérience", "text": "En coordination SSI" },
+        { "number": "500+", "title": "Missions Réalisées", "text": "Dans le Nord et au-delà" },
+        { "number": "24h", "title": "Délai de Réponse", "text": "Réactivité garantie" }
+      ]
+    },
+    {
+      "kind": "testimonials",
+      "title": "Témoignages Clients",
+      "lead": "La satisfaction de nos clients est notre priorité",
+      "cards": [
+        {
+          "rating": 5,
+          "content": "Nous avons connu Mr LEBLANC de la SASU COOSSI par la réputation de son sérieux, ses compétences, sa notoriété. Accueillant, professionnel, réactif, un résultat au rendez-vous, je recommande !",
+          "clientName": "Mr Stéphane THEAUD",
+          "clientCompany": "Propriétaire et Responsable Unique de Sécurité"
+        },
+        {
+          "rating": 5,
+          "content": "Parfait, rien à signaler. Accueillant, très professionnel, très compétent, très sérieux, très disponible, résultat très satisfaisant.",
+          "clientName": "Client COOSSI",
+          "clientCompany": "Coordination SSI"
+        },
+        {
+          "rating": 5,
+          "content": "La commission communale de sécurité n'ayant formulé aucune remarque sur le travail du coordinateur SSI a donc validé le travail de M Leblanc. Le résultat est très satisfaisant.",
+          "clientName": "Mr Lejars",
+          "clientCompany": "Responsable SSI du Château de la S.A Paris-Jardin"
+        },
+        {
+          "rating": 5,
+          "content": "Je recommande fortement l'entreprise COOSSI et son représentant Mr Jean LEBLANC pour sa rapidité son efficacité et surtout le plus important son sérieux.",
+          "clientName": "Client Satisfait",
+          "clientCompany": "Mission Coordination SSI"
+        },
+        {
+          "rating": 5,
+          "content": "Nous avons fait appel à cette entreprise, et tout particulièrement à M.Leblanc, pour la constitution de la notice de sécurité et nous en sommes vraiment très satisfaits.",
+          "clientName": "Client ERP",
+          "clientCompany": "Ouverture ERP - Notice de Sécurité"
+        },
+        {
+          "rating": 5,
+          "content": "Très satisfait du travail de Mr Leblanc. Très sérieux. Bon travail. Nous avons connu la société COOSSI par le bouche à oreille.",
+          "clientName": "Mr Chouya",
+          "clientCompany": "Mission levée d'avis défavorable"
+        }
+      ]
+    },
+    {
+      "kind": "missions",
+      "title": "Missions Réalisées",
+      "lead": "Exemples de nos prestations de coordination SSI",
+      "cards": [
+        {
+          "type": "ERP",
+          "title": "Optical Center",
+          "bullets": [
+            "Audit sécurité incendie",
+            "Montage dossier Autorisation de Travaux",
+            "Mission de Coordination SSI"
+          ],
+          "note": "Ouverture et mise en conformité",
+          "noteIcon": "fa-map-marker-alt"
+        },
+        {
+          "type": "EHPAD",
+          "title": "EHPAD MARIE BLAISE",
+          "bullets": [
+            "Mission de Coordination SSI",
+            "Installation et asservissement du désenfumage"
+          ],
+          "note": "Signy-le-Petit (08380)",
+          "noteIcon": "fa-map-marker-alt"
+        },
+        {
+          "type": "ERP",
+          "title": "Château S.A Paris-Jardin",
+          "bullets": [
+            "Mission de Coordination SSI",
+            "Validation par la commission communale de sécurité sans remarque"
+          ],
+          "note": "Avis favorable obtenu",
+          "noteIcon": "fa-check-circle",
+          "noteClass": "text-success"
+        },
+        {
+          "type": "Changement de destination",
+          "title": "Montage Dossier de Travaux",
+          "bullets": [
+            "Constitution du dossier de demande de travaux",
+            "Montage du dossier de changement de destination",
+            "Suivi administratif complet"
+          ]
+        },
+        {
+          "type": "Levée d'avis défavorable",
+          "title": "Mise en Conformité",
+          "bullets": [
+            "Audit de mise en conformité",
+            "Coordination des travaux correctifs",
+            "Obtention de l'avis favorable"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "zone",
+      "title": "Zone d'Intervention",
+      "lead": "Basé à <strong>Villers Pol dans le Nord</strong>, à proximité de Valenciennes, COOSSI intervient dans les <strong>Hauts de France</strong> et au-delà selon les projets.",
+      "areasTitle": "Zone principale :",
+      "areas": ["Nord (59)", "Pas-de-Calais (62)", "Somme (80)", "Aisne (02)"],
+      "citiesTitle": "Villes proches :",
+      "cities": ["Valenciennes", "Maubeuge", "Cambrai", "Lille"],
+      "box": {
+        "icon": "fa-map-marked-alt",
+        "title": "Déplacements Inclus",
+        "text": "Interventions sur site comprises dans nos prestations. Accompagnement personnalisé partout en France pour les projets d'envergure."
+      }
+    },
+    {
+      "kind": "cta",
+      "title": "Rejoignez nos clients satisfaits",
+      "text": "Contactez Jean LEBLANC pour votre projet de coordination SSI",
+      "phone": "06 85 75 27 75",
+      "phoneHref": "tel:0685752775",
+      "contactHref": "/contact"
+    }
+  ]
+}

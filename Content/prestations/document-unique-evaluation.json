@@ -1,0 +1,11 @@
+{
+  "Id": 8,
+  "Slug": "document-unique-evaluation",
+  "Title": "Document Unique d'Évaluation des Risques (DUERP)",
+  "MetaTitle": "DUERP | COOSSI",
+  "MetaDescription": "Évaluation des risques professionnels, mise à jour et plan d'actions.",
+  "IntroHtml": "Nous réalisons et mettons à jour votre DUERP.",
+  "BodyHtml": "<h2>Contenu</h2><ul><li>Identification des risques</li><li>Mesures de prévention</li></ul>",
+  "HeroImageWebp": "/images/slider-images/categories/document-unique-evaluation.webp",
+  "HeroImagePngFallback": "/images/slider-images/categories/document-unique-evaluation.png"
+}

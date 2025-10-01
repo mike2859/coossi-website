@@ -1,0 +1,24 @@
+{
+  "title": "Témoignages clients",
+  "lead": "Ils parlent de notre travail",
+  "items": [
+    {
+      "rating": 5,
+      "content": "Très professionnel et efficace. Avis favorable obtenu sans remarque.",
+      "clientName": "Mr Stéphane THEAUD",
+      "clientCompany": "RUS (Responsable Unique de Sécurité)"
+    },
+    {
+      "rating": 5,
+      "content": "Coordination SSI impeccable, réactivité au top.",
+      "clientName": "Client ERP",
+      "clientCompany": "Ouverture magasin"
+    },
+    {
+      "rating": 5,
+      "content": "Audit clair, préconisations précises, résultats.",
+      "clientName": "Client EHPAD",
+      "clientCompany": "Mise en conformité"
+    }
+  ]
+}

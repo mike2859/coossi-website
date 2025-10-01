@@ -1,0 +1,57 @@
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IKeywordStore Store
+
+@code {
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public int MinSize { get; set; } = 12;  // px
+    [Parameter] public int MaxSize { get; set; } = 28;  // px
+
+    private KeywordCloudDto? _cloud;
+    private int _minW, _maxW;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        _cloud = string.IsNullOrWhiteSpace(Id) ? null : await Store.GetByIdAsync(Id);
+        if (_cloud?.Items is { Count: >0 })
+        {
+            _minW = _cloud.Items.Min(i => i.Weight);
+            _maxW = _cloud.Items.Max(i => i.Weight);
+        }
+    }
+
+    private string SizeFor(int w)
+    {
+        if (_maxW == _minW) return $"{(MinSize+MaxSize)/2}px";
+        var t = (double)(w - _minW) / (_maxW - _minW);
+        var px = MinSize + t * (MaxSize - MinSize);
+        return $"{Math.Round(px)}px";
+    }
+}
+
+@if (_cloud is not null && _cloud.Items?.Count > 0)
+{
+    <section class="section-padding">
+        <div class="container">
+            @if (!string.IsNullOrWhiteSpace(Title ?? _cloud.Title))
+            {
+                <h2 class="h4 fw-bold mb-3">@((Title ?? _cloud.Title))</h2>
+            }
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+                @foreach (var k in _cloud.Items.OrderByDescending(x => x.Weight))
+                {
+                    var style = $"font-size:{SizeFor(k.Weight)}";
+                    if (!string.IsNullOrWhiteSpace(k.Url))
+                    {
+                        <a class="text-decoration-none text-reset" style="@style" href="@k.Url" title="@k.Title">@k.Text</a>
+                    }
+                    else
+                    {
+                        <span style="@style" title="@k.Title">@k.Text</span>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+}

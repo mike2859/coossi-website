@@ -1,0 +1,29 @@
+@using Microsoft.AspNetCore.Components.Routing
+
+@code {
+    [Parameter] public string? Current { get; set; }
+    [Parameter] public Dictionary<string, string>? Parents { get; set; }
+}
+
+<nav aria-label="breadcrumb" class="bg-light py-2 border-bottom">
+    <div class="container">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item">
+                <NavLink href="/" Match="NavLinkMatch.All">Accueil</NavLink>
+            </li>
+            @if (Parents is not null)
+            {
+                @foreach (var kv in Parents)
+                {
+                    <li class="breadcrumb-item">
+                        <NavLink href="@kv.Value">@kv.Key</NavLink>
+                    </li>
+                }
+            }
+            @if (!string.IsNullOrWhiteSpace(Current))
+            {
+                <li class="breadcrumb-item active" aria-current="page">@Current</li>
+            }
+        </ol>
+    </div>
+</nav>

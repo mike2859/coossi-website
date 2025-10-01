@@ -1,0 +1,15 @@
+@code {
+    [Parameter] public string? Webp { get; set; }
+    [Parameter] public string? Png { get; set; }
+    [Parameter] public string Alt { get; set; } = "";
+    [Parameter] public int Width { get; set; } = 1920;
+    [Parameter] public int Height { get; set; } = 800;
+    [Parameter] public string Class { get; set; } = "w-100";
+}
+<picture>
+    @if (!string.IsNullOrWhiteSpace(Webp))
+    {
+        <source srcset="@Webp" type="image/webp" />
+    }
+    <img src="@(Png ?? Webp?.Replace(".webp",".png"))" alt="@Alt" width="@Width" height="@Height" class="@Class" />
+</picture>

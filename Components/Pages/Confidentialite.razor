@@ -1,0 +1,252 @@
+@page "/confidentialite"
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject ILegalStore LegalStore
+@inject NavigationManager Nav
+
+@code {
+    private LegalPageDto? Page;
+
+    protected override async Task OnInitializedAsync()
+        => Page = await LegalStore.GetAsync("confidentialite");
+
+    // Utilitaire pour fabriquer un id d'ancre depuis un titre
+    private static string AnchorOf(string heading)
+{
+    if (string.IsNullOrWhiteSpace(heading)) return string.Empty;
+
+    var normalized = heading
+        .ToLowerInvariant()
+        .Normalize(System.Text.NormalizationForm.FormD);
+
+    var sb = new System.Text.StringBuilder();
+    bool prevDash = false;
+
+    foreach (var c in normalized)
+    {
+        if (char.IsLetterOrDigit(c))
+        {
+            sb.Append(c);
+            prevDash = false;
+        }
+        else if (char.IsWhiteSpace(c) || c == '-' || c == '\'' || c == '’')
+        {
+            if (!prevDash)
+            {
+                sb.Append('-');
+                prevDash = true;
+            }
+        }
+        // on ignore les accents et symboles
+    }
+
+    return sb.ToString().Trim('-');
+}
+    private RenderFragment RenderSection(LegalSection s) => builder =>
+    {
+        int seq = 0;
+
+        string IconTag(string? icon)
+            => !string.IsNullOrWhiteSpace(icon) ? $"<i class=\"fas {icon} me-2\"></i>" : "";
+
+        void OpenWrap(string css)
+        {
+            builder.OpenElement(seq++, "div");
+            builder.AddAttribute(seq++, "class", css);
+        }
+        void CloseWrap() => builder.CloseElement();
+
+        // calcule l'id d'ancre si Heading existe
+        var hasHeading = !string.IsNullOrWhiteSpace(s.Heading);
+        var anchorId = hasHeading ? AnchorOf(s.Heading!) : null;
+
+        switch (s.Kind?.ToLowerInvariant())
+        {
+            case "section":
+                OpenWrap("legal-section mb-4");
+                if (hasHeading)
+                {
+                    builder.OpenElement(seq++, "h2");
+                    builder.AddAttribute(seq++, "id", anchorId);
+                    builder.AddMarkupContent(seq++, $"{IconTag(s.Icon)}{s.Heading}");
+                    builder.CloseElement(); // h2
+                }
+                if (!string.IsNullOrWhiteSpace(s.Html))
+                    builder.AddMarkupContent(seq++, s.Html);
+                CloseWrap();
+                break;
+
+            case "box":
+                OpenWrap("legal-section mb-4");
+                if (hasHeading)
+                {
+                    builder.OpenElement(seq++, "h2");
+                    builder.AddAttribute(seq++, "id", anchorId);
+                    builder.AddMarkupContent(seq++, $"{IconTag(s.Icon)}{s.Heading}");
+                    builder.CloseElement();
+                }
+                builder.OpenElement(seq++, "div");
+                builder.AddAttribute(seq++, "class", "info-box");
+                if (s.Lines is { Count: >0 })
+                {
+                    builder.OpenElement(seq++, "ul");
+                    foreach (var line in s.Lines!)
+                    {
+                        builder.OpenElement(seq++, "li");
+                        builder.AddContent(seq++, line);
+                        builder.CloseElement();
+                    }
+                    builder.CloseElement();
+                }
+                if (!string.IsNullOrWhiteSpace(s.Html))
+                    builder.AddMarkupContent(seq++, s.Html);
+                builder.CloseElement(); // .info-box
+                CloseWrap();
+                break;
+
+            case "alert":
+                OpenWrap("alert-info mb-4");
+                if (hasHeading)
+                {
+                    builder.OpenElement(seq++, "p");
+                    builder.AddAttribute(seq++, "class", "m-0 fw-semibold");
+                    builder.AddMarkupContent(seq++, $"{IconTag(s.Icon)}{s.Heading}");
+                    builder.CloseElement();
+                }
+                if (!string.IsNullOrWhiteSpace(s.Html))
+                    builder.AddMarkupContent(seq++, s.Html);
+                CloseWrap();
+                break;
+
+            case "contact":
+                OpenWrap("contact-info mb-4");
+                if (hasHeading)
+                {
+                    builder.OpenElement(seq++, "h4");
+                    builder.AddAttribute(seq++, "id", anchorId);
+                    builder.AddAttribute(seq++, "class", "mb-3");
+                    builder.AddMarkupContent(seq++, $"{IconTag(s.Icon)}{s.Heading}");
+                    builder.CloseElement();
+                }
+                if (s.Lines is { Count: >0 })
+                {
+                    builder.OpenElement(seq++, "ul");
+                    builder.AddAttribute(seq++, "class", "list-unstyled mb-0");
+                    foreach (var line in s.Lines!)
+                    {
+                        builder.OpenElement(seq++, "li");
+                        builder.AddContent(seq++, line);
+                        builder.CloseElement();
+                    }
+                    builder.CloseElement();
+                }
+                if (!string.IsNullOrWhiteSpace(s.Html))
+                    builder.AddMarkupContent(seq++, s.Html);
+                CloseWrap();
+                break;
+
+            default:
+                OpenWrap("legal-section mb-4");
+                if (hasHeading)
+                {
+                    builder.OpenElement(seq++, "h2");
+                    builder.AddAttribute(seq++, "id", anchorId);
+                    builder.AddMarkupContent(seq++, $"{IconTag(s.Icon)}{s.Heading}");
+                    builder.CloseElement();
+                }
+                if (!string.IsNullOrWhiteSpace(s.Html))
+                    builder.AddMarkupContent(seq++, s.Html);
+                if (s.Lines is { Count: >0 })
+                {
+                    builder.OpenElement(seq++, "ul");
+                    foreach (var line in s.Lines!)
+                    {
+                        builder.OpenElement(seq++, "li");
+                        builder.AddContent(seq++, line);
+                        builder.CloseElement();
+                    }
+                    builder.CloseElement();
+                }
+                CloseWrap();
+                break;
+        }
+    };
+}
+
+@if (Page is null)
+{
+    <section class="section-padding" style="margin-top:76px">
+        <div class="container text-center text-muted">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="mt-3">Chargement de la politique de confidentialité…</p>
+        </div>
+    </section>
+}
+else
+{
+    <!-- Fil d’Ariane -->
+    <section class="py-2" style="margin-top:76px;background:var(--light);border-bottom:1px solid #dee2e6">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a class="text-decoration-none" href="/">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@Page.Title</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-2">
+                        <i class="fas fa-user-shield me-2"></i>@Page.Title
+                    </h1>
+                    @if (!string.IsNullOrWhiteSpace(Page.Lead))
+                    {
+                        <p class="lead text-white-75">@Page.Lead</p>
+                    }
+                    <small class="text-white-50">
+                        <i class="fas fa-calendar-alt me-1"></i>
+                        Dernière mise à jour : Janvier 2025
+                    </small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-9 order-2 order-lg-1">
+                    @foreach (var s in Page.Sections)
+                    {
+                        @RenderSection(s)
+                    }
+                </div>
+
+                <aside class="col-lg-3 order-1 order-lg-2">
+                    <div class="p-4 rounded-xl shadow-smx" style="background:var(--light); position:sticky; top:100px">
+                        <h5 class="mb-3 text-danger"><i class="fas fa-list me-2"></i>Sommaire</h5>
+                        <ul class="list-unstyled m-0">
+                            @foreach (var s in Page.Sections.Where(x => !string.IsNullOrWhiteSpace(x.Heading)))
+                            {
+                                var anchor = AnchorOf(s.Heading!);
+                                <li class="mb-2">
+                                    <a class="text-decoration-none" href="@($"{Nav.Uri.Split('#')[0]}#{anchor}")">@s.Heading</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .legal-section h2 { scroll-margin-top: 120px; }
+    </style>
+}

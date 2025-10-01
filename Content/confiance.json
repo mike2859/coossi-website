@@ -1,0 +1,99 @@
+{
+  "id": "confiance",
+  "title": "Ils Nous Font Confiance",
+  "lead": "Entreprises, collectivités et organismes qui ont choisi COOSSI pour leur sécurité incendie",
+  "sections": [
+    {
+      "kind": "intro",
+      "title": "Plus de 15 ans de partenariats de confiance",
+      "html": "<p class=\"lead mb-4\">Depuis sa création, <strong>COOSSI</strong> accompagne des entreprises de toutes tailles, des collectivités et des organismes publics dans leurs projets de sécurité incendie.</p><p><strong>Jean LEBLANC</strong> et son équipe ont su gagner la confiance de leurs clients grâce à leur expertise technique, leur réactivité et leur engagement pour l'obtention de l'avis favorable.</p>"
+    },
+    {
+      "kind": "stats",
+      "items": [
+        { "number": "500+", "title": "Clients", "text": "Nous font confiance" },
+        { "number": "100%", "title": "Avis Favorables", "text": "Obtenus en commission" },
+        { "number": "4", "title": "Départements", "text": "Zone principale" },
+        { "number": "15+", "title": "Années", "text": "D'expérience" }
+      ]
+    },
+    {
+      "kind": "sector",
+      "icon": "fa-shopping-cart",
+      "title": "Commerce & Distribution",
+      "subtitle": "Centres commerciaux, magasins spécialisés, enseignes nationales",
+      "cards": [
+        { "icon": "fa-eye", "name": "Optical Center", "sector": "Optique - ERP", "highlight": "Audit + Autorisation de Travaux + Coordination SSI" },
+        { "icon": "fa-store", "name": "Centre Commercial", "sector": "Grande Distribution", "highlight": "Coordination SSI complexe" },
+        { "icon": "fa-shopping-bag", "name": "Magasins Spécialisés", "sector": "Commerce de détail", "highlight": "Notices de sécurité" },
+        { "icon": "fa-tags", "name": "Enseignes Franchisées", "sector": "Retail", "highlight": "Mise en conformité ERP" }
+      ]
+    },
+    {
+      "kind": "sector",
+      "icon": "fa-heartbeat",
+      "title": "Santé & Social",
+      "subtitle": "EHPAD, établissements de soins, structures médico-sociales",
+      "cards": [
+        { "icon": "fa-home", "name": "EHPAD Marie Blaise", "sector": "Signy-le-Petit (08)", "highlight": "Coordination SSI - Installation désenfumage" },
+        { "icon": "fa-user-md", "name": "Cliniques Privées", "sector": "Soins spécialisés", "highlight": "Audit sécurité incendie" },
+        { "icon": "fa-wheelchair", "name": "Centres Médico-Sociaux", "sector": "Accueil spécialisé", "highlight": "Notices d'accessibilité" },
+        { "icon": "fa-hospital", "name": "Établissements de Santé", "sector": "Soins généraux", "highlight": "Coordination SSI" }
+      ]
+    },
+    {
+      "kind": "sector",
+      "icon": "fa-landmark",
+      "title": "Patrimoine & Tourisme",
+      "subtitle": "Châteaux, monuments historiques, sites touristiques",
+      "cards": [
+        { "icon": "fa-chess-rook", "name": "Château S.A Paris-Jardin", "sector": "Monument historique", "highlight": "Coordination SSI – Avis favorable sans remarque" },
+        { "icon": "fa-monument", "name": "Sites Patrimoniaux", "sector": "Monuments classés", "highlight": "Études spécialisées" },
+        { "icon": "fa-camera", "name": "Sites Touristiques", "sector": "Accueil du public", "highlight": "Mise en sécurité ERP" },
+        { "icon": "fa-tree", "name": "Parcs & Jardins", "sector": "Espaces verts", "highlight": "Équipements d'accueil" }
+      ]
+    },
+    {
+      "kind": "sector",
+      "icon": "fa-industry",
+      "title": "Entreprises & Industrie",
+      "subtitle": "Bureaux, usines, entrepôts, zones d'activité",
+      "cards": [
+        { "icon": "fa-building", "name": "Bureaux Tertiaires", "sector": "ERT - Secteur privé", "highlight": "Coordination SSI ERT" },
+        { "icon": "fa-warehouse", "name": "Entrepôts Logistiques", "sector": "Stockage & Distribution", "highlight": "Audit & Mise en conformité" },
+        { "icon": "fa-cogs", "name": "Sites Industriels", "sector": "Production", "highlight": "Études ICPE" },
+        { "icon": "fa-hard-hat", "name": "Zones d'Activité", "sector": "Parc d'entreprises", "highlight": "Coordination multi-sites" }
+      ]
+    },
+    {
+      "kind": "sector",
+      "icon": "fa-university",
+      "title": "Public & Collectivités",
+      "subtitle": "Administrations, écoles, équipements publics",
+      "cards": [
+        { "icon": "fa-school", "name": "Établissements Scolaires", "sector": "Éducation nationale", "highlight": "ERP Type R - Notices sécurité" },
+        { "icon": "fa-city", "name": "Mairies & Collectivités", "sector": "Administration publique", "highlight": "Équipements municipaux" },
+        { "icon": "fa-dumbbell", "name": "Équipements Sportifs", "sector": "Type X - Sport", "highlight": "Complexes sportifs" },
+        { "icon": "fa-theater-masks", "name": "Équipements Culturels", "sector": "Type L - Spectacles", "highlight": "Salles de spectacle" }
+      ]
+    },
+    {
+      "kind": "partners",
+      "title": "Nos Partenariats",
+      "lead": "COOSSI travaille en étroite collaboration avec les acteurs de la sécurité incendie",
+      "badges": [
+        { "icon": "fa-fire-flame-curved", "title": "SDIS", "text": "Services Départementaux d'Incendie et de Secours" },
+        { "icon": "fa-balance-scale", "title": "Commissions de Sécurité", "text": "Accompagnement administratif et technique" },
+        { "icon": "fa-handshake", "title": "Bureaux de Contrôle", "text": "Collaboration avec les organismes agréés" }
+      ]
+    },
+    {
+      "kind": "cta",
+      "title": "Rejoignez nos clients satisfaits",
+      "text": "Faites confiance à COOSSI pour votre projet de sécurité incendie",
+      "phone": "06 85 75 27 75",
+      "phoneHref": "tel:0685752775",
+      "contactHref": "/contact"
+    }
+  ]
+}

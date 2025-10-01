@@ -1,0 +1,61 @@
+{
+  "id": "contact",
+  "title": "Contactez COOSSI",
+  "lead": "Pour prendre rendez-vous ou un complément d'information",
+  "highlights": [
+    { "icon": "fa-phone", "title": "Contactez Jean LEBLANC", "text": "Appel gratuit - Réponse rapide", "phone": "06.85.75.27.75", "phoneHref": "tel:0685752775", "variant": "primary" },
+    { "icon": "fa-exclamation-triangle", "title": "Interventions d'Urgence", "text": "Disponible 7j/7", "phone": "06.85.75.27.75", "phoneHref": "tel:0685752775", "variant": "warning" },
+    { "icon": "fa-clock", "title": "Horaires", "lines": ["Lun - Ven : 8h - 18h", "Samedi : 8h - 12h", "Urgences : 24h/24"], "variant": "dark" }
+  ],
+  "cards": [
+    { "icon": "fa-map-marker-alt", "title": "Adresse", "html": "<strong>Villers Pol</strong><br>Nord (59)<br><small class='text-muted'>Près de Valenciennes</small>" },
+    { "icon": "fa-phone", "title": "Téléphone", "html": "<a href='tel:0685752775' class='text-decoration-none text-dark fw-bold'>06.85.75.27.75</a><br><small class='text-muted'>Appel gratuit</small>" },
+    { "icon": "fa-envelope", "title": "Email", "html": "<a href='mailto:contact@coossi-securite-incendie.eu' class='text-decoration-none text-dark'>contact@coossi-securite-incendie.eu</a><br><small class='text-muted'>Réponse sous 24h</small>" },
+    { "icon": "fa-handshake", "title": "Rendez-vous", "html": "Sur site ou en agence<br><small class='text-muted'>Déplacement inclus</small>" }
+  ],
+  "form": {
+    "title": "Demande de renseignements",
+    "submitText": "Envoyer ma demande",
+    "successText": "Message envoyé !",
+    "fields": [
+      { "type": "text", "id": "prenom", "label": "Prénom *", "required": true },
+      { "type": "text", "id": "nom", "label": "Nom *", "required": true },
+      { "type": "email", "id": "email", "label": "Email *", "required": true },
+      { "type": "tel", "id": "telephone", "label": "Téléphone *", "required": true },
+      { "type": "text", "id": "entreprise", "label": "Entreprise", "required": false },
+      { "type": "select", "id": "typeProjet", "label": "Type de projet *", "required": true, "options": [
+        "Coordination SSI","Audit Sécurité Incendie","Notice de Sécurité","Plans de Zones","Dossier Autorisation de Travaux","ERP","ERT","IGH","ICPE","Autre"
+      ]},
+      { "type": "text", "id": "ville", "label": "Ville du projet", "required": false },
+      { "type": "textarea", "id": "message", "label": "Description du projet *", "required": true, "rows": 5 },
+      { "type": "checkbox", "id": "rgpd", "label": "J'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma demande *", "required": true }
+    ],
+    "fallbackPhoneText": "Ou appelez directement :",
+    "fallbackPhone": "06.85.75.27.75",
+    "fallbackPhoneHref": "tel:0685752775"
+  },
+  "map": {
+    "title": "Villers Pol, Nord (59)",
+    "subtitle": "Proche de Valenciennes",
+    "small": "Bureau d'études en sécurité incendie",
+    "icon": "fa-map-marked-alt"
+  },
+  "zone": {
+    "title": "Zone d'Intervention",
+    "areas": {
+      "principale": ["Nord", "Pas-de-Calais", "Somme", "Aisne"],
+      "villes": ["Valenciennes", "Maubeuge", "Cambrai", "Lille"]
+    },
+    "note": "Projets d'envergure : Toute la France selon le projet"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "lead": "Les réponses aux questions les plus courantes",
+    "items": [
+      { "icon": "fa-question-circle", "q": "Quels sont vos délais d'intervention ?", "a": "Réponse rapide. Urgences : possible dans la journée. Projets : rendez-vous sous 48h." },
+      { "icon": "fa-money-bill-wave", "q": "Proposez-vous des devis gratuits ?", "a": "Oui, devis gratuit et personnalisé après analyse du projet. Sans engagement." },
+      { "icon": "fa-map-marker-alt", "q": "Dans quelles villes intervenez-vous ?", "a": "Nord, Pas-de-Calais, Somme et Aisne. Déplacements inclus." },
+      { "icon": "fa-certificate", "q": "Garantissez-vous l'avis favorable ?", "a": "Accompagnement jusqu'à l'obtention de l'avis favorable, fort d'une solide expérience réglementaire." }
+    ]
+  }
+}

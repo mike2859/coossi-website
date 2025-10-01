@@ -1,0 +1,27 @@
+@using Coossi.Blazor.Data.Models
+@inject NavigationManager Nav
+
+<div class="card service-card h-100 border-0 shadow-sm">
+    <div class="service-header">
+        <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
+        <h5 class="fw-bold mb-0">@Item.Title</h5>
+    </div>
+
+    <div class="service-content">
+        <p class="text-muted">@Item.MetaDescription</p>
+
+        <!-- Lien correct (pas de NavigateTo dans href, pas de parenthèses en trop) -->
+        <a href="@($"/prestation/{Item.Slug}")" class="btn btn-outline-danger">
+            Découvrir <i class="fas fa-arrow-right ms-1"></i>
+        </a>
+        @* Variante possible avec NavLink :
+        <NavLink class="btn btn-outline-danger" href="@($"/prestation/{Item.Slug}")">
+            Découvrir <i class="fas fa-arrow-right ms-1"></i>
+        </NavLink>
+        *@
+    </div>
+</div>
+
+@code {
+    [Parameter] public PrestationDto Item { get; set; } = default!;
+}

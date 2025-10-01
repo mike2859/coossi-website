@@ -1,0 +1,87 @@
+{
+  "id": "mentions-legales",
+  "title": "Mentions Légales",
+  "lead": "Informations légales et protection des données personnelles",
+  "sections": [
+    {
+      "kind": "contact",
+      "icon": "fa-user-tie",
+      "heading": "Responsable de publication",
+      "lines": [
+        "COOSSI — M Jean LEBLANC",
+        "1908 chaussée Brunehaut, 59530 Villers Pol",
+        "SIRET : 84077416000013",
+        "Email : contact@coossi-securite-incendie.eu",
+        "Tél. : 06 85 75 27 75"
+      ]
+    },
+    {
+      "kind": "box",
+      "icon": "fa-code",
+      "heading": "Création du site internet",
+      "lines": [
+        "Le Chevalier de la Cyber",
+        "https://lechevalierdelacyber.fr"
+      ]
+    },
+    {
+      "kind": "box",
+      "icon": "fa-server",
+      "heading": "Hébergeur du site",
+      "lines": [
+        "IKOULA — 2 Cité Paradis, 75010 Paris, FRANCE",
+        "SAS au capital de 181 260 € — RCS PARIS 417 680 618",
+        "TVA FR37417680618"
+      ]
+    },
+    {
+      "kind": "section",
+      "icon": "fa-copyright",
+      "heading": "Propriété intellectuelle",
+      "html": "<p>Le présent site et chacun de ses éléments (programmes, développements, textes, images, logos, sons, graphiques, fichiers, etc.) sont la propriété exclusive de leur titulaire.</p><p>Les bases de données présentes sur le site sont protégées ; toute extraction ou réutilisation substantielle est interdite.</p>"
+    },
+    {
+      "kind": "alert",
+      "icon": "fa-exclamation-triangle",
+      "heading": "Important",
+      "html": "<p>Toute représentation totale ou partielle du site sans autorisation est interdite et constituerait une contrefaçon (articles L.335-2 et suivants du Code de la propriété intellectuelle).</p>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-shield-alt",
+      "heading": "Loi informatique et libertés",
+      "html": "<p>Conformément à la loi du 6 janvier 1978, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression des données vous concernant. Pour exercer vos droits : <a href='mailto:contact@coossi-securite-incendie.eu' class='text-danger'>contact@coossi-securite-incendie.com</a>.</p>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-lock",
+      "heading": "Politique de protection des données",
+      "html": "<p>Les données transmises via le formulaire de contact et nos canaux listés sont utilisées pour la gestion de la relation-client et la gestion administrative des dossiers. Elles ne sont conservées que pour la durée nécessaire à la finalité et le respect d'obligations légales.</p><p>Elles ne sont ni partagées ni vendues à des tiers à des fins commerciales.</p><h3>Vos droits (RGPD)</h3><ul><li>Droit d'accès</li><li>Droit de rectification</li><li>Droit d'opposition et d'effacement</li><li>Droit à la limitation du traitement</li><li>Droit à la portabilité</li></ul>"
+    },
+    {
+      "kind": "box",
+      "icon": "fa-info-circle",
+      "heading": "Réclamation CNIL",
+      "lines": [
+        "En cas de non-respect de la réglementation, vous pouvez déposer une plainte auprès de la CNIL.",
+        "Nous vous invitons à nous contacter d'abord pour résoudre la situation."
+      ]
+    },
+    {
+      "kind": "section",
+      "icon": "fa-phone-slash",
+      "heading": "Dispositif BLOCTEL",
+      "html": "<p>Article L223-2 : Information sur le droit à l'inscription sur la liste d'opposition au démarchage téléphonique <strong>BLOCTEL</strong>.</p>"
+    },
+    {
+      "kind": "contact",
+      "icon": "fa-question-circle",
+      "heading": "Contact",
+      "lines": [
+        "Email : contact@coossi-securite-incendie.eu",
+        "Téléphone : 06 85 75 27 75",
+        "Adresse : 1908 chaussée Brunehaut, 59530 Villers Pol"
+      ]
+    }
+  ]
+}

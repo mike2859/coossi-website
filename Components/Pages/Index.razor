@@ -1,0 +1,219 @@
+@page "/"
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
+
+@code {
+    private HomePage? Page;
+    protected override async Task OnInitializedAsync()
+        => Page = await ContentStore.GetAsync<HomePage>("home");
+}
+
+@if (Page is null)
+{
+    <section class="section-padding" style="margin-top:76px">
+        <div class="container text-center text-muted">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="mt-3">Chargement…</p>
+        </div>
+    </section>
+}
+else
+{
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">@Page.Hero.Title</h1>
+                    <p class="lead mb-4 text-seo"><strong>@Page.Hero.LeadStrong</strong></p>
+                    <p class="mb-4 text-seo"><strong>@Page.Hero.TextStrong</strong></p>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        @foreach (var b in Page.Hero.Buttons)
+                        {
+                            if (b.Kind == "primary")
+                            {
+                                <a href="@b.Href" class="btn btn-custom btn-lg">
+                                    <i class="fas @b.Icon me-2"></i>@b.Label
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@b.Href" class="btn btn-outline-custom btn-lg">
+                                    <i class="fas @b.Icon me-2"></i>@b.Label
+                                </a>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="display-1 text-white-50">
+                        <i class="fas @Page.Hero.RightIcon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction SEO -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold mb-4">@Page.Intro.Title</h2>
+                        <p class="lead text-seo">@Page.Intro.Lead</p>
+                        <p class="text-seo">
+                            <strong>@Page.Intro.P1Strong</strong><br />
+                            <strong>@Page.Intro.P2Strong</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services principaux -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-6 fw-bold mb-3">@Page.Services.Title</h2>
+                    <p class="lead">@Page.Services.Subtitle</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                @foreach (var c in Page!.Services.Cards)
+                {
+                    <div class="col-md-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-header">
+                                <div class="service-icon"><i class="fas @c.Icon"></i></div>
+                                <h5 class="fw-bold mb-0">@c.Title</h5>
+                            </div>
+                            <div class="service-content">
+                                <h6 class="fw-bold">@c.Subtitle</h6>
+                                <p class="text-muted mb-0">@c.Text</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Expertise technique -->
+    <section class="expertise-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-6 fw-bold mb-3">@Page.Expertise.Title</h2>
+                    <p class="lead">@Page.Expertise.Subtitle</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                @foreach (var it in Page.Expertise.Items)
+                {
+                    <div class="col-lg-3 col-md-6">
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <i class="fas @it.Icon"></i>
+                            </div>
+                            <h5 class="fw-bold">@it.Title</h5>
+                            <p>@it.Text</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-6 fw-bold mb-3">@Page.Process.Title</h2>
+                    <p class="lead">@Page.Process.Subtitle</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                @foreach (var step in Page.Process.Steps)
+                {
+                    <div class="col-md-4">
+                        <div class="process-step">
+                            <div class="step-number">@step.Num</div>
+                            <h5 class="fw-bold">@step.Title</h5>
+                            <p class="text-muted">@step.Text</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-4">
+                    <h2 class="display-6 fw-bold mb-3">@Page.Zones.Title</h2>
+                    <p class="lead">@Page.Zones.Subtitle</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    @for (var i = 0; i < Page.Zones.Badges.Count; i++)
+                    {
+                        var isRed = i % 2 == 0;
+                        if (isRed)
+                        {
+                            <span class="badge bg-danger fs-6 py-2 px-3">@Page.Zones.Badges[i]</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">@Page.Zones.Badges[i]</span>
+                        }
+                    }
+                </div>
+                <div class="mt-4">
+                    <a href="@Page.Zones.Link.Href" class="btn btn-outline-dark">
+                        <i class="fas @Page.Zones.Link.Icon me-2"></i>@Page.Zones.Link.Label
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-bold mb-3">@Page.Cta.Title</h2>
+                    <p class="lead mb-0">@Page.Cta.Subtitle</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    @foreach (var b in Page.Cta.Buttons)
+                    {
+                        if (b.Kind == "primary")
+                        {
+                            <a href="@b.Href" class="btn btn-custom btn-lg me-3">
+                                <i class="fas @b.Icon me-2"></i>@b.Label
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@b.Href" class="btn btn-outline-custom btn-lg">
+                                <i class="fas @b.Icon me-2"></i>@b.Label
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}

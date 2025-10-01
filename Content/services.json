@@ -1,0 +1,137 @@
+{
+  "id": "services",
+  "title": "Nos Prestations",
+  "lead": "Coordination SSI, Notices de sécurité, Audit incendie et accompagnement réglementaire",
+  "sections": [
+    {
+      "kind": "service",
+      "id": "coordination",
+      "icon": "fa-project-diagram",
+      "title": "Mission de Coordination SSI",
+      "leadHtml": "<strong>Coordination des Systèmes de Sécurité Incendie</strong> dans le cadre de l'installation, de l'asservissement et de la mise en conformité de vos équipements.",
+      "featuresTitle": "Missions réalisées :",
+      "features": [
+        "Coordination SSI phase conception, réalisation, réception",
+        "Suivi des travaux en phase d'étude, réalisation et réception",
+        "Installation et asservissement du désenfumage",
+        "Mise en conformité des équipements de sécurité incendie",
+        "Validation technique des systèmes installés"
+      ],
+      "rightBox": {
+        "icon": "fa-certificate",
+        "title": "Conformité Réglementaire",
+        "text": "Accompagnement jusqu'à l'obtention de l'avis favorable des autorités compétentes"
+      },
+      "bg": "none"
+    },
+    {
+      "kind": "service",
+      "id": "notices",
+      "icon": "fa-file-alt",
+      "title": "Notice de Sécurité et Accessibilité",
+      "leadHtml": "<strong>Réalisation de notice de sécurité et accessibilité</strong> pour tous types de bâtiments : ERP, IGH ou encore ICPE.",
+      "featuresTitle": "Conformément à l'article GE2 de l'arrêté du 25 Juin 1980 modifié :",
+      "features": [
+        "Zones d'évacuation en cas d'incendie ou de sinistre",
+        "Dimensions de chaque espace et dispositifs de commandes",
+        "Conditions de raccordement entre le bâtiment et la voirie",
+        "Documents plastifiés pour affichage qualitatif",
+        "Respect des contraintes techniques et normes en vigueur"
+      ],
+      "leftBoxes": [
+        { "icon": "fa-building", "title": "ERP", "subtitle": "Établissements Recevant du Public" },
+        { "icon": "fa-city", "title": "IGH", "subtitle": "Immeubles de Grande Hauteur" },
+        { "icon": "fa-radiation", "title": "ICPE", "subtitle": "Installations Classées pour la Protection de l'Environnement" }
+      ],
+      "reverse": true,
+      "bg": "light"
+    },
+    {
+      "kind": "service",
+      "id": "plans",
+      "icon": "fa-map",
+      "title": "Plans de Zones & Dossiers SSI",
+      "leadHtml": "<strong>Réalisation de tous les plans de mise en sécurité et de détection</strong> pour un affichage qualitatif et une meilleure lisibilité.",
+      "featuresTitle": "Plans réalisés :",
+      "zoneTags": ["Z.A", "Z.C", "Z.F", "Z.D.A", "Z.D.M"],
+      "features": [
+        "Plans d'implantation SDI/SMSI",
+        "Synoptiques de sécurité incendie",
+        "Dossier d'identité du SSI",
+        "Plans plastifiés pour meilleure durabilité"
+      ],
+      "rightBox": {
+        "icon": "fa-drafting-compass",
+        "title": "Dossier d'Identité SSI",
+        "text": "Tous les documents techniques classés et organisés selon les exigences réglementaires pour les commissions de sécurité"
+      },
+      "bg": "none"
+    },
+    {
+      "kind": "service",
+      "id": "audit",
+      "icon": "fa-search",
+      "title": "Audit Sécurité Incendie",
+      "leadHtml": "<strong>Analyse des besoins en sécurité de votre bâtiment</strong> dans les Hauts de France. Diagnostic complet de vos installations existantes.",
+      "featuresTitle": "Prestations d'audit :",
+      "features": [
+        "Audit sécurité incendie complet de vos installations",
+        "Analyse de conformité réglementaire",
+        "Identification des non-conformités",
+        "Préconisations de mise en conformité",
+        "Accompagnement pour levée d'avis défavorable"
+      ],
+      "leftBoxes": [
+        {
+          "icon": "fa-clipboard-check",
+          "title": "Diagnostic Complet",
+          "subtitle": "Évaluation des équipements de sécurité incendie et identification des améliorations"
+        }
+      ],
+      "reverse": true,
+      "bg": "light"
+    },
+    {
+      "kind": "service",
+      "id": "dossiers",
+      "icon": "fa-folder-open",
+      "title": "Montage Dossier Autorisation de Travaux",
+      "leadHtml": "<strong>Montage du dossier de demande de travaux</strong> et accompagnement administratif pour vos projets de mise en conformité.",
+      "featuresTitle": "Dossiers constitués :",
+      "features": [
+        "Dossier de demande d'autorisation de travaux",
+        "Dossier de changement de destination",
+        "Constitution des pièces administratives",
+        "Suivi des procédures auprès des administrations",
+        "Accompagnement jusqu'à l'obtention des autorisations"
+      ],
+      "rightBox": {
+        "icon": "fa-stamp",
+        "title": "Accompagnement Administratif",
+        "text": "Suivi complet des dossiers auprès des services compétents (Mairie, Préfecture, Commission de sécurité)",
+        "bullets": ["Commission de Sécurité", "Services Urbanisme", "SDIS (Service Départemental d'Incendie et de Secours)"]
+      },
+      "bg": "none"
+    },
+    {
+      "kind": "types",
+      "bg": "dark",
+      "title": "Types d'Établissements",
+      "subtitle": "Nos prestations couvrent tous types d'établissements",
+      "cards": [
+        { "icon": "fa-building", "title": "ERP", "text": "Établissements Recevant du Public", "small": "Commerces, restaurants, hôtels, écoles..." },
+        { "icon": "fa-industry", "title": "ERT", "text": "Établissements Recevant des Travailleurs", "small": "Bureaux, usines, entrepôts, ateliers..." },
+        { "icon": "fa-city", "title": "IGH", "text": "Immeubles de Grande Hauteur", "small": "Tours, immeubles de bureaux et habitation..." },
+        { "icon": "fa-radiation", "title": "ICPE", "text": "Installations Classées", "small": "Installations à risques particuliers..." }
+      ]
+    },
+    {
+      "kind": "cta",
+      "title": "Besoin d'un expert en sécurité incendie ?",
+      "text": "Contactez Jean LEBLANC par mail ou par téléphone pour un accompagnement personnalisé",
+      "phone": "06 85 75 27 75",
+      "phoneHref": "tel:0685752775",
+      "contactHref": "/contact"
+    }
+  ]
+}

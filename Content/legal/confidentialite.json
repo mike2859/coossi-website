@@ -1,0 +1,87 @@
+{
+  "id": "confidentialite",
+  "title": "Politique de Confidentialité",
+  "lead": "Protection de vos données personnelles - Formulaire de contact",
+  "sections": [
+    {
+      "kind": "section",
+      "icon": "fa-info-circle",
+      "heading": "Introduction",
+      "html": "<p class=\"lead\"><strong>COOSSI</strong> s'engage à protéger votre vie privée et vos données personnelles.</p><p>Cette politique de confidentialité vous explique de manière simple et transparente comment nous utilisons les informations que vous nous transmettez via notre formulaire de contact.</p><p><strong>Ce site ne nécessite pas de création de compte et n'utilise pas de cookies de suivi ou de marketing.</strong></p>"
+    },
+    {
+      "kind": "box",
+      "icon": "fa-check-circle",
+      "heading": "Notre engagement",
+      "lines": [
+        "Nous collectons uniquement les informations strictement nécessaires pour répondre à votre demande.",
+        "Aucune donnée n'est vendue, partagée ou utilisée à des fins commerciales."
+      ]
+    },
+    {
+      "kind": "section",
+      "icon": "fa-user-tie",
+      "heading": "Qui est responsable de vos données ?",
+      "html": "<div><h4 class=\"fw-bold\">COOSSI</h4><p class=\"mb-2\"><strong>Responsable :</strong> M. Jean LEBLANC</p><p class=\"mb-2\"><i class=\"fas fa-map-marker-alt me-2\"></i>1908 chaussée Brunehaut, 59530 Villers Pol</p><p class=\"mb-2\"><i class=\"fas fa-building me-2\"></i><strong>SIRET :</strong> 84077416000013</p><p class=\"mb-2\"><i class=\"fas fa-envelope me-2\"></i><strong>Email :</strong> contact@coossi-securite-incendie.com</p><p class=\"mb-0\"><i class=\"fas fa-phone me-2\"></i><strong>Téléphone :</strong> 06 85 75 27 75</p></div>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-database",
+      "heading": "Quelles données collectons-nous ?",
+      "html": "<p><strong>Nous collectons uniquement les informations que vous nous fournissez volontairement via le formulaire de contact.</strong></p><h3>Informations du formulaire de contact</h3><ul><li><strong>Prénom et Nom</strong> — Obligatoire — Pour vous identifier et personnaliser notre réponse</li><li><strong>Adresse email</strong> — Obligatoire — Pour vous répondre par email</li><li><strong>Numéro de téléphone</strong> — Obligatoire — Pour vous contacter directement si nécessaire</li><li><strong>Nom de l'entreprise</strong> — Facultatif — Pour comprendre le contexte professionnel</li><li><strong>Type de projet</strong> — Obligatoire — Pour qualifier votre demande</li><li><strong>Ville du projet</strong> — Facultatif — Pour évaluer notre zone d'intervention</li><li><strong>Votre message</strong> — Obligatoire — Pour comprendre votre besoin</li></ul><div class=\"info-box\"><p class=\"mb-0\"><i class=\"fas fa-shield-alt me-2\"></i><strong>Important :</strong> Sans les informations obligatoires, nous ne pourrons pas traiter votre demande et vous répondre.</p></div>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-question-circle",
+      "heading": "Comment utilisons-nous vos données ?",
+      "html": "<p>Vos données sont utilisées <strong>uniquement</strong> pour :</p><ul><li><strong>Répondre à votre demande</strong> de contact, devis ou information</li><li><strong>Vous contacter</strong> par email ou téléphone pour échanger sur votre projet</li><li><strong>Établir un devis</strong> si vous en faites la demande</li><li><strong>Assurer le suivi</strong> de votre dossier si vous devenez client</li></ul><h3>Base légale</h3><p>Le traitement repose sur votre <strong>consentement explicite</strong> (case à cocher du formulaire) et sur <strong>l'exécution de mesures précontractuelles</strong> (réponse à votre demande de devis).</p>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-share-alt",
+      "heading": "Qui a accès à vos données ?",
+      "html": "<p>Vos données sont accessibles uniquement à :</p><ul><li><strong>Jean LEBLANC</strong> (responsable de COOSSI) pour traiter votre demande</li><li><strong>L'hébergeur du site</strong> (IKOULA) qui stocke les données sur ses serveurs sécurisés en France</li></ul><div class=\"info-box\"><p class=\"mb-0\"><strong>Aucun tiers commercial</strong> n'a accès à vos données. Elles restent strictement confidentielles et ne sont jamais transmises à des sociétés externes pour du marketing ou de la prospection.</p></div>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-clock",
+      "heading": "Combien de temps conservons-nous vos données ?",
+      "html": "<ul><li><strong>Contact sans suite</strong> : 3 ans à partir du dernier contact</li><li><strong>Devis non accepté</strong> : 3 ans pour suivi commercial</li><li><strong>Client avec contrat</strong> : 5 ans après la fin du contrat (obligations comptables)</li></ul><p>À l'issue de ces délais, vos données sont <strong>définitivement supprimées</strong> de nos systèmes.</p>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-user-shield",
+      "heading": "Quels sont vos droits ?",
+      "html": "<p>Conformément au <strong>RGPD</strong> et à la loi Informatique et Libertés, vous disposez notamment des droits suivants : <strong>accès</strong>, <strong>rectification</strong>, <strong>effacement</strong>, <strong>opposition</strong>.</p><h3>Comment exercer vos droits ?</h3><p>Contactez-nous simplement :</p><ul><li><strong>Email :</strong> contact@coossi-securite-incendie.com</li><li><strong>Téléphone :</strong> 06 85 75 27 75</li><li><strong>Courrier :</strong> COOSSI, 1908 chaussée Brunehaut, 59530 Villers Pol</li></ul><p>Nous vous répondrons dans un <strong>délai maximum de 1 mois</strong>. Pour des raisons de sécurité, une pièce d'identité peut être demandée.</p><div class=\"info-box\"><p class=\"mb-2\"><strong>Réclamation CNIL :</strong> En cas de non-respect de vos droits, vous pouvez saisir la CNIL.</p><p class=\"mb-0\"><a href=\"https://www.cnil.fr\" target=\"_blank\" class=\"text-danger\">www.cnil.fr</a> — 3 Place de Fontenoy, 75334 PARIS CEDEX 07</p></div>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-cookie-bite",
+      "heading": "Utilisons-nous des cookies ?",
+      "html": "<div class=\"alert-success\"><p class=\"m-0\"><strong>Bonne nouvelle :</strong> Ce site n'utilise <strong>aucun cookie de suivi, publicitaire ou marketing</strong>.</p></div><p>Les seuls cookies techniques éventuellement utilisés sont strictement nécessaires au fonctionnement du site (session, sécurité). Ces cookies ne collectent aucune donnée personnelle et ne nécessitent pas de consentement.</p>"
+    },
+    {
+      "kind": "section",
+      "icon": "fa-lock",
+      "heading": "Comment protégeons-nous vos données ?",
+      "html": "<ul><li><strong>Hébergement sécurisé</strong> : serveurs en France (IKOULA), HTTPS, sauvegardes régulières</li><li><strong>Accès restreint</strong> : seul Jean LEBLANC accède aux données</li><li><strong>Transmission sécurisée</strong> : chiffrement du formulaire</li><li><strong>Suppression définitive</strong> : purge des données expirées</li></ul>"
+    },
+    {
+      "kind": "contact",
+      "icon": "fa-envelope-open-text",
+      "heading": "Des questions ?",
+      "lines": [
+        "M. Jean LEBLANC",
+        "Email : contact@coossi-securite-incendie.com",
+        "Tél. : 06 85 75 27 75",
+        "Adresse : 1908 chaussée Brunehaut, 59530 Villers Pol"
+      ]
+    },
+    {
+      "kind": "alert",
+      "icon": "fa-calendar-alt",
+      "heading": "Dernière mise à jour",
+      "html": "<p>Janvier 2025.</p>"
+    }
+  ]
+}

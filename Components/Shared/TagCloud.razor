@@ -1,0 +1,71 @@
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IKeywordStore Store
+
+@code {
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public string? Title { get; set; }
+
+    // Mode 1 : rouge si Weight >= HighlightWeight (reco)
+    [Parameter] public bool UseWeightThreshold { get; set; } = true;
+    [Parameter] public int HighlightWeight { get; set; } = 4;
+
+    // Mode 2 : alternance stricte (rouge/blanc/rouge/…)
+    [Parameter] public bool Alternate { get; set; } = false;
+
+    private KeywordCloudDto? _cloud;
+
+    protected override async Task OnParametersSetAsync()
+        => _cloud = string.IsNullOrWhiteSpace(Id) ? null : await Store.GetByIdAsync(Id);
+
+    string BadgeClassFor(KeywordItem k, int index)
+    {
+        @* if (Alternate)
+            return (index % 2 == 0) ? "badge badge-red px-3 py-2" : "badge text-bg-light px-3 py-2"; *@
+        if (Alternate)
+            return (index % 2 == 0) ? "badge bg-outline-danger fs-6 py-2 px-3 text-dark border" : "badge text-bg-light px-3 py-2";
+
+        // par défaut: seuil de poids
+        var isRed = UseWeightThreshold && k.Weight >= HighlightWeight;
+        //return isRed ? "badge badge-red px-3 py-2" : "badge text-bg-light px-3 py-2";
+        return isRed ? "badge bg-outline-danger fs-6 py-2 px-3 text-dark border" : "badge bg-danger fs-6 py-2 px-3";
+
+    }
+}
+
+@if (_cloud is not null && _cloud.Items?.Count > 0)
+{
+    <section class="section-padding">
+        <div class="container text-center">
+            @if (!string.IsNullOrWhiteSpace(Title ?? _cloud.Title))
+            {
+                <h2 class="display-5 fw-bold mb-3">@((Title ?? _cloud.Title))</h2>
+            }
+            <p class="text-muted mb-4">COOSSI intervient dans toute la France pour vos projets de sécurité incendie</p>
+
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                @for (int i = 0; i < _cloud.Items.Count; i++)
+                {
+                    var k = _cloud.Items[i];
+                    var cls = BadgeClassFor(k, i);
+
+                    if (!string.IsNullOrWhiteSpace(k.Url))
+                    {
+                        <a class="@cls" href="@k.Url" title="@k.Title">@k.Text</a>
+                    }
+                    else
+                    {
+                        <span class="@cls" title="@k.Title">@k.Text</span>
+                    }
+                }
+            </div>
+
+            @* Bouton sous le nuage (comme ta maquette) — facultatif *@
+            <div class="mt-4">
+                <a href="/prestations" class="btn btn-outline-dark">
+                    <i class="fa-solid fa-location-dot me-2"></i>Voir toutes les zones d'intervention
+                </a>
+            </div>
+        </div>
+    </section>
+}

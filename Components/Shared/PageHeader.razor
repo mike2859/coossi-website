@@ -1,0 +1,25 @@
+@code {
+  [Parameter] public string Title { get; set; } = "";
+  [Parameter] public string? Lead { get; set; }
+}
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">@Title</h1>
+                     @if (!string.IsNullOrWhiteSpace(Lead)) { <p class="lead">@Lead</p> }
+                </div>
+            </div>
+        </div>
+    </section>
+
+@* <section class="page-header" style="background:linear-gradient(135deg,#dc3545,#b02a37);color:white;padding:120px 0 80px">
+  <div class="container">
+    <div class="row"><div class="col-lg-10 mx-auto text-center">
+      <h1 class="display-4 fw-bold mb-4">@Title</h1>
+      @if (!string.IsNullOrWhiteSpace(Lead)) { <p class="lead">@Lead</p> }
+    </div></div>
+  </div>
+</section> *@

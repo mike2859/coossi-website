@@ -1,0 +1,11 @@
+{
+  "Id": 7,
+  "Slug": "audit-diagnostic",
+  "Title": "Audit & Diagnostic",
+  "MetaTitle": "Audit & Diagnostic | COOSSI",
+  "MetaDescription": "État des lieux, conformité, recommandations priorisées.",
+  "IntroHtml": "Nous auditons vos équipements, procédures et conformité.",
+  "BodyHtml": "<h2>Livrables</h2><ul><li>Rapport de conformité</li><li>Plan d'actions priorisé</li></ul>",
+  "HeroImageWebp": "/images/slider-images/categories/audit-diagnostic.webp",
+  "HeroImagePngFallback": "/images/slider-images/categories/audit-diagnostic.png"
+}

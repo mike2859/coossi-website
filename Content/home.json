@@ -1,0 +1,90 @@
+{
+  "id": "home",
+  "hero": {
+    "title": "COOSSI - Coordinateur en Système de Sécurité Incendie",
+    "leadStrong": "COOSSI ( COOrdinateur en Système de Sécurité Incendie) est un Bureau d'études basé à Villers Pol, dans le département du Nord, à proximité de Valenciennes.",
+    "textStrong": "Notre seul objectif: Votre satisfaction avec un avis favorable à l'exploitation de votre (vos) bâtiment (s), par les autorités compétentes.",
+    "buttons": [
+      { "kind": "primary", "href": "tel:0685752775", "icon": "fa-phone", "label": "06 85 75 27 75" },
+      { "kind": "outline", "href": "/contact", "icon": "fa-envelope", "label": "Nous contacter" }
+    ],
+    "rightIcon": "fa-shield-alt"
+  },
+  "intro": {
+    "title": "Vous recherchez un Coordinateur en Systèmes de Sécurité Incendie ?",
+    "lead": "COOSSI vous accompagne dans la mise en sécurité incendie des personnes et des biens de votre établissement (ERP, ERT, IGH, Etablissements spéciaux), conformément à vos demandes et obligations règlementaires.",
+    "p1Strong": "Nous vous proposons de gérer votre sécurité incendie dans la conception, la réalisation, la réception avec une prestation clé en main.",
+    "p2Strong": "Votre avantage, un seul interlocuteur du début à la fin de la mission."
+  },
+  "services": {
+    "title": "Nos Prestations",
+    "subtitle": "Une expertise complète pour tous vos projets de sécurité incendie",
+    "cards": [
+      {
+        "code": "ERP",
+        "icon": "fa-building",
+        "title": "ERP",
+        "subtitle": "Établissements Recevant du Public",
+        "text": "Conception et mise en conformité des systèmes de sécurité pour tous types d'ERP"
+      },
+      {
+        "code": "ERT",
+        "icon": "fa-industry",
+        "title": "ERT",
+        "subtitle": "Établissements Recevant des Travailleurs",
+        "text": "Sécurité incendie au travail selon le Code du Travail"
+      },
+      {
+        "code": "IGH",
+        "icon": "fa-city",
+        "title": "IGH",
+        "subtitle": "Immeubles de Grande Hauteur",
+        "text": "Systèmes de sécurité complexes pour les bâtiments de grande hauteur"
+      },
+      {
+        "code": "SPECIAUX",
+        "icon": "fa-cogs",
+        "title": "Spéciaux",
+        "subtitle": "Établissements Spéciaux",
+        "text": "Solutions sur mesure pour les établissements à risques particuliers"
+      }
+    ]
+  },
+  "expertise": {
+    "title": "Notre Expertise Technique",
+    "subtitle": "Des prestations complètes pour vos projets de sécurité incendie",
+    "items": [
+      { "icon": "fa-search", "title": "Audit Sécurité Incendie", "text": "Analyse complète de vos installations et mise en conformité réglementaire" },
+      { "icon": "fa-file-alt", "title": "Notice de Sécurité", "text": "Rédaction des notices de sécurité et accessibilité conformes aux normes" },
+      { "icon": "fa-project-diagram", "title": "Coordination SSI", "text": "Mission de coordination des Systèmes de Sécurité Incendie" },
+      { "icon": "fa-map", "title": "Plans & Dossiers", "text": "Plans de zones, synoptiques et dossiers d'identité SSI" }
+    ]
+  },
+  "process": {
+    "title": "Notre Processus",
+    "subtitle": "Prestation clé en main : Conception, Réalisation, Réception",
+    "steps": [
+      { "num": 1, "title": "Conception", "text": "Analyse des besoins, élaboration des plans et conception des systèmes de sécurité" },
+      { "num": 2, "title": "Réalisation", "text": "Coordination des travaux, suivi des installations et contrôles de conformité" },
+      { "num": 3, "title": "Réception", "text": "Accompagnement jusqu'à l'avis favorable des autorités compétentes" }
+    ]
+  },
+  "zones": {
+    "title": "Zones d'Intervention",
+    "subtitle": "COOSSI intervient dans toute la France pour vos projets de sécurité incendie",
+    "badges": [
+      "Valenciennes","Lille","Maubeuge","Cambrai","Amiens","Calais",
+      "Arras","Lens","Dunkerque","Roubaix","Tourcoing","Paris",
+      "Lyon","Marseille","Toulouse","Bordeaux","Nantes","Strasbourg"
+    ],
+    "link": { "href": "/rus", "icon": "fa-map-marker-alt", "label": "Voir toutes les zones d'intervention" }
+  },
+  "cta": {
+    "title": "Pour prendre rendez-vous ou un complément d'information",
+    "subtitle": "Contactez COOSSI dès aujourd'hui pour votre projet de sécurité incendie",
+    "buttons": [
+      { "kind": "primary", "href": "tel:0685752775", "icon": "fa-phone", "label": "06 85 75 27 75" },
+      { "kind": "outline", "href": "/contact", "icon": "fa-envelope", "label": "Formulaire" }
+    ]
+  }
+}

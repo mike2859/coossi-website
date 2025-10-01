@@ -1,0 +1,11 @@
+{
+  "Id": 6,
+  "Slug": "creation-dossier-ssi",
+  "Title": "Création de dossier SSI",
+  "MetaTitle": "Création de dossier SSI | COOSSI",
+  "MetaDescription": "Constitution et suivi complet de vos dossiers SSI.",
+  "IntroHtml": "Nous préparons vos dossiers SSI selon la réglementation en vigueur.",
+  "BodyHtml": "<h2>Contenu</h2><ul><li>Analyse des risques</li><li>Documentation technique</li><li>Coordination avec les bureaux de contrôle</li></ul>",
+  "HeroImageWebp": "/images/slider-images/categories/creation-dossier-ssi.webp",
+  "HeroImagePngFallback": "/images/slider-images/categories/creation-dossier-ssi.png"
+}

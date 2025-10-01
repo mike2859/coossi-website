@@ -1,0 +1,34 @@
+@using Coossi.Blazor.Data.Interfaces
+@inject IPrestationStore Store
+
+<section class="section-padding bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center mb-5">
+        <h2 class="display-6 fw-bold mb-3">Nos Prestations</h2>
+        <p class="lead">Une expertise complète pour tous vos projets de sécurité incendie</p>
+      </div>
+    </div>
+
+    @if (_items is null)
+    {
+      <div class="text-center text-muted">Chargement…</div>
+    }
+    else
+    {
+      <div class="row g-4">
+        @foreach (var p in _items)
+        {
+          <div class="col-md-6 col-lg-4">
+            <ServiceCard Item="p" />
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+@code {
+  private IReadOnlyList<Coossi.Blazor.Data.Models.PrestationDto>? _items;
+  protected override async Task OnInitializedAsync() => _items = await Store.ListAsync();
+}
