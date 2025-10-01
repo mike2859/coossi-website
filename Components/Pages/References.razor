@@ -1,4 +1,6 @@
 @page "/references"
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Components.Testimonials
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @inject IContentStore ContentStore
@@ -8,6 +10,8 @@
     protected override async Task OnInitializedAsync()
         => Page = await ContentStore.GetAsync<RealisationsPage>("references"); // Content/references.json
 }
+
+<Seo Title="Références – COOSSI" Canonical="https://.../references" />
 
 @if (Page is null)
 {
@@ -20,7 +24,8 @@
 }
 else
 {
-    <section class="page-header">
+    <PageHeader Title="@Page!.Title" Lead="@Page.Lead" />
+    @* <section class="page-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -29,7 +34,7 @@ else
                 </div>
             </div>
         </div>
-    </section>
+    </section> *@
 
     @* 1) Stats *@
     @foreach (var s in Page.Sections.Where(x => x.Kind == "stats" && x.Items is not null))
@@ -53,11 +58,14 @@ else
     }
 
     @* 2) Témoignages via COMPOSANT JSON dédié *@
-    <section class="section-padding">
+    <Section>
+        <TestimonialsGrid JsonId="testimonials" />
+    </Section>
+    @* <section class="section-padding">
         <div class="container">
             <TestimonialsGrid JsonId="testimonials" />
         </div>
-    </section>
+    </section> *@
 
     @* 3) Missions *@
     @foreach (var s in Page.Sections.Where(x => x.Kind == "missions" && x.Cards2 is not null))

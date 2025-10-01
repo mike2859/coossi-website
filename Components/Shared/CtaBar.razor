@@ -1,0 +1,24 @@
+@code {
+  [Parameter] public string Title { get; set; } = "";
+  [Parameter] public string? Text { get; set; }
+  [Parameter] public string? Phone { get; set; }
+  [Parameter] public string? PhoneHref { get; set; }
+  [Parameter] public string? ContactHref { get; set; }
+  [Parameter] public bool Dark { get; set; } = false;
+}
+<section class="@($"section-padding {(Dark ? "bg-dark text-white" : "")}")">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="display-6 fw-bold mb-3">@Title</h2>
+        @if (!string.IsNullOrWhiteSpace(Text)) { <p class="lead mb-0">@Text</p> }
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        @if (!string.IsNullOrWhiteSpace(Phone) && !string.IsNullOrWhiteSpace(PhoneHref))
+        { <a href="@PhoneHref" class="btn btn-custom btn-lg me-3"><i class="fas fa-phone me-2"></i>@Phone</a> }
+        @if (!string.IsNullOrWhiteSpace(ContactHref))
+        { <a href="@ContactHref" class="btn @(Dark ? "btn-outline-light" : "btn-outline-dark") btn-lg"><i class="fas fa-envelope me-2"></i>Contact</a> }
+      </div>
+    </div>
+  </div>
+</section>

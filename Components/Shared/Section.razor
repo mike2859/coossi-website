@@ -1,0 +1,10 @@
+@code {
+  [Parameter] public string? Class { get; set; } // ex: "bg-light"
+  [Parameter] public RenderFragment? ChildContent { get; set; }
+}
+
+<section class="@($"section-padding {(Class??"")}")">
+  <div class="container">
+    @ChildContent
+  </div>
+</section>

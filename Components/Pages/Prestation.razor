@@ -25,9 +25,8 @@ else
        Canonical="@(Nav.Uri)" OgImage="@item.HeroImageWebp" />
 
 
-
      <!-- Breadcrumb -->
-  <Breadcrumb Current="@item.Title" Parents="@(new Dictionary<string,string>{{"Prestations","/prestations"}})" />
+  @* <Breadcrumb Current="@item.Title" Parents="@(new Dictionary<string,string>{{"Prestations","/prestations"}})" /> *@
 
 <PageHeader Title="@item.Title"
                               Lead="@item.HeroLead" />
