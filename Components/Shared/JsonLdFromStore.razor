@@ -1,0 +1,19 @@
+@using Coossi.Blazor.Data.Interfaces
+@inject IContentStore ContentStore
+
+@code {
+    [Parameter] public string Id { get; set; } = ""; // ex: "seo/jsonld/localbusiness"
+    private string? _payload;
+
+    protected override async Task OnParametersSetAsync()
+        => _payload = await ContentStore.GetRawAsync(Id);
+}
+
+@if (!string.IsNullOrWhiteSpace(_payload))
+{
+    <HeadContent>
+        <script type="application/ld+json">
+            @((MarkupString)_payload)
+        </script>
+    </HeadContent>
+}

@@ -25,4 +25,13 @@ public sealed class FileContentStore : IContentStore
         try { return JsonSerializer.Deserialize<T>(json, _opts); }
         catch { return default; }
     }
+
+    public async Task<string?> GetRawAsync(string id, string? subfolder = null, CancellationToken ct = default)
+    {
+        var folder = string.IsNullOrWhiteSpace(subfolder) ? _root : Path.Combine(_root, subfolder);
+        var path = Path.Combine(folder, id + ".json");
+        if (!File.Exists(path)) return null;
+
+        return await File.ReadAllTextAsync(path, ct);
+    }
 }
