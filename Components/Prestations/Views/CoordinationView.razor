@@ -1,0 +1,53 @@
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Models
+@namespace Coossi.Blazor.Components.Prestations.Views
+@code {
+    [Parameter] public PrestationPageDto Model { get; set; } = default!;
+    PrestationSection? S(string t) => Model.Sections?.FirstOrDefault(x => string.Equals(x.Title, t, StringComparison.OrdinalIgnoreCase));
+}
+@{
+    var sMission  = S("Mission obligatoire");
+    var sActions  = S("Nos actions");
+}
+
+@if (sMission is not null)
+{
+    <section class="content-section">
+        <div class="container">
+            <div class="info-card">
+                <h3 class="mb-3">@sMission.Title</h3>
+                @((MarkupString?)sMission.Html)
+            </div>
+        </div>
+    </section>
+}
+
+@if (sActions?.Items?.Count > 0)
+{
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">@sActions.Title</h2>
+            <div class="row">
+                @foreach (var it in sActions.Items)
+                {
+                    <div class="col-lg-4 mb-4">
+                        <div class="info-card h-100">
+                            <p class="mb-0">@it</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<CtaBar Title="Besoin d’aller plus loin ?"
+     Text="Parlons de votre projet : audit, notices, coordination ou dossier SSI."
+     Phone="06 85 75 27 75" PhoneHref="tel:0685752775" ContactHref="/contact" Dark="true" />
+@* 
+<section class="cta-section">
+    <div class="container text-center">
+        <h2 class="mb-3">Besoin d’une coordination SSI ?</h2>
+        <a href="/contact" class="btn-primary-custom"><i class="fas fa-envelope"></i> Nous contacter</a>
+    </div>
+</section> *@

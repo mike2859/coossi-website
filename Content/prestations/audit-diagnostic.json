@@ -1,11 +1,25 @@
 {
-  "Id": 7,
+  "Id": 5,
   "Slug": "audit-diagnostic",
-  "Title": "Audit & Diagnostic",
-  "MetaTitle": "Audit & Diagnostic | COOSSI",
-  "MetaDescription": "État des lieux, conformité, recommandations priorisées.",
-  "IntroHtml": "Nous auditons vos équipements, procédures et conformité.",
-  "BodyHtml": "<h2>Livrables</h2><ul><li>Rapport de conformité</li><li>Plan d'actions priorisé</li></ul>",
-  "HeroImageWebp": "/images/slider-images/categories/audit-diagnostic.webp",
-  "HeroImagePngFallback": "/images/slider-images/categories/audit-diagnostic.png"
+  "MetaTitle": "Audit & Diagnostic Sécurité Incendie – COOSSI",
+  "MetaDescription": "Contrôle fonctionnel, conformité réglementaire et plan d’actions priorisé pour votre SSI.",
+  "OgImage": "images/og-prestations.webp",
+  "Title": "Audit & Diagnostic Sécurité Incendie",
+  "Subtitle": "Contrôle complet et plan d’actions",
+  "Sections": [
+    {
+      "Kind": "html",
+      "Title": "Pourquoi réaliser un audit ?",
+      "Html": "<p>Le SSI doit rester <strong>fonctionnel</strong> et <strong>conforme</strong>. Nous identifions les écarts, les risques et les travaux à prévoir, puis nous priorisons les actions à engager.</p>"
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Périmètre typique",
+      "Columns": [
+        ["Détection & alarme", "Désenfumage & DAS", "Compartimentage EI", "Signalisation/BAES"],
+        ["Moyens de secours", "Corrélation ZD/ZS", "Report d’alarme", "Documentation & consignes"]
+      ]
+    },
+    { "Kind": "cta" }
+  ]
 }

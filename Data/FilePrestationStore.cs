@@ -12,30 +12,30 @@ public sealed class FilePrestationStore : IPrestationStore
     public FilePrestationStore(IWebHostEnvironment env)
         => _root = Path.Combine(env.ContentRootPath, "Content", "prestations");
 
-    public async Task<PrestationDto?> GetBySlugAsync(string slug, CancellationToken ct = default)
+    public async Task<PrestationPageDto?> GetBySlugAsync(string slug, CancellationToken ct = default)
     {
         var file = Path.Combine(_root, slug + ".json");
-        return File.Exists(file)
-            ? JsonSerializer.Deserialize<PrestationDto>(await File.ReadAllTextAsync(file, ct), _opts)
-            : null;
+        if (!File.Exists(file)) return null;
+        var json = await File.ReadAllTextAsync(file, ct);
+        return JsonSerializer.Deserialize<PrestationPageDto>(json, _opts);
     }
 
-    public async Task<PrestationDto?> GetByIdAsync(int id, CancellationToken ct = default)
+    public async Task<PrestationPageDto?> GetByIdAsync(int id, CancellationToken ct = default)
     {
         foreach (var f in Directory.EnumerateFiles(_root, "*.json"))
         {
-            var dto = JsonSerializer.Deserialize<PrestationDto>(await File.ReadAllTextAsync(f, ct), _opts);
+            var dto = JsonSerializer.Deserialize<PrestationPageDto>(await File.ReadAllTextAsync(f, ct), _opts);
             if (dto?.Id == id) return dto;
         }
         return null;
     }
 
-    public async Task<IReadOnlyList<PrestationDto>> ListAsync(CancellationToken ct = default)
+    public async Task<IReadOnlyList<PrestationPageDto>> ListAsync(CancellationToken ct = default)
     {
-        var list = new List<PrestationDto>();
+        var list = new List<PrestationPageDto>();
         foreach (var f in Directory.EnumerateFiles(_root, "*.json"))
         {
-            var dto = JsonSerializer.Deserialize<PrestationDto>(await File.ReadAllTextAsync(f, ct), _opts);
+            var dto = JsonSerializer.Deserialize<PrestationPageDto>(await File.ReadAllTextAsync(f, ct), _opts);
             if (dto is not null) list.Add(dto);
         }
         return list.OrderBy(p => p.Title).ToList();

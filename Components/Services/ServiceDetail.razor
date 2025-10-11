@@ -1,43 +1,42 @@
-@page "/prestation2/{slug}"
-@using Coossi.Blazor.Components.Shared
-@using Coossi.Blazor.Data.Interfaces
-@using Coossi.Blazor.Data.Models
-@inject IPrestationStore Store
-
 @code {
-  [Parameter] public string slug { get; set; } = "";
-  private PrestationDto? Item;
-  protected override async Task OnParametersSetAsync() =>
-      Item = (await Store.ListAsync()).FirstOrDefault(x => x.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public string? Lead { get; set; }
+    [Parameter] public IEnumerable<string>? Items { get; set; }
+    [Parameter] public IEnumerable<string>? ItemsRight { get; set; } // si colonnes 2
+    [Parameter] public bool Light { get; set; } = false;             // fond gris clair
 }
 
-@if (Item is null)
-{
-  <PageHeader Title="Prestation introuvable" Lead="La page demandée n'existe pas." />
-}
-else
-{
-  <PageHeader Title="@Item.HeroTitle" Lead="@Item.HeroLead" />
+<section class="@($"section-padding {(Light ? "bg-light" : "")}")">
+  <div class="container">
+    @if (!string.IsNullOrWhiteSpace(Title)) { <h2 class="display-6 fw-bold mb-3">@Title</h2> }
+    @if (!string.IsNullOrWhiteSpace(Lead))  { <p class="lead">@Lead</p> }
 
-  <section class="section-padding">
-    <div class="container">
-      <div class="row"><div class="col-lg-10 mx-auto">
-        <h2 class="h3 fw-bold mb-3">Notre approche</h2>
-        <p class="lead">@Item.IntroHtml</p>
-
-        @if (Item.Bullets?.Any() == true)
-        {
-          <div class="mt-4">
-            <h5 class="text-danger">Missions réalisées :</h5>
-            <ul class="list-unstyled">
-              @foreach (var b in Item.Bullets) { <li class="mb-1">• @b</li> }
-            </ul>
-          </div>
-        }
-      </div></div>
-    </div>
-  </section>
-
-  <CTA Title="Besoin d'un expert ?" Subtitle="Parlez-nous de votre projet de sécurité incendie" />
-
-}
+    @if (ItemsRight is null)
+    {
+        <ul class="list-unstyled mb-0">
+            @if (Items is not null)
+            {
+                @foreach (var it in Items) { <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i>@it</li> }
+            }
+        </ul>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    @if (Items is not null)
+                    {
+                        @foreach (var it in Items) { <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i>@it</li> }
+                    }
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    @foreach (var it in ItemsRight) { <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i>@it</li> }
+                </ul>
+            </div>
+        </div>
+    }
+  </div>
+</section>

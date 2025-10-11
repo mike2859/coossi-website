@@ -6,23 +6,6 @@
 @inject IContentStore ContentStore
 
 @code {
-
-    private readonly string JsonLdLocalBusiness = @"{
-        ""@context"": ""https://schema.org"",
-        ""@type"": ""LocalBusiness"",
-        ""name"": ""COOSSI"",
-        ""image"": ""https://www.coossi-securite-incendie.eu/images/og-home.webp"",
-        ""telephone"": ""+33685752775"",
-        ""url"": ""https://www.coossi-securite-incendie.eu/"",
-        ""address"": {
-            ""@type"": ""PostalAddress"",
-            ""addressLocality"": ""Villers-Pol"",
-            ""addressRegion"": ""Hauts-de-France"",
-            ""addressCountry"": ""FR""
-        },
-        ""areaServed"": [""Nord"", ""Pas-de-Calais"", ""Somme"", ""Aisne""]
-        }";
-
     private HomePage? Page;
     protected override async Task OnInitializedAsync()
         => Page = await ContentStore.GetAsync<HomePage>("home");

@@ -1,0 +1,48 @@
+@using Coossi.Blazor.Data.Models
+@namespace Coossi.Blazor.Components.Prestations.Views
+@code {
+    [Parameter] public PrestationPageDto Model { get; set; } = default!;
+    PrestationSection? S(string t) => Model.Sections?.FirstOrDefault(x => string.Equals(x.Title, t, StringComparison.OrdinalIgnoreCase));
+}
+@{
+    var sQuoi = S("Qu’est-ce que le DUER ?");
+    var sObj  = S("Objectifs");
+}
+
+@if (sQuoi is not null)
+{
+    <section class="content-section">
+        <div class="container">
+            <div class="info-card">
+                <h3 class="mb-3">@sQuoi.Title</h3>
+                @((MarkupString?)sQuoi.Html)
+            </div>
+        </div>
+    </section>
+}
+
+@if (sObj?.Items?.Count > 0)
+{
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">@sObj.Title</h2>
+            <div class="row">
+                @foreach (var it in sObj.Items)
+                {
+                    <div class="col-lg-4 mb-4">
+                        <div class="info-card h-100">
+                            <p class="mb-0">@it</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<section class="cta-section">
+    <div class="container text-center">
+        <h2 class="mb-3">Mettre à jour votre DUER</h2>
+        <a href="/contact" class="btn-primary-custom"><i class="fas fa-envelope"></i> Nous contacter</a>
+    </div>
+</section>

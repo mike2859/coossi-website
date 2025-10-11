@@ -1,0 +1,26 @@
+{
+  "Id": 1,
+  "Slug": "coordination-ssi",
+  "MetaTitle": "Coordination SSI (NF S 61-931) – COOSSI",
+  "MetaDescription": "Mission obligatoire : cohérence du Système de Sécurité Incendie de la conception à la réception. Réunions techniques, schémas d’asservissements, essais & PV.",
+  "OgImage": "images/og-prestations.webp",
+  "Title": "Coordination SSI",
+  "Subtitle": "Mission obligatoire (NF S 61-931)",
+  "Sections": [
+    {
+      "Kind": "html",
+      "Title": "Mission obligatoire",
+      "Html": "<p>En application du § 5.3 de la norme <strong>NF S 61-931</strong>, la coordination SSI est <strong>obligatoire</strong> pour le maître d’ouvrage. Elle sécurise la conformité des équipements et des asservissements tout au long du projet.</p>"
+    },
+    {
+      "Kind": "bullets",
+      "Title": "Nos actions",
+      "Items": [
+        "Exigences & schémas d’asservissement",
+        "Réunions techniques & coordination",
+        "Préparation des essais & PV de réception"
+      ]
+    },
+    { "Kind": "cta" }
+  ]
+}

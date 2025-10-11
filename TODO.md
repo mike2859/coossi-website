@@ -18,7 +18,6 @@
 - [x] Balises complétées sur toutes les pages
 - [x] Images OG (WebP ou PNG) par page
 - [ ] Minifier css
-- [ ] Ooutil Crawler en local
 
 ## Bonus utilitaires (tech/SEO)
 - [ ] `sitemap.xml` (statiques principales)

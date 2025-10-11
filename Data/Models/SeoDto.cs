@@ -1,4 +1,4 @@
-#nullable enable
+
 namespace Coossi.Blazor.Data.Models;
 
 public record SeoSiteDefaults(

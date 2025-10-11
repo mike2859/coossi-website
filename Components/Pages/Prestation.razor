@@ -1,41 +1,58 @@
 @page "/prestation/{slug}"
 @using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
 @inject IPrestationStore Store
 @inject NavigationManager Nav
 
 @code {
-  [Parameter] public string? slug { get; set; }
-  Coossi.Blazor.Data.Models.PrestationDto? item;
-  protected override async Task OnParametersSetAsync()
-  {
-    if (!string.IsNullOrWhiteSpace(slug))
-      item = await Store.GetBySlugAsync(slug);
-  }
+    [Parameter] public string slug { get; set; } = "";
+    private PrestationPageDto? Model;
+    private Type? RendererType;
+
+    // mapping slug -> composant de rendu spécifique
+    private static readonly IReadOnlyDictionary<string, Type> Map = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
+    {
+        ["coordination-ssi"] = typeof(Coossi.Blazor.Components.Prestations.Views.CoordinationView),
+        ["creation-dossier-ssi"] = typeof(Coossi.Blazor.Components.Prestations.Views.DossierSsiView),
+        ["notices-securite-accessibilite"] = typeof(Coossi.Blazor.Components.Prestations.Views.NoticesView),
+        ["audit-diagnostic"] = typeof(Coossi.Blazor.Components.Prestations.Views.AuditDiagnosticView),
+        ["assistance-moe"] = typeof(Coossi.Blazor.Components.Prestations.Views.AssistanceMoeView),
+        ["responsable-unique-securite"] = typeof(Coossi.Blazor.Components.Prestations.Views.RusView),
+        ["document-unique-evaluation"] = typeof(Coossi.Blazor.Components.Prestations.Views.DuerView),
+        ["signaletique"] = typeof(Coossi.Blazor.Components.Prestations.Views.SignaletiqueView),
+        // … ajoute tes autres slugs au fur et à mesure
+    };
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Model = await Store.GetBySlugAsync(slug);
+        RendererType = Model is null ? null : (Map.TryGetValue(Model.Slug, out var t) ? t : typeof(Coossi.Blazor.Components.Prestations.Views.GenericPrestationView));
+    }
+
+    string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{slug}";
 }
 
-@if (item is null)
+@if (Model is null)
 {
-  <div class="text-muted">Introuvable.</div>
+    <section class="content-section text-center text-muted">
+        <div class="container">
+            <div class="spinner-border text-danger"></div>
+            <p class="mt-3">Chargement…</p>
+        </div>
+    </section>
 }
 else
 {
-  <Seo Title="@(item.MetaTitle ?? item.Title + " | COOSSI")"
-       Description="@(item.MetaDescription ?? item.IntroHtml)"
-       Canonical="@(Nav.Uri)" OgImage="@item.HeroImageWebp" />
+    <!-- SEO -->
+    <Seo Title="@Model.MetaTitle"
+         Description="@Model.MetaDescription"
+         Canonical="@Canonical"
+         OgImage="@(Model.OgImage ?? "images/og-prestations.webp")" />
 
+    <!-- Header -->
+    <PageHeader Title="@Model.Title" Lead="@Model.Subtitle" />
 
-     <!-- Breadcrumb -->
-  @* <Breadcrumb Current="@item.Title" Parents="@(new Dictionary<string,string>{{"Prestations","/prestations"}})" /> *@
-
-<PageHeader Title="@item.Title"
-                              Lead="@item.HeroLead" />
-
-    <section class="section-padding">
-        <div class="container">
-    @((MarkupString)item.BodyHtml)
-  </div>
-    </section>
-
-    <WeightedCloud Id="@($"keywords-{slug}")" Title="Mots-clés liés" />
+    <!-- Rendu spécifique -->
+    <DynamicComponent Type="@(RendererType!)" Parameters="@(new Dictionary<string, object?> { ["Model"] = Model })" />
 }

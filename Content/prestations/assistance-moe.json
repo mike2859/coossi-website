@@ -1,0 +1,27 @@
+{
+  "Id": 3,
+  "Slug": "assistance-moe",
+  "MetaTitle": "Assistance à Maîtrise d’Ouvrage SSI – COOSSI",
+  "MetaDescription": "Appui technique durant la conception et la réalisation : coordination, réponses techniques, corrélation des DAS, préparation des essais & réception.",
+  "OgImage": "images/og-prestations.webp",
+  "Title": "Assistance à Maîtrise d’Ouvrage SSI",
+  "Subtitle": "Accompagnement en conception & réalisation",
+  "Sections": [
+    {
+      "Kind": "html",
+      "Title": "Mission d’assistance",
+      "Html": "<p>Nous accompagnons la MOA/MOE sur la phase de conception du SSI et le suivi en réalisation : <strong>coordination, réponses techniques, cohérence</strong> avec les intervenants.</p>"
+    },
+    {
+      "Kind": "bullets",
+      "Title": "Missions du coordinateur",
+      "Items": [
+        "Animer les réunions techniques SSI",
+        "Répondre aux questions des intervenants",
+        "Tableaux de corrélation des DAS/dispositifs",
+        "Préparer les essais et la réception"
+      ]
+    },
+    { "Kind": "cta" }
+  ]
+}

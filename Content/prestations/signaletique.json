@@ -1,0 +1,193 @@
+{
+  "Id": 8,
+  "Slug": "signaletique",
+
+  "MetaTitle": "Signalétique de Sécurité Incendie | COOSSI Valenciennes",
+  "MetaDescription": "COOSSI conçoit et installe votre signalétique de sécurité incendie conforme aux normes. Plans d'évacuation, panneaux, pictogrammes pour ERP, IGH. Valenciennes.",
+  "OgImage": "images/og-prestations.webp",
+
+  "Title": "Signalétique de Sécurité Incendie",
+  "Subtitle": "Conception & installation conformes aux normes",
+
+  "Sections": [
+    {
+      "Kind": "html",
+      "Title": "L'Importance de la Signalétique",
+      "Html": "<p>La signalétique de sécurité incendie est un élément <strong>essentiel et obligatoire</strong> dans tous les établissements recevant du public (ERP) et les immeubles de grande hauteur (IGH). Elle guide les personnes vers les issues de secours, indique l'emplacement des équipements de lutte contre l'incendie et diffuse les consignes de sécurité.</p><p>COOSSI vous accompagne dans la conception, la réalisation et l'installation d'une signalétique complète et conforme aux normes en vigueur pour votre établissement près de Valenciennes et partout en France.</p>"
+    },
+
+    {
+      "Kind": "bullets",
+      "Title": "Conformité aux Normes",
+      "Lead": "La signalétique de sécurité incendie doit respecter des normes strictes pour garantir son efficacité :",
+      "Items": [
+        "ISO 7010",
+        "NF EN ISO 7010",
+        "Arrêté du 25/06/1980",
+        "Code du Travail"
+      ]
+    },
+
+    { "Kind": "bullets",
+      "Title": "Plans d’Évacuation",
+      "Items": [
+        "Plans d'évacuation personnalisés",
+        "Point « Vous êtes ici »",
+        "Cheminements d'évacuation",
+        "Issues de secours",
+        "Points de rassemblement",
+        "Emplacements des équipements",
+        "Support plastifié résistant"
+      ]
+    },
+    { "Kind": "bullets",
+      "Title": "Panneaux Directionnels",
+      "Items": [
+        "Issues / sorties de secours",
+        "Flèches directionnelles",
+        "Escaliers de secours",
+        "Sorties sans issue",
+        "Points de rassemblement",
+        "Formats et matériaux adaptés"
+      ]
+    },
+    { "Kind": "bullets",
+      "Title": "Signalisation des Équipements",
+      "Items": [
+        "Extincteurs",
+        "RIA (Robinet Incendie Armé)",
+        "Colonnes sèches et humides",
+        "Déclencheurs manuels",
+        "Téléphones d'urgence",
+        "Défibrillateurs",
+        "Commandes de désenfumage"
+      ]
+    },
+    { "Kind": "bullets",
+      "Title": "Panneaux d’Interdiction",
+      "Items": [
+        "Interdiction de fumer",
+        "Interdiction de flamme nue",
+        "Interdiction d'éteindre avec de l'eau",
+        "Accès interdit",
+        "Ne pas obstruer",
+        "Danger électrique",
+        "Autres interdictions spécifiques"
+      ]
+    },
+    { "Kind": "bullets",
+      "Title": "Consignes de Sécurité",
+      "Items": [
+        "Consignes générales",
+        "Consignes en cas d'incendie",
+        "Conduite à tenir",
+        "Numéros d'urgence",
+        "Personnalisées par établissement",
+        "Format A4 ou A3 plastifié"
+      ]
+    },
+    { "Kind": "bullets",
+      "Title": "Balisage Lumineux",
+      "Items": [
+        "Blocs de secours BAES",
+        "Éclairage d'évacuation",
+        "Éclairage d'ambiance",
+        "Marquage au sol lumineux",
+        "Conformité aux normes",
+        "Alimentation de sécurité"
+      ]
+    },
+
+    {
+      "Kind": "bullets",
+      "Title": "Pictogrammes Principaux",
+      "Items": [
+        "Issue de secours",
+        "Extincteur",
+        "Téléphone d'urgence",
+        "Alarme incendie",
+        "Premiers secours",
+        "Point de rassemblement",
+        "Interdiction de fumer",
+        "Robinet incendie"
+      ]
+    },
+
+    {
+      "Kind": "bullets",
+      "Title": "Matériaux & Supports",
+      "Items": [
+        "Adhésifs — Vinyle adhésif résistant pour surfaces lisses, durable et facile à poser",
+        "Rigides — PVC, aluminium ou dibond pour une installation pérenne (int./ext.)",
+        "Photoluminescents — Visibles dans l'obscurité sans alimentation électrique"
+      ]
+    },
+
+    {
+      "Kind": "bullets",
+      "Title": "Étude & Conception",
+      "Items": [
+        "Visite de votre établissement",
+        "Analyse des besoins réglementaires",
+        "Conception des plans d'évacuation",
+        "Choix des emplacements optimaux",
+        "Sélection des formats et matériaux"
+      ]
+    },
+    {
+      "Kind": "bullets",
+      "Title": "Réalisation & Pose",
+      "Items": [
+        "Fabrication des panneaux",
+        "Installation professionnelle",
+        "Fixations adaptées à chaque support",
+        "Vérification de la conformité",
+        "Remise d'un dossier complet"
+      ]
+    },
+
+    {
+      "Kind": "bullets",
+      "Title": "Établissements Concernés",
+      "Items": [
+        "ERP — Commerce, restauration, enseignement, hébergement…",
+        "IGH — Bureaux, résidences…",
+        "ERT — Entrepôts, ateliers, usines…",
+        "Tertiaire — Administrations, espaces professionnels…"
+      ]
+    },
+
+    {
+      "Kind": "columns2",
+      "Title": "Pourquoi Choisir COOSSI ?",
+      "Columns": [
+        [
+          "Conformité garantie aux normes en vigueur",
+          "Plans d'évacuation personnalisés",
+          "Matériaux de qualité professionnelle"
+        ],
+        [
+          "Installation rapide et soignée",
+          "Expertise en sécurité incendie depuis 2012",
+          "Service clé en main de A à Z"
+        ]
+      ]
+    },
+
+    {
+      "Kind": "html",
+      "Title": "Demandez Votre Signalétique",
+      "Html": "<p>Contactez COOSSI pour une étude personnalisée de votre signalétique de sécurité incendie.</p><p class='mb-3'><strong>Téléphone :</strong> <a href='tel:0685752775'>06 85 75 27 75</a></p><p><a href='/contact' class='btn-primary-custom'><i class='fas fa-envelope'></i> Demander un devis</a></p>"
+    },
+
+    {
+      "Kind": "bullets",
+      "Title": "Nos Zones d’Intervention",
+      "Items": [
+        "Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Calais","Reims","Dijon","Rouen","Paris","Lyon","Marseille","Bordeaux","Toulouse","Nantes"
+      ]
+    },
+
+    { "Kind": "cta" }
+  ]
+}

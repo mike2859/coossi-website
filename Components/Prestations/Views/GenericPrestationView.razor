@@ -1,0 +1,25 @@
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Models
+@code { [Parameter] public PrestationPageDto Model { get; set; } = default!; }
+
+@if (Model.Sections is not null)
+{
+    @foreach (var s in Model.Sections)
+    {
+        <Section>
+            @if (!string.IsNullOrWhiteSpace(s.Title)) { <h2 class="display-6 fw-bold mb-3">@s.Title</h2> }
+            @if (!string.IsNullOrWhiteSpace(s.Lead))  { <p class="lead">@s.Lead</p> }
+            @if (!string.IsNullOrWhiteSpace(s.Html))  { @((MarkupString)s.Html) }
+            @if (s.Items is not null)
+            {
+                <ul class="list-unstyled">
+                    @foreach (var it in s.Items) { <li>@it</li> }
+                </ul>
+            }
+        </Section>
+    }
+
+    <CtaBar Title="Besoin d’aller plus loin ?" 
+            Text="Parlons de votre projet : audit, notices, coordination ou dossier SSI."
+            Phone="06 85 75 27 75" PhoneHref="tel:0685752775" ContactHref="/contact" Dark="true" />
+}

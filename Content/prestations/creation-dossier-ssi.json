@@ -1,11 +1,27 @@
 {
-  "Id": 6,
+  "Id": 2,
   "Slug": "creation-dossier-ssi",
-  "Title": "Création de dossier SSI",
-  "MetaTitle": "Création de dossier SSI | COOSSI",
-  "MetaDescription": "Constitution et suivi complet de vos dossiers SSI.",
-  "IntroHtml": "Nous préparons vos dossiers SSI selon la réglementation en vigueur.",
-  "BodyHtml": "<h2>Contenu</h2><ul><li>Analyse des risques</li><li>Documentation technique</li><li>Coordination avec les bureaux de contrôle</li></ul>",
-  "HeroImageWebp": "/images/slider-images/categories/creation-dossier-ssi.webp",
-  "HeroImagePngFallback": "/images/slider-images/categories/creation-dossier-ssi.png"
+  "MetaTitle": "Dossier d’identité SSI (NF S 61-932) – COOSSI",
+  "MetaDescription": "Constitution et présentation du dossier SSI : autocontrôles, organisation des essais, PV et rapport de réception.",
+  "OgImage": "images/og-prestations.webp",
+  "Title": "Création de Dossier d’Identité SSI",
+  "Subtitle": "Conformité NF S 61-932",
+  "Sections": [
+    {
+      "Kind": "html",
+      "Title": "Le dossier d’identité SSI",
+      "Html": "<p>Établi selon un <strong>protocole strict</strong>, le dossier regroupe les éléments de conception, d’exécution, d’essais et de réception. COOSSI prend en charge sa réalisation complète.</p>"
+    },
+    {
+      "Kind": "bullets",
+      "Title": "Objectifs en réception",
+      "Items": [
+        "Collecte des autocontrôles et PV d’essais",
+        "Organisation de la réception technique",
+        "Rédaction des PV & rapport de réception",
+        "Remise du dossier d’identité SSI à jour"
+      ]
+    },
+    { "Kind": "cta" }
+  ]
 }

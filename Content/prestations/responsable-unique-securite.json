@@ -1,11 +1,27 @@
 {
-  "Id": 10,
+  "Id": 6,
   "Slug": "responsable-unique-securite",
+  "MetaTitle": "Responsable Unique de Sécurité (RUS) – COOSSI",
+  "MetaDescription": "Coordination sécurité incendie des groupements d’ERP : consignes communes, essais, exercices, relation commission.",
+  "OgImage": "images/og-prestations.webp",
   "Title": "Responsable Unique de Sécurité (RUS)",
-  "MetaTitle": "Responsable Unique de Sécurité | COOSSI",
-  "MetaDescription": "Mise en place et accompagnement RUS.",
-  "IntroHtml": "Nous accompagnons la mise en place d'un RUS.",
-  "BodyHtml": "<h2>Mission</h2><ul><li>Coordination</li><li>Suivi des obligations</li></ul>",
-  "HeroImageWebp": "/images/slider-images/categories/responsable-unique-securite.webp",
-  "HeroImagePngFallback": "/images/slider-images/categories/responsable-unique-securite.png"
+  "Subtitle": "Groupements d’ERP – art. R.123-21 CCH",
+  "Sections": [
+    {
+      "Kind": "html",
+      "Title": "Rôle du RUS",
+      "Html": "<p>Le <strong>Responsable Unique de Sécurité</strong> veille à la cohérence des mesures de sécurité incendie entre établissements d’un même groupement : procédures, consignes, moyens de secours, exercices, coordination avec les autorités.</p>"
+    },
+    {
+      "Kind": "bullets",
+      "Title": "Missions",
+      "Items": [
+        "Consignes communes et mise à jour",
+        "Coordination des essais périodiques",
+        "Organisation des exercices d’évacuation",
+        "Lien avec la commission de sécurité"
+      ]
+    },
+    { "Kind": "cta" }
+  ]
 }

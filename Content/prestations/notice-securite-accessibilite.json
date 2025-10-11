@@ -1,11 +1,26 @@
 {
-  "Id": 9,
-  "Slug": "notice-securite-accessibilite",
-  "Title": "Notice Sécurité & Accessibilité",
-  "MetaTitle": "Notice Sécurité & Accessibilité | COOSSI",
-  "MetaDescription": "Rédaction des notices pour dépôts administratifs.",
-  "IntroHtml": "Nous rédigeons vos notices sécurité et accessibilité.",
-  "BodyHtml": "<h2>Livrables</h2><ul><li>Notice sécurité</li><li>Notice accessibilité</li></ul>",
-  "HeroImageWebp": "/images/slider-images/categories/notice-securite-accessibilite.webp",
-  "HeroImagePngFallback": "/images/slider-images/categories/notice-securite-accessibilite.png"
+  "Id": 4,
+  "Slug": "notices-securite-accessibilite",
+  "MetaTitle": "Notices de Sécurité & Accessibilité – COOSSI",
+  "MetaDescription": "Rédaction des notices exigées au permis de construire et en exploitation : article GE2, accessibilité, moyens de secours, évacuation, désenfumage.",
+  "OgImage": "images/og-prestations.webp",
+  "Title": "Notices de Sécurité & Accessibilité",
+  "Subtitle": "Documents obligatoires ERP/IGH/IPCE",
+  "Sections": [
+    {
+      "Kind": "html",
+      "Title": "Notre expertise",
+      "Html": "<p>COOSSI rédige vos <strong>notices de sécurité incendie</strong> et d’<strong>accessibilité</strong> pour tous types d’établissements. Documents clairs, conformes et opérationnels.</p>"
+    },
+    {
+      "Kind": "bullets",
+      "Title": "Documents PC & exploitation",
+      "Items": [
+        "Notice d’accessibilité (ERP neufs et modifications)",
+        "Notice de sécurité incendie (article GE2)",
+        "Justificatifs de mise en conformité"
+      ]
+    },
+    { "Kind": "cta" }
+  ]
 }
