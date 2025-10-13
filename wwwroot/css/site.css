@@ -553,3 +553,18 @@ footer{background:var(--dark); color:#fff}
 .city-links { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1rem; }
 .city-links a { background:#f8f9fa; color:#212529; padding:.5rem 1rem; border-radius:5px; text-decoration:none; transition:.2s; }
 .city-links a:hover { background: var(--primary,#dc3545); color:#fff; }
+
+
+
+        .number-badge {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary, #dc3545);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 1rem;
+        }

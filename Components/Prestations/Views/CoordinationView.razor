@@ -1,53 +1,127 @@
 @using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Models
-@namespace Coossi.Blazor.Components.Prestations.Views
+@inherits ComponentBase
+
 @code {
-    [Parameter] public PrestationPageDto Model { get; set; } = default!;
-    PrestationSection? S(string t) => Model.Sections?.FirstOrDefault(x => string.Equals(x.Title, t, StringComparison.OrdinalIgnoreCase));
-}
-@{
-    var sMission  = S("Mission obligatoire");
-    var sActions  = S("Nos actions");
+    [Parameter] public PrestationPageDto? Model { get; set; }
 }
 
-@if (sMission is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <div class="info-card">
-                <h3 class="mb-3">@sMission.Title</h3>
-                @((MarkupString?)sMission.Html)
-            </div>
-        </div>
-    </section>
-}
-
-@if (sActions?.Items?.Count > 0)
-{
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">@sActions.Title</h2>
-            <div class="row">
-                @foreach (var it in sActions.Items)
-                {
-                    <div class="col-lg-4 mb-4">
-                        <div class="info-card h-100">
-                            <p class="mb-0">@it</p>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </section>
-}
-
-<CtaBar Title="Besoin d’aller plus loin ?"
-     Text="Parlons de votre projet : audit, notices, coordination ou dossier SSI."
-     Phone="06 85 75 27 75" PhoneHref="tel:0685752775" ContactHref="/contact" Dark="true" />
-@* 
-<section class="cta-section">
-    <div class="container text-center">
-        <h2 class="mb-3">Besoin d’une coordination SSI ?</h2>
-        <a href="/contact" class="btn-primary-custom"><i class="fas fa-envelope"></i> Nous contacter</a>
+<!-- Introduction / Mission obligatoire -->
+<Section>
+    <h2 class="section-title">La Coordination SSI</h2>
+    <div class="info-card">
+        <h3><i class="fas fa-info-circle"></i> Mission obligatoire de coordination</h3>
+        <p>
+            En application de la norme <strong>NF S 61-931</strong>, la coordination des Systèmes de Sécurité Incendie (SSI)
+            est <strong>obligatoire</strong> pour le maître d’ouvrage. Elle garantit la cohérence des dispositifs
+            de sécurité à toutes les étapes du projet.
+        </p>
+        <p class="mb-0">
+            Spécialisée en coordination incendie autour de Valenciennes, <strong>COOSSI</strong> accompagne
+            maîtres d’ouvrage et maîtres d’œuvre pour assurer la conformité et la performance du SSI.
+        </p>
     </div>
-</section> *@
+</Section>
+
+<!-- Types de prestations -->
+<Section>
+    <h2 class="section-title">Types de Prestations</h2>
+    <div class="info-card">
+        <p>
+            Nous adaptons nos missions à vos besoins : analyse de risques, dossier d’identité SSI, notices,
+            coordination études/travaux, assistance en réception et préparation des commissions.
+        </p>
+        <ul class="mt-3">
+            <li>Diagnostic &amp; préconisations</li>
+            <li>Coordination études et entreprises</li>
+            <li>Vérification de cohérence SSI</li>
+            <li>Préparation des essais &amp; PV</li>
+            <li>Assistance aux visites de commission</li>
+        </ul>
+    </div>
+</Section>
+
+<!-- Secteurs -->
+<Section>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="info-card h-100">
+                <h3><i class="fas fa-building"></i> Établissements Recevant du Public (ERP)</h3>
+                <ul>
+                    <li>Commerce &amp; restauration</li>
+                    <li>Hébergement &amp; hôtellerie</li>
+                    <li>Santé &amp; médico-social</li>
+                    <li>Scolaire &amp; universitaire</li>
+                    <li>Bâtiments administratifs</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="info-card h-100">
+                <h3><i class="fas fa-industry"></i> Autres Secteurs</h3>
+                <ul>
+                    <li>Industrie &amp; entrepôts</li>
+                    <li>Logistique</li>
+                    <li>Sites spéciaux</li>
+                    <li>Plateformes multi-activités</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</Section>
+
+<!-- Réglementation -->
+<Section>
+    <h2 class="section-title">La Réglementation Incendie (ERP)</h2>
+    <div class="info-card">
+        <p>
+            La réglementation incendie fixe les exigences de <strong>protection des personnes</strong> et de
+            <strong>cohérence des installations</strong>. La coordination SSI veille à l’application des normes
+            en <strong>conception</strong>, <strong>réalisation</strong> et <strong>réception</strong>.
+        </p>
+        <div class="highlight-box mt-4">
+            <h4><i class="fas fa-shield-alt"></i> Mission de coordination</h4>
+            <p class="mb-0">
+                Analyse des besoins de SSI (catégories A à D), vérification des interfaces (détection, alarme,
+                désenfumage, compartimentage, évacuation), préparation et suivi des essais.
+            </p>
+        </div>
+    </div>
+</Section>
+
+<!-- Disponibilité / contact -->
+<Section>
+    <div class="info-card text-center">
+        <h3><i class="fas fa-clock"></i> Disponibilité &amp; Contact</h3>
+        <p>
+            Intervention depuis <strong>Villers Pol (59)</strong> près de <strong>Valenciennes</strong> et partout en France.
+        </p>
+        <p class="mb-4"><strong>Horaires :</strong> du lundi au samedi, 9h–19h</p>
+        <a href="/contact" class="btn-primary-custom"><i class="fas fa-phone"></i> Contactez-nous</a>
+    </div>
+</Section>
+
+<!-- Zones d’intervention -->
+<Section>
+    <h2 class="section-title">Nos Zones d’Intervention</h2>
+    <div class="city-links">
+        <a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a>
+        <a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a>
+        <a>Calais</a><a>Reims</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a>
+    </div>
+</Section>
+
+<!-- CTA 
+<CtaBar
+    Title="Besoin d’un Coordinateur SSI ?"
+    Text="Confiez votre coordination à COOSSI : conception, réalisation, réception. Devis gratuit – 9h–19h, lun-sam."
+    CtaText="Demander un devis"
+    CtaHref="/contact"
+    IconClass="fas fa-envelope" />-->
+
+
+  <CtaBar Title="Besoin d’un Coordinateur SSI ?" 
+                        Text="Confiez votre coordination à COOSSI : conception, réalisation, réception. Devis gratuit – 9h–19h, lun-sam." 
+                        Phone="06 85 75 27 75" 
+                        PhoneHref="tel:0685752775" 
+                        ContactHref="/contact" Dark="true" />

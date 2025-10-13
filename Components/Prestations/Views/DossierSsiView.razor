@@ -1,49 +1,163 @@
+@using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Models
-@namespace Coossi.Blazor.Components.Prestations.Views
+@inherits ComponentBase
+
 @code {
-    [Parameter] public PrestationPageDto Model { get; set; } = default!;
-    PrestationSection? S(string t) => Model.Sections?.FirstOrDefault(x => string.Equals(x.Title, t, StringComparison.OrdinalIgnoreCase));
-}
-@{
-    var sIntro   = S("Le dossier d’identité SSI");
-    var sObj     = S("Objectifs en réception");
+    // Optionnel : fourni par le host si un jour tu binds depuis JSON
+    [Parameter] public PrestationPageDto? Model { get; set; }
 }
 
-@if (sIntro is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <div class="info-card">
-                <h3 class="mb-3">@sIntro.Title</h3>
-                @((MarkupString?)sIntro.Html)
-            </div>
+<!-- Intro -->
+<Section>
+    <h2 class="section-title">Création de Dossier d'Identité SSI</h2>
+    <div class="info-card">
+        <h3><i class="fas fa-file-alt"></i> Le Dossier d'Identité SSI</h3>
+        <p>
+            Le dossier d'identité du Système de Sécurité Incendie, aussi appelé
+            <strong>"Dossier d'Identité SSI"</strong>, doit être établi suivant un protocole strict et précis.
+            La société COOSSI vous propose de réaliser l'ensemble du dossier SSI, afin d'assurer la
+            mise en conformité de votre établissement face au risque d'incendie.
+        </p>
+        <p>
+            N'hésitez pas à contacter votre coordinateur près de Valenciennes.
+            <strong>Jean LEBLANC</strong> est spécialisé dans la réalisation d'études SSI et dans l'assistance
+            au maître d'ouvrage pendant la phase de travaux de votre établissement.
+        </p>
+        <div class="highlight-box mt-4">
+            <p class="mb-0">
+                <strong>Qu'importe vos besoins, le dossier SSI sera créé selon la norme en vigueur NFS 61-932.</strong>
+            </p>
         </div>
-    </section>
-}
-
-@if (sObj?.Items?.Count > 0)
-{
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">@sObj.Title</h2>
-            <div class="row">
-                @foreach (var it in sObj.Items)
-                {
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="info-card h-100 text-center">
-                            <i class="fas fa-file-signature fa-2x mb-2" style="color:var(--primary)"></i>
-                            <p class="mb-0">@it</p>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </section>
-}
-
-<section class="cta-section">
-    <div class="container text-center">
-        <h2 class="mb-3">Constituer votre dossier SSI</h2>
-        <a href="/contact" class="btn-primary-custom"><i class="fas fa-envelope"></i> Demander un devis</a>
     </div>
-</section>
+</Section>
+
+<!-- Norme et obligations -->
+<Section>
+    <h2 class="section-title">Norme NF S 61-932 &amp; Obligations</h2>
+    <div class="info-card">
+        <p>
+            La norme <strong>NF S 61-932</strong> engage le coordinateur en système de sécurité incendie à organiser
+            la réception technique du SSI, en élaborant et en présentant le dossier d'identité du SSI.
+            Cette organisation est faite en collaboration avec tous les acteurs de la coordination SSI, tels que :
+        </p>
+        <ul class="mt-3">
+            <li>La commission de sécurité</li>
+            <li>Les représentants du maître d'ouvrage</li>
+            <li>La maîtrise d'œuvre</li>
+            <li>Les entreprises</li>
+        </ul>
+    </div>
+</Section>
+
+<!-- Missions de réception -->
+<Section>
+    <h2 class="section-title">Missions de Suivi en Phase de Réception</h2>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="info-card h-100">
+                <h3><span class="number-badge">1</span> Vérification</h3>
+                <p>Vérifier que les installations sont conformes aux prescriptions définies dans le dossier de coordination SSI.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="info-card h-100">
+                <h3><span class="number-badge">2</span> Essais</h3>
+                <p>Effectuer les essais fonctionnels du système SSI installé.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="info-card h-100">
+                <h3><span class="number-badge">3</span> Formation</h3>
+                <p>Former les personnels d'exploitation à l'utilisation du SSI.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="info-card h-100">
+                <h3><span class="number-badge">4</span> Dossier</h3>
+            <p>Constituer et remettre le dossier d'identité du SSI au maître d'ouvrage.</p>
+            </div>
+        </div>
+    </div>
+</Section>
+
+<!-- Obligation ERP -->
+<Section>
+    <div class="info-card">
+        <h3><i class="fas fa-exclamation-triangle"></i> Obligation pour les ERP</h3>
+        <p>
+            Le dossier d'identité du SSI est <strong>obligatoire pour tous les organismes recevant du public</strong>.
+            Afin de respecter la réglementation en vigueur, COOSSI peut prendre en charge la réalisation ou la mise à jour
+            de votre dossier et vous le remettre en mains propres une fois terminé.
+        </p>
+    </div>
+</Section>
+
+<!-- Bureau d’études -->
+<Section>
+    <h2 class="section-title">Notre Bureau d'Études</h2>
+    <div class="info-card">
+        <p>
+            COOSSI dispose d'un bureau d'études où diverses missions sont réalisées avant travaux en phase de conception.
+            Ce bureau d'études permet entre autres :
+        </p>
+
+        <h4 class="mt-4"><i class="fas fa-clipboard-list"></i> Établissement du Cahier des Charges Fonctionnel</h4>
+        <p>Incluant tous types d'informations :</p>
+        <ul>
+            <li>Catégorie du SSI</li>
+            <li>Organisation et corrélation des zones Z.D et Z.S</li>
+            <li>Choix des alimentations de sécurité (AES, APS) et conditions d'implantation</li>
+            <li>Constituants du SSI (DCT et DAS)</li>
+            <li>Procédure de réception technique du SSI</li>
+        </ul>
+
+        <h4 class="mt-4"><i class="fas fa-check-double"></i> Veille à la Cohérence</h4>
+        <p>
+            Veiller à la cohérence entre les prescriptions techniques du dossier,
+            les avis émis par les autorités compétentes ainsi que les avis formulés par le bureau de contrôle technique.
+        </p>
+    </div>
+</Section>
+
+<!-- Contact -->
+<Section>
+    <div class="info-card text-center">
+        <h3><i class="fas fa-phone-alt"></i> Nous Contacter</h3>
+        <p>Pour la création ou la mise à jour de dossier SSI à Valenciennes et les environs, contactez COOSSI.</p>
+        <p class="mb-4">
+            <strong>Téléphone :</strong>
+            <a href="tel:0685752775" style="color: var(--primary-color); font-weight: bold;">06.85.75.27.75</a>
+        </p>
+        <p class="mb-4"><strong>Horaires :</strong> Du lundi au vendredi, de 09h à 19h</p>
+        <a href="/contact" class="btn-primary-custom">
+            <i class="fas fa-envelope"></i> Formulaire en Ligne
+        </a>
+    </div>
+</Section>
+
+<!-- Zones -->
+<Section>
+    <h2 class="section-title">Nos Zones d'Intervention</h2>
+    <div class="city-links">
+        <a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a>
+        <a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a>
+        <a>Calais</a><a>Reims</a><a>Dijon</a><a>Rouen</a><a>Paris</a><a>Lyon</a>
+    </div>
+</Section>
+
+@* <!-- CTA -->
+<CtaBar
+    Title="Besoin d'un Dossier d'Identité SSI ?"
+    Text="Pour faire appel à l'expertise de COOSSI, contactez votre coordinateur par mail ou par téléphone."
+    CtaText="Demander un devis"
+    CtaHref="/contact"
+    IconClass="fas fa-envelope" /> *@
+
+
+
+
+  <CtaBar Title="Besoin d’un Coordinateur SSI ?" 
+                        Text="Confiez votre coordination à COOSSI : conception, réalisation, réception. Devis gratuit – 9h–19h, lun-sam." 
+                        Phone="06 85 75 27 75" 
+                        PhoneHref="tel:0685752775" 
+                        ContactHref="/contact" Dark="true" />
