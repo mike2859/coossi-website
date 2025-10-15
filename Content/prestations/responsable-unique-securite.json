@@ -1,26 +1,85 @@
 {
-  "Id": 6,
+  "Id": 11,
   "Slug": "responsable-unique-securite",
   "MetaTitle": "Responsable Unique de Sécurité (RUS) – COOSSI",
-  "MetaDescription": "Coordination sécurité incendie des groupements d’ERP : consignes communes, essais, exercices, relation commission.",
+  "MetaDescription": "COOSSI assure le rôle de RUS pour groupements d'ERP. Article R.123-21 du CCH. Audit initial, visites régulières, relation commission de sécurité.",
   "OgImage": "images/og-prestations.webp",
   "Title": "Responsable Unique de Sécurité (RUS)",
-  "Subtitle": "Groupements d’ERP – art. R.123-21 CCH",
+  "Subtitle": "Direction unique pour groupements d'ERP",
   "Sections": [
     {
       "Kind": "html",
-      "Title": "Rôle du RUS",
-      "Html": "<p>Le <strong>Responsable Unique de Sécurité</strong> veille à la cohérence des mesures de sécurité incendie entre établissements d’un même groupement : procédures, consignes, moyens de secours, exercices, coordination avec les autorités.</p>"
+      "Title": "Qu'est-ce que le Responsable Unique de Sécurité ?",
+      "Html": "<div class='info-card'><h3><i class='fas fa-info-circle'></i> Nouvelle Compétence COOSSI</h3><p>Depuis le début de l'année 2021, COOSSI s'est doté de nouvelles compétences au travers de prestations de <strong>Responsable Unique de Sécurité (R.U.S.)</strong>.</p><p>Dans un ERP constitué de plusieurs exploitations (ex : centre commercial), une direction responsable de la sécurité incendie doit être nommée. Cette direction est dirigée et coordonnée par une seule personne : le <strong>Responsable unique de sécurité</strong>.</p></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "Cadre légal & réglementaire",
+      "Html": "<div class='info-card'><p>En application de <strong>l'article R.123-21 du Code de la Construction et de l'habitation (CCH)</strong>, le RUS est responsable auprès des autorités publiques des demandes d'autorisation et de l'observation des conditions de sécurité relatives aux risques d'incendie et de panique.</p><div class='highlight-box'><h4><i class='fas fa-exclamation-triangle'></i> Engagement de Responsabilité</h4><p class='mb-0'>La responsabilité du RUS pourra être engagée s'il ne peut pas démontrer qu'il a pris toutes les dispositions nécessaires en vue de rappeler aux exploitants leurs obligations et de s'assurer de leur respect.</p></div></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "COOSSI Assume ce Rôle",
+      "Html": "<div class='info-card'><p><strong>COOSSI vous propose d'assurer et d'assumer ce rôle.</strong></p><p>En tant qu'experts de la sécurité incendie (ingénieurs et formateurs), COOSSI vous fait bénéficier d'une prestation de qualité hors normes.</p></div>"
     },
     {
       "Kind": "bullets",
-      "Title": "Missions",
+      "Title": "Notre Méthodologie",
       "Items": [
-        "Consignes communes et mise à jour",
-        "Coordination des essais périodiques",
-        "Organisation des exercices d’évacuation",
-        "Lien avec la commission de sécurité"
+        "Audit Initial : plan d'actions, feuille de route de la mission RUS",
+        "Visites Régulières : fréquence adaptée à l'activité, taille et gravité",
+        "Interlocuteur Commission : relation lors des visites et échanges administratifs"
       ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Missions du RUS",
+      "Columns": [
+        [
+          "<div class='info-card h-100'><h3><i class='fas fa-file-signature'></i> Demandes Admin</h3><ul><li>Autorisations d'ouverture</li><li>Autorisations de travaux</li><li>Relations avec autorités</li><li>Suivi avis commission</li></ul></div>",
+          "<div class='info-card h-100'><h3><i class='fas fa-book'></i> Documentation</h3><ul><li>Tenue registre de sécurité</li><li>Classement des documents</li><li>Suivi vérifications périodiques</li><li>Traçabilité des actions</li></ul></div>"
+        ],
+        [
+          "<div class='info-card h-100'><h3><i class='fas fa-shield-alt'></i> Coordination</h3><ul><li>Coordination des exploitants</li><li>Vérification de conformité</li><li>Rappel des obligations</li><li>Contrôle des installations</li></ul></div>",
+          "<div class='info-card h-100'><h3><i class='fas fa-search'></i> Contrôles</h3><ul><li>Visites régulières</li><li>Audits de conformité</li><li>Levée de réserves</li><li>Plans d'amélioration</li></ul></div>"
+        ]
+      ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Établissements concernés",
+      "Columns": [
+        [
+          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
+        ],
+        [
+          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
+        ]
+      ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Pourquoi choisir COOSSI ?",
+      "Columns": [
+        [
+          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
+        ],
+        [
+          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
+        ]
+      ]
+    },
+    {
+      "Kind": "html",
+      "Title": "Contact",
+      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Nous Confier le Rôle de RUS</h3><p>Contactez COOSSI pour la mise en place d'un Responsable Unique de Sécurité.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander des informations</a></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "Nos zones d'intervention",
+      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
     },
     { "Kind": "cta" }
   ]

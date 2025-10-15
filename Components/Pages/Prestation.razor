@@ -1,58 +1,122 @@
-@page "/prestation/{slug}"
+@page "/prestation/{Slug}"
 @using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @inject IPrestationStore Store
-@inject NavigationManager Nav
 
 @code {
-    [Parameter] public string slug { get; set; } = "";
-    private PrestationPageDto? Model;
-    private Type? RendererType;
-
-    // mapping slug -> composant de rendu spécifique
-    private static readonly IReadOnlyDictionary<string, Type> Map = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
-    {
-        ["coordination-ssi"] = typeof(Coossi.Blazor.Components.Prestations.Views.CoordinationView),
-        ["creation-dossier-ssi"] = typeof(Coossi.Blazor.Components.Prestations.Views.DossierSsiView),
-        ["notices-securite-accessibilite"] = typeof(Coossi.Blazor.Components.Prestations.Views.NoticesView),
-        ["audit-diagnostic"] = typeof(Coossi.Blazor.Components.Prestations.Views.AuditDiagnosticView),
-        ["assistance-moe"] = typeof(Coossi.Blazor.Components.Prestations.Views.AssistanceMoeView),
-        ["responsable-unique-securite"] = typeof(Coossi.Blazor.Components.Prestations.Views.RusView),
-        ["document-unique-evaluation"] = typeof(Coossi.Blazor.Components.Prestations.Views.DuerView),
-        ["signaletique"] = typeof(Coossi.Blazor.Components.Prestations.Views.SignaletiqueView),
-        // … ajoute tes autres slugs au fur et à mesure
-    };
+    [Parameter] public string Slug { get; set; } = default!;
+    private PrestationPageDto? Page;
 
     protected override async Task OnParametersSetAsync()
     {
-        Model = await Store.GetBySlugAsync(slug);
-        RendererType = Model is null ? null : (Map.TryGetValue(Model.Slug, out var t) ? t : typeof(Coossi.Blazor.Components.Prestations.Views.GenericPrestationView));
+        Page = await Store.GetBySlugAsync(Slug);
     }
-
-    string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{slug}";
 }
 
-@if (Model is null)
+@if (Page is null)
 {
-    <section class="content-section text-center text-muted">
-        <div class="container">
-            <div class="spinner-border text-danger"></div>
-            <p class="mt-3">Chargement…</p>
-        </div>
-    </section>
+    <div class="text-center py-5">
+        <div class="spinner-border text-danger"></div>
+        <p class="mt-3 text-muted">Chargement du contenu...</p>
+    </div>
 }
 else
 {
     <!-- SEO -->
-    <Seo Title="@Model.MetaTitle"
-         Description="@Model.MetaDescription"
-         Canonical="@Canonical"
-         OgImage="@(Model.OgImage ?? "images/og-prestations.webp")" />
+    <Seo Title="@Page.MetaTitle"
+         Description="@Page.MetaDescription"
+         OgImage="@Page.OgImage"
+         Canonical=@($"/prestation/{Page.Slug}") />
 
-    <!-- Header -->
-    <PageHeader Title="@Model.Title" Lead="@Model.Subtitle" />
+    <!-- Hero Header -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>@Page.Title</h1>
+            @if (!string.IsNullOrWhiteSpace(Page.Subtitle))
+            {
+                <p class="lead">@Page.Subtitle</p>
+            }
+        </div>
+    </section>
 
-    <!-- Rendu spécifique -->
-    <DynamicComponent Type="@(RendererType!)" Parameters="@(new Dictionary<string, object?> { ["Model"] = Model })" />
+    <!-- Dynamic sections -->
+    @if (Page.Sections is not null)
+    {
+        foreach (var s in Page.Sections)
+        {
+            switch (s.Kind)
+            {
+                case "html":
+                    <Section>
+                        @if (!string.IsNullOrWhiteSpace(s.Title))
+                        {
+                            <h2 class="section-title">@s.Title</h2>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(s.Html))
+                        {
+                            @((MarkupString)s.Html)
+                        }
+                    </Section>
+                    break;
+
+                case "bullets":
+                    <Section>
+                        @if (!string.IsNullOrWhiteSpace(s.Title))
+                        {
+                            <h2 class="section-title">@s.Title</h2>
+                        }
+                        @if (s.Items is not null)
+                        {
+                            <ul class="info-card">
+                                @foreach (var item in s.Items)
+                                {
+                                    <li>@((MarkupString)item)</li>
+                                }
+                            </ul>
+                        }
+                    </Section>
+                    break;
+
+                case "columns2":
+                    <Section>
+                        @if (!string.IsNullOrWhiteSpace(s.Title))
+                        {
+                            <h2 class="section-title">@s.Title</h2>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(s.Lead))
+                        {
+                            <p class="lead">@s.Lead</p>
+                        }
+                        @if (s.Columns is not null && s.Columns.Count == 2)
+                        {
+                            <div class="row">
+                                <div class="col-lg-6 mb-4">
+                                    @foreach (var block in s.Columns[0])
+                                    {
+                                        @((MarkupString)block)
+                                    }
+                                </div>
+                                <div class="col-lg-6 mb-4">
+                                    @foreach (var block in s.Columns[1])
+                                    {
+                                        @((MarkupString)block)
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </Section>
+                    break;
+
+                @* case "cta":
+                    <CtaBar
+                        Title="Besoin d’un devis ?"
+                        Text="Le standard est ouvert du lundi au samedi, de 9h à 19h."
+                        CtaText="Nous contacter"
+                        CtaHref="/contact"
+                        IconClass="fas fa-envelope" />
+                    break; *@
+            }
+        }
+    }
 }

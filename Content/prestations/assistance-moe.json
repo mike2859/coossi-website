@@ -1,26 +1,81 @@
 {
-  "Id": 3,
+  "Id": 8,
   "Slug": "assistance-moe",
-  "MetaTitle": "Assistance à Maîtrise d’Ouvrage SSI – COOSSI",
-  "MetaDescription": "Appui technique durant la conception et la réalisation : coordination, réponses techniques, corrélation des DAS, préparation des essais & réception.",
+  "MetaTitle": "Assistance à Maîtrise d'Ouvrage SSI – COOSSI",
+  "MetaDescription": "Accompagnement expert en phase de conception et réalisation du SSI. Qualification SSIAP3 depuis 2012. Réunions techniques, suivi de travaux, DOE.",
   "OgImage": "images/og-prestations.webp",
-  "Title": "Assistance à Maîtrise d’Ouvrage SSI",
-  "Subtitle": "Accompagnement en conception & réalisation",
+  "Title": "Assistance à Maîtrise d'Ouvrage SSI",
+  "Subtitle": "Accompagnement en phase conception & réalisation",
   "Sections": [
     {
       "Kind": "html",
-      "Title": "Mission d’assistance",
-      "Html": "<p>Nous accompagnons la MOA/MOE sur la phase de conception du SSI et le suivi en réalisation : <strong>coordination, réponses techniques, cohérence</strong> avec les intervenants.</p>"
+      "Title": "Qu'est-ce que l'Assistance à Maîtrise d'Ouvrage ?",
+      "Html": "<div class='info-card'><h3><i class='fas fa-info-circle'></i> Mission d'Assistance</h3><p>Au moment de la construction d'un établissement, le coordinateur SSI doit assister la maîtrise d'œuvre. COOSSI met son expertise au service des maîtres d'ouvrages pour accompagner la phase de conception du SSI et garantir la mise en conformité du bâtiment avec les normes en vigueur.</p><p>Pour faire appel à un professionnel de la coordination SSI en phase de conception, contactez Jean LEBLANC au <strong>06.85.75.27.75</strong>.</p></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "Cadre légal & réglementaire",
+      "Html": "<div class='info-card'><p>Lors de la phase de réalisation du SSI, le coordinateur doit assister la maîtrise d'œuvre pour garantir la cohérence et la conformité des installations.</p><div class='highlight-box'><h4><i class='fas fa-balance-scale'></i> Qualification SSIAP3</h4><p class='mb-0'>COOSSI est qualifié niveau <strong>SSIAP3 depuis 2012</strong> et vous offre les meilleurs conseils en termes de sécurité incendie et d'accessibilité en phase de conception.</p></div></div>"
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Missions du Coordinateur SSI",
+      "Lead": "Lorsqu'il assiste le maître d'ouvrage, le coordinateur SSI a plusieurs missions :",
+      "Columns": [
+        [
+          "<div class='info-card h-100'><h3><i class='fas fa-users'></i> Réunions Techniques</h3><ul><li>Animer les réunions concernant le SSI</li><li>Répondre aux interrogations des intervenants</li><li>Créer des tableaux de corrélation</li><li>Coordination des acteurs</li></ul></div>",
+          "<div class='info-card h-100'><h3><i class='fas fa-clipboard-check'></i> Suivi de Chantier</h3><ul><li>Visiter le chantier régulièrement</li><li>Suivre les prestations en temps réel</li><li>Collecter les fiches d'essais</li><li>Adresser les avis au MOA</li></ul></div>"
+        ],
+        [
+          "<div class='info-card h-100'><h3><i class='fas fa-tools'></i> Mises au Point</h3><ul><li>Entreprises équipements SSI</li><li>Traitement des interfaces</li><li>Mise en conformité accessibilité</li><li>Vérification installations</li></ul></div>",
+          "<div class='info-card h-100'><h3><i class='fas fa-file-alt'></i> Documentation</h3><ul><li>Plans d'implantation SDI</li><li>Plans SMSI</li><li>Synoptiques</li><li>D.O.E. (Dossier Ouvrages Exécutés)</li></ul></div>"
+        ]
+      ]
     },
     {
       "Kind": "bullets",
-      "Title": "Missions du coordinateur",
+      "Title": "Notre méthodologie",
       "Items": [
-        "Animer les réunions techniques SSI",
-        "Répondre aux questions des intervenants",
-        "Tableaux de corrélation des DAS/dispositifs",
-        "Préparer les essais et la réception"
+        "Phase Conception : définition besoins, CCTP, coordination acteurs",
+        "Phase Réalisation : suivi chantier, mises au point techniques, contrôle conformité",
+        "Phase Réception : essais, formation personnel, remise D.O.E."
       ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Établissements concernés",
+      "Columns": [
+        [
+          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
+        ],
+        [
+          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
+        ]
+      ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Pourquoi choisir COOSSI ?",
+      "Columns": [
+        [
+          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
+        ],
+        [
+          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
+        ]
+      ]
+    },
+    {
+      "Kind": "html",
+      "Title": "Contact",
+      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Besoin d'une Assistance à Maîtrise d'Ouvrage ?</h3><p>COOSSI vous accompagne dans toutes les phases de votre projet SSI.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander un devis</a></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "Nos zones d'intervention",
+      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
     },
     { "Kind": "cta" }
   ]

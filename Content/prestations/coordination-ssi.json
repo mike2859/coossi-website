@@ -2,24 +2,80 @@
   "Id": 1,
   "Slug": "coordination-ssi",
   "MetaTitle": "Coordination SSI (NF S 61-931) – COOSSI",
-  "MetaDescription": "Mission obligatoire : cohérence du Système de Sécurité Incendie de la conception à la réception. Réunions techniques, schémas d’asservissements, essais & PV.",
+  "MetaDescription": "Mission obligatoire : cohérence du Système de Sécurité Incendie de la conception à la réception. Réunions techniques, essais & PV, dossier SSI.",
   "OgImage": "images/og-prestations.webp",
   "Title": "Coordination SSI",
   "Subtitle": "Mission obligatoire (NF S 61-931)",
   "Sections": [
     {
       "Kind": "html",
-      "Title": "Mission obligatoire",
-      "Html": "<p>En application du § 5.3 de la norme <strong>NF S 61-931</strong>, la coordination SSI est <strong>obligatoire</strong> pour le maître d’ouvrage. Elle sécurise la conformité des équipements et des asservissements tout au long du projet.</p>"
+      "Title": "Qu'est-ce que la Coordination SSI ?",
+      "Html": "<div class=\"info-card\"><h3><i class=\"fas fa-info-circle\"></i> Mission obligatoire</h3><p>En application de l'article § 5.3 de la norme <strong>NF S 61-931</strong> du 25 juin 1980, une mission de coordination des Systèmes de Sécurité Incendie (SSI) est rendue <strong>obligatoire pour les maîtres d'ouvrages</strong>.</p><p>Spécialisée en coordination de sécurité incendie autour de Valenciennes, COOSSI met tout en œuvre pour que votre établissement respecte les normes en vigueur : coordination SSI, dossier d'identité SSI, notices de sécurité, etc.</p></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "Cadre légal & réglementaire",
+      "Html": "<div class=\"info-card\"><p>La réglementation incendie pour les ERP vise à protéger les personnes face aux risques d'incendie. Elle s'applique à la <strong>conception</strong> (voies d'accès, issues de secours) et à la <strong>mise en place</strong> des équipements de sécurité.</p><div class=\"highlight-box\"><h4><i class=\"fas fa-balance-scale\"></i> Mission de Coordination Obligatoire</h4><p class=\"mb-0\">La mission consiste à analyser les besoins de SSI (cat. A, B, C, D) et à garantir la cohérence des installations à tous les niveaux : <strong>conception, réalisation, réception</strong>.</p></div></div>"
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Missions de coordination",
+      "Lead": "Pour tout type de locaux, mettre en place un SSI optimal est primordial.",
+      "Columns": [
+        [
+          "<div class='info-card'><h3><i class='fas fa-clipboard-check'></i> Phase Conception</h3><ul><li>Analyse des besoins SSI</li><li>Définition du cahier des charges</li><li>Choix des équipements</li><li>Coordination avec les acteurs</li></ul></div>",
+          "<div class='info-card'><h3><i class='fas fa-check-circle'></i> Phase Réception</h3><ul><li>Essais fonctionnels</li><li>Vérification des installations</li><li>Formation du personnel</li><li>Remise du dossier SSI</li></ul></div>"
+        ],
+        [
+          "<div class='info-card'><h3><i class='fas fa-tools'></i> Phase Réalisation</h3><ul><li>Suivi des travaux</li><li>Contrôle de conformité</li><li>Coordination des entreprises</li><li>Réunions techniques</li></ul></div>",
+          "<div class='info-card'><h3><i class='fas fa-file-alt'></i> Documentation</h3><ul><li>Dossier d'identité SSI</li><li>Notices de sécurité</li><li>Plans de prévention</li><li>Procès-verbaux</li></ul></div>"
+        ]
+      ]
     },
     {
       "Kind": "bullets",
-      "Title": "Nos actions",
+      "Title": "Notre méthodologie (3 étapes)",
       "Items": [
-        "Exigences & schémas d’asservissement",
-        "Réunions techniques & coordination",
-        "Préparation des essais & PV de réception"
+        "Conception : besoins, CCTP, coordination des acteurs",
+        "Réalisation : suivi de chantier, conformité, coordination entreprises",
+        "Réception : essais fonctionnels, formation, remise du dossier complet"
       ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Établissements concernés",
+      "Columns": [
+        [
+          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
+        ],
+        [
+          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
+        ]
+      ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Pourquoi choisir COOSSI ?",
+      "Columns": [
+        [
+          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
+        ],
+        [
+          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
+        ]
+      ]
+    },
+    {
+      "Kind": "html",
+      "Title": "Contact",
+      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Besoin d'un Coordinateur SSI ?</h3><p>Contactez COOSSI pour tous vos besoins en coordination SSI.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander un devis</a></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "Nos zones d'intervention",
+      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
     },
     { "Kind": "cta" }
   ]

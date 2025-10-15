@@ -1,25 +1,75 @@
 {
-  "Id": 4,
-  "Slug": "notices-securite-accessibilite",
+  "Id": 9,
+  "Slug": "notice-securite-accessibilite",
   "MetaTitle": "Notices de Sécurité & Accessibilité – COOSSI",
-  "MetaDescription": "Rédaction des notices exigées au permis de construire et en exploitation : article GE2, accessibilité, moyens de secours, évacuation, désenfumage.",
+  "MetaDescription": "Rédaction professionnelle de notices de sécurité incendie et accessibilité pour ERP, IGH, Habitation. Conforme article GE2. Plans de zones plastifiés.",
   "OgImage": "images/og-prestations.webp",
   "Title": "Notices de Sécurité & Accessibilité",
-  "Subtitle": "Documents obligatoires ERP/IGH/IPCE",
+  "Subtitle": "Rédaction conforme pour permis de construire",
   "Sections": [
     {
       "Kind": "html",
-      "Title": "Notre expertise",
-      "Html": "<p>COOSSI rédige vos <strong>notices de sécurité incendie</strong> et d’<strong>accessibilité</strong> pour tous types d’établissements. Documents clairs, conformes et opérationnels.</p>"
+      "Title": "Qu'est-ce qu'une Notice de Sécurité ?",
+      "Html": "<div class='info-card'><h3><i class='fas fa-info-circle'></i> Notre Expertise</h3><p>Vous souhaitez faire appel à une entreprise spécialisée dans la protection incendie près de Valenciennes. COOSSI vous propose la réalisation de <strong>notice de sécurité et accessibilité</strong> pour tous types de bâtiments : ERP, IGH ou encore Habitation.</p><p>Pour faire rédiger vos notices de sécurité incendie par un professionnel, contactez Jean LEBLANC au <strong>06.85.75.27.75</strong>.</p></div>"
     },
     {
-      "Kind": "bullets",
-      "Title": "Documents PC & exploitation",
-      "Items": [
-        "Notice d’accessibilité (ERP neufs et modifications)",
-        "Notice de sécurité incendie (article GE2)",
-        "Justificatifs de mise en conformité"
+      "Kind": "html",
+      "Title": "Cadre légal & réglementaire",
+      "Html": "<div class='info-card'><p>Lors du dépôt de <strong>permis de construire</strong> pour la création d'un ERP, le maître d'ouvrages doit impérativement joindre une notice d'accessibilité et une notice de sécurité incendie. Ces documents justifient la mise en conformité des lieux avec les normes en vigueur.</p><div class='highlight-box'><h4><i class='fas fa-balance-scale'></i> Article GE2</h4><p class='mb-0'>Conformément à <strong>l'article GE2 de l'arrêté du 25 Juin 1980 modifié</strong>, COOSSI conçoit une notice de sécurité permettant de comprendre comment l'établissement est conçu et où sont les zones clés.</p></div></div>"
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Les Deux Types de Notices",
+      "Lead": "Réalisés en collaboration directe avec le maître d'ouvrages :",
+      "Columns": [
+        [
+          "<div class='info-card h-100'><h3><i class='fas fa-fire-extinguisher'></i> Notice de Sécurité</h3><ul><li>Zones d'évacuation</li><li>Issues de secours</li><li>Dispositifs de sécurité</li><li>Systèmes d'alarme</li><li>Moyens d'extinction</li></ul></div>"
+        ],
+        [
+          "<div class='info-card h-100'><h3><i class='fas fa-wheelchair'></i> Notice d'Accessibilité</h3><ul><li>Dimensions des espaces</li><li>Dispositifs pour PMR</li><li>Raccordement à la voirie</li><li>Cheminements accessibles</li><li>Équipements adaptés</li></ul></div>"
+        ]
       ]
+    },
+    {
+      "Kind": "html",
+      "Title": "Plans de Zones",
+      "Html": "<div class='info-card'><h3><i class='fas fa-map'></i> Réalisation de Plans Techniques</h3><p>Expert en sécurité incendie, Jean LEBLANC réalise tous les plans de mise en sécurité et de détection :</p><ul><li><strong>Z.A</strong> - Zone d'Alarme</li><li><strong>Z.C</strong> - Zone de Compartimentage</li><li><strong>Z.F</strong> - Zone de Fumée</li><li><strong>Z.D.A</strong> - Zone de Détection Automatique</li><li><strong>Z.D.M</strong> - Zone de Détection Manuelle</li></ul><p class='mt-3'>Pour un affichage qualitatif et une meilleure lisibilité, les plans réalisés par COOSSI sont <strong>plastifiés</strong>.</p></div>"
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Établissements concernés",
+      "Columns": [
+        [
+          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
+        ],
+        [
+          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
+          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
+        ]
+      ]
+    },
+    {
+      "Kind": "columns2",
+      "Title": "Pourquoi choisir COOSSI ?",
+      "Columns": [
+        [
+          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
+        ],
+        [
+          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
+        ]
+      ]
+    },
+    {
+      "Kind": "html",
+      "Title": "Contact",
+      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Besoin de Notices de Sécurité ?</h3><p>Contactez un expert pour la rédaction de vos notices de sécurité et accessibilité.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander un devis</a></div>"
+    },
+    {
+      "Kind": "html",
+      "Title": "Nos zones d'intervention",
+      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
     },
     { "Kind": "cta" }
   ]
