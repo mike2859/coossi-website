@@ -1,78 +1,55 @@
 {
-  "Id": 10,
+  "Id": 7,
   "Slug": "document-unique-evaluation",
-  "MetaTitle": "Document Unique d'Évaluation des Risques (DUER) – COOSSI",
-  "MetaDescription": "Rédaction professionnelle du DUER obligatoire. Inventaire des risques pour la santé et sécurité du personnel. Manuscrit ou digitalisé.",
+
+  "MetaTitle": "DUERP – Document Unique d'Évaluation des Risques Professionnels | COOSSI",
+  "MetaDescription": "Inventaire des risques, plan d’actions, mise à jour et affichage. Rédaction DUERP par COOSSI.",
   "OgImage": "images/og-prestations.webp",
-  "Title": "Document Unique d'Évaluation des Risques (DUER)",
-  "Subtitle": "Rédaction professionnelle obligatoire",
+
+  "Title": "Document Unique d'Évaluation des Risques Professionnels (DUERP)",
+  "Subtitle": "Inventaire des risques et plan d’actions",
+
   "Sections": [
     {
       "Kind": "html",
-      "Title": "Qu'est-ce que le DUER ?",
-      "Html": "<div class='info-card'><h3><i class='fas fa-info-circle'></i> Document Obligatoire</h3><p>Vous souhaitez faire appel à un professionnel pour la rédaction de votre <strong>Document Unique d'Évaluation des Risques (DUER)</strong> ? Contactez COOSSI !</p><p>Jean LEBLANC met ses compétences à votre service pour la rédaction de ce document, recensant l'ensemble des risques pour la santé et la sécurité du personnel et des individus présents dans le bâtiment. Ce document doit être <strong>mis à jour dès que nécessaire</strong>.</p></div>"
+      "Title": "Qu’est-ce que le DUERP ?",
+      "Html": "<p>Le DUERP recense l’ensemble des risques pour la santé et la sécurité du personnel par unité de travail, et doit être <strong>tenu à jour</strong>…</p>"
     },
     {
       "Kind": "html",
-      "Title": "Cadre légal & réglementaire",
-      "Html": "<div class='info-card'><p>Le DUER sert à élaborer un bilan de la situation générale de l'hygiène, de la sécurité et des conditions de travail et du programme annuel de prévention des risques prévus à l'article L. du Code du Travail.</p><div class='highlight-box'><h4><i class='fas fa-exclamation-triangle'></i> Document Obligatoire</h4><p class='mb-0'>Afin de préserver vos employés, COOSSI assure la rédaction de ce document unique, qui devra être <strong>affiché dans l'entreprise concernée</strong>.</p></div></div>"
+      "Title": "Objectif du Document Unique",
+      "Html": "<p>Élaborer un bilan hygiène/sécurité/conditions de travail et un programme annuel de prévention.</p>",
+      "Items": ["Bilan HSC", "Programme de prévention", "Affichage obligatoire"]
     },
     {
-      "Kind": "columns2",
-      "Title": "Contenu du Document Unique",
-      "Lead": "Le DUER doit comporter l'inventaire des risques identifiés :",
-      "Columns": [
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-exclamation-circle'></i> Inventaire</h3><p>Identification des dangers présents, sources potentielles de dommages pour la santé et analyse des risques éventuels.</p></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-shield-alt'></i> Prévention</h3><p>Actions mises en place ou à mettre en place pour éliminer ou réduire les risques.</p></div>"
-        ],
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-chart-line'></i> Évaluation</h3><p>Estimation de la gravité et de la probabilité d'occurrence de chaque risque identifié.</p></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-tasks'></i> Plan d'Actions</h3><p>Programme de prévention avec les priorités et le calendrier de mise en œuvre.</p></div>"
-        ]
-      ]
+      "Kind": "bullets",
+      "Title": "Contenu du DUERP",
+      "Items": ["Inventaire des dangers", "Évaluation (gravité/probabilité)", "Mesures de prévention", "Plan d’actions"]
     },
     {
-      "Kind": "html",
+      "Kind": "bullets",
       "Title": "Types de Risques Évalués",
-      "Html": "<div class='row'><div class='col-lg-4 mb-4'><div class='info-card h-100'><h3><i class='fas fa-fire'></i> Risques Incendie</h3><ul><li>Sources d'ignition</li><li>Matériaux combustibles</li><li>Évacuation</li><li>Moyens de lutte</li></ul></div></div><div class='col-lg-4 mb-4'><div class='info-card h-100'><h3><i class='fas fa-hard-hat'></i> Risques Physiques</h3><ul><li>Chutes de plain-pied</li><li>Chutes de hauteur</li><li>Risques mécaniques</li><li>Bruit et vibrations</li></ul></div></div><div class='col-lg-4 mb-4'><div class='info-card h-100'><h3><i class='fas fa-flask'></i> Risques Chimiques</h3><ul><li>Produits dangereux</li><li>Exposition aux agents</li><li>Stockage</li><li>Manipulation</li></ul></div></div></div>"
+      "Items": ["Incendie", "Physiques", "Chimiques", "Ergonomiques", "Psychosociaux", "Électriques"]
     },
     {
-      "Kind": "columns2",
-      "Title": "Établissements concernés",
-      "Columns": [
-        [
-          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
-        ],
-        [
-          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
-        ]
-      ]
+      "Kind": "bullets",
+      "Title": "Mise à Jour du DUERP",
+      "Items": ["Au moins 1 fois/an", "Changement conditions de travail", "Nouveaux locaux/équipements", "Après accident/maladie pro"]
     },
     {
-      "Kind": "columns2",
-      "Title": "Pourquoi choisir COOSSI ?",
-      "Columns": [
-        [
-          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
-        ],
-        [
-          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
-        ]
-      ]
+      "Kind": "bullets",
+      "Title": "Formats Disponibles",
+      "Items": ["Manuscrit (affichage)", "Digitalisé (facilite les MàJ)"]
     },
     {
       "Kind": "html",
       "Title": "Contact",
-      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Besoin d'un DUER ?</h3><p>Contactez COOSSI pour la rédaction de votre Document Unique.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander une rédaction</a></div>"
+      "Html": "<p class='mb-0'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;'>06.85.75.27.75</a></p>"
     },
     {
-      "Kind": "html",
-      "Title": "Nos zones d'intervention",
-      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
-    },
-    { "Kind": "cta" }
+      "Kind": "bullets",
+      "Title": "Nos Zones d’Intervention",
+      "Items": ["Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Paris","Lyon","Marseille","Bordeaux","Toulouse","Nantes"]
+    }
   ]
 }

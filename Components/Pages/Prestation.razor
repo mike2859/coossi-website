@@ -1,122 +1,70 @@
-@page "/prestation/{Slug}"
+@page "/prestation/{slug}"
+
+@using System.Collections.Generic
 @using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @inject IPrestationStore Store
+@inject NavigationManager Nav
 
 @code {
-    [Parameter] public string Slug { get; set; } = default!;
-    private PrestationPageDto? Page;
+    [Parameter] public string slug { get; set; } = "";
+
+    private PrestationPageDto? Model;
+    private Type? RendererType;
+
+    // Map slug -> vue spécifique (sinon fallback GenericPrestationView)
+    private static readonly IReadOnlyDictionary<string, Type> Map =
+        new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["signaletique"]                    = typeof(Coossi.Blazor.Components.Prestations.Views.SignaletiqueView),
+            ["document-unique-evaluation"]      = typeof(Coossi.Blazor.Components.Prestations.Views.DuerpView),
+            ["audit-diagnostic"]                = typeof(Coossi.Blazor.Components.Prestations.Views.AuditDiagnosticView),
+            ["notices-securite-accessibilite"]  = typeof(Coossi.Blazor.Components.Prestations.Views.NoticesSecuriteView),
+            ["assistance-moe"]                  = typeof(Coossi.Blazor.Components.Prestations.Views.AssistanceMoeView),
+            ["creation-dossier-ssi"]            = typeof(Coossi.Blazor.Components.Prestations.Views.DossierSsiView),
+            ["coordination-ssi"]                = typeof(Coossi.Blazor.Components.Prestations.Views.CoordinationView),
+            ["responsable-unique-securite"]     = typeof(Coossi.Blazor.Components.Prestations.Views.RusView),
+        };
 
     protected override async Task OnParametersSetAsync()
     {
-        Page = await Store.GetBySlugAsync(Slug);
+        Model = await Store.GetBySlugAsync(slug);
+        if (Model is null)
+        {
+            RendererType = null;
+            return;
+        }
+
+        RendererType = Map.TryGetValue(Model.Slug, out var t)
+            ? t
+            : typeof(Coossi.Blazor.Components.Prestations.Views.GenericPrestationView);
     }
+
+    string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{slug}";
 }
 
-@if (Page is null)
+@if (Model is null)
 {
-    <div class="text-center py-5">
-        <div class="spinner-border text-danger"></div>
-        <p class="mt-3 text-muted">Chargement du contenu...</p>
-    </div>
+    <section class="content-section text-center text-muted">
+        <div class="container">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="mt-3">Chargement de la prestation…</p>
+        </div>
+    </section>
 }
 else
 {
     <!-- SEO -->
-    <Seo Title="@Page.MetaTitle"
-         Description="@Page.MetaDescription"
-         OgImage="@Page.OgImage"
-         Canonical=@($"/prestation/{Page.Slug}") />
+    <Seo Title="@Model.MetaTitle"
+         Description="@Model.MetaDescription"
+         Canonical="@Canonical"
+         OgImage="@(Model.OgImage ?? "images/og-prestations.webp")" />
 
-    <!-- Hero Header -->
-    <section class="hero-section">
-        <div class="container hero-content">
-            <h1>@Page.Title</h1>
-            @if (!string.IsNullOrWhiteSpace(Page.Subtitle))
-            {
-                <p class="lead">@Page.Subtitle</p>
-            }
-        </div>
-    </section>
+    <!-- Header -->
+    <PageHeader Title="@Model.Title" Lead="@Model.Subtitle" />
 
-    <!-- Dynamic sections -->
-    @if (Page.Sections is not null)
-    {
-        foreach (var s in Page.Sections)
-        {
-            switch (s.Kind)
-            {
-                case "html":
-                    <Section>
-                        @if (!string.IsNullOrWhiteSpace(s.Title))
-                        {
-                            <h2 class="section-title">@s.Title</h2>
-                        }
-                        @if (!string.IsNullOrWhiteSpace(s.Html))
-                        {
-                            @((MarkupString)s.Html)
-                        }
-                    </Section>
-                    break;
-
-                case "bullets":
-                    <Section>
-                        @if (!string.IsNullOrWhiteSpace(s.Title))
-                        {
-                            <h2 class="section-title">@s.Title</h2>
-                        }
-                        @if (s.Items is not null)
-                        {
-                            <ul class="info-card">
-                                @foreach (var item in s.Items)
-                                {
-                                    <li>@((MarkupString)item)</li>
-                                }
-                            </ul>
-                        }
-                    </Section>
-                    break;
-
-                case "columns2":
-                    <Section>
-                        @if (!string.IsNullOrWhiteSpace(s.Title))
-                        {
-                            <h2 class="section-title">@s.Title</h2>
-                        }
-                        @if (!string.IsNullOrWhiteSpace(s.Lead))
-                        {
-                            <p class="lead">@s.Lead</p>
-                        }
-                        @if (s.Columns is not null && s.Columns.Count == 2)
-                        {
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    @foreach (var block in s.Columns[0])
-                                    {
-                                        @((MarkupString)block)
-                                    }
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    @foreach (var block in s.Columns[1])
-                                    {
-                                        @((MarkupString)block)
-                                    }
-                                </div>
-                            </div>
-                        }
-                    </Section>
-                    break;
-
-                @* case "cta":
-                    <CtaBar
-                        Title="Besoin d’un devis ?"
-                        Text="Le standard est ouvert du lundi au samedi, de 9h à 19h."
-                        CtaText="Nous contacter"
-                        CtaHref="/contact"
-                        IconClass="fas fa-envelope" />
-                    break; *@
-            }
-        }
-    }
+    <!-- Vue dédiée (ou générique en fallback) -->
+    <DynamicComponent Type="@(RendererType!)"
+                      Parameters="@(new Dictionary<string, object?> { ["Model"] = Model })" />
 }

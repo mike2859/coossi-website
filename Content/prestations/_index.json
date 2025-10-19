@@ -1,12 +1,12 @@
 {
   "items": [
-    { "title": "Coordination SSI", "slug": "coordination-ssi", "icon": "fa-project-diagram", "excerpt": "Mission obligatoire (NF S 61-931) – cohérence de la conception à la réception." },
-    { "title": "Dossier d’identité SSI", "slug": "creation-dossier-ssi", "icon": "fa-folder-open", "excerpt": "Conformité NF S 61-932 – autocontrôles, PV et remise du dossier." },
-    { "title": "Notices sécurité & accessibilité", "slug": "notices-securite-accessibilite", "icon": "fa-file-contract", "excerpt": "Documents PC & exploitation – article GE2, accessibilité." },
-    { "title": "Audit & diagnostic", "slug": "audit-diagnostic", "icon": "fa-search", "excerpt": "Contrôle fonctionnel, conformité et plan d’actions priorisé." },
-    { "title": "Assistance MOE/MOA", "slug": "assistance-moe", "icon": "fa-hands-helping", "excerpt": "Appui technique durant la conception et la réalisation du SSI." },
-    { "title": "RUS – Responsable Unique de Sécurité", "slug": "responsable-unique-securite", "icon": "fa-user-shield", "excerpt": "Coordination sécurité incendie des groupements d’ERP." },
-    { "title": "DUER", "slug": "document-unique-evaluation", "icon": "fa-clipboard-list", "excerpt": "Inventaire des risques, évaluation et plan d’actions." },
-    { "title": "Signalétique", "slug": "signaletique", "icon": "fa-signs-post", "excerpt": "Plans d’évacuation et pictogrammes conformes ISO 7010." }
+    { "title": "Coordination SSI", "slug": "coordination-ssi", "icon": "fa-tasks", "excerpt": "Mission obligatoire NF S 61-931", "bullets": ["Conception", "Réalisation", "Réception"] },
+    { "title": "Dossier d'identité SSI", "slug": "creation-dossier-ssi", "icon": "fa-folder-open", "excerpt": "Création conforme NFS 61-932", "bullets": ["Vérifications", "Essais", "Formation"] },
+    { "title": "Notices sécurité & accessibilité", "slug": "notices-securite-accessibilite", "icon": "fa-file-contract", "excerpt": "Dossiers PC + intégration SSI", "bullets": ["GE2", "Accessibilité PMR"] },
+    { "title": "Audit & Diagnostic", "slug": "audit-diagnostic", "icon": "fa-search", "excerpt": "État des lieux et plan d’actions", "bullets": ["Équipements", "Organisation", "Documentation"] },
+    { "title": "DUERP", "slug": "document-unique-evaluation", "icon": "fa-clipboard-list", "excerpt": "Document Unique d’Évaluation des Risques", "bullets": ["Inventaire", "Prévention", "Plan d’actions"] },
+    { "title": "Signalétique & Plans", "slug": "signaletique", "icon": "fa-map-signs", "excerpt": "Plans d’évacuation et pictogrammes", "bullets": ["ISO 7010", "Photoluminescent"] },
+    { "title": "Assistance MOE/MOA", "slug": "assistance-moe", "icon": "fa-hands-helping", "excerpt": "Accompagnement expert SSI", "bullets": ["Réunions", "CCTP", "Synoptiques"] },
+    { "title": "Responsable Unique de Sécurité (RUS)", "slug": "responsable-unique-securite", "icon": "fa-user-shield", "excerpt": "Direction unique pour ERP multiples", "bullets": ["Audit initial", "Visites régulières"] }
   ]
 }

@@ -1,0 +1,158 @@
+@using Coossi.Blazor.Data.Models
+
+@code {
+    [Parameter] public PrestationPageDto Model { get; set; } = default!;
+    PrestationSection? S(string t) => Model.Sections?.FirstOrDefault(
+        x => string.Equals(x.Title, t, StringComparison.OrdinalIgnoreCase));
+}
+
+@{
+    var sIntro     = S("Qu’est-ce que le DUERP ?");
+    var sObjectif  = S("Objectif du Document Unique");
+    var sContenu   = S("Contenu du DUERP");
+    var sRisques   = S("Types de Risques Évalués");
+    var sMaj       = S("Mise à Jour du DUERP");
+    var sFormats   = S("Formats Disponibles");
+    var sContact   = S("Contact");
+    var sZones     = S("Nos Zones d’Intervention");
+}
+
+<section class="content-section">
+  <div class="container">
+
+    @* Intro *@
+    @if (sIntro is not null)
+    {
+      <div class="row mb-5"><div class="col-lg-12"><div class="info-card">
+        <h3><i class="fas fa-info-circle"></i> @sIntro.Title</h3>
+        @if (!string.IsNullOrWhiteSpace(sIntro.Html)) { @((MarkupString)sIntro.Html) }
+        @if (!string.IsNullOrWhiteSpace(sIntro.Lead)) { <p class="mt-2">@sIntro.Lead</p> }
+      </div></div></div>
+    }
+
+    @* Objectif *@
+    @if (sObjectif is not null)
+    {
+      <div class="row mb-5"><div class="col-lg-12">
+        <h2 class="section-title">@sObjectif.Title</h2>
+        <div class="info-card">
+          @if (!string.IsNullOrWhiteSpace(sObjectif.Html)) { @((MarkupString)sObjectif.Html) }
+          @if (sObjectif.Items?.Count > 0)
+          {
+            <ul class="mt-3">
+              @foreach (var it in sObjectif.Items) { <li>@it</li> }
+            </ul>
+          }
+          <div class="alert-warning-custom mt-4">
+            <h4><i class="fas fa-exclamation-triangle"></i> Document Obligatoire</h4>
+            <p class="mb-0">Le DUERP doit être <strong>affiché</strong> et tenu <strong>à jour</strong>.</p>
+          </div>
+        </div>
+      </div></div>
+    }
+
+    @* Contenu *@
+    @if (sContenu is not null)
+    {
+      <div class="row mb-5"><div class="col-lg-12">
+        <h2 class="section-title">@sContenu.Title</h2>
+        <div class="row mt-3">
+          @foreach (var it in sContenu.Items ?? new())
+          {
+            <div class="col-lg-6 mb-4">
+              <div class="info-card h-100">
+                <h3><i class="fas fa-check"></i> @it</h3>
+                @* option : si tu veux des sous-textes, on pourra étendre le JSON plus tard *@
+              </div>
+            </div>
+          }
+        </div>
+      </div></div>
+    }
+
+    @* Typologie des risques (cartes) *@
+    @if (sRisques is not null)
+    {
+      <div class="row mb-5"><div class="col-lg-12">
+        <h2 class="section-title">@sRisques.Title</h2>
+        <div class="row">
+          @foreach (var it in sRisques.Items ?? new())
+          {
+            <div class="col-lg-4 mb-4">
+              <div class="info-card h-100 text-center">
+                <i class="fas fa-exclamation-circle fa-3x mb-3" style="color:var(--primary-color);"></i>
+                <h3>@it</h3>
+              </div>
+            </div>
+          }
+        </div>
+      </div></div>
+    }
+
+    @* Mise à jour *@
+    @if (sMaj is not null)
+    {
+      <div class="row mb-5"><div class="col-lg-12">
+        <h2 class="section-title">@sMaj.Title</h2>
+        <div class="info-card">
+          @if (!string.IsNullOrWhiteSpace(sMaj.Html)) { @((MarkupString)sMaj.Html) }
+          @if (sMaj.Items?.Count > 0)
+          {
+            <ul class="mt-3">
+              @foreach (var it in sMaj.Items) { <li>@it</li> }
+            </ul>
+          }
+        </div>
+      </div></div>
+    }
+
+    @* Formats *@
+    @if (sFormats is not null)
+    {
+      <div class="row mb-5"><div class="col-lg-12">
+        <h2 class="section-title">@sFormats.Title</h2>
+        <div class="row">
+          @foreach (var it in sFormats.Items ?? new())
+          {
+            <div class="col-lg-6 mb-4">
+              <div class="info-card text-center h-100">
+                <i class="fas fa-file-alt fa-3x mb-3" style="color:var(--primary-color);"></i>
+                <h3>@it</h3>
+              </div>
+            </div>
+          }
+        </div>
+      </div></div>
+    }
+
+    @* Contact *@
+    @if (sContact is not null)
+    {
+      <div class="row"><div class="col-lg-12">
+        <div class="info-card text-center">
+          <h3><i class="fas fa-phone-alt"></i> @sContact.Title</h3>
+          @if (!string.IsNullOrWhiteSpace(sContact.Html)) { @((MarkupString)sContact.Html) }
+          <a href="/contact" class="btn-primary-custom mt-3"><i class="fas fa-envelope"></i> Nous Contacter</a>
+        </div>
+      </div></div>
+    }
+
+    @* Zones *@
+    @if (sZones is not null)
+    {
+      <div class="row mt-5"><div class="col-lg-12">
+        <h2 class="section-title">@sZones.Title</h2>
+        <div class="city-links">
+          @foreach (var c in sZones.Items ?? new()) { <a>@c</a> }
+        </div>
+      </div></div>
+    }
+
+  </div>
+</section>
+
+<CtaBar Title="Faites rédiger votre DUERP par un expert"
+        Text="COOSSI vous accompagne pour un DUERP conforme et utile au quotidien."
+        CtaText="Demander une Rédaction"
+        CtaHref="/contact"
+        IconClass="fas fa-edit" />
