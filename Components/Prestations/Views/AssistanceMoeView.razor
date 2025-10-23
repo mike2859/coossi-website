@@ -21,13 +21,13 @@
     </section>
 }
 
-@if (sMissions?.Items?.Count > 0)
+@if (sMissions is not null)
 {
     <section class="content-section">
         <div class="container">
             <h2 class="section-title">@sMissions.Title</h2>
             <div class="row">
-                @foreach (var it in sMissions.Items)
+                @foreach (var it in sMissions.AsCards())
                 {
                     <div class="col-lg-6 mb-4">
                         <div class="info-card h-100">

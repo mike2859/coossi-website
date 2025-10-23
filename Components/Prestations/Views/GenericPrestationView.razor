@@ -13,7 +13,7 @@
             @if (s.Items is not null)
             {
                 <ul class="list-unstyled">
-                    @foreach (var it in s.Items) { <li>@it</li> }
+                    @foreach (var it in s.AsCards()) { <li>@it</li> }
                 </ul>
             }
         </Section>

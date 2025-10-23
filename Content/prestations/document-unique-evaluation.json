@@ -1,55 +1,98 @@
 {
-  "Id": 7,
-  "Slug": "document-unique-evaluation",
-
-  "MetaTitle": "DUERP – Document Unique d'Évaluation des Risques Professionnels | COOSSI",
-  "MetaDescription": "Inventaire des risques, plan d’actions, mise à jour et affichage. Rédaction DUERP par COOSSI.",
-  "OgImage": "images/og-prestations.webp",
-
-  "Title": "Document Unique d'Évaluation des Risques Professionnels (DUERP)",
-  "Subtitle": "Inventaire des risques et plan d’actions",
-
-  "Sections": [
+  "seo": {
+    "metaTitle": "Document Unique d'Évaluation des Risques (DUERP) | COOSSI",
+    "metaDescription": "Rédaction DUERP : inventaire des risques, évaluation, plan d'actions, mises à jour. Affichage obligatoire."
+  },
+  "hero": {
+    "icon": "fas fa-clipboard-list",
+    "title": "Document Unique d'Évaluation des Risques (DUERP)",
+    "subtitle": "Préservez la santé et la sécurité de vos employés"
+  },
+  "sections": [
     {
-      "Kind": "html",
-      "Title": "Qu’est-ce que le DUERP ?",
-      "Html": "<p>Le DUERP recense l’ensemble des risques pour la santé et la sécurité du personnel par unité de travail, et doit être <strong>tenu à jour</strong>…</p>"
+      "type": "intro",
+      "title": "Qu’est-ce que le DUERP ?",
+      "text": "COOSSI rédige votre DUERP : inventaire des risques par unité de travail, évaluation et plan d’actions. Mise à jour dès que nécessaire."
     },
     {
-      "Kind": "html",
-      "Title": "Objectif du Document Unique",
-      "Html": "<p>Élaborer un bilan hygiène/sécurité/conditions de travail et un programme annuel de prévention.</p>",
-      "Items": ["Bilan HSC", "Programme de prévention", "Affichage obligatoire"]
+      "type": "title",
+      "text": "Objectif du document unique"
     },
     {
-      "Kind": "bullets",
-      "Title": "Contenu du DUERP",
-      "Items": ["Inventaire des dangers", "Évaluation (gravité/probabilité)", "Mesures de prévention", "Plan d’actions"]
+      "type": "highlight",
+      "title": "Document obligatoire",
+      "text": "Affichage dans l’entreprise, base du programme annuel de prévention."
     },
     {
-      "Kind": "bullets",
-      "Title": "Types de Risques Évalués",
-      "Items": ["Incendie", "Physiques", "Chimiques", "Ergonomiques", "Psychosociaux", "Électriques"]
+      "type": "title",
+      "text": "Contenu du DUERP"
     },
     {
-      "Kind": "bullets",
-      "Title": "Mise à Jour du DUERP",
-      "Items": ["Au moins 1 fois/an", "Changement conditions de travail", "Nouveaux locaux/équipements", "Après accident/maladie pro"]
+      "type": "cards",
+      "items": [
+        { "title": "Inventaire des risques", "text": "Dangers, sources de dommages, analyse." },
+        { "title": "Évaluation", "text": "Gravité et probabilité d’occurrence." },
+        { "title": "Prévention", "text": "Mesures pour éliminer ou réduire les risques." },
+        { "title": "Plan d’actions", "text": "Priorités et calendrier de mise en œuvre." }
+      ]
     },
     {
-      "Kind": "bullets",
-      "Title": "Formats Disponibles",
-      "Items": ["Manuscrit (affichage)", "Digitalisé (facilite les MàJ)"]
+      "type": "title",
+      "text": "Types de risques évalués"
     },
     {
-      "Kind": "html",
-      "Title": "Contact",
-      "Html": "<p class='mb-0'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;'>06.85.75.27.75</a></p>"
+      "type": "gridCards",
+      "items": [
+        { "icon": "fas fa-fire", "title": "Incendie" },
+        { "icon": "fas fa-hard-hat", "title": "Physiques" },
+        { "icon": "fas fa-flask", "title": "Chimiques" },
+        { "icon": "fas fa-hand-holding-medical", "title": "Ergonomiques" },
+        { "icon": "fas fa-brain", "title": "Psychosociaux" },
+        { "icon": "fas fa-bolt", "title": "Électriques" }
+      ]
     },
     {
-      "Kind": "bullets",
-      "Title": "Nos Zones d’Intervention",
-      "Items": ["Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Paris","Lyon","Marseille","Bordeaux","Toulouse","Nantes"]
+      "type": "title",
+      "text": "Mise à jour du DUERP"
+    },
+    {
+      "type": "bullets",
+      "items": [
+        "Au moins une fois par an",
+        "Modification importante des conditions de travail",
+        "Aménagement de nouveaux locaux",
+        "Nouveaux équipements",
+        "Après AT/MP",
+        "Nouvelles informations de risque"
+      ]
+    },
+    {
+      "type": "gridCards",
+      "title": "Formats disponibles",
+      "items": [
+        { "icon": "fas fa-file-alt", "title": "Manuscrit", "text": "Affichage obligatoire" },
+        { "icon": "fas fa-laptop", "title": "Digital", "text": "Facilite les mises à jour" }
+      ]
+    },
+    {
+      "type": "contact",
+      "title": "Contact",
+      "text": "Rendez-vous près de Valenciennes.",
+      "phone": "0685752775",
+      "buttonText": "Formulaire en ligne",
+      "buttonHref": "/contact"
+    },
+    {
+      "type": "cities",
+      "title": "Nos zones d’intervention",
+      "items": ["Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Paris","Lyon","Marseille","Bordeaux","Toulouse","Nantes"]
+    },
+    {
+      "type": "cta",
+      "title": "Protégez vos employés avec un DUERP conforme",
+      "text": "Rédaction et mise à jour par COOSSI.",
+      "buttonText": "Demander une rédaction",
+      "buttonHref": "/contact"
     }
   ]
 }

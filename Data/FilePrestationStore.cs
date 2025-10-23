@@ -25,7 +25,7 @@ public sealed class FilePrestationStore : IPrestationStore
         foreach (var f in Directory.EnumerateFiles(_root, "*.json"))
         {
             var dto = JsonSerializer.Deserialize<PrestationPageDto>(await File.ReadAllTextAsync(f, ct), _opts);
-            if (dto?.Id == id) return dto;
+            if (dto?.Id == id) return dto.Normalize();
         }
         return null;
     }
@@ -36,7 +36,7 @@ public sealed class FilePrestationStore : IPrestationStore
         foreach (var f in Directory.EnumerateFiles(_root, "*.json"))
         {
             var dto = JsonSerializer.Deserialize<PrestationPageDto>(await File.ReadAllTextAsync(f, ct), _opts);
-            if (dto is not null) list.Add(dto);
+            if (dto is not null) list.Add(dto.Normalize());
         }
         return list.OrderBy(p => p.Title).ToList();
     }

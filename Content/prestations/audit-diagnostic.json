@@ -1,78 +1,93 @@
 {
-  "Id": 7,
-  "Slug": "audit-diagnostic",
-  "MetaTitle": "Audit & Diagnostic Sécurité Incendie – COOSSI",
-  "MetaDescription": "Audit complet de vos installations SSI pour ERP, IGH, ERT. Contrôle de conformité, préservation équipements, rapport détaillé avec plan d'actions.",
-  "OgImage": "images/og-prestations.webp",
-  "Title": "Audit & Diagnostic Sécurité Incendie",
-  "Subtitle": "Contrôle complet de vos installations SSI",
-  "Sections": [
+  "seo": {
+    "metaTitle": "Audit & Diagnostic Sécurité Incendie | COOSSI Valenciennes",
+    "metaDescription": "Audits et diagnostics SSI pour ERP, IGH, ERT/ICPE. Contrôle de conformité, rapport et plan d’actions."
+  },
+  "hero": {
+    "icon": "fas fa-search",
+    "title": "Audit & Diagnostic Sécurité Incendie",
+    "subtitle": "Contrôle complet de vos installations SSI et mise en conformité"
+  },
+  "sections": [
     {
-      "Kind": "html",
-      "Title": "Pourquoi Réaliser un Audit ?",
-      "Html": "<div class='info-card'><h3><i class='fas fa-info-circle'></i> Importance de l'Audit</h3><p>Tout système de sécurité incendie installé au sein d'un établissement doit être à la fois <strong>fonctionnel et respectueux des normes en vigueur</strong>. Si vous n'avez pas fait vérifier vos équipements depuis quelques temps, il n'est pas impossible qu'ils présentent certains dysfonctionnements…</p><p><strong>Et en matière de sécurité incendie, on ne plaisante pas !</strong> Pour s'assurer d'être en conformité avec la législation en vigueur, ne tardez pas à faire expertiser votre établissement.</p></div>"
+      "type": "intro",
+      "title": "Pourquoi réaliser un audit ?",
+      "text": "Un SSI doit être fonctionnel et conforme aux normes. COOSSI réalise diagnostic et audit pour vérifier, corriger et prioriser."
     },
     {
-      "Kind": "html",
-      "Title": "Cadre légal & réglementaire",
-      "Html": "<div class='info-card'><p>Afin de préserver vos équipements de sécurité de la vétusté ou de l'obsolescence, faites appel à COOSSI. A mesure que les normes de sécurité évoluent, il est primordial de réaliser des travaux de modification, de remplacement ou d'extension.</p><div class='highlight-box'><h4><i class='fas fa-clipboard-check'></i> Audit Préalable Obligatoire</h4><p class='mb-0'>Avant d'entamer une quelconque démarche, COOSSI vous propose la réalisation d'un <strong>audit complet</strong> pour optimiser les résultats.</p></div></div>"
+      "type": "title",
+      "text": "Préservation de vos équipements"
     },
     {
-      "Kind": "html",
-      "Title": "Les Étapes de l'Audit Incendie",
-      "Lead": "L'audit s'effectue en plusieurs étapes pour optimiser les résultats :",
-      "Html": "<div class='row'><div class='col-lg-4 mb-4'><div class='info-card text-center h-100'><i class='fas fa-search fa-3x mb-3' style='color:var(--primary-color)'></i><h3>1. Visite Préalable</h3><p>Déterminer les risques, la vulnérabilité du site et les mesures de remise en conformité.</p></div></div><div class='col-lg-4 mb-4'><div class='info-card text-center h-100'><i class='fas fa-comments fa-3x mb-3' style='color:var(--primary-color)'></i><h3>2. Entretien Direction</h3><p>Prise en compte des contraintes spécifiques, professionnelles et réglementaires.</p></div></div><div class='col-lg-4 mb-4'><div class='info-card text-center h-100'><i class='fas fa-clipboard-list fa-3x mb-3' style='color:var(--primary-color)'></i><h3>3. Examen Complet</h3><p>Évaluation des équipements, issues de secours, consignes et risques particuliers.</p></div></div></div>"
+      "type": "intro",
+      "text": "Normes qui évoluent, vétusté, extensions : commencez par un audit complet avant travaux."
     },
     {
-      "Kind": "columns2",
-      "Title": "Points de Contrôle",
-      "Columns": [
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-fire-extinguisher'></i> Équipements</h3><ul><li>État des extincteurs et RIA</li><li>Fonctionnement du SSI</li><li>Systèmes de détection</li><li>Alarmes et signalisation</li><li>Éclairage de sécurité</li></ul></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-file-alt'></i> Documentation</h3><ul><li>Registre de sécurité</li><li>Dossier d'identité SSI</li><li>Notices de sécurité</li><li>Plans de prévention</li><li>PV de vérification</li></ul></div>"
-        ],
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-door-open'></i> Infrastructures</h3><ul><li>Issues de secours</li><li>Compartimentage</li><li>Désenfumage</li><li>Cheminements d'évacuation</li><li>Plans d'évacuation</li></ul></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-users'></i> Organisation</h3><ul><li>Consignes de sécurité</li><li>Formation du personnel</li><li>Exercices d'évacuation</li><li>Maintenance préventive</li><li>Gestion des anomalies</li></ul></div>"
-        ]
+      "type": "title",
+      "text": "Les étapes de l’audit"
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Visite préalable", "text": "Détermination des risques, vulnérabilités, premières mesures." },
+        { "title": "Entretien direction", "text": "Contraintes spécifiques et réglementaires." },
+        { "title": "Examen complet", "text": "Documents & infrastructures, issues, consignes, risques particuliers." }
       ]
     },
     {
-      "Kind": "columns2",
-      "Title": "Établissements concernés",
-      "Columns": [
-        [
-          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
-        ],
-        [
-          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
-        ]
+      "type": "title",
+      "text": "Notre intervention"
+    },
+    {
+      "type": "intro",
+      "text": "Audit/diagnostic complet des installations SSI (Valenciennes et France). Contact : Jean LEBLANC."
+    },
+    {
+      "type": "gridCards",
+      "title": "Établissements concernés",
+      "items": [
+        { "icon": "fas fa-building", "title": "ERP", "text": "Commerce, enseignement, santé…" },
+        { "icon": "fas fa-city", "title": "IGH", "text": "Tours de bureaux, habitation…" },
+        { "icon": "fas fa-industry", "title": "ERT & ICPE", "text": "Usines, entrepôts, sites classés…" }
       ]
     },
     {
-      "Kind": "columns2",
-      "Title": "Pourquoi choisir COOSSI ?",
-      "Columns": [
-        [
-          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
-        ],
-        [
-          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
-        ]
+      "type": "title",
+      "text": "Points de contrôle"
+    },
+    {
+      "type": "cards",
+      "items": [
+        { "title": "Équipements de sécurité", "bullets": ["Extincteurs/RIA","Fonctionnement SSI","Détection","Alarmes","Éclairage de sécurité"] },
+        { "title": "Infrastructures", "bullets": ["Issues de secours","Compartimentage","Désenfumage","Cheminements","Plans d’évacuation"] },
+        { "title": "Documentation", "bullets": ["Registre","Dossier d’identité SSI","Notices","Plans de prévention","PV de vérification"] },
+        { "title": "Organisation", "bullets": ["Consignes","Formation","Exercices","Maintenance préventive","Gestion des anomalies"] }
       ]
     },
     {
-      "Kind": "html",
-      "Title": "Contact",
-      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Demandez Votre Audit</h3><p>Contactez Jean LEBLANC pour planifier un audit de sécurité incendie.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander un audit</a></div>"
+      "type": "highlight",
+      "title": "Livrable : Rapport d’audit détaillé",
+      "text": "État des lieux, non-conformités, plan d’actions, recommandations, estimation budgétaire."
     },
     {
-      "Kind": "html",
-      "Title": "Nos zones d'intervention",
-      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
+      "type": "contact",
+      "title": "Demandez votre audit",
+      "text": "Planification rapide.",
+      "phone": "0685752775",
+      "buttonText": "Demander un audit",
+      "buttonHref": "/contact"
     },
-    { "Kind": "cta" }
+    {
+      "type": "cities",
+      "title": "Zones d’intervention",
+      "items": ["Valenciennes","Lille","Paris","Marseille","Lyon","Toulouse","Nice","Nantes","Montpellier","Strasbourg","Bordeaux","Roubaix","Tourcoing","Dunkerque","Lens","Arras"]
+    },
+    {
+      "type": "cta",
+      "title": "Ne laissez pas la vétusté compromettre votre sécurité",
+      "text": "Faites expertiser vos installations par un SSIAP3.",
+      "buttonText": "Planifier un audit",
+      "buttonHref": "/contact"
+    }
   ]
 }

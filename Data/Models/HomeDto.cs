@@ -3,7 +3,7 @@ namespace Coossi.Blazor.Data.Models;
 
 public record HomePage(
     string Id,
-    HeroBlock Hero,
+    HomeHeroBlock Hero,
     IntroBlock Intro,
     ServicesBlock Services,
     ExpertiseBlock Expertise,
@@ -12,7 +12,7 @@ public record HomePage(
     CtaBlock Cta
 );
 
-public record HeroBlock(string Title, string LeadStrong, string TextStrong, List<HeroButton> Buttons, string RightIcon);
+public record HomeHeroBlock(string Title, string LeadStrong, string TextStrong, List<HeroButton> Buttons, string RightIcon);
 public record HeroButton(string Kind, string Href, string Icon, string Label);
 
 public record IntroBlock(string Title, string Lead, string P1Strong, string P2Strong);

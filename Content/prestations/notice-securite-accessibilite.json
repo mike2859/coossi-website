@@ -1,76 +1,96 @@
 {
-  "Id": 9,
-  "Slug": "notice-securite-accessibilite",
-  "MetaTitle": "Notices de Sécurité & Accessibilité – COOSSI",
-  "MetaDescription": "Rédaction professionnelle de notices de sécurité incendie et accessibilité pour ERP, IGH, Habitation. Conforme article GE2. Plans de zones plastifiés.",
-  "OgImage": "images/og-prestations.webp",
-  "Title": "Notices de Sécurité & Accessibilité",
-  "Subtitle": "Rédaction conforme pour permis de construire",
-  "Sections": [
+  "seo": {
+    "metaTitle": "Notices de Sécurité & Accessibilité | COOSSI Valenciennes",
+    "metaDescription": "Rédaction des notices sécurité incendie & accessibilité (article GE2). Plans de zones, Z.A, Z.C, Z.F, Z.D.A, Z.D.M."
+  },
+  "hero": {
+    "icon": "fas fa-file-contract",
+    "title": "Notices de Sécurité & Accessibilité",
+    "subtitle": "Rédaction professionnelle pour ERP, IGH et IPCE"
+  },
+  "sections": [
     {
-      "Kind": "html",
-      "Title": "Qu'est-ce qu'une Notice de Sécurité ?",
-      "Html": "<div class='info-card'><h3><i class='fas fa-info-circle'></i> Notre Expertise</h3><p>Vous souhaitez faire appel à une entreprise spécialisée dans la protection incendie près de Valenciennes. COOSSI vous propose la réalisation de <strong>notice de sécurité et accessibilité</strong> pour tous types de bâtiments : ERP, IGH ou encore Habitation.</p><p>Pour faire rédiger vos notices de sécurité incendie par un professionnel, contactez Jean LEBLANC au <strong>06.85.75.27.75</strong>.</p></div>"
+      "type": "intro",
+      "title": "Notre Expertise",
+      "text": "Réalisation des notices sécurité et accessibilité pour ERP, IGH, IPCE. Contact : 06.85.75.27.75."
     },
     {
-      "Kind": "html",
-      "Title": "Cadre légal & réglementaire",
-      "Html": "<div class='info-card'><p>Lors du dépôt de <strong>permis de construire</strong> pour la création d'un ERP, le maître d'ouvrages doit impérativement joindre une notice d'accessibilité et une notice de sécurité incendie. Ces documents justifient la mise en conformité des lieux avec les normes en vigueur.</p><div class='highlight-box'><h4><i class='fas fa-balance-scale'></i> Article GE2</h4><p class='mb-0'>Conformément à <strong>l'article GE2 de l'arrêté du 25 Juin 1980 modifié</strong>, COOSSI conçoit une notice de sécurité permettant de comprendre comment l'établissement est conçu et où sont les zones clés.</p></div></div>"
+      "type": "title",
+      "text": "Permis de Construire : Documents Obligatoires"
     },
     {
-      "Kind": "columns2",
-      "Title": "Les Deux Types de Notices",
-      "Lead": "Réalisés en collaboration directe avec le maître d'ouvrages :",
-      "Columns": [
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-fire-extinguisher'></i> Notice de Sécurité</h3><ul><li>Zones d'évacuation</li><li>Issues de secours</li><li>Dispositifs de sécurité</li><li>Systèmes d'alarme</li><li>Moyens d'extinction</li></ul></div>"
-        ],
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-wheelchair'></i> Notice d'Accessibilité</h3><ul><li>Dimensions des espaces</li><li>Dispositifs pour PMR</li><li>Raccordement à la voirie</li><li>Cheminements accessibles</li><li>Équipements adaptés</li></ul></div>"
-        ]
+      "type": "intro",
+      "text": "Notice d’accessibilité et notice de sécurité incendie, plastifiées et conformes aux normes."
+    },
+    {
+      "type": "cards",
+      "title": "Les Deux Types de Notices",
+      "items": [
+        {
+          "badge": "Notice de Sécurité",
+          "title": "Notice de Sécurité Incendie",
+          "text": "Conforme à l'article GE2 (25/06/1980 mod.). Zones d’évacuation, issues, dispositifs, alarmes, moyens d’extinction.",
+          "bullets": ["Zones d'évacuation","Issues de secours","Dispositifs de sécurité","Systèmes d'alarme","Moyens d'extinction"]
+        },
+        {
+          "badge": "Notice d'Accessibilité",
+          "title": "Notice d’Accessibilité",
+          "text": "Dimensions des espaces, dispositifs PMR, raccordement à la voirie, cheminements, équipements adaptés.",
+          "bullets": ["Dimensions des espaces","Dispositifs PMR","Raccordement voirie","Cheminements accessibles","Équipements adaptés"]
+        }
       ]
     },
     {
-      "Kind": "html",
-      "Title": "Plans de Zones",
-      "Html": "<div class='info-card'><h3><i class='fas fa-map'></i> Réalisation de Plans Techniques</h3><p>Expert en sécurité incendie, Jean LEBLANC réalise tous les plans de mise en sécurité et de détection :</p><ul><li><strong>Z.A</strong> - Zone d'Alarme</li><li><strong>Z.C</strong> - Zone de Compartimentage</li><li><strong>Z.F</strong> - Zone de Fumée</li><li><strong>Z.D.A</strong> - Zone de Détection Automatique</li><li><strong>Z.D.M</strong> - Zone de Détection Manuelle</li></ul><p class='mt-3'>Pour un affichage qualitatif et une meilleure lisibilité, les plans réalisés par COOSSI sont <strong>plastifiés</strong>.</p></div>"
+      "type": "highlight",
+      "title": "Intégration au Dossier d’Identité SSI",
+      "text": "Les notices font partie du dossier d’identité SSI remis à la commission."
     },
     {
-      "Kind": "columns2",
-      "Title": "Établissements concernés",
-      "Columns": [
-        [
-          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
-        ],
-        [
-          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
-        ]
+      "type": "title",
+      "text": "Plans de Zones & Mise en Sécurité"
+    },
+    {
+      "type": "bullets",
+      "intro": "Plans réalisés par COOSSI (plastifiés) :",
+      "items": ["Z.A – Zone d’Alarme","Z.C – Zone de Compartimentage","Z.F – Zone de Fumée","Z.D.A – Détection Automatique","Z.D.M – Détection Manuelle"]
+    },
+    {
+      "type": "gridCards",
+      "title": "Documentation Complémentaire",
+      "items": [
+        { "icon": "fas fa-map-marked-alt", "title": "Plans SDI/SMSI" },
+        { "icon": "fas fa-project-diagram", "title": "Synoptiques" },
+        { "icon": "fas fa-folder-open", "title": "Classement Dossier SSI" }
       ]
     },
     {
-      "Kind": "columns2",
-      "Title": "Pourquoi choisir COOSSI ?",
-      "Columns": [
-        [
-          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
-        ],
-        [
-          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
-        ]
+      "type": "gridCards",
+      "title": "Types d’Établissements",
+      "items": [
+        { "icon": "fas fa-building", "title": "ERP", "text": "Commerce, enseignement, hébergement…" },
+        { "icon": "fas fa-city", "title": "IGH", "text": "Bureaux, habitation…" },
+        { "icon": "fas fa-industry", "title": "IPCE", "text": "Sites industriels, entrepôts…" }
       ]
     },
     {
-      "Kind": "html",
-      "Title": "Contact",
-      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Besoin de Notices de Sécurité ?</h3><p>Contactez un expert pour la rédaction de vos notices de sécurité et accessibilité.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander un devis</a></div>"
+      "type": "contact",
+      "title": "Contactez un Expert",
+      "text": "Rendez-vous et devis.",
+      "phone": "0685752775",
+      "buttonText": "Formulaire de contact",
+      "buttonHref": "/contact"
     },
     {
-      "Kind": "html",
-      "Title": "Nos zones d'intervention",
-      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
+      "type": "cities",
+      "title": "Zones d’intervention",
+      "items": ["Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Calais","Reims","Paris","Lyon","Marseille","Bordeaux"]
     },
-    { "Kind": "cta" }
+    {
+      "type": "cta",
+      "title": "Besoin de Notices ?",
+      "text": "Nous vous accompagnons pour votre permis de construire.",
+      "buttonText": "Demander un devis",
+      "buttonHref": "/contact"
+    }
   ]
 }
