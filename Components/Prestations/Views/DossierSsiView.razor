@@ -66,5 +66,8 @@ else
     @foreach (var c in Model.Cities) { <a>@c</a> }
   </div></div></section>
 
-  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+
+<CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" />
+
+  @* <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" /> *@
 }

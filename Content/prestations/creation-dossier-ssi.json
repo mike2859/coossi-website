@@ -1,85 +1,49 @@
 {
+  "slug": "creation-dossier-ssi",
   "seo": {
     "metaTitle": "Création Dossier d'Identité SSI | COOSSI Valenciennes",
-    "metaDescription": "COOSSI crée votre dossier d'identité SSI selon la norme NF S 61-932. Obligatoire pour les ERP. Bureau d'études près de Valenciennes."
+    "metaDescription": "COOSSI crée votre dossier d'identité SSI selon la norme NF S 61-932. Obligatoire pour les ERP. Bureau d'études près de Valenciennes.",
+    "ogImage": "images/og-prestations.webp"
   },
   "hero": {
-    "icon": "fas fa-folder-open",
     "title": "Création de Dossier d'Identité SSI",
-    "subtitle": "Réalisation complète selon la norme NF S 61-932"
+    "subtitle": "Réalisation complète selon la norme NF S 61-932",
+    "icon": "fas fa-folder-open"
   },
-  "sections": [
-    {
-      "type": "intro",
-      "title": "Le Dossier d'Identité SSI",
-      "text": "COOSSI réalise l’ensemble du dossier d’identité SSI pour assurer la conformité de votre établissement (norme NF S 61-932)."
-    },
-    {
-      "type": "title",
-      "text": "Norme NF S 61-932 & Obligations"
-    },
-    {
-      "type": "bullets",
-      "intro": "Organisation de la réception technique du SSI en collaboration avec :",
-      "items": ["Commission de sécurité","Maître d’ouvrage","Maîtrise d'œuvre","Entreprises"]
-    },
-    {
-      "type": "title",
-      "text": "Missions de Suivi en Phase de Réception"
-    },
-    {
-      "type": "cards",
-      "items": [
-        { "title": "Vérification", "text": "Conformité aux prescriptions du dossier de coordination." },
-        { "title": "Essais", "text": "Essais fonctionnels du système SSI installé." },
-        { "title": "Formation", "text": "Formation des personnels d’exploitation au SSI." },
-        { "title": "Dossier", "text": "Constitution et remise du dossier d’identité au MOA." }
-      ]
-    },
-    {
-      "type": "intro",
-      "title": "Obligation pour les ERP",
-      "text": "Le dossier d'identité du SSI est obligatoire pour tous les ERP. COOSSI peut créer ou mettre à jour votre dossier et vous le remettre en mains propres."
-    },
-    {
-      "type": "title",
-      "text": "Notre Bureau d'Études"
-    },
-    {
-      "type": "bullets",
-      "intro": "Exemples d’éléments fournis dans le CCF :",
-      "items": [
-        "Catégorie du SSI",
-        "Organisation/corrélation des zones Z.D et Z.S",
-        "Choix des alimentations de sécurité (AES, APS)",
-        "Constituants du SSI (DCT et DAS)",
-        "Procédure de réception technique"
-      ]
-    },
-    {
-      "type": "highlight",
-      "title": "Cohérence & Conformité",
-      "text": "Vigilance à la cohérence entre prescriptions techniques, avis des autorités et bureau de contrôle."
-    },
-    {
-      "type": "contact",
-      "title": "Nous contacter",
-      "text": "Création ou mise à jour de dossier SSI. Horaires : lun-ven 9h-19h.",
-      "phone": "0685752775",
-      "buttonText": "Formulaire en ligne",
-      "buttonHref": "/contact"
-    },
-    {
-      "type": "cities",
-      "title": "Nos Zones d'Intervention",
-      "items": ["Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Calais","Reims","Dijon","Rouen","Paris","Lyon"]
-    },
-    {
-      "type": "cta",
-      "title": "Besoin d’un Dossier SSI ?",
-      "text": "Contactez-nous pour un devis.",
-      "buttonText": "Demander un devis",
-      "buttonHref": "/contact"
-    }
-  ]
+
+  "introText": "COOSSI réalise l’ensemble du dossier d’identité SSI pour assurer la conformité de votre établissement (norme NF S 61-932).",
+
+  "normeText": "Organisation de la réception technique du SSI avec la commission de sécurité, le maître d’ouvrage, la maîtrise d'œuvre et les entreprises.",
+
+  "phaseReception": [
+    "Vérification — conformité aux prescriptions du dossier de coordination",
+    "Essais — essais fonctionnels du SSI installé",
+    "Formation — sensibilisation des personnels d’exploitation",
+    "Dossier — constitution et remise du dossier d’identité au MOA"
+  ],
+
+  "obligationText": "Le dossier d'identité du SSI est obligatoire pour tous les ERP. COOSSI peut créer ou mettre à jour votre dossier et vous le remettre en mains propres.",
+
+  "bureauEtudesText": "Notre bureau d’études accompagne la préparation, la coordination et la réception technique du SSI selon la NF S 61-932.",
+
+  "ccfPoints": [
+    "Catégorie du SSI",
+    "Organisation / corrélation des zones Z.D et Z.S",
+    "Choix des alimentations de sécurité (AES, APS)",
+    "Constituants du SSI (DCT et DAS)",
+    "Procédure de réception technique"
+  ],
+
+  "coherenceText": "Vigilance à la cohérence entre prescriptions techniques, avis des autorités et bureau de contrôle.",
+
+  "contactText": "Création ou mise à jour de dossier SSI. Horaires : lun–ven 9h–19h. Tél : 06 85 75 27 75.",
+
+  "cities": [ "Valenciennes", "Lille", "Roubaix", "Tourcoing", "Dunkerque", "Maubeuge", "Lens", "Arras", "Cambrai", "Amiens", "Calais", "Reims", "Dijon", "Rouen", "Paris", "Lyon" ],
+
+  "cta": {
+    "title": "Besoin d’un Dossier SSI ?",
+    "text": "Contactez-nous pour un devis.",
+    "buttonText": "Demander un devis",
+    "buttonHref": "/contact"
+  }
 }
