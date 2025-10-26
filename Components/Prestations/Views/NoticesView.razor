@@ -1,0 +1,67 @@
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@using Coossi.Blazor.Data.Models.Prestations
+@inject IContentStore Content
+@inject NavigationManager Nav
+
+@code {
+  [Parameter] public string Slug { get; set; } = "";
+  private NoticesPage? Model;
+  protected override async Task OnParametersSetAsync()
+    => Model = await Content.GetAsync<NoticesPage>($"prestations/{Slug}");
+  string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
+}
+
+@if (Model is null) { <section class="content-section"><div class="container">Chargement…</div></section> }
+else {
+  <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
+  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+
+  <section class="content-section"><div class="container"><div class="info-card"><p>@Model.IntroText</p></div></div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Les deux types de notices</h2>
+    <div class="row">@foreach (var n in Model.Notices){
+      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>@n.Title</h3>
+        @if (!string.IsNullOrWhiteSpace(n.Text)) { <p>@n.Text</p> }
+        @if (n.Bullets is {Count:>0}) { <ul>@foreach (var b in n.Bullets!){ <li>@b</li> }</ul> }
+      </div></div> }
+    </div>
+  </div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card highlight-box">
+    <h3>Intégration au Dossier d’Identité SSI</h3><p>@Model.IntegrationText</p>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card">
+    <h2 class="section-title">Plans de zones & mise en sécurité</h2>
+    <ul>@foreach (var p in Model.PlansZones){ <li>@p</li> }</ul>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Documentation complémentaire</h2>
+    <div class="row">@foreach (var d in Model.DocsComplement){
+      <div class="col-lg-4 col-md-6 mb-4"><div class="info-card h-100 text-center">
+        @if (!string.IsNullOrWhiteSpace(d.Icon)) { <i class="fas @d.Icon fa-3x mb-2" style="color:var(--primary-color);"></i> }
+        <h3>@d.Title</h3>@if (!string.IsNullOrWhiteSpace(d.Text)) { <p>@d.Text</p> }
+      </div></div> }
+    </div>
+  </div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Types d’établissements</h2>
+    <div class="row">@foreach (var t in Model.TypesEtablissements){
+      <div class="col-lg-4 col-md-6 mb-4"><div class="info-card h-100 text-center">
+        @if (!string.IsNullOrWhiteSpace(t.Icon)) { <i class="fas @t.Icon fa-3x mb-2" style="color:var(--primary-color);"></i> }
+        <h3>@t.Title</h3>@if (!string.IsNullOrWhiteSpace(t.Text)) { <p>@t.Text</p> }
+      </div></div> }
+    </div>
+  </div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card text-center">
+    <h3>Contact</h3><p>@Model.ContactText</p><a class="btn-primary-custom" href="/contact">Formulaire de contact</a>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Zones d’intervention</h2><div class="city-links">
+    @foreach (var c in Model.Cities) { <a>@c</a> }
+  </div></div></section>
+
+  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+}

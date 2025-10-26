@@ -1,70 +1,29 @@
 @page "/prestation/{slug}"
 
-@using System.Collections.Generic
-@using Coossi.Blazor.Components.Shared
-@using Coossi.Blazor.Data.Interfaces
-@using Coossi.Blazor.Data.Models
-@inject IPrestationStore Store
-@inject NavigationManager Nav
+@using Microsoft.AspNetCore.Components
 
 @code {
     [Parameter] public string slug { get; set; } = "";
 
-    private PrestationPageDto? Model;
-    private Type? RendererType;
-
-    // Map slug -> vue spécifique (sinon fallback GenericPrestationView)
+    // Mappe chaque slug vers sa vue dédiée
     private static readonly IReadOnlyDictionary<string, Type> Map =
         new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
         {
-            ["signaletique"]                    = typeof(Coossi.Blazor.Components.Prestations.Views.SignaletiqueView),
-            ["document-unique-evaluation"]      = typeof(Coossi.Blazor.Components.Prestations.Views.DuerpView),
-            ["audit-diagnostic"]                = typeof(Coossi.Blazor.Components.Prestations.Views.AuditDiagnosticView),
-            ["notices-securite-accessibilite"]  = typeof(Coossi.Blazor.Components.Prestations.Views.NoticesSecuriteView),
-            ["assistance-moe"]                  = typeof(Coossi.Blazor.Components.Prestations.Views.AssistanceMoeView),
-            ["creation-dossier-ssi"]            = typeof(Coossi.Blazor.Components.Prestations.Views.DossierSsiView),
-            ["coordination-ssi"]                = typeof(Coossi.Blazor.Components.Prestations.Views.CoordinationView),
-            ["responsable-unique-securite"]     = typeof(Coossi.Blazor.Components.Prestations.Views.RusView),
+            ["coordination-ssi"]               = typeof(Coossi.Blazor.Components.Prestations.Views.CoordinationView),
+            ["creation-dossier-ssi"]           = typeof(Coossi.Blazor.Components.Prestations.Views.DossierSsiView),
+            ["assistance-moe"]                 = typeof(Coossi.Blazor.Components.Prestations.Views.AssistanceMoeView),
+            ["notices-securite-accessibilite"] = typeof(Coossi.Blazor.Components.Prestations.Views.NoticesView),
+            ["audit-diagnostic"]               = typeof(Coossi.Blazor.Components.Prestations.Views.AuditDiagnosticView),
+            ["document-unique-evaluation"]     = typeof(Coossi.Blazor.Components.Prestations.Views.DuerpView),
+            ["responsable-unique-securite"]    = typeof(Coossi.Blazor.Components.Prestations.Views.RusView),
+            ["signaletique"]                   = typeof(Coossi.Blazor.Components.Prestations.Views.SignaletiqueView),
         };
 
-    protected override async Task OnParametersSetAsync()
-    {
-        Model = await Store.GetBySlugAsync(slug);
-        if (Model is null)
-        {
-            RendererType = null;
-            return;
-        }
-
-        RendererType = Map.TryGetValue(Model.Slug, out var t)
-            ? t
-            : typeof(Coossi.Blazor.Components.Prestations.Views.GenericPrestationView);
-    }
-
-    string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{slug}";
+    // Par défaut, on tombe sur une vue générique (peut afficher un message ou un 404 custom)
+    Type ViewType => Map.TryGetValue(slug, out var t)
+        ? t
+        : typeof(Coossi.Blazor.Components.Prestations.Views.GenericPrestationView);
 }
 
-@if (Model is null)
-{
-    <section class="content-section text-center text-muted">
-        <div class="container">
-            <div class="spinner-border text-danger" role="status"></div>
-            <p class="mt-3">Chargement de la prestation…</p>
-        </div>
-    </section>
-}
-else
-{
-    <!-- SEO -->
-    <Seo Title="@Model.MetaTitle"
-         Description="@Model.MetaDescription"
-         Canonical="@Canonical"
-         OgImage="@(Model.OgImage ?? "images/og-prestations.webp")" />
-
-    <!-- Header -->
-    <PageHeader Title="@Model.Title" Lead="@Model.Subtitle" />
-
-    <!-- Vue dédiée (ou générique en fallback) -->
-    <DynamicComponent Type="@(RendererType!)"
-                      Parameters="@(new Dictionary<string, object?> { ["Model"] = Model })" />
-}
+<DynamicComponent Type="ViewType"
+                  Parameters="@(new Dictionary<string, object?> { ["Slug"] = slug })" />

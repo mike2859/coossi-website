@@ -30,5 +30,5 @@ public record ProcessStep(int Num, string Title, string Text);
 public record ZonesBlock(string Title, string Subtitle, List<string> Badges, ZonesLink Link);
 public record ZonesLink(string Href, string Icon, string Label);
 
-public record CtaBlock(string Title, string Subtitle, List<CtaButton> Buttons);
+//public record CtaBlock(string Title, string Subtitle, List<CtaButton> Buttons);
 public record CtaButton(string Kind, string Href, string Icon, string Label);

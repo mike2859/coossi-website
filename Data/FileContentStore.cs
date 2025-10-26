@@ -34,4 +34,5 @@ public sealed class FileContentStore : IContentStore
 
         return await File.ReadAllTextAsync(path, ct);
     }
+    
 }

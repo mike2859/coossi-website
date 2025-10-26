@@ -1,229 +1,87 @@
+@using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
+@using Coossi.Blazor.Data.Models.Prestations
+@inject IContentStore Content
+@inject NavigationManager Nav
+
 @code {
-    [Parameter] public PrestationPageDto Model { get; set; } = default!;
-    PrestationSection? S(string t) => Model.Sections?.FirstOrDefault(x => string.Equals(x.Title, t, StringComparison.OrdinalIgnoreCase));
+  [Parameter] public string Slug { get; set; } = "";
+  private SignaletiquePage? Model;
+  protected override async Task OnParametersSetAsync()
+    => Model = await Content.GetAsync<SignaletiquePage>($"prestations/{Slug}");
+  string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
+}
 
-    string IconFor(string name)
+@if (Model is null) { <section class="content-section"><div class="container">Chargement…</div></section> }
+else {
+  <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
+  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+
+  <section class="content-section"><div class="container">
+    <div class="info-card"><h2 class="section-title">L’importance de la signalétique</h2><p>@Model.ImportanceText</p></div>
+    <div class="info-card mt-4"><h3>Conformité aux normes</h3><p>@Model.ConformiteText</p></div>
+  </div></section>
+
+  @* Exemples de familles en grille 2×2 *@
+  @renderCards("Plans d’évacuation", Model.PlansEvacuation)
+  @renderCards("Panneaux directionnels", Model.Directionnels)
+  @renderCards("Signalisation des équipements", Model.Equipements)
+  @renderCards("Panneaux d’interdiction", Model.Interdictions)
+  @renderCards("Consignes de sécurité", Model.Consignes)
+  @renderCards("Balisage lumineux", Model.Balisage)
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Pictogrammes principaux</h2>
+    <div class="row">@foreach (var p in Model.Pictos){
+      <div class="col-lg-3 col-md-4 mb-4"><div class="info-card h-100 text-center">
+        @if (!string.IsNullOrWhiteSpace(p.Icon)) { <i class="fas @p.Icon fa-2x mb-2" style="color:var(--primary-color);"></i> }
+        <h4 class="mb-0">@p.Title</h4>
+      </div></div> }
+    </div>
+  </div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Matériaux & supports</h2>
+    <div class="row">@foreach (var m in Model.MateriauxSupports){
+      <div class="col-lg-4 mb-4"><div class="info-card h-100"><h3>@m.Title</h3>@if (!string.IsNullOrWhiteSpace(m.Text)){<p>@m.Text</p>}</div></div>
+    }</div>
+  </div></section>
+
+  <section class="content-section"><div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>Étude & conception</h3><p>@Model.EtudeConceptionText</p></div></div>
+      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>Réalisation & pose</h3><p>@Model.RealisationPoseText</p></div></div>
+    </div>
+  </div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card">
+    <h2 class="section-title">Établissements concernés</h2><ul>@foreach (var e in Model.Etablissements){ <li>@e</li> }</ul>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Zones d’intervention</h2><div class="city-links">
+    @foreach (var c in Model.Cities) { <a>@c</a> }
+  </div></div></section>
+
+  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+}
+
+@code {
+  RenderFragment renderCards(string title, List<SigCard> items) => __builder =>
+  {
+    if (items is null || items.Count == 0) return;
+    __builder.AddMarkupContent(0, $@"<section class=""content-section""><div class=""container""><h2 class=""section-title"">{title}</h2><div class=""row"">");
+    var seq = 1;
+    foreach (var it in items)
     {
-        name = name.ToLowerInvariant();
-        if (name.Contains("issue")) return "fa-running";
-        if (name.Contains("extincteur")) return "fa-fire-extinguisher";
-        if (name.Contains("téléphone")) return "fa-phone-alt";
-        if (name.Contains("alarme")) return "fa-bell";
-        if (name.Contains("premiers secours")) return "fa-first-aid";
-        if (name.Contains("rassemblement")) return "fa-map-marker-alt";
-        if (name.Contains("interdiction")) return "fa-ban";
-        if (name.Contains("robinet")) return "fa-tint";
-        return "fa-square";
+        __builder.AddMarkupContent(seq++, @"<div class=""col-lg-6 mb-4""><div class=""info-card h-100"">");
+        __builder.AddMarkupContent(seq++, $"<h3>{it.Title}</h3>");
+        if (!string.IsNullOrWhiteSpace(it.Text)) __builder.AddMarkupContent(seq++, $"<p>{it.Text}</p>");
+        if (it.Bullets is { Count: > 0 })
+        {
+            __builder.AddMarkupContent(seq++, "<ul>");
+            foreach (var b in it.Bullets) __builder.AddMarkupContent(seq++, $"<li>{b}</li>");
+            __builder.AddMarkupContent(seq++, "</ul>");
+        }
+        __builder.AddMarkupContent(seq++, "</div></div>");
     }
+    __builder.AddMarkupContent(seq++, "</div></div></section>");
+  };
 }
-
-@{
-    var sIntro   = S("L'Importance de la Signalétique");
-    var sNormes  = S("Conformité aux Normes");
-    var sPlans   = S("Plans d’Évacuation");
-    var sDirs    = S("Panneaux Directionnels");
-    var sEquip   = S("Signalisation des Équipements");
-    var sInterd  = S("Panneaux d’Interdiction");
-    var sCons    = S("Consignes de Sécurité");
-    var sBalis   = S("Balisage Lumineux");
-    var sPictos  = S("Pictogrammes Principaux");
-    var sMats    = S("Matériaux & Supports");
-    var sEtude   = S("Étude & Conception");
-    var sReal    = S("Réalisation & Pose");
-    var sEtab    = S("Établissements Concernés");
-    var sWhy     = S("Pourquoi Choisir COOSSI ?");
-    var sContact = S("Demandez Votre Signalétique");
-    var sZones   = S("Nos Zones d’Intervention");
-}
-
-@if (sIntro is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <div class="info-card">
-                <h3><i class="fas fa-info-circle"></i> @sIntro.Title</h3>
-                @((MarkupString?)sIntro.Html)
-            </div>
-        </div>
-    </section>
-}
-
-@if (sNormes is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">@sNormes.Title</h2>
-            <div class="info-card">
-                @if (!string.IsNullOrWhiteSpace(sNormes.Lead)) { <p>@sNormes.Lead</p> }
-                <div class="mt-3">
-                    @foreach (var it in sNormes.AsCards()) { <span class="norm-badge">@it</span> }
-                </div>
-            </div>
-        </div>
-    </section>
-}
-
-<section class="content-section">
-    <div class="container">
-        <h2 class="section-title">Types de Signalétique</h2>
-        <div class="row">
-            @foreach (var bloc in new[] { sPlans, sDirs, sEquip, sInterd, sCons, sBalis }.Chunk(2))
-            {
-                <div class="w-100 d-none d-lg-block"></div>
-                @foreach (var s in bloc.Where(x => x is not null))
-                {
-                    <div class="col-lg-6 mb-4">
-                        <div class="info-card h-100">
-                            <h3>@s!.Title</h3>
-                            <ul>@foreach (var it in s.AsCards()) { <li>@it</li> }</ul>
-                        </div>
-                    </div>
-                }
-            }
-        </div>
-    </div>
-</section>
-@* *@
-@* @if (sPictos  is not null) *@
-@* { *@
-@*     <section class="content-section"> *@
-@*         <div class="container"> *@
-@*             <h2 class="section-title">@sPictos.Title</h2> *@
-@*             <div class="row"> *@
-@*                 @foreach (var name in sPictos.AsCards()) *@
-@*                 { *@
-@*                     <div class="col-lg-3 col-md-4 col-6 mb-4"> *@
-@*                         <div class="picto-box"> *@
-@*                             <div class="picto-icon"><i class="fas @IconFor(name)"></i></div> *@
-@*                             <h5>@name</h5> *@
-@*                         </div> *@
-@*                     </div> *@
-@*                 } *@
-@*             </div> *@
-@*         </div> *@
-@*     </section> *@
-@* } *@
-
-@* @if (sMats is not null) *@
-@* { *@
-@*     var mats = sMats.Items; *@
-@*     string title(string s) => (s.Contains("—") ? s.Split("—")[0] : s).Trim(); *@
-@*     string text(string s)  => (s.Contains("—") ? s[(s.IndexOf("—")+1)..] : "").Trim(); *@
-@* *@
-@*     <section class="content-section"> *@
-@*         <div class="container"> *@
-@*             <h2 class="section-title">@sMats.Title</h2> *@
-@*             <div class="row"> *@
-@*                 @for (int i = 0; i < 3; i++) *@
-@*                 { *@
-@*                     <div class="col-lg-4 mb-4"> *@
-@*                         <div class="info-card text-center h-100"> *@
-@*                             <i class="fas fa-star fa-3x mb-3" style="color: var(--primary);"></i> *@
-@*                             <h3>@title(mats[i])</h3> *@
-@*                             <p>@text(mats[i])</p> *@
-@*                         </div> *@
-@*                     </div> *@
-@*                 } *@
-@*             </div> *@
-@*         </div> *@
-@*     </section> *@
-@* } *@
-
-@if (sEtude is not null || sReal is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">Notre Prestation Complète</h2>
-            <div class="info-card">
-                <div class="row mt-4">
-                    <div class="col-lg-6">
-                        <h4>Étude & Conception</h4>
-                        <ul>@foreach (var it in sEtude.AsCards()) { <li>@it</li> }</ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4>Réalisation & Pose</h4>
-                        <ul>@foreach (var it in sReal.AsCards()) { <li>@it</li> }</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-}
-@* *@
-@* @if (sEtab is not null) *@
-@* { *@
-@*     <section class="content-section"> *@
-@*         <div class="container"> *@
-@*             <h2 class="section-title">@sEtab.Title</h2> *@
-@*             <div class="row"> *@
-@*                 @foreach (var it in sEtab.AsCards()) *@
-@*                 { *@
-@*                     var parts = it.Split('—'); *@
-@*                     var t = parts[0].Trim(); *@
-@*                     var d = parts.Length > 1 ? parts[1].Trim() : ""; *@
-@*                     <div class="col-lg-3 col-md-6 mb-4"> *@
-@*                         <div class="info-card text-center h-100"> *@
-@*                             <i class="fas fa-building fa-2x mb-3" style="color: var(--primary);"></i> *@
-@*                             <h4>@t</h4> *@
-@*                             <p class="small">@d</p> *@
-@*                         </div> *@
-@*                     </div> *@
-@*                 } *@
-@*             </div> *@
-@*         </div> *@
-@*     </section> *@
-@* } *@
-
-@if (sWhy?.Columns is not null && sWhy.Columns.Count == 2)
-{
-    <section class="content-section">
-        <div class="container">
-            <div class="highlight-box">
-                <h4><i class="fas fa-check-circle"></i> @sWhy.Title</h4>
-                <div class="row mt-3">
-                    <div class="col-lg-6">
-                        <ul>@foreach(var it in sWhy.Columns[0]) { <li>@it</li> }</ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul>@foreach(var it in sWhy.Columns[1]) { <li>@it</li> }</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-}
-
-@if (sContact is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <div class="info-card text-center">
-                <h3><i class="fas fa-phone-alt"></i> @sContact.Title</h3>
-                @((MarkupString?)sContact.Html)
-            </div>
-        </div>
-    </section>
-}
-
-@if (sZones is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">@sZones.Title</h2>
-            <div class="city-links">
-                @foreach (var city in sZones.AsCards()) { <a href="#">@city</a> }
-            </div>
-        </div>
-    </section>
-}
-
-<section class="cta-section">
-    <div class="container text-center">
-        <h2 class="mb-4">Une Signalétique Claire, C'est des Vies Sauvées</h2>
-        <p class="mb-4">COOSSI installe une signalétique conforme et efficace pour protéger vos occupants.</p>
-        <a href="/contact" class="btn-primary-custom">
-            <i class="fas fa-signs-post"></i> Commander Votre Signalétique
-        </a>
-    </div>
-</section>

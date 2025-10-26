@@ -1,260 +1,79 @@
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
-@inherits ComponentBase
+@using Coossi.Blazor.Data.Models.Prestations
+@inject IContentStore Content
+@inject NavigationManager Nav
 
 @code {
-    // Le host te passe la page si tu veux piocher dedans plus tard.
-    [Parameter] public PrestationPageDto? Model { get; set; }
+  [Parameter] public string Slug { get; set; } = "";
+  private RusPage? Model;
+  protected override async Task OnParametersSetAsync()
+    => Model = await Content.GetAsync<RusPage>($"prestations/{Slug}");
+  string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
 }
 
-<section class="hero-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-10">
-        <h1><i class="fas fa-user-shield"></i> Responsable Unique de Sécurité (RUS)</h1>
-        <p>Direction unique pour groupements d'ERP - Article R.123-21 du CCH</p>
-      </div>
+@if (Model is null) { <section class="content-section"><div class="container">Chargement…</div></section> }
+else {
+  <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
+  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+
+  <section class="content-section"><div class="container"><div class="info-card highlight-box">
+    <h3>Depuis 2021</h3><p>@Model.SinceText</p>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card"><h2 class="section-title">Qu’est-ce que le RUS ?</h2><p>@Model.QuEstCeQueText</p></div></div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card"><h2 class="section-title">Cadre légal & responsabilités</h2><p>@Model.CadreLegalText</p></div></div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card highlight-box">
+    <h3>Engagement de responsabilité</h3><p>@Model.EngagementText</p>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card"><h2 class="section-title">COOSSI assume ce rôle</h2><p>@Model.CoossiRoleText</p></div></div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Notre méthodologie</h2>
+    <div class="row">@for (int i=0;i<Model.Methodologie.Count;i++){
+      var it = Model.Methodologie[i];
+      <div class="col-lg-4 mb-4"><div class="info-card h-100"><div class="number-badge">@((i+1).ToString())</div>
+        <h3>@it.Title</h3>@if (!string.IsNullOrWhiteSpace(it.Text)){<p>@it.Text</p>}
+      </div></div> }
     </div>
-  </div>
-</section>
+  </div></section>
 
-<section class="content-section">
-  <div class="container">
-
-    <!-- Introduction -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <div class="info-card">
-          <span class="badge-year"><i class="fas fa-calendar-alt"></i> Depuis 2021</span>
-          <h3><i class="fas fa-info-circle"></i> Nouvelle Compétence COOSSI</h3>
-          <p>Depuis le début de l'année 2021, COOSSI s'est doté de nouvelles compétences au travers de prestations de <strong>"Responsable Unique de Sécurité" (R.U.S.)</strong>.</p>
-        </div>
-      </div>
+  <section class="content-section"><div class="container"><h2 class="section-title">Missions du RUS</h2>
+    <div class="row">@foreach (var m in Model.Missions){
+      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>@m.Title</h3>
+        @if (m.Bullets is {Count:>0}){ <ul>@foreach (var b in m.Bullets!){ <li>@b</li> }</ul> }
+      </div></div> }
     </div>
+  </div></section>
 
-    <!-- Qu'est-ce que le RUS -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">Qu'est-ce que le Responsable Unique de Sécurité ?</h2>
-        <div class="info-card">
-          <p>Dans un établissement recevant du public (ERP) constitué de plusieurs exploitations (exemple : <strong>un centre commercial</strong>), une direction responsable de la sécurité incendie doit être nommée. Elle assume l'entière responsabilité de la sécurité des personnes accueillies.</p>
-          <p class="mb-0">Cette direction est dirigée et coordonnée par une seule personne : le <strong>Responsable unique de sécurité (R.U.S.)</strong>.</p>
-        </div>
-      </div>
+  <section class="content-section"><div class="container"><h2 class="section-title">Établissements concernés</h2>
+    <div class="row">@foreach (var e in Model.Etablissements){
+      <div class="col-lg-4 mb-4"><div class="info-card h-100 text-center">
+        @if (!string.IsNullOrWhiteSpace(e.Icon)) { <i class="fas @e.Icon fa-3x mb-2" style="color:var(--primary-color);"></i> }
+        <h3>@e.Title</h3>@if (!string.IsNullOrWhiteSpace(e.Text)){<p>@e.Text</p>}
+      </div></div> }
     </div>
+  </div></section>
 
-    <!-- Cadre Légal -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">Cadre Légal &amp; Responsabilités</h2>
-        <div class="info-card">
-          <h3><i class="fas fa-balance-scale"></i> Article R.123-21 du CCH</h3>
-          <p>En application de <strong>l'article R.123-21 du Code de la Construction et de l'habitation (CCH)</strong>, le RUS est responsable auprès des autorités publiques des demandes d'autorisation et de l'observation des conditions de sécurité relatives aux risques d'incendie et de panique tant pour l'ensemble des exploitations du groupement que pour chacune d'entre elles.</p>
-
-          <div class="highlight-box mt-4">
-            <h4><i class="fas fa-exclamation-triangle"></i> Engagement de Responsabilité</h4>
-            <p class="mb-0">La responsabilité du RUS pourra être engagée s'il ne peut pas démontrer qu'il a pris toutes les dispositions nécessaires en vue de rappeler aux exploitants leurs obligations et de s'assurer de leur respect.</p>
-          </div>
-        </div>
-      </div>
+  <section class="content-section"><div class="container"><h2 class="section-title">Avantages de faire appel à COOSSI</h2>
+    <div class="row">@foreach (var a in Model.Avantages){
+      <div class="col-lg-3 mb-4"><div class="info-card h-100 text-center">
+        @if (!string.IsNullOrWhiteSpace(a.Icon)) { <i class="fas @a.Icon fa-2x mb-2" style="color:var(--primary-color);"></i> }
+        <h3>@a.Title</h3>@if (!string.IsNullOrWhiteSpace(a.Text)){<p>@a.Text</p>}
+      </div></div> }
     </div>
+  </div></section>
 
-    <!-- Proposition COOSSI -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">COOSSI Assume ce Rôle</h2>
-        <div class="info-card">
-          <p><strong>COOSSI vous propose d'assurer et d'assumer ce rôle.</strong></p>
-          <p>En tant qu'experts de la sécurité incendie (ingénieurs et formateurs), COOSSI vous fait bénéficier d'une prestation de qualité hors normes.</p>
-        </div>
-      </div>
-    </div>
+  <section class="content-section"><div class="container"><div class="info-card text-center">
+    <h3>Nous confier le rôle de RUS</h3><p>@Model.ContactText</p><a class="btn-primary-custom" href="/contact">Demander des informations</a>
+  </div></div></section>
 
-    <!-- Méthodologie -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">Notre Méthodologie</h2>
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="info-card h-100">
-              <h3><i class="fas fa-clipboard-check"></i> 1. Audit Initial</h3>
-              <p>Un premier audit est réalisé afin de définir un <strong>plan d'actions</strong> qui sera la feuille de route de la mission RUS.</p>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="info-card h-100">
-              <h3><i class="fas fa-calendar-check"></i> 2. Visites Régulières</h3>
-              <p>Les visites sont assurées régulièrement, à une fréquence dépendant de l'activité de l'établissement, de sa taille et de la gravité de la situation sécuritaire.</p>
-            </div>
-          </div>
-          <div class="col-lg-12 mb-4">
-            <div class="info-card">
-              <h3><i class="fas fa-handshake"></i> 3. Interlocuteur Commission de Sécurité</h3>
-              <p>Nous sommes interlocuteurs de la Commission de sécurité et, à ce titre assurons la relation avec elle, aussi bien lors des visites qu'au cours des différents échanges administratifs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class="content-section"><div class="container"><h2 class="section-title">Zones d’intervention</h2><div class="city-links">
+    @foreach (var c in Model.Cities) { <a>@c</a> }
+  </div></div></section>
 
-    <!-- Missions du RUS -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">Missions du Responsable Unique de Sécurité</h2>
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="info-card">
-              <h3><i class="fas fa-file-signature"></i> Demandes Administratives</h3>
-              <ul>
-                <li>Demandes d'autorisation d'ouverture</li>
-                <li>Autorisations de travaux</li>
-                <li>Relations avec les autorités</li>
-                <li>Suivi des avis de commission</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="info-card">
-              <h3><i class="fas fa-shield-alt"></i> Coordination Sécurité</h3>
-              <ul>
-                <li>Coordination des exploitants</li>
-                <li>Vérification de la conformité</li>
-                <li>Rappel des obligations</li>
-                <li>Contrôle des installations</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="info-card">
-              <h3><i class="fas fa-book"></i> Documentation</h3>
-              <ul>
-                <li>Tenue du registre de sécurité</li>
-                <li>Classement des documents</li>
-                <li>Suivi des vérifications périodiques</li>
-                <li>Traçabilité des actions</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="info-card">
-              <h3><i class="fas fa-search"></i> Contrôles &amp; Audits</h3>
-              <ul>
-                <li>Visites de contrôle régulières</li>
-                <li>Audits de conformité</li>
-                <li>Levée de réserves</li>
-                <li>Plans d'amélioration</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Établissements Concernés -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">Établissements Concernés</h2>
-        <div class="info-card">
-          <p>Le Responsable Unique de Sécurité est obligatoire pour les groupements d'ERP comprenant :</p>
-          <div class="row mt-4">
-            <div class="col-lg-4 mb-3">
-              <div class="text-center p-3" style="background-color:#f8f9fa;border-radius:10px;">
-                <i class="fas fa-shopping-cart fa-2x mb-2" style="color:var(--primary-color);"></i>
-                <h5>Centres Commerciaux</h5>
-                <p class="small mb-0">Plusieurs exploitations commerciales</p>
-              </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-              <div class="text-center p-3" style="background-color:#f8f9fa;border-radius:10px;">
-                <i class="fas fa-building fa-2x mb-2" style="color:var(--primary-color);"></i>
-                <h5>Complexes Multi-activités</h5>
-                <p class="small mb-0">Activités diverses regroupées</p>
-              </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-              <div class="text-center p-3" style="background-color:#f8f9fa;border-radius:10px;">
-                <i class="fas fa-store fa-2x mb-2" style="color:var(--primary-color);"></i>
-                <h5>Galeries Marchandes</h5>
-                <p class="small mb-0">Ensemble de boutiques</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Avantages -->
-    <div class="row mb-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">Avantages de Faire Appel à COOSSI</h2>
-        <div class="row">
-          <div class="col-lg-3 mb-4">
-            <div class="info-card text-center h-100">
-              <i class="fas fa-award fa-3x mb-3" style="color:var(--primary-color);"></i>
-              <h4>Expertise</h4>
-              <p>Ingénieurs et formateurs spécialisés</p>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-4">
-            <div class="info-card text-center h-100">
-              <i class="fas fa-shield-alt fa-3x mb-3" style="color:var(--primary-color);"></i>
-              <h4>Sérénité</h4>
-              <p>Délégation complète de la responsabilité</p>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-4">
-            <div class="info-card text-center h-100">
-              <i class="fas fa-file-contract fa-3x mb-3" style="color:var(--primary-color);"></i>
-              <h4>Conformité</h4>
-              <p>Respect total de la réglementation</p>
-            </div>
-          </div>
-          <div class="col-lg-3 mb-4">
-            <div class="info-card text-center h-100">
-              <i class="fas fa-clock fa-3x mb-3" style="color:var(--primary-color);"></i>
-              <h4>Réactivité</h4>
-              <p>Disponibilité et suivi régulier</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="info-card text-center">
-          <h3><i class="fas fa-phone-alt"></i> Nous Confier le Rôle de RUS</h3>
-          <p>Contactez COOSSI pour discuter de la mise en place d'un Responsable Unique de Sécurité pour votre groupement d'ERP.</p>
-          <p class="mb-4"><strong>Téléphone :</strong> <a href="tel:0685752775" style="color:var(--primary-color);font-weight:bold;font-size:1.3rem;">06.85.75.27.75</a></p>
-          <a href="/contact" class="btn-primary-custom">
-            <i class="fas fa-envelope"></i> Demander des informations
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Zones d'intervention -->
-    <div class="row mt-5">
-      <div class="col-lg-12">
-        <h2 class="section-title">Nos Zones d'Intervention</h2>
-        <div class="city-links">
-          <a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a>
-          <a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a>
-          <a>Bordeaux</a><a>Toulouse</a><a>Nantes</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="cta-section">
-  <div class="container text-center">
-    <h2 class="mb-4">Déléguez la Responsabilité Unique de Sécurité à des Experts</h2>
-    <p class="mb-4">COOSSI assure le rôle de RUS pour votre groupement d'ERP en toute conformité.</p>
-    <a href="/contact" class="btn-primary-custom">
-      <i class="fas fa-user-check"></i> Nous contacter
-    </a>
-  </div>
-</section>
+  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+}

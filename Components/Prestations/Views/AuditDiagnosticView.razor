@@ -1,50 +1,75 @@
+@using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
-@namespace Coossi.Blazor.Components.Prestations.Views
+@using Coossi.Blazor.Data.Models.Prestations
+@inject IContentStore Content
+@inject NavigationManager Nav
+
 @code {
-    [Parameter] public PrestationPageDto Model { get; set; } = default!;
-    PrestationSection? S(string t) => Model.Sections?.FirstOrDefault(x => string.Equals(x.Title, t, StringComparison.OrdinalIgnoreCase));
-}
-@{
-    var sPourquoi = S("Pourquoi réaliser un audit ?");
-    var sPerim    = S("Périmètre typique");
-}
-
-@if (sPourquoi is not null)
-{
-    <section class="content-section">
-        <div class="container">
-            <div class="info-card">
-                <h3 class="mb-3">@sPourquoi.Title</h3>
-                @((MarkupString?)sPourquoi.Html)
-            </div>
-        </div>
-    </section>
+  [Parameter] public string Slug { get; set; } = "";
+  private AuditDiagnosticPage? Model;
+  protected override async Task OnParametersSetAsync()
+    => Model = await Content.GetAsync<AuditDiagnosticPage>($"prestations/{Slug}");
+  string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
 }
 
-@if (sPerim?.Columns is not null && sPerim.Columns.Count == 2)
-{
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">@sPerim.Title</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="info-card h-100">
-                        <ul>@foreach(var it in sPerim.Columns[0]) { <li>@it</li> }</ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="info-card h-100">
-                        <ul>@foreach(var it in sPerim.Columns[1]) { <li>@it</li> }</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-}
+@if (Model is null) { <section class="content-section"><div class="container text-muted">Chargement…</div></section> }
+else {
+  <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
+  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
 
-<section class="cta-section">
-    <div class="container text-center">
-        <h2 class="mb-3">Programmer un audit</h2>
-        <a href="/contact" class="btn-primary-custom"><i class="fas fa-envelope"></i> Prendre RDV</a>
+  <section class="content-section"><div class="container"><div class="info-card">
+    <h2 class="section-title">Pourquoi réaliser un audit ?</h2><p>@Model.IntroPourquoi</p>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card">
+    <h2 class="section-title">Préservation de vos équipements</h2><p>@Model.IntroPreservation</p>
+  </div></div></section>
+
+  <section class="content-section"><div class="container">
+    <h2 class="section-title">Les étapes de l’audit</h2>
+    <div class="row">@for (int i=0;i<Model.Etapes.Count;i++){
+      <div class="col-lg-4 mb-4"><div class="info-card h-100"><div class="number-badge">@((i+1).ToString())</div><p>@Model.Etapes[i]</p></div></div> }
     </div>
-</section>
+  </div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card">
+    <h2 class="section-title">Notre intervention</h2><p>@Model.IntroIntervention</p>
+  </div></div></section>
+
+  <section class="content-section"><div class="container">
+    <h2 class="section-title">Établissements concernés</h2>
+    <div class="row">
+      @foreach (var c in Model.Etablissements){
+        <div class="col-lg-4 mb-4"><div class="info-card h-100 text-center">
+          @if (!string.IsNullOrWhiteSpace(c.Icon)) { <i class="fas @c.Icon fa-3x mb-3" style="color:var(--primary-color);"></i> }
+          <h3>@c.Title</h3>@if (!string.IsNullOrWhiteSpace(c.Text)) { <p>@c.Text</p> }
+        </div></div>
+      }
+    </div>
+  </div></section>
+
+  <section class="content-section"><div class="container">
+    <h2 class="section-title">Points de contrôle</h2>
+    <div class="row">
+      @foreach (var c in Model.PointsDeControle){
+        <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>@c.Title</h3>
+          @if (c.Bullets is {Count:>0}){ <ul>@foreach (var b in c.Bullets!){ <li>@b</li> }</ul> }
+        </div></div>
+      }
+    </div>
+  </div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card highlight-box">
+    <h3>Livrable : Rapport d’audit détaillé</h3><p>@Model.LivrableText</p>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><div class="info-card text-center">
+    <h3>Contact</h3><p>@Model.ContactText</p><a href="/contact" class="btn-primary-custom">Demander un audit</a>
+  </div></div></section>
+
+  <section class="content-section"><div class="container"><h2 class="section-title">Zones d’intervention</h2><div class="city-links">
+    @foreach (var c in Model.Cities) { <a>@c</a> }
+  </div></div></section>
+
+  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+}

@@ -12,8 +12,8 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 
-
-builder.Services.AddScoped<IPrestationStore, FilePrestationStore>();
+builder.Services.AddSingleton<IPrestationIndex, FilePrestationIndex>();
+//builder.Services.AddScoped<IPrestationStore, FilePrestationStore>();
 builder.Services.AddScoped<IKeywordStore, FileKeywordStore>();
 builder.Services.AddScoped<ILegalStore, FileLegalStore>();
 builder.Services.AddSingleton<IContentStore, FileContentStore>();
@@ -66,13 +66,21 @@ var rewrite = new RewriteOptions()
 app.UseRewriter(rewrite);
 
 // Legacy /prestation/{id}
-app.MapGet("/prestation/{id:int}", async (int id, IPrestationStore store) =>
+app.MapGet("/prestation/{id:int}", async (int id, IPrestationIndex idx) =>
 {
-    var dto = await store.GetByIdAsync(id);
+    var slug = await idx.GetSlugByIdAsync(id);
+    return slug is null
+        ? Results.NotFound()
+        : Results.Redirect($"/prestation/{slug}", permanent: true);
+});
+/*
+app.MapGet("/prestation/{id:int}", async (int id, IPrestationIndex store) =>
+{
+    var dto = await store.GetSlugByIdAsync(id);
     return dto is null
         ? Results.NotFound()
         : Results.Redirect($"/prestation/{dto.Slug}", true);
-});
+});*/
 
 // // Legacy /prestation/{code}
 // app.MapGet("/prestation/{code}", async (string code, IPrestationStore store) =>
@@ -110,6 +118,7 @@ app.MapGet("/robots.txt", (HttpContext ctx) =>
 });
 
 // sitemap.xml
+/*
 app.MapGet("/sitemap.xml", async (HttpContext ctx, IPrestationStore store) =>
 {
     var baseUrl = $"{ctx.Request.Scheme}://{ctx.Request.Host}";
@@ -137,7 +146,7 @@ app.MapGet("/sitemap.xml", async (HttpContext ctx, IPrestationStore store) =>
     xml.Append("</urlset>");
     return Results.Text(xml.ToString(), "application/xml", Encoding.UTF8);
 });
-
+*/
 
 app.UseHttpsRedirection();
 
