@@ -15,11 +15,20 @@
 
   "normeText": "Organisation de la réception technique du SSI avec la commission de sécurité, le maître d’ouvrage, la maîtrise d'œuvre et les entreprises.",
 
-  "phaseReception": [
-    "Vérification — conformité aux prescriptions du dossier de coordination",
-    "Essais — essais fonctionnels du SSI installé",
-    "Formation — sensibilisation des personnels d’exploitation",
-    "Dossier — constitution et remise du dossier d’identité au MOA"
+  "phaseReceptions": [
+    {
+      "title":  "Vérification","text":  "Vérifier que les installations sont conformes aux prescriptions définies dans le dossier de coordination SSI"
+    },
+    {
+      "title":  "Essais","text":  "Effectuer les essais fonctionnels du système SSI installé"
+    },
+    {
+      "title":  "Formation","text":  "Former les personnels d'exploitation à l'utilisation du SSI"
+    },
+    {
+      "title":  "Dossier","text":  "Constituer et remettre le dossier d'identité du SSI au maître d'ouvrage"
+    }
+   
   ],
 
   "obligationText": "Le dossier d'identité du SSI est obligatoire pour tous les ERP. COOSSI peut créer ou mettre à jour votre dossier et vous le remettre en mains propres.",

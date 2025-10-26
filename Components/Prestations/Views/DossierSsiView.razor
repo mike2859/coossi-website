@@ -33,14 +33,16 @@ else
   <section class="content-section"><div class="container">
     <h2 class="section-title">Missions de réception</h2>
     <div class="row">
-      @for (int i = 0; i < Model.PhaseReception.Count; i++)
+      @{ var i = 0; }
+      @foreach (var phase in Model.PhaseReceptions)
       {
-        <div class="col-lg-3 mb-4">
+        <div class="col-lg-6 mb-4">
           <div class="info-card h-100">
-            <div class="number-badge">@((i + 1).ToString())</div>
-            <h3>@Model.PhaseReception[i]</h3>
+            
+              <h3><span class="number-badge">@(++i)</span>@phase.Title</h3>
+              <p>@phase.Text</p>
+            </div>
           </div>
-        </div>
       }
     </div>
   </div></section>

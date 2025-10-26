@@ -6,7 +6,7 @@ public sealed record DossierSsiPage(
     HeroBlock Hero,
     string IntroText,
     string NormeText,
-    List<string> PhaseReception,   // Vérification/Essais/Formation/Dossier
+    List<PhaseReception> PhaseReceptions,   // Vérification/Essais/Formation/Dossier
     string ObligationText,
     string BureauEtudesText,
     List<string> CcfPoints,        // ex: Catégorie SSI, corrélations, AES/APS, DCT/DAS, réception
@@ -15,3 +15,5 @@ public sealed record DossierSsiPage(
     List<string> Cities,
     CtaBlock Cta
 );
+
+public sealed record PhaseReception(string Title, string Text);
