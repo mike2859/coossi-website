@@ -66,13 +66,41 @@ var rewrite = new RewriteOptions()
 app.UseRewriter(rewrite);
 
 // Legacy /prestation/{id}
-app.MapGet("/prestation/{id:int}", async (int id, IPrestationIndex idx) =>
+//app.MapGet("/prestation/{id:int}", async (int id, IPrestationIndex idx) =>
+//{
+//    var slug = await idx.GetSlugByIdAsync(id);
+//    return slug is null
+//        ? Results.NotFound()
+//        : Results.Redirect($"/prestation/{slug}", permanent: true);
+//});
+
+
+app.MapGet("/prestation/{id:int}", (int id) =>
 {
-    var slug = await idx.GetSlugByIdAsync(id);
-    return slug is null
-        ? Results.NotFound()
-        : Results.Redirect($"/prestation/{slug}", permanent: true);
+    // Table de correspondance ancienne ID -> nouveau slug
+    var redirects = new Dictionary<int, string>
+    {
+        // À adapter selon ton ancien site
+        // Exemples à titre indicatif :
+        { 5, "coordination-ssi" },
+        { 6, "creation-dossier-ssi" },
+        { 7, "audit-diagnostic" },
+        { 8, "duerp" },
+        { 9, "notice-securite-accessibilite" },
+        { 10, "signaletique" },
+        { 11, "assistance-moe" },
+        { 12, "responsable-unique-securite" }
+    };
+
+    if (!redirects.TryGetValue(id, out var slug))
+    {
+        return Results.NotFound();
+    }
+
+    // redirection permanente (301) pour le SEO
+    return Results.Redirect($"/prestation/{slug}", permanent: true);
 });
+
 /*
 app.MapGet("/prestation/{id:int}", async (int id, IPrestationIndex store) =>
 {

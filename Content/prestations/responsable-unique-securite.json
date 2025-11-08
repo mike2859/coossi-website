@@ -1,108 +1,195 @@
 {
+  "slug": "responsable-unique-securite",
+
   "seo": {
     "metaTitle": "Responsable Unique de Sécurité (RUS) | COOSSI",
-    "metaDescription": "COOSSI assure le rôle de RUS pour les groupements d’ERP (Article R.123-21 CCH). Méthodologie, missions et avantages."
+    "metaDescription": "COOSSI assure le rôle de Responsable Unique de Sécurité (RUS) pour les groupements d’ERP, conformément à l'article R.123-21 du CCH. Méthodologie, missions et avantages.",
+    "ogImage": "images/og-prestations.webp"
   },
+
   "hero": {
     "icon": "fas fa-user-shield",
     "title": "Responsable Unique de Sécurité (RUS)",
-    "subtitle": "Direction unique pour groupements d’ERP – Art. R.123-21 CCH"
+    "subtitle": "Direction unique pour groupements d’ERP – Article R.123-21 du CCH"
   },
-  "sections": [
-    {
-      "type": "highlight",
-      "title": "Depuis 2021",
-      "text": "COOSSI propose la prestation de Responsable Unique de Sécurité (R.U.S.)."
-    },
-    {
-      "type": "title",
-      "text": "Qu’est-ce que le RUS ?"
-    },
-    {
-      "type": "intro",
-      "text": "Dans un ERP à exploitations multiples (ex. centre commercial), une direction unique responsable de la sécurité doit être nommée : le RUS."
-    },
-    {
-      "type": "title",
-      "text": "Cadre légal & responsabilités"
-    },
-    {
-      "type": "intro",
-      "text": "Article R.123-21 du CCH : responsabilité auprès des autorités, demandes d’autorisation et observation des conditions de sécurité."
-    },
-    {
-      "type": "highlight",
-      "title": "Engagement de responsabilité",
-      "text": "Le RUS doit démontrer les dispositions prises pour rappeler et faire respecter les obligations."
-    },
-    {
-      "type": "intro",
-      "title": "COOSSI assume ce rôle",
-      "text": "Experts SSI (ingénieurs et formateurs), nous assurons la mission avec un haut niveau d’exigence."
-    },
-    {
-      "type": "title",
-      "text": "Notre méthodologie"
-    },
-    {
-      "type": "steps",
-      "items": [
-        { "title": "Audit initial", "text": "Définition du plan d’actions – feuille de route." },
-        { "title": "Visites régulières", "text": "Fréquence adaptée à l’activité, taille et contexte." },
-        { "title": "Interlocuteur commission", "text": "Relations et échanges administratifs." }
-      ]
-    },
-    {
-      "type": "title",
-      "text": "Missions du RUS"
-    },
-    {
-      "type": "cards",
-      "items": [
-        { "title": "Demandes administratives", "bullets": ["Ouverture","Travaux","Autorités","Suivi des avis"] },
-        { "title": "Coordination sécurité", "bullets": ["Coordination exploitants","Vérification conformité","Rappel obligations","Contrôle installations"] },
-        { "title": "Documentation", "bullets": ["Registre de sécurité","Classement documents","Vérifications périodiques","Traçabilité"] },
-        { "title": "Contrôles & audits", "bullets": ["Visites régulières","Audits","Levée de réserves","Amélioration continue"] }
-      ]
-    },
-    {
-      "type": "gridCards",
-      "title": "Établissements concernés",
-      "items": [
-        { "icon": "fas fa-shopping-cart", "title": "Centres commerciaux" },
-        { "icon": "fas fa-building", "title": "Complexes multi-activités" },
-        { "icon": "fas fa-store", "title": "Galeries marchandes" }
-      ]
-    },
-    {
-      "type": "gridCards",
-      "title": "Avantages COOSSI",
-      "items": [
-        { "icon": "fas fa-award", "title": "Expertise", "text": "Ingénieurs & formateurs" },
-        { "icon": "fas fa-shield-alt", "title": "Sérénité", "text": "Délégation complète" },
-        { "icon": "fas fa-file-contract", "title": "Conformité", "text": "Réglementation maîtrisée" },
-        { "icon": "fas fa-clock", "title": "Réactivité", "text": "Suivi régulier" }
-      ]
-    },
-    {
-      "type": "contact",
-      "title": "Nous confier le rôle de RUS",
-      "text": "Échangeons sur vos besoins.",
-      "phone": "0685752775",
-      "buttonText": "Demander des informations",
-      "buttonHref": "/contact"
-    },
-    {
-      "type": "cities",
-      "title": "Zones d’intervention",
-      "items": ["Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Paris","Lyon","Marseille","Bordeaux","Toulouse","Nantes"]
-    },
-    {
-      "type": "cta",
-      "title": "Déléguez la responsabilité à des experts",
-      "text": "COOSSI prend en charge la mission de RUS.",
-      "buttonText": "Nous contacter",
-      "buttonHref": "/contact"
-    }
-  ]
+
+  "intro": {
+    "badgeText": "Depuis 2021",
+    "title": "Nouvelle compétence COOSSI",
+    "paragraphs": [
+      "Depuis le début de l'année 2021, COOSSI s'est doté de nouvelles compétences au travers de prestations de \"Responsable Unique de Sécurité\" (R.U.S.).",
+      "COOSSI vous propose d'assurer et d'assumer ce rôle, en mettant à votre service son expertise en sécurité incendie."
+    ]
+  },
+
+  "definition": {
+    "title": "Qu'est-ce que le Responsable Unique de Sécurité ?",
+    "paragraphs": [
+      "Dans un établissement recevant du public (ERP) constitué de plusieurs exploitations, comme par exemple un centre commercial, une direction responsable de la sécurité incendie doit être nommée. Elle assume l'entière responsabilité de la sécurité des personnes accueillies.",
+      "Cette direction est dirigée et coordonnée par une seule personne : le Responsable Unique de Sécurité (R.U.S.)."
+    ]
+  },
+
+  "legal": {
+    "title": "Cadre légal & responsabilités",
+    "articleTitle": "Article R.123-21 du Code de la Construction et de l'Habitation",
+    "articleText": "En application de l'article R.123-21 du Code de la Construction et de l'Habitation (CCH), le RUS est responsable auprès des autorités publiques des demandes d'autorisation et de l'observation des conditions de sécurité relatives aux risques d'incendie et de panique tant pour l'ensemble des exploitations du groupement que pour chacune d'entre elles.",
+    "highlightTitle": "Engagement de responsabilité",
+    "highlightText": "La responsabilité du RUS pourra être engagée s'il ne peut pas démontrer qu'il a pris toutes les dispositions nécessaires en vue de rappeler aux exploitants leurs obligations et de s'assurer de leur respect."
+  },
+
+  "coossiRole": {
+    "title": "COOSSI assume ce rôle",
+    "text": "COOSSI vous propose d'assurer et d'assumer le rôle de Responsable Unique de Sécurité. En tant qu'experts de la sécurité incendie (ingénieurs et formateurs), nous vous garantissons une prestation de qualité, conforme à la réglementation et adaptée aux spécificités de votre groupement d'ERP."
+  },
+
+  "methodology": {
+    "title": "Notre méthodologie",
+    "steps": [
+      {
+        "icon": "fas fa-clipboard-check",
+        "title": "1. Audit initial",
+        "text": "Un premier audit est réalisé afin de définir un plan d'actions qui sera la feuille de route de la mission RUS."
+      },
+      {
+        "icon": "fas fa-calendar-check",
+        "title": "2. Visites régulières",
+        "text": "Les visites sont assurées régulièrement, à une fréquence dépendant de l'activité de l'établissement, de sa taille et de la situation sécuritaire."
+      },
+      {
+        "icon": "fas fa-handshake",
+        "title": "3. Interlocuteur Commission de Sécurité",
+        "text": "COOSSI devient l'interlocuteur de la Commission de sécurité et assure la relation avec elle, lors des visites comme dans les échanges administratifs."
+      }
+    ]
+  },
+
+  "missions": {
+    "title": "Missions du Responsable Unique de Sécurité",
+    "cards": [
+      {
+        "icon": "fas fa-file-signature",
+        "title": "Demandes administratives",
+        "bullets": [
+          "Demandes d'autorisation d'ouverture",
+          "Autorisations de travaux",
+          "Relations avec les autorités",
+          "Suivi des avis de commission"
+        ]
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "Coordination sécurité",
+        "bullets": [
+          "Coordination des exploitants",
+          "Vérification de la conformité",
+          "Rappel des obligations",
+          "Contrôle des installations"
+        ]
+      },
+      {
+        "icon": "fas fa-book",
+        "title": "Documentation",
+        "bullets": [
+          "Tenue du registre de sécurité",
+          "Classement des documents",
+          "Suivi des vérifications périodiques",
+          "Traçabilité des actions"
+        ]
+      },
+      {
+        "icon": "fas fa-search",
+        "title": "Contrôles & audits",
+        "bullets": [
+          "Visites de contrôle régulières",
+          "Audits de conformité",
+          "Levée de réserves",
+          "Plans d'amélioration"
+        ]
+      }
+    ]
+  },
+
+  "establishments": {
+    "title": "Établissements concernés",
+    "items": [
+      {
+        "icon": "fas fa-shopping-cart",
+        "title": "Centres commerciaux",
+        "text": "Plusieurs exploitations commerciales dans un même ensemble."
+      },
+      {
+        "icon": "fas fa-building",
+        "title": "Complexes multi-activités",
+        "text": "Différentes activités regroupées dans un même bâtiment."
+      },
+      {
+        "icon": "fas fa-store",
+        "title": "Galeries marchandes",
+        "text": "Ensemble de boutiques au sein d'un même site."
+      }
+    ]
+  },
+
+  "advantages": {
+    "title": "Avantages de faire appel à COOSSI",
+    "items": [
+      {
+        "icon": "fas fa-award",
+        "title": "Expertise",
+        "text": "Ingénieurs et formateurs spécialisés en sécurité incendie."
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "Sérénité",
+        "text": "Délégation complète de la mission de RUS."
+      },
+      {
+        "icon": "fas fa-file-contract",
+        "title": "Conformité",
+        "text": "Maîtrise de la réglementation et des exigences des autorités."
+      },
+      {
+        "icon": "fas fa-clock",
+        "title": "Réactivité",
+        "text": "Disponibilité et suivi régulier de votre site."
+      }
+    ]
+  },
+
+  "contactBlock": {
+    "title": "Nous confier le rôle de RUS",
+    "text": "Contactez COOSSI pour discuter de la mise en place d'un Responsable Unique de Sécurité pour votre groupement d'ERP.",
+    "phoneDisplay": "06.85.75.27.75",
+    "phoneHref": "tel:0685752775",
+    "buttonText": "Demander des informations",
+    "buttonHref": "/contact"
+  },
+
+  "citiesIntro": "COOSSI assure la mission de Responsable Unique de Sécurité près de Valenciennes et partout en France",
+  "cities": [
+    "Valenciennes",
+    "Lille",
+    "Roubaix",
+    "Tourcoing",
+    "Dunkerque",
+    "Maubeuge",
+    "Lens",
+    "Arras",
+    "Cambrai",
+    "Amiens",
+    "Paris",
+    "Lyon",
+    "Marseille",
+    "Bordeaux",
+    "Toulouse",
+    "Nantes"
+  ],
+
+  "cta": {
+    "title": "Déléguez la Responsabilité Unique de Sécurité à des Experts",
+    "text": "COOSSI assure le rôle de RUS pour votre groupement d'ERP en conformité avec la réglementation.",
+    "buttonText": "Nous contacter",
+    "buttonHref": "/contact"
+  }
 }

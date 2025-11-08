@@ -1,102 +1,143 @@
 {
+  "slug": "assistance-moe",
   "seo": {
     "metaTitle": "Assistance Maîtrise d'Ouvrage SSI | COOSSI Valenciennes",
-    "metaDescription": "COOSSI accompagne les maîtres d'ouvrage en conception et réalisation du SSI. Qualification SSIAP3 depuis 2012."
+    "metaDescription": "COOSSI assiste les maîtres d'ouvrage en phase de conception et réalisation du SSI. Bureau d'études spécialisé près de Valenciennes. Qualification SSIAP3 depuis 2012.",
+    "ogImage": "images/og-prestations.webp"
   },
   "hero": {
     "icon": "fas fa-hands-helping",
     "title": "Assistance à Maîtrise d'Ouvrage SSI",
-    "subtitle": "Accompagnement expert de la conception à la réception"
+    "subtitle": "Accompagnement expert en phase de conception et réalisation pour garantir la conformité"
   },
-  "sections": [
-    {
-      "type": "intro",
-      "title": "Mission d’Assistance",
-      "text": "COOSSI assiste la maîtrise d'œuvre et le maître d’ouvrage lors de la réalisation du SSI : conseils, cadrage, conformité."
-    },
-    {
-      "type": "title",
-      "text": "Missions du Coordinateur SSI"
-    },
-    {
-      "type": "cards",
-      "items": [
-        { "icon": "fas fa-users", "title": "Réunions Techniques", "text": "Animation des réunions SSI." },
-        { "icon": "fas fa-question-circle", "title": "Réponse aux Questions", "text": "Soutien à tous les intervenants." },
-        { "icon": "fas fa-table", "title": "Tableaux de Corrélation", "text": "Définition des dispositifs actionnés." }
-      ]
-    },
-    {
-      "type": "title",
-      "text": "Suivi de Travaux (Réalisation)"
-    },
-    {
-      "type": "highlight",
-      "title": "PHASE RÉALISATION",
-      "text": "Mises au point techniques, interfaces entre équipements, suivi terrain et conformité."
-    },
-    {
-      "type": "bullets",
-      "intro": "Interventions à tous les niveaux :",
-      "items": [
-        "Visites de chantier et suivi des prestations",
-        "Collecte des fiches d’essais et PV",
-        "Avis & comptes rendus au MOA",
-        "Mise en conformité accessibilité en cas d’incendie"
-      ]
-    },
-    {
-      "type": "title",
-      "text": "Bureau d’Études en SSI"
-    },
-    {
-      "type": "highlight",
-      "title": "Qualifié SSIAP3 depuis 2012",
-      "text": "Prestations partout en France, respect des normes et solutions personnalisées."
-    },
-    {
-      "type": "title",
-      "text": "Nos Expertises"
-    },
-    {
-      "type": "gridCards",
-      "items": [
-        { "icon": "fas fa-building", "title": "ERP", "text": "Établissements recevant du public" },
-        { "icon": "fas fa-city", "title": "IGH", "text": "Immeubles de grande hauteur" },
-        { "icon": "fas fa-industry", "title": "ERT & Spéciaux", "text": "Établissements industriels et spéciaux" }
-      ]
-    },
-    {
-      "type": "title",
-      "text": "Plans & Documentation"
-    },
-    {
-      "type": "bullets",
-      "items": [
-        "Plans d’implantation SDI",
-        "Plans SMSI",
-        "Synoptiques"
-      ]
-    },
-    {
-      "type": "contact",
-      "title": "Nous joindre",
-      "text": "Rendez-vous et informations.",
-      "phone": "0685752775",
-      "buttonText": "Contacter Jean LEBLANC",
-      "buttonHref": "/contact"
-    },
-    {
-      "type": "cities",
-      "title": "Nos Zones d’Intervention",
-      "items": ["Valenciennes","Lille","Roubaix","Tourcoing","Dunkerque","Maubeuge","Lens","Arras","Cambrai","Amiens","Paris","Lyon","Marseille","Bordeaux","Toulouse","Nantes"]
-    },
-    {
-      "type": "cta",
-      "title": "Besoin d’une AMO SSI ?",
-      "text": "On vous accompagne sur toutes les phases.",
-      "buttonText": "Contact direct",
-      "buttonHref": "/contact"
-    }
-  ]
+
+  "mission": {
+    "title": "Mission d'Assistance",
+    "paragraphs": [
+      "Au moment de la construction d'un établissement, et plus précisément dans la phase de réalisation du SSI, le coordinateur en système de sécurité incendie doit assister la maîtrise d'œuvre.",
+      "La société COOSSI met son expertise au service des maîtres d'ouvrages pour accompagner la phase de conception du SSI et garantir la mise en conformité du bâtiment avec les normes en vigueur.",
+      "Pour faire appel à un professionnel de la coordination SSI en phase de conception, contactez Jean LEBLANC au 06.85.75.27.75."
+    ]
+  },
+
+  "missionsCoordinateur": {
+    "title": "Missions du Coordinateur SSI",
+    "intro": "Lorsqu'il assiste le maître d'ouvrage, le coordinateur SSI a plusieurs missions :",
+    "cards": [
+      {
+        "icon": "fas fa-users",
+        "title": "Réunions Techniques",
+        "text": "Animer des réunions techniques concernant le SSI."
+      },
+      {
+        "icon": "fas fa-question-circle",
+        "title": "Réponse aux Questions",
+        "text": "Répondre aux interrogations des différents intervenants sur le SSI."
+      },
+      {
+        "icon": "fas fa-table",
+        "title": "Tableaux de Corrélation",
+        "text": "Créer des tableaux de corrélation des divers dispositifs actionnés."
+      }
+    ]
+  },
+
+  "realisation": {
+    "title": "Suivi de Travaux en Phase de Réalisation",
+    "badge": "PHASE RÉALISATION",
+    "intro": "La société se charge d'effectuer les missions de suivi de travaux en phase de réalisation, à savoir assurer les mises au point techniques avec les entreprises concernées, d'une part pour les équipements constitutifs du SSI, et d'autre part pour le traitement de l'interface entre les différents équipements installés.",
+    "subTitle": "Interventions à Tous les Niveaux",
+    "subText": "Mais ses missions ne s'arrêtent pas qu'aux équipements puisque le coordinateur intervient à tous les niveaux :",
+    "bullets": [
+      "Visiter le chantier et suivre les prestations en temps réel",
+      "Collecter les fiches d'essais fonctionnels et les procès-verbaux de conformité des matériels installés",
+      "Adresser les avis et comptes rendus des réunions techniques au maître d'ouvrage",
+      "Assurer la mise en conformité des systèmes d'accessibilité en cas d'incendie"
+    ]
+  },
+
+  "bureauEtudes": {
+    "title": "Bureau d'Études en SSI",
+    "badge": "Qualifié SSIAP3 depuis 2012",
+    "text": "Vous recherchez un bureau d'études en Système de Sécurité Incendie (SSI) ? COOSSI intervient en tant que prestataire de services auprès des Maîtres d'œuvre et Maîtres d'Ouvrages autour de Valenciennes mais aussi partout en France. La société agit dans le respect des normes en matière de sécurité incendie et son objectif est de vous apporter une solution personnalisée pour protéger les personnes et les biens au sein de votre établissement."
+  },
+
+  "expertises": {
+    "title": "Nos Expertises",
+    "intro": "Vous prévoyez la construction d'un établissement recevant du public ? La société COOSSI est qualifiée niveau SSIAP3 depuis 2012 et vous offre les meilleurs conseils en termes de sécurité incendie et d'accessibilité en phase de conception. Jean LEBLANC travaille sur tous types de projets :",
+    "items": [
+      {
+        "icon": "fas fa-building",
+        "title": "ERP",
+        "text": "Établissements Recevant du Public"
+      },
+      {
+        "icon": "fas fa-city",
+        "title": "IGH",
+        "text": "Immeubles de Grande Hauteur"
+      },
+      {
+        "icon": "fas fa-industry",
+        "title": "ERT & Spéciaux",
+        "text": "Établissements industriels et spéciaux"
+      }
+    ]
+  },
+
+  "plansDocs": {
+    "title": "Plans & Documentation Technique",
+    "intro": "La société COOSSI est aussi en mesure de fournir :",
+    "items": [
+      "Plans d'implantation pour Système de Détection Incendie (SDI)",
+      "Plans de Système de Management de la Sécurité de l'Information (SMSI)",
+      "Synoptiques"
+    ],
+    "closingText": "Contactez le 06.85.75.27.75 pour prendre rendez-vous ou pour obtenir davantage d'informations."
+  },
+
+  "doe": {
+    "title": "D.O.E. - Dossier des Ouvrages Exécutés",
+    "intro": "Le Dossier d'Ouvrages Exécutés est un document établi à l'achèvement des travaux de construction ou de réhabilitation ou de mises aux normes en sécurité incendie qui doit être remis au Maître d'Ouvrage.",
+    "highlightTitle": "Utilité du D.O.E.",
+    "highlightLead": "Généralement intégré dans la mission du Maître d'Oeuvre ou de l'assistant à Maîtrise d'Ouvrage, le D.O.E. retrace l'ensemble des travaux réalisés sur l'ouvrage.",
+    "highlightText": "Destiné à tous les propriétaires et exploitants successifs, il permet de faciliter l'entretien et la maintenance du bien par la compréhension de sa construction, de ses composants et de son fonctionnement, c'est pourquoi il doit comporter un ensemble d'informations indispensables.",
+    "outro": "À la fin du chantier, le Maître d'Ouvrage effectue la réception des travaux et constate leur bonne exécution. Ces travaux réalisés doivent être retranscrits dans le Dossier des Ouvrages Exécutés.",
+    "note": "Nota Bene : Selon que le projet de construction relève du droit public ou du droit privé, sa constitution et sa remise se traitent différemment."
+  },
+
+  "contact": {
+    "title": "Nous joindre",
+    "text": "Pour toute demande d'assistance à maîtrise d'ouvrage SSI, de la conception à la réception.",
+    "phoneDisplay": "06.85.75.27.75",
+    "phoneHref": "tel:0685752775",
+    "buttonText": "Contacter Jean LEBLANC",
+    "buttonHref": "/contact"
+  },
+
+  "citiesIntro": "COOSSI accompagne vos projets SSI près de Valenciennes et partout en France",
+  "cities": [
+    "Valenciennes",
+    "Lille",
+    "Roubaix",
+    "Tourcoing",
+    "Dunkerque",
+    "Maubeuge",
+    "Lens",
+    "Arras",
+    "Cambrai",
+    "Amiens",
+    "Paris",
+    "Lyon",
+    "Marseille",
+    "Bordeaux",
+    "Toulouse",
+    "Nantes"
+  ],
+
+  "cta": {
+    "title": "Besoin d'une Assistance à Maîtrise d'Ouvrage ?",
+    "text": "COOSSI vous accompagne dans toutes les phases de votre projet SSI, de la conception à la réception.",
+    "buttonText": "Parler de votre projet",
+    "buttonHref": "/contact"
+  }
 }

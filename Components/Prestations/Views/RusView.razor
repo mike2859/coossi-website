@@ -16,64 +16,207 @@
 @if (Model is null) { <section class="content-section"><div class="container">Chargement…</div></section> }
 else {
   <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
-  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+  @* <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" /> *@
 
-  <section class="content-section"><div class="container"><div class="info-card highlight-box">
-    <h3>Depuis 2021</h3><p>@Model.SinceText</p>
-  </div></div></section>
+    <!-- HERO -->
+    <section class="hero-section" style="margin-top:76px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <h1 class="display-5 fw-bold mb-2">
+                        <i class="@Model.Hero.Icon me-2"></i>@Model.Hero.Title
+                    </h1>
+                    <p class="lead mb-0">@Model.Hero.Subtitle</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="content-section"><div class="container"><div class="info-card"><h2 class="section-title">Qu’est-ce que le RUS ?</h2><p>@Model.QuEstCeQueText</p></div></div></section>
+    <!-- CONTENU PRINCIPAL -->
+    <section class="content-section">
+        <div class="container">
+            <!-- INTRO / BADGE Depuis 2021 -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="info-card">
+                        <span class="badge-year">
+                            <i class="fas fa-calendar-alt me-1"></i>@Model.Intro.BadgeText
+                        </span>
+                        <h3><i class="fas fa-info-circle me-2"></i>@Model.Intro.Title</h3>
+                        @foreach (var p in Model.Intro.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><div class="info-card"><h2 class="section-title">Cadre légal & responsabilités</h2><p>@Model.CadreLegalText</p></div></div></section>
+            <!-- QU'EST-CE QUE LE RUS -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Definition.Title</h2>
+                    <div class="info-card">
+                        @foreach (var p in Model.Definition.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><div class="info-card highlight-box">
-    <h3>Engagement de responsabilité</h3><p>@Model.EngagementText</p>
-  </div></div></section>
+            <!-- CADRE LÉGAL -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Legal.Title</h2>
+                    <div class="info-card">
+                        <h3><i class="fas fa-balance-scale me-2"></i>@Model.Legal.ArticleTitle</h3>
+                        <p>@Model.Legal.ArticleText</p>
 
-  <section class="content-section"><div class="container"><div class="info-card"><h2 class="section-title">COOSSI assume ce rôle</h2><p>@Model.CoossiRoleText</p></div></div></section>
+                        <div class="highlight-box mt-4">
+                            <h4><i class="fas fa-exclamation-triangle me-2"></i>@Model.Legal.HighlightTitle</h4>
+                            <p class="mb-0">@Model.Legal.HighlightText</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Notre méthodologie</h2>
-    <div class="row">@for (int i=0;i<Model.Methodologie.Count;i++){
-      var it = Model.Methodologie[i];
-      <div class="col-lg-4 mb-4"><div class="info-card h-100"><div class="number-badge">@((i+1).ToString())</div>
-        <h3>@it.Title</h3>@if (!string.IsNullOrWhiteSpace(it.Text)){<p>@it.Text</p>}
-      </div></div> }
-    </div>
-  </div></section>
+            <!-- COOSSI ASSUME CE RÔLE -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.CoossiRole.Title</h2>
+                    <div class="info-card">
+                        <p class="mb-0">@Model.CoossiRole.Text</p>
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Missions du RUS</h2>
-    <div class="row">@foreach (var m in Model.Missions){
-      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>@m.Title</h3>
-        @if (m.Bullets is {Count:>0}){ <ul>@foreach (var b in m.Bullets!){ <li>@b</li> }</ul> }
-      </div></div> }
-    </div>
-  </div></section>
+            <!-- MÉTHODOLOGIE -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Methodology.Title</h2>
+                    <div class="row">
+                        @foreach (var step in Model.Methodology.Steps)
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card h-100">
+                                    <h3><i class="@step.Icon me-2"></i>@step.Title</h3>
+                                    <p class="mb-0">@step.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Établissements concernés</h2>
-    <div class="row">@foreach (var e in Model.Etablissements){
-      <div class="col-lg-4 mb-4"><div class="info-card h-100 text-center">
-        @if (!string.IsNullOrWhiteSpace(e.Icon)) { <i class="fas @e.Icon fa-3x mb-2" style="color:var(--primary-color);"></i> }
-        <h3>@e.Title</h3>@if (!string.IsNullOrWhiteSpace(e.Text)){<p>@e.Text</p>}
-      </div></div> }
-    </div>
-  </div></section>
+            <!-- MISSIONS DU RUS -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Missions.Title</h2>
+                    <div class="row">
+                        @foreach (var card in Model.Missions.Cards)
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card h-100">
+                                    <h3><i class="@card.Icon me-2"></i>@card.Title</h3>
+                                    <ul>
+                                        @foreach (var b in card.Bullets)
+                                        {
+                                            <li>@b</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Avantages de faire appel à COOSSI</h2>
-    <div class="row">@foreach (var a in Model.Avantages){
-      <div class="col-lg-3 mb-4"><div class="info-card h-100 text-center">
-        @if (!string.IsNullOrWhiteSpace(a.Icon)) { <i class="fas @a.Icon fa-2x mb-2" style="color:var(--primary-color);"></i> }
-        <h3>@a.Title</h3>@if (!string.IsNullOrWhiteSpace(a.Text)){<p>@a.Text</p>}
-      </div></div> }
-    </div>
-  </div></section>
+            <!-- ÉTABLISSEMENTS CONCERNÉS -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Establishments.Title</h2>
+                    <div class="info-card">
+                        <p>Le Responsable Unique de Sécurité est obligatoire pour les groupements d'ERP comprenant&nbsp;:</p>
+                        <div class="row mt-4">
+                            @foreach (var e in Model.Establishments.Items)
+                            {
+                                <div class="col-lg-4 mb-3">
+                                    <div class="text-center p-3" style="background-color:#f8f9fa;border-radius:10px;">
+                                        <i class="@e.Icon fa-2x mb-2" style="color:var(--primary);"></i>
+                                        <h5>@e.Title</h5>
+                                        <p class="small mb-0">@e.Text</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><div class="info-card text-center">
-    <h3>Nous confier le rôle de RUS</h3><p>@Model.ContactText</p><a class="btn-primary-custom" href="/contact">Demander des informations</a>
-  </div></div></section>
+            <!-- AVANTAGES -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Advantages.Title</h2>
+                    <div class="row">
+                        @foreach (var adv in Model.Advantages.Items)
+                        {
+                            <div class="col-lg-3 mb-4">
+                                <div class="info-card text-center h-100">
+                                    <i class="@adv.Icon fa-3x mb-3" style="color:var(--primary);"></i>
+                                    <h4>@adv.Title</h4>
+                                    <p class="mb-0">@adv.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Zones d’intervention</h2><div class="city-links">
-    @foreach (var c in Model.Cities) { <a>@c</a> }
-  </div></div></section>
+            <!-- CONTACT -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="info-card text-center">
+                        <h3><i class="fas fa-phone-alt me-2"></i>@Model.ContactBlock.Title</h3>
+                        <p>@Model.ContactBlock.Text</p>
+                        <p class="mb-4">
+                            <strong>Téléphone :</strong>
+                            <a href="@Model.ContactBlock.PhoneHref"
+                               style="color:var(--primary);font-weight:bold;font-size:1.3rem;">
+                                @Model.ContactBlock.PhoneDisplay
+                            </a>
+                        </p>
+                        <a href="@Model.ContactBlock.ButtonHref" class="btn-custom">
+                            <i class="fas fa-envelope me-2"></i>@Model.ContactBlock.ButtonText
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+            <!-- ZONES D'INTERVENTION -->
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <h2 class="section-title">Nos zones d'intervention</h2>
+                    <p>@Model.CitiesIntro</p>
+                    <div class="city-links">
+                        @foreach (var city in Model.Cities)
+                        {
+                            <a href="#">@city</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">@Model.Cta.Title</h2>
+            <p class="mb-4">@Model.Cta.Text</p>
+            <a href="@Model.Cta.ButtonHref" class="btn-custom">
+                <i class="fas fa-user-check me-2"></i>@Model.Cta.ButtonText
+            </a>
+        </div>
+    </section>
+  @* <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" /> *@
 }

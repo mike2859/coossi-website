@@ -1,3 +1,4 @@
+@using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @using Coossi.Blazor.Data.Models.Prestations
@@ -5,83 +6,287 @@
 @inject NavigationManager Nav
 
 @code {
-  [Parameter] public string Slug { get; set; } = "";
-  private SignaletiquePage? Model;
-  protected override async Task OnParametersSetAsync()
-    => Model = await Content.GetAsync<SignaletiquePage>($"prestations/{Slug}");
-  string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
+    [Parameter] public string Slug { get; set; } = "";
+    private SignaletiquePage? Model;
+    protected override async Task OnParametersSetAsync()
+      => Model = await Content.GetAsync<SignaletiquePage>($"prestations/{Slug}");
+    string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
 }
 
-@if (Model is null) { <section class="content-section"><div class="container">Chargement…</div></section> }
-else {
-  <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
-  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
-
-  <section class="content-section"><div class="container">
-    <div class="info-card"><h2 class="section-title">L’importance de la signalétique</h2><p>@Model.ImportanceText</p></div>
-    <div class="info-card mt-4"><h3>Conformité aux normes</h3><p>@Model.ConformiteText</p></div>
-  </div></section>
-
-  @* Exemples de familles en grille 2×2 *@
-  @renderCards("Plans d’évacuation", Model.PlansEvacuation)
-  @renderCards("Panneaux directionnels", Model.Directionnels)
-  @renderCards("Signalisation des équipements", Model.Equipements)
-  @renderCards("Panneaux d’interdiction", Model.Interdictions)
-  @renderCards("Consignes de sécurité", Model.Consignes)
-  @renderCards("Balisage lumineux", Model.Balisage)
-
-  <section class="content-section"><div class="container"><h2 class="section-title">Pictogrammes principaux</h2>
-    <div class="row">@foreach (var p in Model.Pictos){
-      <div class="col-lg-3 col-md-4 mb-4"><div class="info-card h-100 text-center">
-        @if (!string.IsNullOrWhiteSpace(p.Icon)) { <i class="fas @p.Icon fa-2x mb-2" style="color:var(--primary-color);"></i> }
-        <h4 class="mb-0">@p.Title</h4>
-      </div></div> }
-    </div>
-  </div></section>
-
-  <section class="content-section"><div class="container"><h2 class="section-title">Matériaux & supports</h2>
-    <div class="row">@foreach (var m in Model.MateriauxSupports){
-      <div class="col-lg-4 mb-4"><div class="info-card h-100"><h3>@m.Title</h3>@if (!string.IsNullOrWhiteSpace(m.Text)){<p>@m.Text</p>}</div></div>
-    }</div>
-  </div></section>
-
-  <section class="content-section"><div class="container">
-    <div class="row">
-      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>Étude & conception</h3><p>@Model.EtudeConceptionText</p></div></div>
-      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>Réalisation & pose</h3><p>@Model.RealisationPoseText</p></div></div>
-    </div>
-  </div></section>
-
-  <section class="content-section"><div class="container"><div class="info-card">
-    <h2 class="section-title">Établissements concernés</h2><ul>@foreach (var e in Model.Etablissements){ <li>@e</li> }</ul>
-  </div></div></section>
-
-  <section class="content-section"><div class="container"><h2 class="section-title">Zones d’intervention</h2><div class="city-links">
-    @foreach (var c in Model.Cities) { <a>@c</a> }
-  </div></div></section>
-
-  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+@if (Model is null)
+{
+    <section class="content-section"><div class="container">Chargement…</div></section>
 }
+else
+{
+    <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
+    @* <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" /> *@
 
-@code {
-  RenderFragment renderCards(string title, List<SigCard> items) => __builder =>
-  {
-    if (items is null || items.Count == 0) return;
-    __builder.AddMarkupContent(0, $@"<section class=""content-section""><div class=""container""><h2 class=""section-title"">{title}</h2><div class=""row"">");
-    var seq = 1;
-    foreach (var it in items)
-    {
-        __builder.AddMarkupContent(seq++, @"<div class=""col-lg-6 mb-4""><div class=""info-card h-100"">");
-        __builder.AddMarkupContent(seq++, $"<h3>{it.Title}</h3>");
-        if (!string.IsNullOrWhiteSpace(it.Text)) __builder.AddMarkupContent(seq++, $"<p>{it.Text}</p>");
-        if (it.Bullets is { Count: > 0 })
-        {
-            __builder.AddMarkupContent(seq++, "<ul>");
-            foreach (var b in it.Bullets) __builder.AddMarkupContent(seq++, $"<li>{b}</li>");
-            __builder.AddMarkupContent(seq++, "</ul>");
-        }
-        __builder.AddMarkupContent(seq++, "</div></div>");
-    }
-    __builder.AddMarkupContent(seq++, "</div></div></section>");
-  };
+    <!-- HERO -->
+    <section class="hero-section" style="margin-top:76px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-2">
+                        <i class="@Model.Hero.Icon me-2"></i>@Model.Hero.Title
+                    </h1>
+                    <p class="lead mb-0">@Model.Hero.Subtitle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENU -->
+    <section class="content-section">
+        <div class="container">
+            <!-- INTRO -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle me-2"></i>@Model.Intro.Title</h3>
+                        @foreach (var p in Model.Intro.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- NORMES -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Normes.Title</h2>
+                    <div class="info-card">
+                        <p>@Model.Normes.Intro</p>
+                        <div class="mt-3">
+                            @foreach (var n in Model.Normes.Normes)
+                            {
+                                <span class="norm-badge">@n</span>
+                            }
+                        </div>
+                        <p class="mt-3 mb-0">@Model.Normes.Conclusion</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TYPES DE SIGNALETIQUE -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Types.Title</h2>
+
+                    <div class="row">
+                        @foreach (var t in Model.Types.Items.Take(2))
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card h-100">
+                                    <h3><i class="@t.Icon me-2"></i>@t.Title</h3>
+                                    <ul>
+                                        @foreach (var b in t.Bullets)
+                                        {
+                                            <li>@b</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="row">
+                        @foreach (var t in Model.Types.Items.Skip(2).Take(2))
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card h-100">
+                                    <h3><i class="@t.Icon me-2"></i>@t.Title</h3>
+                                    <ul>
+                                        @foreach (var b in t.Bullets)
+                                        {
+                                            <li>@b</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="row">
+                        @foreach (var t in Model.Types.Items.Skip(4).Take(2))
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card h-100">
+                                    <h3><i class="@t.Icon me-2"></i>@t.Title</h3>
+                                    <ul>
+                                        @foreach (var b in t.Bullets)
+                                        {
+                                            <li>@b</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- PICTOGRAMMES -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Pictos.Title</h2>
+                    <div class="row">
+                        @foreach (var pic in Model.Pictos.Items)
+                        {
+                            <div class="col-lg-3 col-md-4 col-6 mb-4">
+                                <div class="picto-box">
+                                    <div class="picto-icon" style="color:@pic.Color">
+                                        <i class="@pic.Icon"></i>
+                                    </div>
+                                    <h5>@pic.Label</h5>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- MATERIAUX & SUPPORTS -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Materiaux.Title</h2>
+                    <div class="row">
+                        @foreach (var m in Model.Materiaux.Items)
+                        {
+                            <div class="col-lg-4 mb-4">
+                                <div class="info-card text-center h-100">
+                                    <i class="@m.Icon fa-3x mb-3" style="color:var(--primary);"></i>
+                                    <h3>@m.Title</h3>
+                                    <p class="mb-0">@m.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRESTATION COMPLETE -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Prestation.Title</h2>
+                    <div class="info-card">
+                        <h3><i class="fas fa-tasks me-2"></i>@Model.Prestation.Subtitle</h3>
+                        <div class="row mt-4">
+                            <div class="col-lg-6">
+                                <h4>@Model.Prestation.Etude.Title</h4>
+                                <ul>
+                                    @foreach (var b in Model.Prestation.Etude.Bullets)
+                                    {
+                                        <li>@b</li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <h4>@Model.Prestation.Realisation.Title</h4>
+                                <ul>
+                                    @foreach (var b in Model.Prestation.Realisation.Bullets)
+                                    {
+                                        <li>@b</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETABLISSEMENTS -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Establishments.Title</h2>
+                    <div class="row">
+                        @foreach (var e in Model.Establishments.Items)
+                        {
+                            <div class="col-lg-3 col-md-6 mb-4">
+                                <div class="info-card text-center h-100">
+                                    <i class="@e.Icon fa-2x mb-3" style="color:var(--primary);"></i>
+                                    <h4>@e.Title</h4>
+                                    <p class="small mb-0">@e.Small</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- AVANTAGES -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-check-circle me-2"></i>@Model.Avantages.Title</h4>
+                        <div class="row mt-3">
+                            <div class="col-lg-6">
+                                <ul>
+                                    @foreach (var b in Model.Avantages.LeftBullets)
+                                    {
+                                        <li>@b</li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    @foreach (var b in Model.Avantages.RightBullets)
+                                    {
+                                        <li>@b</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="info-card text-center">
+                        <h3><i class="fas fa-phone-alt me-2"></i>@Model.Contact.Title</h3>
+                        <p>@Model.Contact.Text</p>
+                        <p class="mb-4">
+                            <strong>Téléphone :</strong>
+                            <a href="@Model.Contact.PhoneHref"
+                               style="color:var(--primary);font-weight:bold;font-size:1.3rem;">
+                                @Model.Contact.PhoneDisplay
+                            </a>
+                        </p>
+                        <a href="@Model.Contact.ButtonHref" class="btn-primary-custom">
+                            <i class="fas fa-envelope me-2"></i>@Model.Contact.ButtonText
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZONES D'INTERVENTION -->
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">Nos Zones d'Intervention</h2>
+                    <p>@Model.CitiesIntro</p>
+                    <div class="city-links">
+                        @foreach (var city in Model.Cities)
+                        {
+                            <a href="#">@city</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">@Model.Cta.Title</h2>
+            <p class="mb-4">@Model.Cta.Text</p>
+            <a href="@Model.Cta.ButtonHref" class="btn-primary-custom">
+                <i class="fas fa-signs-post me-2"></i>@Model.Cta.ButtonText
+            </a>
+        </div>
+    </section>
+
 }

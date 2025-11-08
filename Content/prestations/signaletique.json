@@ -1,83 +1,287 @@
 {
-  "Id": 27,
-  "Slug": "signaletique",
-  "MetaTitle": "Signalétique de Sécurité Incendie – COOSSI",
-  "MetaDescription": "Conception et installation de signalétique conforme ISO 7010. Plans d'évacuation, panneaux directionnels, pictogrammes. Matériaux professionnels.",
-  "OgImage": "images/og-prestations.webp",
-  "Title": "Signalétique de Sécurité Incendie",
-  "Subtitle": "Conception et installation conformes aux normes",
-  "Sections": [
-    {
-      "Kind": "html",
-      "Title": "L'Importance de la Signalétique",
-      "Html": "<div class='info-card'><h3><i class='fas fa-info-circle'></i> Élément Essentiel & Obligatoire</h3><p>La signalétique de sécurité incendie est un élément <strong>essentiel et obligatoire</strong> dans tous les ERP et IGH. Elle guide les personnes vers les issues de secours, indique l'emplacement des équipements de lutte contre l'incendie et diffuse les consignes de sécurité.</p><p>COOSSI vous accompagne dans la conception, la réalisation et l'installation d'une signalétique complète et conforme aux normes en vigueur pour votre établissement près de Valenciennes et partout en France.</p></div>"
-    },
-    {
-      "Kind": "html",
-      "Title": "Conformité aux Normes",
-      "Html": "<div class='info-card'><p>La signalétique de sécurité incendie doit respecter des normes strictes pour garantir son efficacité : <strong>ISO 7010</strong>, <strong>NF EN ISO 7010</strong>, <strong>Arrêté du 25/06/1980</strong>, <strong>Code du Travail</strong>.</p><div class='highlight-box'><h4><i class='fas fa-certificate'></i> Conformité Garantie</h4><p class='mb-0'>COOSSI s'assure que tous les panneaux et pictogrammes installés sont conformes à la réglementation française et européenne en matière de sécurité incendie.</p></div></div>"
-    },
-    {
-      "Kind": "columns2",
-      "Title": "Types de Signalétique",
-      "Columns": [
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-map-marked-alt'></i> Plans d'Évacuation</h3><ul><li>Plans personnalisés</li><li>Point 'Vous êtes ici'</li><li>Cheminements d'évacuation</li><li>Issues de secours</li><li>Points de rassemblement</li><li>Support plastifié</li></ul></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-fire-extinguisher'></i> Signalisation Équipements</h3><ul><li>Extincteurs</li><li>RIA (Robinets Incendie Armés)</li><li>Colonnes sèches/humides</li><li>Déclencheurs manuels</li><li>Téléphones d'urgence</li><li>Défibrillateurs</li></ul></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-clipboard-list'></i> Consignes</h3><ul><li>Consignes générales</li><li>Consignes en cas d'incendie</li><li>Conduite à tenir</li><li>Numéros d'urgence</li><li>Format A4/A3 plastifié</li></ul></div>"
-        ],
-        [
-          "<div class='info-card h-100'><h3><i class='fas fa-sign'></i> Panneaux Directionnels</h3><ul><li>Issues de secours</li><li>Sorties de secours</li><li>Flèches directionnelles</li><li>Escaliers de secours</li><li>Sorties sans issue</li><li>Points de rassemblement</li></ul></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-exclamation-triangle'></i> Panneaux Interdiction</h3><ul><li>Interdiction de fumer</li><li>Interdiction flamme nue</li><li>Ne pas éteindre avec eau</li><li>Accès interdit</li><li>Ne pas obstruer</li><li>Danger électrique</li></ul></div>",
-          "<div class='info-card h-100'><h3><i class='fas fa-lightbulb'></i> Balisage Lumineux</h3><ul><li>Blocs de secours BAES</li><li>Éclairage d'évacuation</li><li>Éclairage d'ambiance</li><li>Marquage au sol lumineux</li><li>Alimentation de sécurité</li></ul></div>"
+  "slug": "signaletique",
+  "seo": {
+    "metaTitle": "Signalétique de Sécurité Incendie – COOSSI",
+    "metaDescription": "Conception et installation de signalétique conforme ISO 7010. Plans d'évacuation, panneaux directionnels, pictogrammes. Matériaux professionnels.",
+    "ogImage": "images/og-prestations.webp"
+  },
+  "hero": {
+    "icon": "fas fa-signs-post",
+    "title": "Signalétique de Sécurité Incendie",
+    "subtitle": "Conception et installation conformes aux normes en vigueur"
+  },
+
+  "intro": {
+    "title": "L'Importance de la Signalétique",
+    "paragraphs": [
+      "La signalétique de sécurité incendie est un élément essentiel et obligatoire dans tous les établissements recevant du public (ERP) et les immeubles de grande hauteur (IGH). Elle guide les personnes vers les issues de secours, indique l'emplacement des équipements de lutte contre l'incendie et diffuse les consignes de sécurité.",
+      "La société COOSSI vous accompagne dans la conception, la réalisation et l'installation d'une signalétique complète et conforme aux normes en vigueur pour votre établissement près de Valenciennes et partout en France."
+    ]
+  },
+
+  "normes": {
+    "title": "Conformité aux Normes",
+    "intro": "La signalétique de sécurité incendie doit respecter des normes strictes pour garantir son efficacité :",
+    "normes": [
+      "ISO 7010",
+      "NF EN ISO 7010",
+      "Arrêté du 25/06/1980",
+      "Code du Travail"
+    ],
+    "conclusion": "COOSSI s'assure que tous les panneaux et pictogrammes installés sont conformes à la réglementation française et européenne en matière de sécurité incendie."
+  },
+
+  "types": {
+    "title": "Types de Signalétique",
+    "items": [
+      {
+        "icon": "fas fa-map-marked-alt",
+        "title": "Plans d'Évacuation",
+        "bullets": [
+          "Plans d'évacuation personnalisés",
+          "Point \"Vous êtes ici\"",
+          "Cheminements d'évacuation",
+          "Issues de secours",
+          "Points de rassemblement",
+          "Emplacements des équipements",
+          "Support plastifié résistant"
         ]
-      ]
-    },
-    {
-      "Kind": "bullets",
-      "Title": "Notre Prestation Complète",
-      "Items": [
-        "Étude : visite, analyse besoins, conception plans d'évacuation",
-        "Conception : choix emplacements optimaux, sélection formats et matériaux",
-        "Installation : fabrication, pose professionnelle, vérification conformité"
-      ]
-    },
-    {
-      "Kind": "columns2",
-      "Title": "Établissements concernés",
-      "Columns": [
-        [
-          "<div class='info-card text-center'><i class='fas fa-building fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERP</h3><p>Commerces, restauration, enseignement, hébergement…</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-warehouse fa-3x mb-3' style='color:var(--primary-color)'></i><h3>ERT / ICPE</h3><p>Industrie, entrepôts, installations classées…</p></div>"
-        ],
-        [
-          "<div class='info-card text-center'><i class='fas fa-city fa-3x mb-3' style='color:var(--primary-color)'></i><h3>IGH</h3><p>Tours de bureaux, immeubles de grande hauteur</p></div>",
-          "<div class='info-card text-center'><i class='fas fa-home fa-3x mb-3' style='color:var(--primary-color)'></i><h3>Habitation</h3><p>Résidences, copropriétés, logements collectifs…</p></div>"
+      },
+      {
+        "icon": "fas fa-sign",
+        "title": "Panneaux Directionnels",
+        "bullets": [
+          "Issues de secours",
+          "Sorties de secours",
+          "Flèches directionnelles",
+          "Escaliers de secours",
+          "Sorties sans issue",
+          "Points de rassemblement",
+          "Formats et matériaux adaptés"
         ]
-      ]
-    },
-    {
-      "Kind": "columns2",
-      "Title": "Pourquoi choisir COOSSI ?",
-      "Columns": [
-        [
-          "<ul class='info-card'><li>Expertise reconnue depuis 2012</li><li>Qualification SSIAP3</li><li>Conformité garantie aux normes</li></ul>"
-        ],
-        [
-          "<ul class='info-card'><li>Prestation clé en main</li><li>Disponibilité & réactivité</li><li>Intervention partout en France</li></ul>"
+      },
+      {
+        "icon": "fas fa-fire-extinguisher",
+        "title": "Signalisation Équipements",
+        "bullets": [
+          "Extincteurs",
+          "Robinets d'Incendie Armés (RIA)",
+          "Colonnes sèches et humides",
+          "Déclencheurs manuels",
+          "Téléphones d'urgence",
+          "Défibrillateurs",
+          "Commandes de désenfumage"
         ]
+      },
+      {
+        "icon": "fas fa-exclamation-triangle",
+        "title": "Panneaux d'Interdiction",
+        "bullets": [
+          "Interdiction de fumer",
+          "Interdiction de flamme nue",
+          "Interdiction d'éteindre avec de l'eau",
+          "Accès interdit",
+          "Ne pas obstruer",
+          "Danger électrique",
+          "Autres interdictions spécifiques"
+        ]
+      },
+      {
+        "icon": "fas fa-clipboard-list",
+        "title": "Consignes de Sécurité",
+        "bullets": [
+          "Consignes générales de sécurité",
+          "Consignes en cas d'incendie",
+          "Conduite à tenir",
+          "Numéros d'urgence",
+          "Personnalisées par établissement",
+          "Format A4 ou A3 plastifié"
+        ]
+      },
+      {
+        "icon": "fas fa-lightbulb",
+        "title": "Balisage Lumineux",
+        "bullets": [
+          "Blocs de secours BAES",
+          "Éclairage d'évacuation",
+          "Éclairage d'ambiance",
+          "Marquage au sol lumineux",
+          "Conformité aux normes",
+          "Alimentation de sécurité"
+        ]
+      }
+    ]
+  },
+
+  "pictos": {
+    "title": "Pictogrammes Principaux",
+    "items": [
+      {
+        "icon": "fas fa-running",
+        "label": "Issue de secours",
+        "color": "#28a745"
+      },
+      {
+        "icon": "fas fa-fire-extinguisher",
+        "label": "Extincteur",
+        "color": "#dc3545"
+      },
+      {
+        "icon": "fas fa-phone-alt",
+        "label": "Téléphone urgence",
+        "color": "#007bff"
+      },
+      {
+        "icon": "fas fa-bell",
+        "label": "Alarme incendie",
+        "color": "#dc3545"
+      },
+      {
+        "icon": "fas fa-first-aid",
+        "label": "Premiers secours",
+        "color": "#28a745"
+      },
+      {
+        "icon": "fas fa-map-marker-alt",
+        "label": "Point rassemblement",
+        "color": "#ffc107"
+      },
+      {
+        "icon": "fas fa-ban",
+        "label": "Interdiction fumer",
+        "color": "#212529"
+      },
+      {
+        "icon": "fas fa-tint",
+        "label": "Robinet incendie",
+        "color": "#007bff"
+      }
+    ]
+  },
+
+  "materiaux": {
+    "title": "Matériaux & Supports",
+    "items": [
+      {
+        "icon": "fas fa-certificate",
+        "title": "Adhésifs",
+        "text": "Vinyle adhésif résistant pour surfaces lisses. Facile à poser et durable."
+      },
+      {
+        "icon": "fas fa-layer-group",
+        "title": "Rigides",
+        "text": "PVC, aluminium ou dibond pour une installation durable en intérieur ou extérieur."
+      },
+      {
+        "icon": "fas fa-star",
+        "title": "Photoluminescents",
+        "text": "Panneaux luminescents visibles dans l'obscurité sans alimentation électrique."
+      }
+    ]
+  },
+
+  "prestation": {
+    "title": "Notre Prestation Complète",
+    "subtitle": "De l'Étude à l'Installation",
+    "etude": {
+      "title": "Étude & Conception",
+      "bullets": [
+        "Visite de votre établissement",
+        "Analyse des besoins réglementaires",
+        "Conception des plans d'évacuation",
+        "Choix des emplacements optimaux",
+        "Sélection des formats et matériaux"
       ]
     },
-    {
-      "Kind": "html",
-      "Title": "Contact",
-      "Html": "<div class='info-card text-center'><h3><i class='fas fa-phone-alt'></i> Demandez Votre Signalétique</h3><p>Contactez COOSSI pour une étude personnalisée de votre signalétique.</p><p class='mb-4'><strong>Téléphone :</strong> <a href='tel:0685752775' style='color:var(--primary-color);font-weight:bold;font-size:1.2rem'>06.85.75.27.75</a></p><a class='btn-primary-custom' href='/contact'><i class='fas fa-envelope'></i> Demander un devis</a></div>"
-    },
-    {
-      "Kind": "html",
-      "Title": "Nos zones d'intervention",
-      "Html": "<div class='city-links'><a>Valenciennes</a><a>Lille</a><a>Roubaix</a><a>Tourcoing</a><a>Dunkerque</a><a>Maubeuge</a><a>Lens</a><a>Arras</a><a>Cambrai</a><a>Amiens</a><a>Paris</a><a>Lyon</a><a>Marseille</a><a>Bordeaux</a><a>Toulouse</a><a>Nantes</a></div>"
-    },
-    { "Kind": "cta" }
-  ]
+    "realisation": {
+      "title": "Réalisation & Pose",
+      "bullets": [
+        "Fabrication des panneaux",
+        "Installation professionnelle",
+        "Fixations adaptées à chaque support",
+        "Vérification de la conformité",
+        "Remise d'un dossier complet"
+      ]
+    }
+  },
+
+  "establishments": {
+    "title": "Établissements Concernés",
+    "items": [
+      {
+        "icon": "fas fa-building",
+        "title": "ERP",
+        "small": "Commerce, restauration, enseignement, hébergement..."
+      },
+      {
+        "icon": "fas fa-city",
+        "title": "IGH",
+        "small": "Immeubles de grande hauteur, bureaux, résidences..."
+      },
+      {
+        "icon": "fas fa-industry",
+        "title": "ERT",
+        "small": "Entrepôts, ateliers, usines, sites industriels..."
+      },
+      {
+        "icon": "fas fa-briefcase",
+        "title": "Tertiaire",
+        "small": "Bureaux, administrations, espaces professionnels..."
+      }
+    ]
+  },
+
+  "avantages": {
+    "title": "Pourquoi Choisir COOSSI ?",
+    "leftBullets": [
+      "Conformité garantie aux normes en vigueur",
+      "Plans d'évacuation personnalisés",
+      "Matériaux de qualité professionnelle"
+    ],
+    "rightBullets": [
+      "Installation rapide et soignée",
+      "Expertise en sécurité incendie depuis 2012",
+      "Service clé en main de A à Z"
+    ]
+  },
+
+  "contact": {
+    "title": "Demandez Votre Signalétique",
+    "text": "Contactez COOSSI pour une étude personnalisée de votre signalétique de sécurité incendie.",
+    "phoneDisplay": "06.85.75.27.75",
+    "phoneHref": "tel:0685752775",
+    "buttonText": "Demander un Devis",
+    "buttonHref": "/contact"
+  },
+
+  "citiesIntro": "COOSSI installe votre signalétique de sécurité incendie partout en France",
+  "cities": [
+    "Valenciennes",
+    "Lille",
+    "Roubaix",
+    "Tourcoing",
+    "Dunkerque",
+    "Maubeuge",
+    "Lens",
+    "Arras",
+    "Cambrai",
+    "Amiens",
+    "Calais",
+    "Reims",
+    "Dijon",
+    "Rouen",
+    "Paris",
+    "Lyon",
+    "Marseille",
+    "Bordeaux",
+    "Toulouse",
+    "Nantes"
+  ],
+
+  "cta": {
+    "title": "Une Signalétique Claire, C'est des Vies Sauvées",
+    "text": "COOSSI installe une signalétique de sécurité incendie conforme et efficace pour protéger vos occupants.",
+    "buttonText": "Commander Votre Signalétique",
+    "buttonHref": "/contact"
+  }
 }
