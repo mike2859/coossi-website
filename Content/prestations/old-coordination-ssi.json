@@ -1,0 +1,167 @@
+{
+  "slug": "coordination-ssi",
+  "seo": {
+    "metaTitle": "Mission de Coordination SSI - Coordinateur Système Sécurité Incendie | COOSSI",
+    "metaDescription": "COOSSI – Mission de Coordination SSI : conception, réalisation, réception. Asservissement désenfumage, conformité réglementaire. Nord (Valenciennes) & France.",
+    "ogImage": "images/og-prestations.webp"
+  },
+  "hero": {
+    "title": "MISSION DE COORDINATION SSI",
+    "subtitle": "Coordination des Systèmes de Sécurité Incendie : Conception, Réalisation, Réception",
+    "icon": "fas fa-tasks"
+  },
+
+  "introText": [
+    "La mission de Coordination SSI consiste à coordonner les Systèmes de Sécurité Incendie dans le cadre de l'installation, de l'asservissement et de la mise en conformité de vos équipements.",
+    "COOSSI vous accompagne dans toutes les phases de votre projet, de la conception à la réception, en passant par la réalisation et le suivi des travaux."
+  ],
+
+  "missionHighlight": {
+    "icon": "fas fa-target",
+    "title": "Notre Mission",
+    "text": "Assurer la coordination technique des Systèmes de Sécurité Incendie pour garantir leur conformité réglementaire et leur efficacité opérationnelle."
+  },
+
+  "successAlert": "Expertise COOSSI : Coordination SSI pour l’EHPAD Marie Blaise à Signy-le-Petit (08380) – installation et asservissement du désenfumage réalisés avec succès.",
+
+  "phasesTitle": "Les 3 Phases de la Coordination SSI",
+  "phases": [
+    {
+      "title": "PHASE CONCEPTION",
+      "icon": "fas fa-drafting-compass",
+      "bullets": [
+        "Analyse des besoins en sécurité du bâtiment",
+        "Élaboration des plans SSI et synoptiques",
+        "Dimensionnement des équipements",
+        "Coordination avec bureaux d’études et architectes",
+        "Validation des choix techniques avec les autorités"
+      ]
+    },
+    {
+      "title": "PHASE RÉALISATION",
+      "icon": "fas fa-tools",
+      "bullets": [
+        "Suivi des travaux d’installation des équipements SSI",
+        "Coordination des entreprises spécialisées",
+        "Contrôle de la conformité des installations",
+        "Installation et asservissement du désenfumage",
+        "Tests et essais des systèmes de sécurité"
+      ]
+    },
+    {
+      "title": "PHASE RÉCEPTION",
+      "icon": "fas fa-check-circle",
+      "bullets": [
+        "Réception technique des installations SSI",
+        "Validation des performances",
+        "Constitution du dossier d’identité SSI",
+        "Préparation de la visite de commission",
+        "Accompagnement jusqu’à l’avis favorable"
+      ]
+    },
+    {
+      "title": "DOCUMENTATION",
+      "icon": "fas fa-check-circle",
+      "bullets": [
+        "Dossier d'identité SSI",
+        "Notices de sécurité",
+        "Plans de prévention",
+        "Procès-verbaux"
+      ]
+    }
+  ],
+
+  "expertiseTitle": "Domaines d’Expertise en Coordination SSI",
+  "expertise": [
+    {
+      "title": "Système de Détection Incendie (SDI)",
+      "icon": "fas fa-fire-extinguisher",
+      "text": "Détecteurs, centrales, dispositifs d’alarme"
+    },
+    {
+      "title": "Système de Désenfumage",
+      "icon": "fas fa-wind",
+      "text": "Évacuation des fumées, amenée d’air"
+    },
+    {
+      "title": "Système de Mise en Sécurité Incendie (SMSI)",
+      "icon": "fas fa-door-open",
+      "text": "Asservissements, commandes, sécurité"
+    },
+    {
+      "title": "Système d’Alarme",
+      "icon": "fas fa-broadcast-tower",
+      "text": "Diffusion sonore, alarme générale"
+    },
+    {
+      "title": "Éclairage de Sécurité",
+      "icon": "fas fa-lightbulb",
+      "text": "BAES, LSC, éclairage d’évacuation"
+    },
+    {
+      "title": "Poste Central de Sécurité (PCS)",
+      "icon": "fas fa-tv",
+      "text": "Centralisation, supervision, commandes"
+    }
+  ],
+
+  "contactText": "Besoin d’une coordination SSI ? Jean LEBLANC coordonne vos systèmes avec expertise et réactivité. Tél. : 06 85 75 27 75.",
+  "citiesIntro": "COOSSI coordonne vos systèmes de sécurité incendie dans toute la France",
+  "cities": [
+    "Valenciennes",
+    "Amiens",
+    "Calais",
+    "Maubeuge",
+    "Reims",
+    "Dijon",
+    "Rouen",
+    "Roubaix",
+    "Lille",
+    "Tourcoing",
+    "Dunkerque",
+    "Villeneuve d'Ascq",
+    "Armentières",
+    "Paris",
+    "Lens",
+    "Arras",
+    "Cambrai",
+    "Beauvais",
+    "Strasbourg",
+    "Metz",
+    "Rennes",
+    "Perpignan",
+    "Nantes",
+    "Lyon",
+    "Grenoble",
+    "Marseille",
+    "Montpellier",
+    "Bordeaux",
+    "Toulouse",
+    "Clermont-Ferrand",
+    "Nice",
+    "Caen",
+    "Besançon",
+    "Brest",
+    "Poitiers",
+    "Tours",
+    "Limoges",
+    "Orléans"
+  ],
+  "keywords": [
+    "Coordination SSI",
+    "Installation désenfumage",
+    "Asservissement sécurité",
+    "Système détection incendie",
+    "SMSI",
+    "Poste central sécurité",
+    "Réception SSI",
+    "Commission sécurité"
+  ],
+
+  "cta": {
+    "title": "Besoin d’une coordination SSI ?",
+    "text": "Devis rapide et gratuit.",
+    "buttonText": "Demander un devis",
+    "buttonHref": "/contact"
+  }
+}

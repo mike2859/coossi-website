@@ -1,3 +1,4 @@
+@using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @using Coossi.Blazor.Data.Models.Prestations
@@ -15,53 +16,205 @@
 @if (Model is null) { <section class="content-section"><div class="container">Chargement…</div></section> }
 else {
   <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
-  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+  @* <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" /> *@
 
-  <section class="content-section"><div class="container"><div class="info-card"><p>@Model.IntroText</p></div></div></section>
+    <!-- HERO -->
+    <section class="hero-section" style="margin-top:76px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-2">
+                        <i class="@Model.Hero.Icon me-2"></i>@Model.Hero.Title
+                    </h1>
+                    <p class="lead mb-0">@Model.Hero.Subtitle</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Les deux types de notices</h2>
-    <div class="row">@foreach (var n in Model.Notices){
-      <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>@n.Title</h3>
-        @if (!string.IsNullOrWhiteSpace(n.Text)) { <p>@n.Text</p> }
-        @if (n.Bullets is {Count:>0}) { <ul>@foreach (var b in n.Bullets!){ <li>@b</li> }</ul> }
-      </div></div> }
-    </div>
-  </div></section>
+    <!-- CONTENU -->
+    <section class="content-section">
+        <div class="container">
 
-  <section class="content-section"><div class="container"><div class="info-card highlight-box">
-    <h3>Intégration au Dossier d’Identité SSI</h3><p>@Model.IntegrationText</p>
-  </div></div></section>
+            <!-- INTRO -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle me-2"></i>@Model.Intro.Title</h3>
+                        @foreach (var p in Model.Intro.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><div class="info-card">
-    <h2 class="section-title">Plans de zones & mise en sécurité</h2>
-    <ul>@foreach (var p in Model.PlansZones){ <li>@p</li> }</ul>
-  </div></div></section>
+            <!-- DOCUMENTS PERMIS -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.DocsPermis.Title</h2>
+                    <div class="info-card">
+                        @foreach (var p in Model.DocsPermis.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Documentation complémentaire</h2>
-    <div class="row">@foreach (var d in Model.DocsComplement){
-      <div class="col-lg-4 col-md-6 mb-4"><div class="info-card h-100 text-center">
-        @if (!string.IsNullOrWhiteSpace(d.Icon)) { <i class="fas @d.Icon fa-3x mb-2" style="color:var(--primary-color);"></i> }
-        <h3>@d.Title</h3>@if (!string.IsNullOrWhiteSpace(d.Text)) { <p>@d.Text</p> }
-      </div></div> }
-    </div>
-  </div></section>
+            <!-- DEUX TYPES DE NOTICES -->
+            <div class="row mb-5">
+                @foreach (var n in Model.Notices.Items)
+                {
+                    <div class="col-lg-6 mb-4">
+                        <div class="info-card h-100">
+                            <span class="doc-type-badge">
+                                @if (!string.IsNullOrWhiteSpace(n.Badge))
+                                {
+                                    <i class="@(n.Badge.Contains("Accessibilité") ? "fas fa-wheelchair" : "fas fa-fire-extinguisher") me-2"></i>
+                                }
+                                @n.Badge
+                            </span>
+                            <h3>@n.Title</h3>
+                            <p>@n.Text</p>
+                            <ul class="mt-3">
+                                @foreach (var b in n.Bullets)
+                                {
+                                    <li>@b</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Types d’établissements</h2>
-    <div class="row">@foreach (var t in Model.TypesEtablissements){
-      <div class="col-lg-4 col-md-6 mb-4"><div class="info-card h-100 text-center">
-        @if (!string.IsNullOrWhiteSpace(t.Icon)) { <i class="fas @t.Icon fa-3x mb-2" style="color:var(--primary-color);"></i> }
-        <h3>@t.Title</h3>@if (!string.IsNullOrWhiteSpace(t.Text)) { <p>@t.Text</p> }
-      </div></div> }
-    </div>
-  </div></section>
+            <!-- INTÉGRATION DOSSIER SSI -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-folder me-2"></i>@Model.Integration.Title</h4>
+                        <p class="mb-0">@Model.Integration.Text</p>
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container"><div class="info-card text-center">
-    <h3>Contact</h3><p>@Model.ContactText</p><a class="btn-primary-custom" href="/contact">Formulaire de contact</a>
-  </div></div></section>
+            <!-- PLANS DE ZONES -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Plans.Title</h2>
+                    <div class="info-card">
+                        <h3><i class="fas fa-map me-2"></i>Réalisation de Plans Techniques</h3>
+                        <p>@Model.Plans.Intro</p>
+                        <ul class="mt-3">
+                            @foreach (var item in Model.Plans.Items)
+                            {
+                                <li>@item</li>
+                            }
+                        </ul>
 
-  <section class="content-section"><div class="container"><h2 class="section-title">Zones d’intervention</h2><div class="city-links">
-    @foreach (var c in Model.Cities) { <a>@c</a> }
-  </div></div></section>
+                        <div class="alert-info-custom mt-4">
+                            <h4><i class="fas fa-star me-2"></i>Qualité &amp; Lisibilité</h4>
+                            <p class="mb-0">
+                                Pour un affichage qualitatif et une meilleure lisibilité, les plans réalisés par COOSSI sont <strong>plastifiés</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" />
+            <!-- DOCUMENTATION COMPLÉMENTAIRE -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.DocsComplement.Title</h2>
+                    <div class="info-card">
+                        <p>Enfin, la société est en mesure de fournir :</p>
+                        <div class="row mt-3">
+                            @foreach (var d in Model.DocsComplement.Items)
+                            {
+                                <div class="col-lg-4 mb-3">
+                                    <div class="text-center p-3" style="background-color:#f8f9fa;border-radius:10px;">
+                                        <i class="@d.Icon fa-2x mb-2" style="color:var(--primary);"></i>
+                                        <h5>@d.Title</h5>
+                                        @if (!string.IsNullOrWhiteSpace(d.Text))
+                                        {
+                                            <p class="small mb-0">@d.Text</p>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <p class="mt-3 mb-0">@Model.DocsComplement.Conclusion</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TYPES D'ÉTABLISSEMENTS -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Establishments.Title</h2>
+                    <div class="row">
+                        @foreach (var e in Model.Establishments.Items)
+                        {
+                            <div class="col-lg-4 mb-4">
+                                <div class="info-card text-center h-100">
+                                    <i class="@e.Icon fa-3x mb-3" style="color:var(--primary);"></i>
+                                    <h3>@e.Title</h3>
+                                    <p>@e.Subtitle</p>
+                                    <p class="small text-muted mb-0">@e.Small</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="info-card text-center">
+                        <h3><i class="fas fa-phone-alt me-2"></i>@Model.Contact.Title</h3>
+                        <p>@Model.Contact.Text</p>
+                        <p class="mb-4">
+                            <strong>Téléphone :</strong>
+                            <a href="@Model.Contact.PhoneHref"
+                               style="color:var(--primary);font-weight:bold;font-size:1.3rem;">
+                                @Model.Contact.PhoneDisplay
+                            </a>
+                        </p>
+                        <a href="@Model.Contact.ButtonHref" class="btn-primary-custom">
+                            <i class="fas fa-envelope me-2"></i>@Model.Contact.ButtonText
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZONES D'INTERVENTION -->
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">Nos Zones d'Intervention</h2>
+                    <p>@Model.CitiesIntro</p>
+                    <div class="city-links">
+                        @foreach (var city in Model.Cities)
+                        {
+                            <a href="#">@city</a>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">@Model.Cta.Title</h2>
+            <p class="mb-4">@Model.Cta.Text</p>
+            <a href="@Model.Cta.ButtonHref" class="btn-primary-custom">
+                <i class="fas fa-file-alt me-2"></i>@Model.Cta.ButtonText
+            </a>
+        </div>
+    </section>
+
+  @* <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" /> *@
 }

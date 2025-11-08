@@ -1,65 +1,156 @@
 {
   "slug": "coordination-ssi",
   "seo": {
-    "metaTitle": "Mission de Coordination SSI - Coordinateur Système Sécurité Incendie | COOSSI",
-    "metaDescription": "COOSSI – Mission de Coordination SSI : conception, réalisation, réception. Asservissement désenfumage, conformité réglementaire. Nord (Valenciennes) & France.",
+    "metaTitle": "Coordination SSI | COOSSI - Expert Sécurité Incendie Valenciennes",
+    "metaDescription": "Mission obligatoire selon NF S 61-931 : COOSSI coordonne vos Systèmes de Sécurité Incendie de la conception à la réception. ERP, IGH, ERT/ICPE, habitation.",
     "ogImage": "images/og-prestations.webp"
   },
   "hero": {
-    "title": "MISSION DE COORDINATION SSI",
-    "subtitle": "Coordination des Systèmes de Sécurité Incendie : Conception, Réalisation, Réception",
+    "title": "Coordination SSI",
+    "subtitle": "Mission obligatoire selon la norme NF S 61-931 pour garantir la conformité de vos installations",
     "icon": "fas fa-tasks"
   },
 
-  "introText": [
-    "La mission de Coordination SSI consiste à coordonner les Systèmes de Sécurité Incendie dans le cadre de l'installation, de l'asservissement et de la mise en conformité de vos équipements.",
-    "COOSSI vous accompagne dans toutes les phases de votre projet, de la conception à la réception, en passant par la réalisation et le suivi des travaux."
-  ],
-
-  "missionHighlight": {
-    "icon": "fas fa-target",
-    "title": "Notre Mission",
-    "text": "Assurer la coordination technique des Systèmes de Sécurité Incendie pour garantir leur conformité réglementaire et leur efficacité opérationnelle."
+  "intro": {
+    "title": "Qu'est-ce que la Coordination SSI ?",
+    "paragraphs": [
+      "En application de l'article § 5.3 de la norme NF S 61-931, une mission de coordination des Systèmes de Sécurité Incendie (SSI) est rendue obligatoire pour les maîtres d’ouvrages.",
+      "Spécialisée en coordination de sécurité incendie autour de Valenciennes, COOSSI veille au respect des normes anti-incendie en vigueur. En étroite collaboration avec le maître d’ouvrage, nous assurons coordination SSI, création de dossiers d’identité SSI, notices de sécurité, etc."
+    ]
   },
 
-  "successAlert": "Expertise COOSSI : Coordination SSI pour l’EHPAD Marie Blaise à Signy-le-Petit (08380) – installation et asservissement du désenfumage réalisés avec succès.",
+  "legal": {
+    "title": "Cadre Légal & Réglementaire",
+    "paragraphs": [
+      "La réglementation incendie pour les ERP vise à protéger les personnes face aux risques d’incendie. Elle concerne la construction (voies d’accès, issues de secours) et l’installation d’équipements assurant la sécurité au quotidien.",
+      "La mission de coordination consiste à analyser les besoins de SSI (cat. A, B, C, D) et à garantir la cohérence des installations aux phases de conception, réalisation et réception."
+    ],
+    "highlightTitle": "Mission de Coordination Obligatoire",
+    "highlightText": "La coordination SSI garantit la cohérence technique du système : conception, réalisation et réception. Elle s’appuie sur la NF S 61-931 et la doctrine des commissions de sécurité."
+  },
 
-  "phasesTitle": "Les 3 Phases de la Coordination SSI",
-  "phases": [
-    {
-      "title": "PHASE CONCEPTION",
-      "icon": "fas fa-drafting-compass",
-      "bullets": [
-        "Analyse des besoins en sécurité du bâtiment",
-        "Élaboration des plans SSI et synoptiques",
-        "Dimensionnement des équipements",
-        "Coordination avec bureaux d’études et architectes",
-        "Validation des choix techniques avec les autorités"
-      ]
-    },
-    {
-      "title": "PHASE RÉALISATION",
-      "icon": "fas fa-tools",
-      "bullets": [
-        "Suivi des travaux d’installation des équipements SSI",
-        "Coordination des entreprises spécialisées",
-        "Contrôle de la conformité des installations",
-        "Installation et asservissement du désenfumage",
-        "Tests et essais des systèmes de sécurité"
-      ]
-    },
-    {
-      "title": "PHASE RÉCEPTION",
-      "icon": "fas fa-check-circle",
-      "bullets": [
-        "Réception technique des installations SSI",
-        "Validation des performances",
-        "Constitution du dossier d’identité SSI",
-        "Préparation de la visite de commission",
-        "Accompagnement jusqu’à l’avis favorable"
-      ]
-    }
-  ],
+  "missions": {
+    "title": "Missions de Coordination",
+    "lead": "Pour tous types de locaux, il est primordial de mettre en place un système de sécurité incendie optimal. Les missions varient selon les besoins : organisation documentaire, coordination des acteurs, audits, essais, etc.",
+    "items": [
+      {
+        "title": "Phase Conception",
+        "icon": "fas fa-clipboard-check",
+        "bullets": [
+          "Analyse des besoins SSI",
+          "Définition du cahier des charges",
+          "Choix des équipements",
+          "Coordination avec les acteurs"
+        ]
+      },
+      {
+        "title": "Phase Réalisation",
+        "icon": "fas fa-tools",
+        "bullets": [
+          "Suivi des travaux",
+          "Contrôle de conformité",
+          "Coordination des entreprises",
+          "Réunions techniques"
+        ]
+      },
+      {
+        "title": "Phase Réception",
+        "icon": "fas fa-check-circle",
+        "bullets": [
+          "Essais fonctionnels",
+          "Vérification des installations",
+          "Formation du personnel",
+          "Remise du dossier SSI"
+        ]
+      },
+      {
+        "title": "Documentation",
+        "icon": "fas fa-file-alt",
+        "bullets": [
+          "Dossier d’identité SSI",
+          "Notices de sécurité",
+          "Plans de prévention",
+          "Procès-verbaux"
+        ]
+      }
+    ]
+  },
+
+  "methodo": {
+    "title": "Notre Méthodologie",
+    "lead": "COOSSI vous accompagne tout au long du projet avec une approche structurée en 3 phases principales :",
+    "steps": [
+      {
+        "title": "1. Conception",
+        "icon": "fas fa-pencil-ruler",
+        "text": "Définition des besoins, élaboration du cahier des charges et coordination avec tous les acteurs."
+      },
+      {
+        "title": "2. Réalisation",
+        "icon": "fas fa-hard-hat",
+        "text": "Suivi de chantier, contrôle de conformité et coordination des entreprises intervenantes."
+      },
+      {
+        "title": "3. Réception",
+        "icon": "fas fa-handshake",
+        "text": "Essais fonctionnels, formation du personnel et remise du dossier complet au maître d’ouvrage."
+      }
+    ]
+  },
+
+  "establishments": {
+    "title": "Établissements Concernés",
+    "items": [
+      {
+        "title": "ERP",
+        "icon": "fas fa-building",
+        "subtitle": "Établissements Recevant du Public",
+        "small": "Commerce, restauration, enseignement, hébergement…"
+      },
+      {
+        "title": "IGH",
+        "icon": "fas fa-city",
+        "subtitle": "Immeubles de Grande Hauteur",
+        "small": "Tours de bureaux, immeubles d’habitation…"
+      },
+      {
+        "title": "ERT / ICPE",
+        "icon": "fas fa-warehouse",
+        "subtitle": "Établissements Industriels",
+        "small": "Entrepôts, usines, installations classées…"
+      },
+      {
+        "title": "Habitation",
+        "icon": "fas fa-home",
+        "subtitle": "Immeubles d’Habitation",
+        "small": "Résidences, copropriétés, logements collectifs…"
+      }
+    ]
+  },
+
+  "advantages": {
+    "title": "Pourquoi Choisir COOSSI ?",
+    "leftBullets": [
+      "Expertise reconnue depuis 2012",
+      "Qualification SSIAP3",
+      "Conformité garantie aux normes"
+    ],
+    "rightBullets": [
+      "Prestation clé en main",
+      "Disponibilité et réactivité",
+      "Intervention partout en France"
+    ]
+  },
+
+  "contact": {
+    "title": "Besoin d'un Coordinateur SSI ?",
+    "text": "Contactez COOSSI pour tous vos besoins en coordination de Systèmes de Sécurité Incendie.",
+    "phoneDisplay": "06.85.75.27.75",
+    "phoneHref": "tel:0685752775",
+    "buttonText": "Demander un Devis",
+    "buttonHref": "/contact"
+  },
+
 
   "expertiseTitle": "Domaines d’Expertise en Coordination SSI",
   "expertise": [

@@ -5,16 +5,13 @@ public sealed record CoordinationPage(
     SeoBlock Seo,
     HeroBlock Hero,
 
-    // Intro
-    List<string> IntroText,
-
-    // Highlights
-    MissionBlock MissionHighlight,
-    string SuccessAlert,
-
-    // Phases
-    string PhasesTitle,
-    List<PhaseItem> Phases,
+    IntroBlockPrestation Intro,
+    LegalBlock Legal,
+    MissionsBlock Missions,
+    MethodoBlock Methodo,
+    EstablishmentsBlock Establishments,
+    AdvantagesBlock Advantages,
+    ContactBlock Contact,
 
     // Expertise
     string ExpertiseTitle,
@@ -28,8 +25,54 @@ public sealed record CoordinationPage(
     CtaBlock Cta
 );
 
-public sealed record MissionBlock(string Icon, string Title, string Text);
-public sealed record PhaseItem(string Title, string Icon, List<string> Bullets);
+
+public sealed record IntroBlockPrestation(string Title, List<string> Paragraphs);
+
+public sealed record LegalBlock(
+    string Title,
+    List<string> Paragraphs,
+    string HighlightTitle,
+    string HighlightText
+);
+
+public sealed record MissionsBlock(
+    string Title,
+    string Lead,
+    List<MissionItem> Items
+);
+public sealed record MissionItem(string Title, string Icon, List<string> Bullets);
+
+public sealed record MethodoBlock(
+    string Title,
+    string Lead,
+    List<MethodStep> Steps
+);
+public sealed record MethodStep(string Title, string Icon, string Text);
+
+//public sealed record EstablishmentsBlock(
+//    string Title,
+//    List<EstablishmentItem> Items
+//);
+//public sealed record EstablishmentItem(string Title, string Icon, string Subtitle, string Small);
+
+public sealed record AdvantagesBlock(
+    string Title,
+    List<string> LeftBullets,
+    List<string> RightBullets
+);
+
+public sealed record ContactBlock(
+    string Title,
+    string Text,
+    string PhoneDisplay,
+    string PhoneHref,
+    string ButtonText,
+    string ButtonHref
+);
+
+
+// public sealed record MissionBlock(string Icon, string Title, string Text);
+// public sealed record PhaseItem(string Title, string Icon, List<string> Bullets);
 public sealed record ExpertiseItem(string Title, string Icon, string Text);
 
 

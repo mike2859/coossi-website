@@ -17,66 +17,188 @@
 @if (Model is null) { <section class="content-section"><div class="container text-muted">Chargement…</div></section> }
 else {
   <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
-  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+  @* <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" /> *@
 
-  <section class="content-section"><div class="container"><div class="info-card">
-    <h2 class="section-title">Qu’est-ce que le DUERP ?</h2><p>@Model.IntroText</p>
-  </div></div></section>
+    <!-- HERO -->
+    <section class="hero-section" style="margin-top:76px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <h1 class="display-5 fw-bold mb-2">
+                        <i class="@Model.Hero.Icon me-2"></i>@Model.Hero.Title
+                    </h1>
+                    <p class="lead mb-0">@Model.Hero.Subtitle</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="content-section"><div class="container">
-    <h2 class="section-title">@Model.ObjectifTitle</h2>
-    <div class="row mt-3">
-      @foreach (var it in Model.ContenuItems)
-      {
-        <div class="col-lg-6 mb-4"><div class="info-card h-100"><h3>@it</h3></div></div>
-      }
-    </div>
-  </div></section>
+    <!-- CONTENU -->
+    <section class="content-section">
+        <div class="container">
+            <!-- INTRO -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle me-2"></i>@Model.Intro.Title</h3>
+                        @foreach (var p in Model.Intro.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container">
-    <h2 class="section-title">Types de risques évalués</h2>
-    <div class="row">
-      @foreach (var r in Model.Risques)
-      {
-        <div class="col-lg-4 mb-4"><div class="info-card h-100 text-center">
-          <i class="fas fa-exclamation-circle fa-3x mb-3" style="color:var(--primary-color);"></i><h3>@r</h3>
-        </div></div>
-      }
-    </div>
-  </div></section>
+            <!-- OBJECTIF + ALERTE -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">@Model.Objectif.Title</h2>
+                    <div class="info-card">
+                        @foreach (var p in Model.Objectif.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
 
-  <section class="content-section"><div class="container"><div class="info-card">
-    <h2 class="section-title">Mise à jour du DUERP</h2>
-    <ul>@foreach (var m in Model.MiseAJour) { <li>@m</li> }</ul>
-  </div></div></section>
+                        <div class="alert-warning-custom mt-4">
+                            <h4><i class="fas fa-exclamation-triangle me-2"></i>@Model.Objectif.Alert.Title</h4>
+                            <p class="mb-0">@Model.Objectif.Alert.Text</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container">
-    <h2 class="section-title">Formats disponibles</h2>
-    <div class="row">
-      @foreach (var f in Model.Formats)
-      {
-        <div class="col-lg-6 mb-4"><div class="info-card text-center h-100">
-          <i class="fas fa-file-alt fa-3x mb-3" style="color:var(--primary-color);"></i><h3>@f</h3>
-        </div></div>
-      }
-    </div>
-  </div></section>
+            <!-- CONTENU DU DOCUMENT (4 cartes) -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">@Model.Contenu.Title</h2>
+                    <p>@Model.Contenu.Lead</p>
 
-  <section class="content-section"><div class="container"><div class="info-card text-center">
-    <h3>Contact</h3>@((MarkupString)Model.ContactHtml)
-    <a class="btn-primary-custom mt-3" href="/contact"><i class="fas fa-envelope"></i> Nous contacter</a>
-  </div></div></section>
+                    <div class="row mt-3">
+                        @foreach (var c in Model.Contenu.Cards)
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card h-100 text-center">
+                                    <i class="@c.Icon fa-3x mb-3" style="color: var(--primary);"></i>
+                                    <h3>@c.Title</h3>
+                                    <p class="mb-0">@c.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  <section class="content-section"><div class="container">
-    <h2 class="section-title">Nos zones d’intervention</h2>
-    <div class="city-links">@foreach (var c in Model.Cities) { <a>@c</a> }</div>
-  </div></section>
+            <!-- TYPES DE RISQUES -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">@Model.RiskTypes.Title</h2>
+                    <div class="row">
+                        @foreach (var r in Model.RiskTypes.Items)
+                        {
+                            <div class="col-lg-4 mb-4">
+                                <div class="info-card h-100">
+                                    <h3><i class="@r.Icon me-2"></i>@r.Title</h3>
+                                    <ul>
+                                        @foreach (var b in r.Bullets)
+                                        {
+                                            <li>@b</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
 
-  
-  
-  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" />
-  /*
-  <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text"
-          CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref"
-          IconClass="fas fa-comments" />*/
+            <!-- MISE A JOUR -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">@Model.MiseAJour.Title</h2>
+                    <div class="info-card">
+                        <p>Le Document Unique doit être mis à jour dans les cas suivants :</p>
+                        <ul class="mb-0">
+                            @foreach (var b in Model.MiseAJour.Bullets)
+                            {
+                                <li>@b</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMATS -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">@Model.Formats.Title</h2>
+                    <div class="row">
+                        @foreach (var f in Model.Formats.Items)
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card text-center h-100">
+                                    <i class="@f.Icon fa-3x mb-3" style="color: var(--primary);"></i>
+                                    <h3>@f.Title</h3>
+                                    <p class="mb-0">@f.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="info-card text-center">
+                        <h3><i class="fas fa-phone-alt me-2"></i>@Model.Contact.Title</h3>
+                        <p>@Model.Contact.Text</p>
+                        <p class="mb-4">
+                            <strong>Téléphone :</strong>
+                            <a href="@Model.Contact.PhoneHref"
+                               style="color: var(--primary); font-weight: bold; font-size: 1.3rem;">
+                                @Model.Contact.PhoneDisplay
+                            </a>
+                        </p>
+                        <a href="@Model.Contact.ButtonHref" class="btn-primary-custom">
+                            <i class="fas fa-envelope me-2"></i>@Model.Contact.ButtonText
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ZONES + MOTS-CLÉS -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="cities-cloud">
+                <h3 class="fw-bold">
+                    <i class="fas fa-map-marker-alt me-2"></i>Zones d'intervention — DUERP
+                </h3>
+                <p class="lead mb-4">@Model.CitiesIntro</p>
+                <div>
+                    @foreach (var c in Model.Cities)
+                    {
+                        <a class="city-link" href="#">@c</a>
+                    }
+                </div>
+                <div class="mt-4">
+                    <small class="text-muted">
+                        <strong>Mots-clés :</strong> @string.Join(", ", Model.Keywords)
+                    </small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-3">@Model.Cta.Title</h2>
+            <p class="mb-4">@Model.Cta.Text</p>
+            <a href="@Model.Cta.ButtonHref" class="btn-primary-custom">
+                <i class="fas fa-edit me-2"></i>@Model.Cta.ButtonText
+            </a>
+        </div>
+    </section>
 }
