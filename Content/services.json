@@ -1,6 +1,6 @@
 {
   "id": "services",
-  "title": "Nos Prestations",
+  "title": "Nos Services",
   "lead": "Coordination SSI, Notices de sécurité, Audit incendie et accompagnement réglementaire",
   "sections": [
     {
@@ -29,7 +29,7 @@
       "id": "notices",
       "icon": "fa-file-alt",
       "title": "Notice de Sécurité et Accessibilité",
-      "leadHtml": "<strong>Réalisation de notice de sécurité et accessibilité</strong> pour tous types de bâtiments : ERP, IGH ou encore ICPE.",
+      "leadHtml": "<strong>Réalisation de notice de sécurité et accessibilité</strong> pour tous types de bâtiments : ERP, IGH, HABITATION ou encore ICPE.",
       "featuresTitle": "Conformément à l'article GE2 de l'arrêté du 25 Juin 1980 modifié :",
       "features": [
         "Zones d'évacuation en cas d'incendie ou de sinistre",
@@ -41,7 +41,8 @@
       "leftBoxes": [
         { "icon": "fa-building", "title": "ERP", "subtitle": "Établissements Recevant du Public" },
         { "icon": "fa-city", "title": "IGH", "subtitle": "Immeubles de Grande Hauteur" },
-        { "icon": "fa-radiation", "title": "ICPE", "subtitle": "Installations Classées pour la Protection de l'Environnement" }
+        { "icon": "fa-industry", "title": "ICPE", "subtitle": "Installations Classées pour la Protection de l'Environnement" },
+        { "icon": "fa-home", "title": "HABITATION", "subtitle": "Résidences, copropriétés, logements collectifs" }
       ],
       "reverse": true,
       "bg": "light"
@@ -122,7 +123,7 @@
         { "icon": "fa-building", "title": "ERP", "text": "Établissements Recevant du Public", "small": "Commerces, restaurants, hôtels, écoles..." },
         { "icon": "fa-industry", "title": "ERT", "text": "Établissements Recevant des Travailleurs", "small": "Bureaux, usines, entrepôts, ateliers..." },
         { "icon": "fa-city", "title": "IGH", "text": "Immeubles de Grande Hauteur", "small": "Tours, immeubles de bureaux et habitation..." },
-        { "icon": "fa-radiation", "title": "ICPE", "text": "Installations Classées", "small": "Installations à risques particuliers..." }
+        { "icon": "fa-industry", "title": "ICPE", "text": "Installations Classées", "small": "Installations à risques particuliers..." }
       ]
     },
     {

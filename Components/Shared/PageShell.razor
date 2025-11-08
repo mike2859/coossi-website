@@ -1,0 +1,23 @@
+@code {
+  [Parameter] public List<(string Href, string Label)>? BreadcrumbItems { get; set; }
+  [Parameter] public string? BreadcrumbCurrent { get; set; }
+  [Parameter] public RenderFragment? Header { get; set; }
+  [Parameter] public RenderFragment? Body { get; set; }
+}
+
+@if (BreadcrumbItems is not null)
+{
+  <section class="py-2" style="margin-top:76px;background:var(--light);border-bottom:1px solid #dee2e6">
+    <div class="container">
+      <Breadcrumb Items="BreadcrumbItems" Current="BreadcrumbCurrent" />
+    </div>
+  </section>
+}
+
+@Header
+
+<section class="section-padding">
+  <div class="container">
+    @Body
+  </div>
+</section>

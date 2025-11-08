@@ -54,7 +54,7 @@
     "items": [
       { "icon": "fa-question-circle", "q": "Quels sont vos délais d'intervention ?", "a": "Réponse rapide. Urgences : possible dans la journée. Projets : rendez-vous sous 48h." },
       { "icon": "fa-money-bill-wave", "q": "Proposez-vous des devis gratuits ?", "a": "Oui, devis gratuit et personnalisé après analyse du projet. Sans engagement." },
-      { "icon": "fa-map-marker-alt", "q": "Dans quelles villes intervenez-vous ?", "a": "Nord, Pas-de-Calais, Somme et Aisne. Déplacements inclus." },
+      { "icon": "fa-map-marker-alt", "q": "Dans quelles villes intervenez-vous ?", "a": "Nord, Pas-de-Calais, Somme et Aisne. Déplacements sur tout le territoire Français." },
       { "icon": "fa-certificate", "q": "Garantissez-vous l'avis favorable ?", "a": "Accompagnement jusqu'à l'obtention de l'avis favorable, fort d'une solide expérience réglementaire." }
     ]
   }

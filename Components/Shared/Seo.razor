@@ -1,0 +1,24 @@
+@using Microsoft.AspNetCore.Components
+@code {
+  [Parameter] public string Title { get; set; } = "COOSSI";
+  [Parameter] public string? Description { get; set; }
+  [Parameter] public string? Canonical { get; set; }
+  [Parameter] public string? OgImage { get; set; }
+  [Parameter] public string Locale { get; set; } = "fr_FR";
+}
+<PageTitle>@Title</PageTitle>
+<HeadContent>
+  @if (!string.IsNullOrWhiteSpace(Description)) {
+    <meta name="description" content="@Description" />
+    <meta property="og:description" content="@Description" />
+  }
+  <meta property="og:title" content="@Title" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="@Locale" />
+  @if (!string.IsNullOrWhiteSpace(Canonical)) { <link rel="canonical" href="@Canonical" /> }
+  @if (!string.IsNullOrWhiteSpace(OgImage)) { <meta property="og:image" content="@OgImage" /> }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="@Title" />
+  @if (!string.IsNullOrWhiteSpace(Description)) { <meta name="twitter:description" content="@Description" /> }
+  @if (!string.IsNullOrWhiteSpace(OgImage)) { <meta name="twitter:image" content="@OgImage" /> }
+</HeadContent>

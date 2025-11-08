@@ -1,0 +1,26 @@
+@* Bloc réutilisable pour titres de section ou hero *@
+<div class="section-header text-@Align mb-4">
+    @if (!string.IsNullOrEmpty(Icon))
+    {
+        <div class="section-icon mb-2">
+            <i class="fas @Icon fa-2x"></i>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(Title))
+    {
+        <h2 class="section-title">@Title</h2>
+    }
+
+    @if (!string.IsNullOrEmpty(Subtitle))
+    {
+        <p class="section-subtitle text-muted">@Subtitle</p>
+    }
+</div>
+
+@code {
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public string? Subtitle { get; set; }
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public string Align { get; set; } = "center";
+}

@@ -11,6 +11,8 @@
     { "text": "Hauts-de-France", "weight": 3 },
     { "text": "ERP", "weight": 4, "url": "/prestations" },
     { "text": "Coordination SSI", "weight": 5, "url": "/prestation/coordination-ssi-service" },
-    { "text": "DUERP", "weight": 3, "url": "/prestation/document-unique-evaluation" }
+    { "text": "RUS", "weight": 5, "url": "/prestation/responsable-unique-securite" },
+    { "text": "DUERP", "weight": 3, "url": "/prestation/document-unique-evaluation" },
+    { "text": "Signalétique", "weight": 3, "url": "/prestation/signaletique" }
   ]
 }

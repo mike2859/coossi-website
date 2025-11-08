@@ -1,51 +1,94 @@
 @page "/prestations"
-@using Coossi.Blazor.Components.Services
+
 @using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
 @inject NavigationManager Nav
 
+@code {
+    // JSON d’index des prestations : Content/prestations/_index.json
+    // Schéma attendu : { "items": [ { "title": "...", "slug": "...", "icon": "fa-...", "excerpt": "...", "bullets": ["..."] } ] }
+    private ServicesIndex? Index;
 
-<Breadcrumb Current="Prestations" />
-
-
-<PageHeader Title="Nos Prestations"
-                              Lead="Coordination SSI, Notices, Audits, Dossiers…" />
-<ServicesGrid />
-
-
-
-<WeightedCloud Id="prestations-generic" />
-
-@* @code {
-    IReadOnlyList<Coossi.Blazor.Data.Models.PrestationDto>? items;
-    protected override async Task OnInitializedAsync() => items = await Store.ListAsync();
-}
-
-<Seo Title="Prestations | COOSSI"
-     Description="Coordination SSI, dossier SSI, audit & diagnostic, DUERP, notices, RUS, signalétique."
-     Canonical="@(Nav.Uri)" />
-
-<h1 class="mb-4">Nos prestations</h1>
-
-@if (items is null)
-{
-  <div class="text-muted">Chargement…</div>
-}
-else
-{
-  <div class="row g-4">
-    @foreach (var p in items)
+    protected override async Task OnInitializedAsync()
     {
-      <div class="col-12 col-md-6 col-lg-4">
-        <a class="text-decoration-none text-reset" href="/prestation/@p.Slug">
-          <div class="card card-service h-100">
-            <div class="card-body">
-              <img src="@($"/images/categories/{p.Slug}.svg")" alt="@p.Title" width="48" height="48" class="mb-3">
-              <h3 class="h5 fw-bold mb-2">@p.Title</h3>
-              <p class="text-muted mb-0">@p.MetaDescription</p>
-            </div>
-          </div>
-        </a>
-      </div>
+        // Change le chemin si ton store pointe ailleurs
+        Index = await ContentStore.GetAsync<ServicesIndex>("prestations/_index");
     }
+
+    string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestations";
+}
+
+<!-- SEO -->
+<Seo Title="Prestations | COOSSI – Sécurité Incendie"
+     Description="Découvrez toutes nos prestations : Coordination SSI, Dossier SSI, Notices sécurité & accessibilité, Audit, DUERP, Signalétique…"
+     Canonical="@Canonical"
+     OgImage="images/og-prestations.webp" />
+
+<!-- Header -->
+<PageHeader Title="Nos prestations"
+            Lead="Accompagnement expert en sécurité incendie : de l’audit à la coordination SSI, de la documentation à la signalétique." />
+
+<section class="content-section">
+  <div class="container">
+
+    @if (Index?.Items?.Count > 0)
+    {
+        <div class="row">
+            @foreach (var s in Index.Items)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="info-card h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-2">
+                            @if (!string.IsNullOrWhiteSpace(s.Icon))
+                            {
+                                <i class="fas @s.Icon fa-2x me-2" style="color:var(--primary-color);"></i>
+                            }
+                            <h3 class="mb-0">@s.Title</h3>
+                        </div>
+
+                        @if (!string.IsNullOrWhiteSpace(s.Excerpt))
+                        {
+                            <p class="text-muted">@s.Excerpt</p>
+                        }
+
+                        @if (s.Bullets is not null && s.Bullets.Count > 0)
+                        {
+                            <ul class="mb-3">
+                                @foreach (var b in s.Bullets.Take(4))
+                                { <li>@b</li> }
+                            </ul>
+                        }
+
+                        <div class="mt-auto">
+                            <a class="btn-primary-custom" href="@($"/prestation/{s.Slug}")">
+                                <i class="fas fa-arrow-right"></i> Découvrir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center text-muted">
+            <p>Aucune prestation à afficher pour le moment.</p>
+        </div>
+    }
+
   </div>
-} *@
+</section>
+
+<!-- CTA bas de page -->
+<CtaBar Title="Un besoin précis ?"
+        Text="Expliquez-nous votre projet : on vous oriente vers la bonne prestation."
+        />
+
+@* <CtaBar Title="Un besoin précis ?"
+        Text="Expliquez-nous votre projet : on vous oriente vers la bonne prestation."
+        CtaText="Nous contacter"
+        CtaHref="/contact"
+        IconClass="fas fa-comments" /> *@

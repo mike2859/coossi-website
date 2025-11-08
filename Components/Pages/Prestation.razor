@@ -1,42 +1,29 @@
 @page "/prestation/{slug}"
-@using Coossi.Blazor.Components.Shared
-@using Coossi.Blazor.Data.Interfaces
-@inject IPrestationStore Store
-@inject NavigationManager Nav
+
+@using Microsoft.AspNetCore.Components
 
 @code {
-  [Parameter] public string? slug { get; set; }
-  Coossi.Blazor.Data.Models.PrestationDto? item;
-  protected override async Task OnParametersSetAsync()
-  {
-    if (!string.IsNullOrWhiteSpace(slug))
-      item = await Store.GetBySlugAsync(slug);
-  }
+    [Parameter] public string slug { get; set; } = "";
+
+    // Mappe chaque slug vers sa vue dédiée
+    private static readonly IReadOnlyDictionary<string, Type> Map =
+        new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["coordination-ssi"]               = typeof(Coossi.Blazor.Components.Prestations.Views.CoordinationView),
+            ["creation-dossier-ssi"]           = typeof(Coossi.Blazor.Components.Prestations.Views.DossierSsiView),
+            ["assistance-moe"]                 = typeof(Coossi.Blazor.Components.Prestations.Views.AssistanceMoeView),
+            ["notices-securite-accessibilite"] = typeof(Coossi.Blazor.Components.Prestations.Views.NoticesView),
+            ["audit-diagnostic"]               = typeof(Coossi.Blazor.Components.Prestations.Views.AuditDiagnosticView),
+            ["document-unique-evaluation"]     = typeof(Coossi.Blazor.Components.Prestations.Views.DuerpView),
+            ["responsable-unique-securite"]    = typeof(Coossi.Blazor.Components.Prestations.Views.RusView),
+            ["signaletique"]                   = typeof(Coossi.Blazor.Components.Prestations.Views.SignaletiqueView),
+        };
+
+    // Par défaut, on tombe sur une vue générique (peut afficher un message ou un 404 custom)
+    Type ViewType => Map.TryGetValue(slug, out var t)
+        ? t
+        : typeof(Coossi.Blazor.Components.Prestations.Views.GenericPrestationView);
 }
 
-@if (item is null)
-{
-  <div class="text-muted">Introuvable.</div>
-}
-else
-{
-  <Seo Title="@(item.MetaTitle ?? item.Title + " | COOSSI")"
-       Description="@(item.MetaDescription ?? item.IntroHtml)"
-       Canonical="@(Nav.Uri)" OgImage="@item.HeroImageWebp" />
-
-
-
-     <!-- Breadcrumb -->
-  <Breadcrumb Current="@item.Title" Parents="@(new Dictionary<string,string>{{"Prestations","/prestations"}})" />
-
-<PageHeader Title="@item.Title"
-                              Lead="@item.HeroLead" />
-
-    <section class="section-padding">
-        <div class="container">
-    @((MarkupString)item.BodyHtml)
-  </div>
-    </section>
-
-    <WeightedCloud Id="@($"keywords-{slug}")" Title="Mots-clés liés" />
-}
+<DynamicComponent Type="ViewType"
+                  Parameters="@(new Dictionary<string, object?> { ["Slug"] = slug })" />

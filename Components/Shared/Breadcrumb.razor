@@ -1,4 +1,19 @@
-@using Microsoft.AspNetCore.Components.Routing
+@code {
+  [Parameter] public List<(string Href, string Label)> Items { get; set; } = new();
+  [Parameter] public string? Current { get; set; }
+}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb m-0">
+    @foreach (var (href, label) in Items)
+    { <li class="breadcrumb-item"><a class="text-decoration-none" href="@href">@label</a></li> }
+    @if (!string.IsNullOrWhiteSpace(Current))
+    { <li class="breadcrumb-item active" aria-current="page">@Current</li> }
+  </ol>
+</nav>
+
+
+
+@* @using Microsoft.AspNetCore.Components.Routing
 
 @code {
     [Parameter] public string? Current { get; set; }
@@ -27,3 +42,6 @@
         </ol>
     </div>
 </nav>
+
+
+ *@

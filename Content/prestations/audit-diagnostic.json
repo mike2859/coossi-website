@@ -1,11 +1,100 @@
 {
-  "Id": 7,
-  "Slug": "audit-diagnostic",
-  "Title": "Audit & Diagnostic",
-  "MetaTitle": "Audit & Diagnostic | COOSSI",
-  "MetaDescription": "État des lieux, conformité, recommandations priorisées.",
-  "IntroHtml": "Nous auditons vos équipements, procédures et conformité.",
-  "BodyHtml": "<h2>Livrables</h2><ul><li>Rapport de conformité</li><li>Plan d'actions priorisé</li></ul>",
-  "HeroImageWebp": "/images/slider-images/categories/audit-diagnostic.webp",
-  "HeroImagePngFallback": "/images/slider-images/categories/audit-diagnostic.png"
+  "slug": "audit-diagnostic",
+  "seo": {
+    "metaTitle": "Audit & Diagnostic Sécurité Incendie | COOSSI Valenciennes",
+    "metaDescription": "Audits et diagnostics SSI pour ERP, IGH, ERT/ICPE. Contrôle de conformité, rapport détaillé et plan d’actions priorisé.",
+    "ogImage": "images/og-prestations.webp"
+  },
+  "hero": {
+    "title": "Audit & Diagnostic Sécurité Incendie",
+    "subtitle": "Contrôle complet de vos installations SSI et mise en conformité",
+    "icon": "fas fa-search"
+  },
+
+  "intro": {
+    "title": "Pourquoi réaliser un audit ?",
+    "paragraphs": [
+      "Tout système de sécurité incendie installé au sein d'un établissement doit être à la fois fonctionnel et respectueux des normes en vigueur.",
+      "Si vous n'avez pas fait vérifier vos équipements depuis quelques temps, il n'est pas impossible qu'ils présentent certains dysfonctionnements… Et en matière de sécurité incendie, on ne plaisante pas !",
+      "Pour s'assurer d'être en conformité avec la législation en vigueur, ne tardez pas à faire expertiser votre établissement : qu'il s'agisse d'un diagnostic ou d'un audit, COOSSI répond présent."
+    ]
+  },
+
+  "preservation": {
+    "title": "Préservation de vos équipements",
+    "paragraphs": [
+      "Afin de préserver vos équipements de la vétusté ou de l'obsolescence, faites appel à COOSSI (Lille, Paris, Marseille, Lyon, Toulouse, Nice, Nantes, Montpellier, Strasbourg, Bordeaux…).",
+      "À mesure que les normes évoluent, il est primordial de prévoir des modifications, remplacements ou extensions. Avant toute démarche, nous réalisons un audit complet."
+    ]
+  },
+
+  "steps": {
+    "title": "Les étapes de l’audit incendie",
+    "lead": "L'audit s'effectue en plusieurs étapes afin d'en optimiser les résultats :",
+    "items": [
+      { "title": "Visite préalable", "text": "Préparation et identification des risques, vulnérabilités et premières mesures de remise en conformité." },
+      { "title": "Entretien direction", "text": "Prise en compte des contraintes spécifiques (opérationnelles et réglementaires)." },
+      { "title": "Examen complet", "text": "Analyse des documents et infrastructures : équipements/Issues de secours, consignes, risques particuliers, etc." }
+    ]
+  },
+
+  "intervention": {
+    "title": "Notre intervention",
+    "paragraphs": [
+      "COOSSI intervient auprès des professionnels près de Valenciennes et partout en France pour réaliser un diagnostic/audit complet des installations SSI (ERP, IGH, ERT/ICPE).",
+      "Contactez votre coordinateur, Jean LEBLANC, pour tout besoin ou pour en apprendre plus sur la réglementation incendie."
+    ]
+  },
+
+  "establishments": {
+    "title": "Établissements concernés",
+    "items": [
+      { "icon": "fas fa-building", "title": "ERP", "subtitle": "Établissements Recevant du Public", "small": "Commerce, restauration, enseignement, santé, hébergement…" },
+      { "icon": "fas fa-city", "title": "IGH", "subtitle": "Immeubles de Grande Hauteur", "small": "Tours de bureaux, immeubles d’habitation…" },
+      { "icon": "fas fa-industry", "title": "ERT & ICPE", "subtitle": "Établissements industriels", "small": "Entrepôts, usines, installations classées…" }
+    ]
+  },
+
+  "checkpoints": {
+    "title": "Points de contrôle de l’audit",
+    "left": [
+      { "title": "Équipements de sécurité", "bullets": ["Extincteurs / RIA", "Fonctionnement du SSI", "Systèmes de détection", "Alarmes et signalisation", "Éclairage de sécurité"] },
+      { "title": "Documentation", "bullets": ["Registre de sécurité", "Dossier d'identité SSI", "Notices de sécurité", "Plans de prévention", "PV de vérification"] }
+    ],
+    "right": [
+      { "title": "Infrastructures", "bullets": ["Issues de secours", "Compartimentage", "Désenfumage", "Cheminements d'évacuation", "Plans d'évacuation"] },
+      { "title": "Organisation", "bullets": ["Consignes de sécurité", "Formation du personnel", "Exercices d'évacuation", "Maintenance préventive", "Gestion des anomalies"] }
+    ]
+  },
+
+  "deliverable": {
+    "title": "Livrable : Rapport d’audit détaillé",
+    "bullets": [
+      "État des lieux détaillé des installations",
+      "Liste des non-conformités identifiées",
+      "Plan d’actions priorisé",
+      "Recommandations techniques",
+      "Estimation budgétaire des travaux"
+    ]
+  },
+
+  "contact": {
+    "title": "Demandez votre audit",
+    "text": "Contactez Jean LEBLANC pour planifier un audit de sécurité incendie de votre établissement.",
+    "phoneDisplay": "06.85.75.27.75",
+    "phoneHref": "tel:0685752775",
+    "buttonText": "Demander un audit",
+    "buttonHref": "/contact"
+  },
+
+  "citiesIntro": "COOSSI réalise vos audits et diagnostics SSI partout en France",
+  "cities": ["Valenciennes","Lille","Paris","Marseille","Lyon","Toulouse","Nice","Nantes","Montpellier","Strasbourg","Bordeaux","Roubaix","Tourcoing","Dunkerque","Lens","Arras"],
+  "keywords": ["Audit SSI","Diagnostic sécurité incendie","Conformité ERP","IGH","ERT/ICPE","Rapport d’audit","Plan d’actions"],
+
+  "cta": {
+    "title": "Ne laissez pas la vétusté compromettre votre sécurité",
+    "text": "Faites expertiser vos installations SSI par un professionnel qualifié SSIAP3.",
+    "buttonText": "Planifier un audit",
+    "buttonHref": "/contact"
+  }
 }

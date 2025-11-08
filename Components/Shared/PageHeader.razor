@@ -1,25 +1,24 @@
 @code {
-  [Parameter] public string Title { get; set; } = "";
-  [Parameter] public string? Lead { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string? Lead { get; set; }
+    [Parameter] public string? Icon { get; set; }    // ex: "fa-shield-alt"
+    [Parameter] public string Variant { get; set; } = "light"; // light | dark
+    [Parameter] public string? BgClass { get; set; } // ex: "bg-light", "bg-dark text-white"
+    [Parameter] public RenderFragment? Extra { get; set; }     // boutons etc.
 }
 
-
-    <section class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-4">@Title</h1>
-                     @if (!string.IsNullOrWhiteSpace(Lead)) { <p class="lead">@Lead</p> }
-                </div>
-            </div>
-        </div>
-    </section>
-
-@* <section class="page-header" style="background:linear-gradient(135deg,#dc3545,#b02a37);color:white;padding:120px 0 80px">
+<section class="@($"page-header {(BgClass ?? "")}")">
   <div class="container">
-    <div class="row"><div class="col-lg-10 mx-auto text-center">
-      <h1 class="display-4 fw-bold mb-4">@Title</h1>
-      @if (!string.IsNullOrWhiteSpace(Lead)) { <p class="lead">@Lead</p> }
-    </div></div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        @if (!string.IsNullOrWhiteSpace(Icon))
+        {
+          <div class="display-5 mb-3"><i class="fas @Icon"></i></div>
+        }
+        <h1 class="display-4 fw-bold mb-3">@Title</h1>
+        @if (!string.IsNullOrWhiteSpace(Lead)) { <p class="lead">@Lead</p> }
+        @if (Extra is not null) { <div class="mt-3">@Extra</div> }
+      </div>
+    </div>
   </div>
-</section> *@
+</section>

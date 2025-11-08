@@ -1,0 +1,35 @@
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Models
+@inject NavigationManager Nav
+
+@code {
+    [Parameter] public string Slug { get; set; } = "";
+
+    private string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
+}
+
+<Seo Title="Prestation introuvable | COOSSI"
+     Description="La prestation que vous recherchez n'existe pas ou n'est plus disponible."
+     Canonical="@Canonical"
+     OgImage="images/og-prestations.webp" />
+
+<section class="content-section">
+    <div class="container text-center py-5">
+        <div class="info-card highlight-box mx-auto" style="max-width:700px;">
+            <h1 class="mb-3">Prestation introuvable</h1>
+            <p class="lead mb-4">
+                La page <strong>@Slug</strong> n’existe pas ou a été déplacée.<br />
+                Vous pouvez retourner à la liste de nos prestations ou contacter notre équipe.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+                <a href="/prestations" class="btn-primary-custom">
+                    <i class="fas fa-list"></i> Voir toutes les prestations
+                </a>
+                <a href="/contact" class="btn-secondary-custom">
+                    <i class="fas fa-envelope"></i> Nous contacter
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+@code {
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string? LeadStrong { get; set; }
+    [Parameter] public string? TextStrong { get; set; }
+    [Parameter] public string? Phone { get; set; }
+    [Parameter] public string? PhoneHref { get; set; }
+    [Parameter] public string? ContactHref { get; set; }
+    [Parameter] public string? ContactLabel { get; set; } = "Nous contacter";
+    [Parameter] public string? Icon { get; set; } = "fa-shield-alt"; // icône à droite
+}
+
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center hero-content">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-4">@Title</h1>
+
+                @if (!string.IsNullOrWhiteSpace(LeadStrong))
+                {
+                    <p class="lead mb-4 text-seo"><strong>@LeadStrong</strong></p>
+                }
+                @if (!string.IsNullOrWhiteSpace(TextStrong))
+                {
+                    <p class="mb-4 text-seo"><strong>@TextStrong</strong></p>
+                }
+
+                <div class="d-flex flex-wrap gap-3">
+                    @if (!string.IsNullOrWhiteSpace(Phone) && !string.IsNullOrWhiteSpace(PhoneHref))
+                    {
+                        <a href="@PhoneHref" class="btn btn-custom btn-lg">
+                            <i class="fas fa-phone me-2"></i>@Phone
+                        </a>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(ContactHref))
+                    {
+                        <a href="@ContactHref" class="btn btn-outline-custom btn-lg">
+                            <i class="fas fa-envelope me-2"></i>@ContactLabel
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="display-1 text-white-50">
+                    <i class="fas @Icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,212 @@
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@using Coossi.Blazor.Data.Models.Prestations
+@inject IContentStore Content
+@inject NavigationManager Nav
+
+@code {
+  [Parameter] public string Slug { get; set; } = "";
+  private AssistanceMoePage? Model;
+  protected override async Task OnParametersSetAsync()
+    => Model = await Content.GetAsync<AssistanceMoePage>($"prestations/{Slug}");
+  string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
+}
+
+@if (Model is null) { <section class="content-section"><div class="container">Chargement…</div></section> }
+else {
+  <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
+  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+
+    <!-- HERO -->
+    <section class="hero-section" style="margin-top:76px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <h1 class="display-5 fw-bold mb-2">
+                        <i class="@Model.Hero.Icon me-2"></i>@Model.Hero.Title
+                    </h1>
+                    <p class="lead mb-0">@Model.Hero.Subtitle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENU -->
+    <section class="content-section">
+        <div class="container">
+
+            <!-- MISSION D'ASSISTANCE -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle me-2"></i>@Model.Mission.Title</h3>
+                        @foreach (var p in Model.Mission.Paragraphs)
+                        {
+                            <p>@p</p>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- MISSIONS DU COORDINATEUR -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.MissionsCoordinateur.Title</h2>
+                    <p>@Model.MissionsCoordinateur.Intro</p>
+
+                    <div class="row mt-4">
+                        @foreach (var card in Model.MissionsCoordinateur.Cards)
+                        {
+                            <div class="col-lg-6 mb-4">
+                                <div class="info-card h-100">
+                                    <h3><i class="@card.Icon me-2"></i>@card.Title</h3>
+                                    <p class="mb-0">@card.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHASE DE RÉALISATION -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Realisation.Title</h2>
+                    <div class="info-card">
+                        <span class="phase-badge">@Model.Realisation.Badge</span>
+                        <p>@Model.Realisation.Intro</p>
+
+                        <h4 class="mt-4"><i class="fas fa-tools me-2"></i>@Model.Realisation.SubTitle</h4>
+                        <p>@Model.Realisation.SubText</p>
+                        <ul class="mt-3">
+                            @foreach (var b in Model.Realisation.Bullets)
+                            {
+                                <li>@b</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUREAU D'ÉTUDES EN SSI -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.BureauEtudes.Title</h2>
+                    <div class="info-card">
+                        <div class="badge-custom">
+                            <i class="fas fa-certificate me-2"></i>@Model.BureauEtudes.Badge
+                        </div>
+                        <p class="mb-0">@Model.BureauEtudes.Text</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERTISES -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Expertises.Title</h2>
+                    <p>@Model.Expertises.Intro</p>
+                    <div class="row mt-4">
+                        @foreach (var e in Model.Expertises.Items)
+                        {
+                            <div class="col-lg-4 mb-4">
+                                <div class="info-card text-center h-100">
+                                    <i class="@e.Icon fa-3x mb-3" style="color:var(--primary);"></i>
+                                    <h3>@e.Title</h3>
+                                    <p class="mb-0">@e.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLANS & DOCUMENTATION -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.PlansDocs.Title</h2>
+                    <div class="info-card">
+                        <p>@Model.PlansDocs.Intro</p>
+                        <ul>
+                            @foreach (var item in Model.PlansDocs.Items)
+                            {
+                                <li>@item</li>
+                            }
+                        </ul>
+                        <p class="mb-0">@Model.PlansDocs.ClosingText</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D.O.E. -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">@Model.Doe.Title</h2>
+                    <div class="info-card">
+                        <p>@Model.Doe.Intro</p>
+
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-lightbulb me-2"></i>@Model.Doe.HighlightTitle</h4>
+                            <p>@Model.Doe.HighlightLead</p>
+                            <p class="mb-0">@Model.Doe.HighlightText</p>
+                        </div>
+
+                        <p class="mt-3">@Model.Doe.Outro</p>
+                        <p class="mt-3"><strong>@Model.Doe.Note</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT BLOc -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="info-card text-center">
+                        <h3><i class="fas fa-phone-alt me-2"></i>@Model.Contact.Title</h3>
+                        <p>@Model.Contact.Text</p>
+                        <p class="mb-4">
+                            <strong>Téléphone :</strong>
+                            <a href="@Model.Contact.PhoneHref"
+                               style="color:var(--primary);font-weight:bold;font-size:1.3rem;">
+                                @Model.Contact.PhoneDisplay
+                            </a>
+                        </p>
+                        <a href="@Model.Contact.ButtonHref" class="btn-primary-custom">
+                            <i class="fas fa-envelope me-2"></i>@Model.Contact.ButtonText
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZONES D'INTERVENTION -->
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <div class="cities-cloud">
+                        <h3><i class="fas fa-map-marker-alt me-2"></i>Nos Zones d'Intervention</h3>
+                        <p class="mb-3">@Model.CitiesIntro</p>
+                        <div>
+                            @foreach (var city in Model.Cities)
+                            {
+                                <a class="city-link" href="#">@city</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">@Model.Cta.Title</h2>
+            <p class="mb-4">@Model.Cta.Text</p>
+            <a href="@Model.Cta.ButtonHref" class="btn-primary-custom">
+                <i class="fas fa-phone me-2"></i>@Model.Cta.ButtonText
+            </a>
+        </div>
+    </section>
+
+  @* <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" /> *@
+}

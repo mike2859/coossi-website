@@ -1,0 +1,8 @@
+@code {
+  [Parameter] public string Payload { get; set; } = "{}"; // JSON déjà sérialisé
+}
+<HeadContent>
+  <script type="application/ld+json">
+    @((MarkupString)Payload)
+  </script>
+</HeadContent>

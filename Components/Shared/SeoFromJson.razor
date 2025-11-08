@@ -1,0 +1,55 @@
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
+@inject NavigationManager Nav
+
+@code {
+    [Parameter] public string Id { get; set; } = ""; // ex: "home", "references"
+    private SeoSiteDefaults? _site;
+    private SeoMeta? _page;
+    private string? _title;
+    private string? _description;
+    private string? _canonical;
+    private string? _og;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        _site = await ContentStore.GetAsync<SeoSiteDefaults>("seo/site");
+        _page = await ContentStore.GetAsync<SeoMeta>($"seo/{Id}");
+
+        var currentPath = Nav.ToBaseRelativePath(Nav.Uri);
+        var baseUrl = _site?.BaseUrl?.TrimEnd('/');
+        var autoCanonical = $"{baseUrl}/{currentPath}".TrimEnd('/');
+        if (string.IsNullOrEmpty(currentPath)) autoCanonical = $"{baseUrl}/";
+
+        _title = !string.IsNullOrWhiteSpace(_page?.Title)
+            ? _page!.Title
+            : (!string.IsNullOrWhiteSpace(_site?.DefaultTitleSuffix) ? $"{Id} {_site!.DefaultTitleSuffix}" : Id);
+
+        _description = !string.IsNullOrWhiteSpace(_page?.Description)
+            ? _page!.Description
+            : _site?.DefaultDescription;
+
+        _canonical = !string.IsNullOrWhiteSpace(_page?.Canonical)
+            ? _page!.Canonical
+            : autoCanonical;
+
+        _og = !string.IsNullOrWhiteSpace(_page?.OgImage) ? _page!.OgImage : _site?.DefaultOgImage;
+    }
+}
+
+@if (_site is not null)
+{
+    <Seo Title="@_title"
+         Description="@_description"
+         Canonical="@_canonical"
+         OgImage="@_og"
+         Locale="@_site.Locale" />
+
+    @if (_page?.Noindex == true)
+    {
+        <HeadContent>
+            <meta name="robots" content="noindex, nofollow" />
+        </HeadContent>
+    }
+}

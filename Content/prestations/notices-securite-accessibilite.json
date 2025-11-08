@@ -1,0 +1,158 @@
+{
+  "slug": "notice-securite-accessibilite",
+  "seo": {
+    "metaTitle": "Notices de Sécurité & Accessibilité | COOSSI Valenciennes",
+    "metaDescription": "COOSSI rédige vos notices de sécurité incendie et d’accessibilité pour ERP, IGH et IPCE. Conforme à l'article GE2. Expert près de Valenciennes.",
+    "ogImage": "images/og-prestations.webp"
+  },
+  "hero": {
+    "icon": "fas fa-file-contract",
+    "title": "Notices de Sécurité & Accessibilité",
+    "subtitle": "Rédaction professionnelle pour ERP, IGH et IPCE conforme aux normes"
+  },
+
+  "intro": {
+    "title": "Notre Expertise",
+    "paragraphs": [
+      "Vous souhaitez faire appel à une entreprise spécialisée dans la protection incendie près de Valenciennes ? La société COOSSI vous propose la réalisation de notices de sécurité et d’accessibilité pour tous types de bâtiments : ERP, IGH ou encore IPCE.",
+      "Pour faire rédiger vos notices de sécurité incendie par un professionnel du domaine, contactez Jean LEBLANC par mail ou par téléphone au 06.85.75.27.75."
+    ]
+  },
+
+  "docsPermis": {
+    "title": "Documents Obligatoires pour le Permis de Construire",
+    "paragraphs": [
+      "Lors du dépôt de permis de construire pour la création d'un établissement recevant du public (ERP), le maître d'ouvrage doit impérativement joindre une notice d'accessibilité et une notice de sécurité incendie. Ces documents généralement plastifiés sont présents dans tous les bâtiments et justifient la mise en conformité des lieux avec les normes en vigueur.",
+      "Réalisés en collaboration directe avec le maître d’ouvrage, lors de la phase conception du projet, ces documents doivent respecter un certain nombre de règles."
+    ]
+  },
+
+  "notices": {
+    "title": "Les Deux Types de Notices",
+    "items": [
+      {
+        "badge": "Notice de Sécurité",
+        "title": "Notice de Sécurité Incendie",
+        "text": "La notice de sécurité doit faire apparaître très clairement les zones d'évacuation en cas d'incendie ou de sinistre. Conformément à l'article GE2 de l'arrêté du 25 Juin 1980 modifié, la société COOSSI vous accompagne pour concevoir une notice de sécurité claire et conforme.",
+        "bullets": [
+          "Zones d'évacuation",
+          "Issues de secours",
+          "Dispositifs de sécurité",
+          "Systèmes d'alarme",
+          "Moyens d'extinction"
+        ]
+      },
+      {
+        "badge": "Notice d'Accessibilité",
+        "title": "Notice d’Accessibilité",
+        "text": "La notice d’accessibilité doit préciser les dimensions de chaque espace, les dispositifs de commandes utilisables par les personnes à mobilité réduite, ainsi que les conditions de raccordement entre le bâtiment et la voirie.",
+        "bullets": [
+          "Dimensions des espaces",
+          "Dispositifs pour PMR",
+          "Raccordement à la voirie",
+          "Cheminements accessibles",
+          "Équipements adaptés"
+        ]
+      }
+    ]
+  },
+
+  "integration": {
+    "title": "Intégration au Dossier d'Identité SSI",
+    "text": "Les notices SSI et d’accessibilité font partie du dossier d’identité SSI, remis à la commission concernée. Contactez la société COOSSI à Valenciennes et les environs, pour des documents respectant toutes les contraintes techniques et les normes en vigueur."
+  },
+
+  "plans": {
+    "title": "Plans de Zones et Plans de Mise en Sécurité",
+    "intro": "Des plans de zones manquent lors des vérifications réglementaires ? Faites appel à la société COOSSI pour y remédier. Expert en sécurité incendie, Jean LEBLANC réalise tous les plans de mise en sécurité et de détection :",
+    "items": [
+      "Z.A – Zone d'Alarme",
+      "Z.C – Zone de Compartimentage",
+      "Z.F – Zone de Fumée",
+      "Z.D.A – Zone de Détection Automatique",
+      "Z.D.M – Zone de Détection Manuelle"
+    ]
+  },
+
+  "docsComplement": {
+    "title": "Documentation Complémentaire",
+    "items": [
+      {
+        "icon": "fas fa-map-marked-alt",
+        "title": "Plans d'Implantation SDI/SMSI",
+        "text": "Plans techniques détaillant l’implantation du système de détection incendie et du système de mise en sécurité."
+      },
+      {
+        "icon": "fas fa-project-diagram",
+        "title": "Synoptiques",
+        "text": "Schémas synoptiques permettant de visualiser le fonctionnement global du SSI."
+      },
+      {
+        "icon": "fas fa-folder-open",
+        "title": "Classement Dossier SSI",
+        "text": "Organisation et classement du dossier d’identité SSI remis à la commission."
+      }
+    ],
+    "conclusion": "Après avoir obtenu tous ces documents, votre établissement respectera l'ensemble de la réglementation en vigueur."
+  },
+
+  "establishments": {
+    "title": "Types d'Établissements Concernés",
+    "items": [
+      {
+        "icon": "fas fa-building",
+        "title": "ERP",
+        "subtitle": "Établissements Recevant du Public",
+        "small": "Commerce, restauration, enseignement, hébergement..."
+      },
+      {
+        "icon": "fas fa-city",
+        "title": "IGH",
+        "subtitle": "Immeubles de Grande Hauteur",
+        "small": "Immeubles de bureaux, habitation..."
+      },
+      {
+        "icon": "fas fa-industry",
+        "title": "IPCE",
+        "subtitle": "Installations Classées",
+        "small": "Sites industriels, entrepôts..."
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Contactez un Expert",
+    "text": "Pour en savoir plus ou pour obtenir un rendez-vous avec Jean LEBLANC, spécialiste en sécurité et accessibilité des ERP, IGH ou IPCE.",
+    "phoneDisplay": "06.85.75.27.75",
+    "phoneHref": "tel:0685752775",
+    "buttonText": "Formulaire de Contact",
+    "buttonHref": "/contact"
+  },
+
+  "citiesIntro": "COOSSI rédige vos notices de sécurité et d’accessibilité partout en France",
+  "cities": [
+    "Valenciennes",
+    "Lille",
+    "Roubaix",
+    "Tourcoing",
+    "Dunkerque",
+    "Maubeuge",
+    "Lens",
+    "Arras",
+    "Cambrai",
+    "Amiens",
+    "Calais",
+    "Reims",
+    "Paris",
+    "Lyon",
+    "Marseille",
+    "Bordeaux"
+  ],
+
+  "cta": {
+    "title": "Besoin de Notices de Sécurité & Accessibilité ?",
+    "text": "COOSSI vous accompagne dans la rédaction de tous vos documents réglementaires pour votre permis de construire.",
+    "buttonText": "Demander un Devis",
+    "buttonHref": "/contact"
+  }
+}

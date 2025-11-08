@@ -1,11 +1,144 @@
 {
-  "Id": 8,
-  "Slug": "document-unique-evaluation",
-  "Title": "Document Unique d'Évaluation des Risques (DUERP)",
-  "MetaTitle": "DUERP | COOSSI",
-  "MetaDescription": "Évaluation des risques professionnels, mise à jour et plan d'actions.",
-  "IntroHtml": "Nous réalisons et mettons à jour votre DUERP.",
-  "BodyHtml": "<h2>Contenu</h2><ul><li>Identification des risques</li><li>Mesures de prévention</li></ul>",
-  "HeroImageWebp": "/images/slider-images/categories/document-unique-evaluation.webp",
-  "HeroImagePngFallback": "/images/slider-images/categories/document-unique-evaluation.png"
+  "slug": "duerp",
+  "seo": {
+    "metaTitle": "Document Unique d'Évaluation des Risques Professionnels (DUERP) | COOSSI",
+    "metaDescription": "COOSSI rédige et met à jour votre DUERP : inventaire des risques, évaluation, plan d’actions et prévention. Intervention nationale.",
+    "ogImage": "images/og-prestations.webp"
+  },
+  "hero": {
+    "icon": "fas fa-clipboard-list",
+    "title": "Document Unique d'Évaluation des Risques Professionnels (DUERP)",
+    "subtitle": "Rédaction professionnelle pour préserver la santé et la sécurité de vos employés"
+  },
+
+  "intro": {
+    "title": "Qu'est-ce que le DUERP ?",
+    "paragraphs": [
+      "Vous souhaitez faire appel à un professionnel pour la rédaction de votre Document Unique d'Évaluation des Risques (DUERP) ? Contactez la société COOSSI !",
+      "Jean LEBLANC met ses compétences à votre service pour la rédaction de ce document, recensant l'ensemble des risques pour la santé et la sécurité du personnel et des individus présents dans le bâtiment.",
+      "Ce document comporte l'inventaire des risques dans chaque unité de travail d'une entreprise ou d'un ERP, et doit être mis à jour dès que cela est nécessaire."
+    ]
+  },
+
+  "objectif": {
+    "title": "Objectif du Document Unique Professionnels",
+    "paragraphs": [
+      "Le DUERP sert à élaborer un bilan de la situation générale de l'hygiène, de la sécurité et des conditions de travail ainsi que le programme annuel de prévention des risques."
+    ],
+    "alert": {
+      "title": "Document Obligatoire",
+      "text": "Afin de préserver vos employés, COOSSI assure la rédaction de ce document unique, qui devra être affiché dans l'entreprise concernée."
+    }
+  },
+
+  "contenu": {
+    "title": "Contenu du Document Unique",
+    "lead": "De manière manuscrite ou digitalisée, le DUERP doit comporter l'inventaire des risques par unité de travail. On y retrouve :",
+    "cards": [
+      {
+        "icon": "fas fa-exclamation-circle",
+        "title": "Inventaire des Risques",
+        "text": "Identification des dangers présents, sources potentielles de dommages et analyse préliminaire."
+      },
+      {
+        "icon": "fas fa-chart-line",
+        "title": "Évaluation des Risques",
+        "text": "Estimation de la gravité et de la probabilité d’occurrence pour chaque risque."
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "Mesures de Prévention",
+        "text": "Actions existantes et complémentaires pour éliminer ou réduire les risques."
+      },
+      {
+        "icon": "fas fa-tasks",
+        "title": "Plan d’Actions",
+        "text": "Priorités, responsables et calendrier de mise en œuvre."
+      }
+    ]
+  },
+
+  "riskTypes": {
+    "title": "Types de Risques Évalués",
+    "items": [
+      {
+        "icon": "fas fa-fire",
+        "title": "Risques Incendie",
+        "bullets": [ "Sources d'ignition", "Matériaux combustibles", "Évacuation", "Moyens de lutte" ]
+      },
+      {
+        "icon": "fas fa-hard-hat",
+        "title": "Risques Physiques",
+        "bullets": [ "Chutes de plain-pied", "Chutes de hauteur", "Risques mécaniques", "Bruit et vibrations" ]
+      },
+      {
+        "icon": "fas fa-flask",
+        "title": "Risques Chimiques",
+        "bullets": [ "Produits dangereux", "Exposition aux agents", "Stockage", "Manipulation" ]
+      },
+      {
+        "icon": "fas fa-hand-holding-medical",
+        "title": "Risques Ergonomiques",
+        "bullets": [ "Postures de travail", "Manutention manuelle", "Gestes répétitifs", "TMS" ]
+      },
+      {
+        "icon": "fas fa-brain",
+        "title": "Risques Psychosociaux",
+        "bullets": [ "Stress au travail", "Charge mentale", "Relations de travail", "Harcèlement" ]
+      },
+      {
+        "icon": "fas fa-bolt",
+        "title": "Risques Électriques",
+        "bullets": [ "Installations", "Équipements", "Maintenance", "Habilitation" ]
+      }
+    ]
+  },
+
+  "miseAJour": {
+    "title": "Mise à Jour du DUERP",
+    "bullets": [
+      "Au moins une fois par an",
+      "Lors de toute modification importante des conditions de travail",
+      "Aménagement de nouveaux locaux",
+      "Acquisition de nouveaux équipements",
+      "Suite à un AT/MP",
+      "Nouvelles informations concernant l’évaluation d’un risque"
+    ]
+  },
+
+  "formats": {
+    "title": "Formats Disponibles",
+    "items": [
+      {
+        "icon": "fas fa-file-alt",
+        "title": "Format Manuscrit",
+        "text": "Document papier plastifié pour affichage obligatoire dans l'entreprise."
+      },
+      {
+        "icon": "fas fa-laptop",
+        "title": "Format Digitalisé",
+        "text": "Version numérique accessible et modifiable pour faciliter les mises à jour."
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Contactez-nous",
+    "text": "Pour faire appel à nos services ou prendre rendez-vous près de Valenciennes pour la rédaction de votre DUERP.",
+    "phoneDisplay": "06.85.75.27.75",
+    "phoneHref": "tel:0685752775",
+    "buttonText": "Formulaire en Ligne",
+    "buttonHref": "/contact"
+  },
+
+  "citiesIntro": "COOSSI rédige et met à jour votre DUERP partout en France",
+  "cities": [ "Valenciennes", "Lille", "Roubaix", "Tourcoing", "Dunkerque", "Maubeuge", "Lens", "Arras", "Cambrai", "Amiens", "Paris", "Lyon", "Marseille", "Bordeaux", "Toulouse", "Nantes" ],
+  "keywords": [ "DUERP", "Document Unique", "Évaluation des risques", "Prévention", "Plan d’actions", "Santé et sécurité au travail" ],
+
+  "cta": {
+    "title": "Protégez Vos Employés avec un DUERP Conforme",
+    "text": "COOSSI vous accompagne dans la rédaction et la mise à jour de votre Document Unique d'Évaluation des Risques.",
+    "buttonText": "Demander une Rédaction",
+    "buttonHref": "/contact"
+  }
 }

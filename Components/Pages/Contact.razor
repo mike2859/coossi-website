@@ -1,4 +1,5 @@
 @page "/contact"
+@using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @using Microsoft.AspNetCore.Components.Forms
@@ -9,12 +10,14 @@
     private EditContext? EditCtx;
     protected override async Task OnInitializedAsync()
     {
-         Page = await ContentStore.GetAsync<ContactPage>("contact");
+        Page = await ContentStore.GetAsync<ContactPage>("contact");
         // EditForm a besoin d'un modèle ou d'un EditContext ; on lui donne un contexte "neutre"
         EditCtx = new EditContext(new object());
     }
 }
 
+
+<SeoFromJson Id="contact" />
 
 @if (Page is null)
 {
@@ -27,7 +30,7 @@
 }
 else
 {
-    <section class="page-header">
+    @* <section class="page-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -36,7 +39,9 @@ else
                 </div>
             </div>
         </div>
-    </section>
+    </section> *@
+    <PageHeader Title="@Page!.Title" Lead="@Page.Lead" />
+
 
     <!-- Highlights -->
     <section class="section-padding">
@@ -49,9 +54,20 @@ else
                             <i class="fas @h.Icon display-4 mb-3"></i>
                             <h5 class="fw-bold">@h.Title</h5>
                             @if (!string.IsNullOrWhiteSpace(h.Phone) && !string.IsNullOrWhiteSpace(h.PhoneHref))
-                            { <a href="@h.PhoneHref" class="@(h.Variant=="warning" ? "text-white" : "text-white") text-decoration-none fw-bold fs-5">@h.Phone</a> }
-                            @if (!string.IsNullOrWhiteSpace(h.Text)) { <p class="mt-2 mb-0 small">@h.Text</p> }
-                            @if (h.Lines is not null) { foreach(var line in h.Lines) { <p class="mb-1">@line</p> } }
+                            {
+                                <a href="@h.PhoneHref" class="@(h.Variant == "warning" ? "text-white" : "text-white") text-decoration-none fw-bold fs-5">@h.Phone</a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(h.Text))
+                            {
+                                <p class="mt-2 mb-0 small">@h.Text</p>
+                            }
+                            @if (h.Lines is not null)
+                            {
+                                foreach (var line in h.Lines)
+                                {
+                                    <p class="mb-1">@line</p>
+                                }
+                            }
                         </div>
                     </div>
                 }
@@ -84,9 +100,9 @@ else
                 <div class="col-lg-7">
                     <div class="contact-form">
                         <h3 class="fw-bold mb-4"><i class="fas fa-envelope text-danger me-3"></i>@Page.Form.Title</h3>
-                        <EditForm EditContext="EditCtx" OnValidSubmit="@OnSubmit">
+                        <EditForm EditContext="EditCtx" FormName="ContactForm" OnValidSubmit="@OnSubmit">
                             <div class="row g-3">
-                                @foreach (var f in Page.Form.Fields.Where(x => x.Type=="text" || x.Type=="email" || x.Type=="tel").Chunk(2))
+                                @foreach (var f in Page.Form.Fields.Where(x => x.Type == "text" || x.Type == "email" || x.Type == "tel").Chunk(2))
                                 {
                                     <div class="col-md-6">
                                         @foreach (var field in f)
@@ -100,26 +116,32 @@ else
                                 }
                             </div>
 
-                            @foreach (var field in Page.Form.Fields.Where(x => x.Type=="select"))
+                            @foreach (var field in Page.Form.Fields.Where(x => x.Type == "select"))
                             {
                                 <div class="form-floating mb-3">
                                     <select class="form-select" id="@field.Id" required="@field.Required">
                                         <option value="">Choisissez le type de projet</option>
-                                        @if (field.Options is not null) { foreach (var opt in field.Options) { <option value="@opt.ToLowerInvariant().Replace(' ','-')">@opt</option> } }
+                                        @if (field.Options is not null)
+                                        {
+                                            foreach (var opt in field.Options)
+                                            {
+                                                <option value="@opt.ToLowerInvariant().Replace(' ', '-')">@opt</option>
+                                            }
+                                        }
                                     </select>
                                     <label for="@field.Id">@field.Label</label>
                                 </div>
                             }
 
-                            @foreach (var field in Page.Form.Fields.Where(x => x.Type=="textarea"))
+                            @foreach (var field in Page.Form.Fields.Where(x => x.Type == "textarea"))
                             {
                                 <div class="form-floating mb-4">
-                                    <textarea class="form-control" id="@field.Id" style="height:@($"{(field.Rows ?? 5)*24}px")" placeholder="@field.Label" required="@field.Required"></textarea>
+                                    <textarea class="form-control" id="@field.Id" style="height:@($"{(field.Rows ?? 5) * 24}px")" placeholder="@field.Label" required="@field.Required"></textarea>
                                     <label for="@field.Id">@field.Label</label>
                                 </div>
                             }
 
-                            @foreach (var field in Page.Form.Fields.Where(x => x.Type=="checkbox"))
+                            @foreach (var field in Page.Form.Fields.Where(x => x.Type == "checkbox"))
                             {
                                 <div class="form-check mb-4">
                                     <input class="form-check-input" type="checkbox" id="@field.Id" required="@field.Required" />
@@ -180,13 +202,13 @@ else
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="accordion" id="faqAccordion">
-                        @for (var i=0; i<Page.Faq.Items.Count; i++)
+                        @for (var i = 0; i < Page.Faq.Items.Count; i++)
                         {
                             var item = Page.Faq.Items[i];
-                            var open = i==0 ? "show" : "";
+                            var open = i == 0 ? "show" : "";
                             <div class="accordion-item mb-3 border-0 shadow-sm">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button @(i==0?"" :"collapsed")" type="button" data-bs-toggle="collapse" data-bs-target="@($"#faq{i}")">
+                                    <button class="accordion-button @(i == 0 ? "" : "collapsed")" type="button" data-bs-toggle="collapse" data-bs-target="@($"#faq{i}")">
                                         <i class="fas @item.Icon text-danger me-3"></i>@item.Q
                                     </button>
                                 </h2>
@@ -206,8 +228,8 @@ else
     private string HighlightClass(string variant) => variant switch
     {
         "warning" => "urgency-contact",
-        "dark"    => "service-hours",
-        _         => "contact-highlight"
+        "dark" => "service-hours",
+        _ => "contact-highlight"
     };
 
     private void OnSubmit()
