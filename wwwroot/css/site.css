@@ -91,9 +91,17 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
    ======================= */
 .expertise-section{background:var(--dark); color:#fff}
 .expertise-item{text-align:center; padding:30px 16px}
-.expertise-icon{
-  width:80px;height:80px;margin:0 auto 18px; border-radius:50%;
-  background:var(--primary); color:#fff; display:flex;align-items:center;justify-content:center; font-size:1.8rem;
+.expertise-icon .expertise-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
 }
 
 .process-step{
@@ -667,7 +675,7 @@ footer{background:var(--dark); color:#fff}
     margin-top: 2rem;
 }
 
-.expertise-item {
+.expertise-grid .expertise-item {
     background: #fff;
     border-radius: 10px;
     padding: 25px 20px;
@@ -676,12 +684,12 @@ footer{background:var(--dark); color:#fff}
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .expertise-item:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-    }
+.expertise-grid .expertise-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
 
-    .expertise-item i {
+    .expertise-grid .expertise-item i {
         display: block;
         font-size: 2rem;
         color: var(--primary);

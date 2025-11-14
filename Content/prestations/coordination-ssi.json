@@ -14,86 +14,184 @@
   "intro": {
     "title": "Qu'est-ce que la Coordination SSI ?",
     "paragraphs": [
-      "En application de l'article § 5.3 de la norme NF S 61-931, une mission de coordination des Systèmes de Sécurité Incendie (SSI) est rendue obligatoire pour les maîtres d’ouvrages.",
-      "Spécialisée en coordination de sécurité incendie autour de Valenciennes, COOSSI veille au respect des normes anti-incendie en vigueur. En étroite collaboration avec le maître d’ouvrage, nous assurons coordination SSI, création de dossiers d’identité SSI, notices de sécurité, etc."
+      "La coordinattion SSI est l'étude de l'architecture du système de Sécurité Incendie permettant la mise en sécurité d'un établissement"
     ]
   },
 
   "legal": {
-    "title": "Cadre Légal & Réglementaire",
+    "title": "Mission de Coordination SSI Obligatoire",
     "paragraphs": [
-      "La réglementation incendie pour les ERP vise à protéger les personnes face aux risques d’incendie. Elle concerne la construction (voies d’accès, issues de secours) et l’installation d’équipements assurant la sécurité au quotidien.",
-      "La mission de coordination consiste à analyser les besoins de SSI (cat. A, B, C, D) et à garantir la cohérence des installations aux phases de conception, réalisation et réception."
-    ],
-    "highlightTitle": "Mission de Coordination Obligatoire",
-    "highlightText": "La coordination SSI garantit la cohérence technique du système : conception, réalisation et réception. Elle s’appuie sur la NF S 61-931 et la doctrine des commissions de sécurité."
+      "En application de l'article § 5.3 de la norme NF S 61-931, une mission de coordination des Systèmes de Sécurité Incendie (SSI) doit nécessairement présider à l'analyse des besoins de sécurité et à la conception du SSI.",
+      "Cette mission doit également exister lors de la réalisation ou modification ou extension d'un bâtiment",
+      "COOSSI vous accompagne tout au long de votre projet"
+
+      //  "La réglementation incendie pour les ERP vise à protéger les personnes face aux risques d’incendie. Elle concerne la construction (voies d’accès, issues de secours) et l’installation d’équipements assurant la sécurité au quotidien.",
+      //  "La mission de coordination consiste à analyser les besoins de SSI (cat. A, B, C, D) et à garantir la cohérence des installations aux phases de conception, réalisation et réception."
+      //
+    ]
   },
 
   "missions": {
-    "title": "Missions de Coordination",
-    "lead": "Pour tous types de locaux, il est primordial de mettre en place un système de sécurité incendie optimal. Les missions varient selon les besoins : organisation documentaire, coordination des acteurs, audits, essais, etc.",
+    "title": "Déroulement de la mission de base",
     "items": [
       {
         "title": "Phase Conception",
         "icon": "fas fa-clipboard-check",
         "bullets": [
-          "Analyse des besoins SSI",
-          "Définition du cahier des charges",
-          "Choix des équipements",
-          "Coordination avec les acteurs"
+          "Élaboration du concept de mise en sécurité",
+          "Rédaction du Cahier des Charges Fonctionnel",
+          "Organisation des zones de détection et des zones de sécurité",
+          "Création des tableaux de corrélation"
         ]
       },
       {
         "title": "Phase Réalisation",
         "icon": "fas fa-tools",
         "bullets": [
-          "Suivi des travaux",
-          "Contrôle de conformité",
-          "Coordination des entreprises",
-          "Réunions techniques"
+          "Réunion avant démarrage des travaux avec les différents intervenants",
+          "Suivi de chantier"
+          //"Suivi des travaux",
         ]
       },
       {
         "title": "Phase Réception",
         "icon": "fas fa-check-circle",
         "bullets": [
+          "Récollement des documents d'ouvrage éxecuté (DOE)",
           "Essais fonctionnels",
-          "Vérification des installations",
-          "Formation du personnel",
-          "Remise du dossier SSI"
+          "Rapport de réception technique",
+          "Création du dossier d'identité SSI",
+          "Participation à la commission de sécurité"
         ]
       },
       {
-        "title": "Documentation",
+        "title": "Mission complémentaire",
         "icon": "fas fa-file-alt",
         "bullets": [
-          "Dossier d’identité SSI",
-          "Notices de sécurité",
-          "Plans de prévention",
-          "Procès-verbaux"
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
         ]
       }
     ]
   },
 
   "methodo": {
-    "title": "Notre Méthodologie",
+    "title": "Détail de la mission complémentaire",
     "lead": "COOSSI vous accompagne tout au long du projet avec une approche structurée en 3 phases principales :",
     "steps": [
       {
-        "title": "1. Conception",
+        "title": "ESQ",
         "icon": "fas fa-pencil-ruler",
-        "text": "Définition des besoins, élaboration du cahier des charges et coordination avec tous les acteurs."
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
+        ]
       },
       {
-        "title": "2. Réalisation",
+        "title": "APS",
         "icon": "fas fa-hard-hat",
-        "text": "Suivi de chantier, contrôle de conformité et coordination des entreprises intervenantes."
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
+        ]
       },
       {
         "title": "3. Réception",
         "icon": "fas fa-handshake",
-        "text": "Essais fonctionnels, formation du personnel et remise du dossier complet au maître d’ouvrage."
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
+        ]
+      },
+      {
+        "title": "1. Conception",
+        "icon": "fas fa-pencil-ruler",
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
+        ]
+      },
+      {
+        "title": "2. Réalisation",
+        "icon": "fas fa-hard-hat",
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
+        ]
+      },
+      {
+        "title": "3. Réception",
+        "icon": "fas fa-handshake",
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet"
+        ]
+      },
+      {
+        "title": "1. Conception",
+        "icon": "fas fa-pencil-ruler",
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
+        ]
+      },
+      {
+        "title": "2. Réalisation",
+        "icon": "fas fa-hard-hat",
+        "bullets": [
+          "Phase ESQUISSE",
+          "Phase APS: Avant Projet Sommaire",
+          "Phase APD:Avant Projet Définitif",
+          "Phase PRO: Projet",
+          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
+          "Phase VISA: Visa des plans et documents techniques",
+          "Phase DET: Direction de l'Exécution des Travaux",
+          "Phase AOR: Assistance aux Opérations de Réception"
+        ]
       }
     ]
   },
@@ -132,13 +230,15 @@
     "title": "Pourquoi Choisir COOSSI ?",
     "leftBullets": [
       "Expertise reconnue depuis 2012",
-      "Qualification SSIAP3",
-      "Conformité garantie aux normes"
+      "Diplôme SSIAP3",
+      "Diplôme de Coordinateur en Système de Sécurité Inendie",
+      "Interlocuteur unique"
     ],
     "rightBullets": [
-      "Prestation clé en main",
+      "Prestations clé en main",
       "Disponibilité et réactivité",
-      "Intervention partout en France"
+      "Intervention sur le territoire national",
+      "Notoriété reconnue"
     ]
   },
 
@@ -187,7 +287,7 @@
   ],
 
   "contactText": "Besoin d’une coordination SSI ? Jean LEBLANC coordonne vos systèmes avec expertise et réactivité. Tél. : 06 85 75 27 75.",
-  "citiesIntro": "COOSSI coordonne vos systèmes de sécurité incendie dans toute la France",
+  "citiesIntro": "Notre seul objectif: Votre satisfaction avec un avis favorable à l'exploitation de votre (vos) bâtiment (s), par les autorités compétentes.",
   "cities": [
     "Valenciennes",
     "Amiens",

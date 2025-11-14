@@ -47,7 +47,7 @@ public sealed record MethodoBlock(
     string Lead,
     List<MethodStep> Steps
 );
-public sealed record MethodStep(string Title, string Icon, string Text);
+public sealed record MethodStep(string Title, string Icon, List<string> Bullets);
 
 //public sealed record EstablishmentsBlock(
 //    string Title,

@@ -11,11 +11,10 @@
       "leadHtml": "<strong>Coordination des Systèmes de Sécurité Incendie</strong> dans le cadre de l'installation, de l'asservissement et de la mise en conformité de vos équipements.",
       "featuresTitle": "Missions réalisées :",
       "features": [
-        "Coordination SSI phase conception, réalisation, réception",
-        "Suivi des travaux en phase d'étude, réalisation et réception",
-        "Installation et asservissement du désenfumage",
-        "Mise en conformité des équipements de sécurité incendie",
-        "Validation technique des systèmes installés"
+        "Coordination SSI phases conception, réalisation, réception",
+        "Validation technique des systèmes installés",
+        "Aide à la préparation des commissions de sécurité",
+        "Levée des réserves et suivi des actions correctives"
       ],
       "rightBox": {
         "icon": "fa-certificate",
@@ -28,21 +27,37 @@
       "kind": "service",
       "id": "notices",
       "icon": "fa-file-alt",
-      "title": "Notice de Sécurité et Accessibilité",
-      "leadHtml": "<strong>Réalisation de notice de sécurité et accessibilité</strong> pour tous types de bâtiments : ERP, IGH, HABITATION ou encore ICPE.",
-      "featuresTitle": "Conformément à l'article GE2 de l'arrêté du 25 Juin 1980 modifié :",
-      "features": [
-        "Zones d'évacuation en cas d'incendie ou de sinistre",
-        "Dimensions de chaque espace et dispositifs de commandes",
-        "Conditions de raccordement entre le bâtiment et la voirie",
-        "Documents plastifiés pour affichage qualitatif",
-        "Respect des contraintes techniques et normes en vigueur"
-      ],
+      "title": "Notice de Sécurité et d'Accessibilité",
+      "leadHtml": "<strong>Réalisation de notice de sécurité et d'accessibilité</strong> pour tous types de bâtiments : ERT, ERP, HABITATION, ICPE, IGH.",
+      //"featuresTitle": "Conformément à :",
+      //"features": [
+      //  "ERP Arrêté du 25 juin 1980 du réglement de Sécurité contre l'incendie dispotitions générales et particulières",
+      //  "ERT Code du travail",
+      //  "Habitation Arrêté du 31 janvier 1986",
+      //  "ICPE Arrêté du 15 février 2012",
+      //  "IGH Arrêté du 30 décembre 2011"
+      //],
       "leftBoxes": [
-        { "icon": "fa-building", "title": "ERP", "subtitle": "Établissements Recevant du Public" },
-        { "icon": "fa-city", "title": "IGH", "subtitle": "Immeubles de Grande Hauteur" },
-        { "icon": "fa-industry", "title": "ICPE", "subtitle": "Installations Classées pour la Protection de l'Environnement" },
-        { "icon": "fa-home", "title": "HABITATION", "subtitle": "Résidences, copropriétés, logements collectifs" }
+        {
+          "icon": "fa-building",
+          "title": "ERP",
+          "subtitle": "Établissements Recevant du Public"
+        },
+        {
+          "icon": "fa-city",
+          "title": "IGH",
+          "subtitle": "Immeubles de Grande Hauteur"
+        },
+        {
+          "icon": "fa-industry",
+          "title": "ICPE",
+          "subtitle": "Installations Classées pour la Protection de l'Environnement"
+        },
+        {
+          "icon": "fa-home",
+          "title": "HABITATION",
+          "subtitle": "Résidences, copropriétés, logements collectifs"
+        }
       ],
       "reverse": true,
       "bg": "light"
@@ -51,15 +66,14 @@
       "kind": "service",
       "id": "plans",
       "icon": "fa-map",
-      "title": "Plans de Zones & Dossiers SSI",
-      "leadHtml": "<strong>Réalisation de tous les plans de mise en sécurité et de détection</strong> pour un affichage qualitatif et une meilleure lisibilité.",
+      "title": "Plans d'évacuation et plan d'intervention",
+      "leadHtml": "<strong>Réalisation ou modification de tous les plans de mise en sécurité et de détection</strong> pour un affichage qualitatif et une meilleure lisibilité.",
       "featuresTitle": "Plans réalisés :",
       "zoneTags": ["Z.A", "Z.C", "Z.F", "Z.D.A", "Z.D.M"],
       "features": [
         "Plans d'implantation SDI/SMSI",
         "Synoptiques de sécurité incendie",
-        "Dossier d'identité du SSI",
-        "Plans plastifiés pour meilleure durabilité"
+        "Dossier d'identité du SSI"
       ],
       "rightBox": {
         "icon": "fa-drafting-compass",

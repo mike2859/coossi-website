@@ -71,10 +71,7 @@ else
                     <h2 class="section-title">@Model.Legal.Title</h2>
                     <div class="info-card">
                         @foreach (var p in Model.Legal.Paragraphs) { <p>@p</p> }
-                        <div class="highlight-box mt-3">
-                            <h4><i class="fas fa-balance-scale me-2"></i>@Model.Legal.HighlightTitle</h4>
-                            <p class="mb-0">@Model.Legal.HighlightText</p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -102,7 +99,7 @@ else
             </div>
 
             <!-- MÉTHODO -->
-            <div class="row mb-5">
+         @*    <div class="row mb-5">
                 <div class="col-lg-12">
                     <h2 class="section-title">@Model.Methodo.Title</h2>
                     <p>@Model.Methodo.Lead</p>
@@ -110,17 +107,21 @@ else
                     <div class="row">
                         @foreach (var s in Model.Methodo.Steps)
                         {
-                            <div class="col-lg-4 mb-4">
-                                <div class="info-card text-center h-100">
-                                    <i class="@s.Icon fa-3x mb-3" style="color: var(--primary);"></i>
-                                    <h3>@s.Title</h3>
-                                    <p>@s.Text</p>
+                            <div class="col-lg-3 mb-3">
+                                <div class="info-card h-100">
+                                    <h3 class="text-center">@s.Title</h3>
+                                    <ul>
+                                        @foreach (var b in s.Bullets)
+                                        {
+                                            <li>@b</li>
+                                        }
+                                    </ul>
                                 </div>
                             </div>
                         }
                     </div>
                 </div>
-            </div>
+            </div> *@
 
             <!-- ÉTABLISSEMENTS CONCERNÉS -->
             <div class="row mb-5">
