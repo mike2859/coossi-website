@@ -7,42 +7,40 @@
   },
   "hero": {
     "title": "Audit & Diagnostic Sécurité Incendie",
-    "subtitle": "Contrôle complet de vos installations SSI et mise en conformité",
+    "subtitle": "Evaluation de l'état de vos installations des Systèmes de Sécurité Incendie",
     "icon": "fa-solid fa-search"
   },
 
   "intro": {
     "title": "Pourquoi réaliser un audit ?",
     "paragraphs": [
-      "Tout système de sécurité incendie installé au sein d'un établissement doit être à la fois fonctionnel et respectueux des normes en vigueur.",
-      "Si vous n'avez pas fait vérifier vos équipements depuis quelques temps, il n'est pas impossible qu'ils présentent certains dysfonctionnements… Et en matière de sécurité incendie, on ne plaisante pas !",
-      "Pour s'assurer d'être en conformité avec la législation en vigueur, ne tardez pas à faire expertiser votre établissement : qu'il s'agisse d'un diagnostic ou d'un audit, COOSSI répond présent."
-    ]
+      "Tout système de sécurité incendie installé au sein d'un établissement doit être à la fois fonctionnel et à jour en ce qui concerne la règlementation en sécurité incendie et les normes en vigueur.",
+      "Vous êtes déjà responsable ou venez d'acquérir la responsabilité de votre établissement au niveau de la sécurité incendie et n'êtes pas certain de la conformité du système installé, ou avez des déclenchements intempestifs du système, et ne savez pas comment les résoudre, vous devez réaliser des travaux de changement de Système de Sécurité ou d'extension. Il serait judicieux de faire réaliser un audit de l'installation complète tant au niveau fonctionnel qu'au niveau documentaire."]
   },
 
   "preservation": {
-    "title": "Préservation de vos équipements",
+    "title": "COOSSi peut intervenir au travers d'un audit règlementaire et documentaire",
     "paragraphs": [
-      "Afin de préserver vos équipements de la vétusté ou de l'obsolescence, faites appel à COOSSI (Lille, Paris, Marseille, Lyon, Toulouse, Nice, Nantes, Montpellier, Strasbourg, Bordeaux…).",
-      "À mesure que les normes évoluent, il est primordial de prévoir des modifications, remplacements ou extensions. Avant toute démarche, nous réalisons un audit complet."
+     "COOSSI intervient sur le territoire national (Lille, Paris, Marseille, Lyon, Toulouse, Nice, Nantes, Montpellier, Strasbourg, Bordeaux…).",
+      "Avant tous travaux, pour régler un problème dans l'installation, changer le système de sécurité incendie, réaliser une extension du bâtiment ou du système de sécurité incendie ou pour toute démarche administrative comme le dossier d'autorisation de travaux, nous réalisons un audit complet au niveau de l'état du système de sécurité incendie avec un rapport de préconisations."
     ]
   },
 
   "steps": {
-    "title": "Les étapes de l’audit incendie",
+    "title": "Les étapes de l’audit du système de sécurité incendie",
     "lead": "L'audit s'effectue en plusieurs étapes afin d'en optimiser les résultats :",
     "items": [
-      { "title": "Visite préalable", "text": "Préparation et identification des risques, vulnérabilités et premières mesures de remise en conformité." },
-      { "title": "Entretien direction", "text": "Prise en compte des contraintes spécifiques (opérationnelles et réglementaires)." },
-      { "title": "Examen complet", "text": "Analyse des documents et infrastructures : équipements/Issues de secours, consignes, risques particuliers, etc." }
+      { "title": "Visite préalablede votre établissement", "text": "Visite de l'établissement, identification des différents risques rencontrés lors de l'exploitation et relevé des éventuelles non-conformités." },
+      { "title": "Entretien avec la direction", "text": "Prise en compte des contraintes spécifiques (techniques et / ou batimentaires). Consultation des documents tels que le Registre de sécurité, le dernier rapport de la commission de sécurité, les derniers rapports de maintenance, ... ." },
+      { "title": "Rédaction du Rapport d'audit sécurité incendie", "text": "Analyse des documents et plans fournis. Rédaction d'un Rapport reprenant les éventuelles non-conformités et les prescriptions permettant un système efficace et sécuritaire" }
     ]
   },
 
   "intervention": {
-    "title": "Notre intervention",
+    "title": "Notre zone d'intervention",
     "paragraphs": [
-      "COOSSI intervient auprès des professionnels près de Valenciennes et partout en France pour réaliser un diagnostic/audit complet des installations SSI (ERP, IGH, ERT/ICPE).",
-      "Contactez votre coordinateur, Jean LEBLANC, pour tout besoin ou pour en apprendre plus sur la réglementation incendie."
+      "Notre zone d'intervention est le territoire national pour réaliser un audit / diagnostic complet de votre installations SSI quel que soit le type et la taille de votre établissement.",
+      "Contactez Jean, pour tout besoin ou pour toute question que vous vous posez."
     ]
   },
 
@@ -51,19 +49,19 @@
     "items": [
       { "icon": "fas fa-building", "title": "ERP", "subtitle": "Établissements Recevant du Public", "small": "Commerce, restauration, enseignement, santé, hébergement…" },
       { "icon": "fas fa-city", "title": "IGH", "subtitle": "Immeubles de Grande Hauteur", "small": "Tours de bureaux, immeubles d’habitation…" },
-      { "icon": "fas fa-industry", "title": "ERT & ICPE", "subtitle": "Établissements industriels", "small": "Entrepôts, usines, installations classées…" }
+      { "icon": "fas fa-industry", "title": "ERT & ICPE", "subtitle": "Établissements industriels", "small": "Etablissements recevant des travailleurs, installations classées pour l'environnement,Entrepôts, usines,…" }
     ]
   },
 
   "checkpoints": {
     "title": "Points de contrôle de l’audit",
     "left": [
-      { "title": "Équipements de sécurité", "bullets": ["Extincteurs / RIA", "Fonctionnement du SSI", "Systèmes de détection", "Alarmes et signalisation", "Éclairage de sécurité"] },
-      { "title": "Documentation", "bullets": ["Registre de sécurité", "Dossier d'identité SSI", "Notices de sécurité", "Plans de prévention", "PV de vérification"] }
+      { "title": "Équipements de sécurité", "bullets": ["Extincteurs / RIA", "Asservissements du SSI","Signalétiques", "Éclairage de sécurité", "Plans de prévention"] },
+      { "title": "Documentation", "bullets": ["Registre de sécurité", "Dossier d'identité SSI", "Permis de construire","Rapports de maintenance","Rapports de Commissions de Sécurité"] },
     ],
     "right": [
-      { "title": "Infrastructures", "bullets": ["Issues de secours", "Compartimentage", "Désenfumage", "Cheminements d'évacuation", "Plans d'évacuation"] },
-      { "title": "Organisation", "bullets": ["Consignes de sécurité", "Formation du personnel", "Exercices d'évacuation", "Maintenance préventive", "Gestion des anomalies"] }
+      { "title": "Mise en Sécurité", "bullets": ["Issues de secours", "Compartimentage", "Désenfumage" ] },
+      { "title": "Organisation", "bullets": ["Consignes de sécurité", "Formation du personnel", "Exercices d'évacuation", "Maintenance préventive", "Gestion des anomalies"] },
     ]
   },
 
