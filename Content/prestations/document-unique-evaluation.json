@@ -14,9 +14,9 @@
   "intro": {
     "title": "Qu'est-ce que le DUERP ?",
     "paragraphs": [
-      "Vous souhaitez faire appel à un professionnel pour la rédaction de votre Document Unique d'Évaluation des Risques (DUERP) ? Contactez la société COOSSI !",
-      "Jean LEBLANC met ses compétences à votre service pour la rédaction de ce document, recensant l'ensemble des risques pour la santé et la sécurité du personnel et des individus présents dans le bâtiment.",
-      "Ce document comporte l'inventaire des risques dans chaque unité de travail d'une entreprise ou d'un ERP, et doit être mis à jour dès que cela est nécessaire."
+      "Le document unique d'évaluation des risques professionnels (DUERP) est un document obligatoire dans toutes les entreprises dès l'embauche du premier salarié." ,
+     // "Pour réaliser le DUERP, COOSSI recense d'abord les risques présents dans l'entreprise au cours de réunions avec les salariés et la Commission Santé Sécurité et Conditions de Travail (CSSCT) si existante.",
+      "Formés à lé rédaction du DUERP quel que soit le type d'activité de votre établissement, nous mettons nos compétences à votre service pour la rédaction de ce document."
     ]
   },
 

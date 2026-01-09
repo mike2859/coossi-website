@@ -30,8 +30,8 @@
     "title": "Les étapes de l’audit du système de sécurité incendie",
     "lead": "L'audit s'effectue en plusieurs étapes afin d'en optimiser les résultats :",
     "items": [
-      { "title": "Visite préalablede votre établissement", "text": "Visite de l'établissement, identification des différents risques rencontrés lors de l'exploitation et relevé des éventuelles non-conformités." },
-      { "title": "Entretien avec la direction", "text": "Prise en compte des contraintes spécifiques (techniques et / ou batimentaires). Consultation des documents tels que le Registre de sécurité, le dernier rapport de la commission de sécurité, les derniers rapports de maintenance, ... ." },
+      { "title": "Visite préalable de votre établissement", "text": "Visite de l'établissement, identification des différents risques rencontrés lors de l'exploitation et relevé des éventuelles non-conformités." },
+      { "title": "Entretien avec l'exploitant", "text": "Prise en compte des contraintes spécifiques (techniques et / ou batimentaires). Consultation des documents tels que le Registre de sécurité, le dernier rapport de la commission de sécurité, les derniers rapports de maintenance, ... ." },
       { "title": "Rédaction du Rapport d'audit sécurité incendie", "text": "Analyse des documents et plans fournis. Rédaction d'un Rapport reprenant les éventuelles non-conformités et les prescriptions permettant un système efficace et sécuritaire" }
     ]
   },
@@ -54,31 +54,21 @@
   },
 
   "checkpoints": {
-    "title": "Points de contrôle de l’audit",
+    "title": "Contenu du rapport d’audit",
     "left": [
-      { "title": "Équipements de sécurité", "bullets": ["Extincteurs / RIA", "Asservissements du SSI","Signalétiques", "Éclairage de sécurité", "Plans de prévention"] },
       { "title": "Documentation", "bullets": ["Registre de sécurité", "Dossier d'identité SSI", "Permis de construire","Rapports de maintenance","Rapports de Commissions de Sécurité"] },
+      { "title": "Mise en Sécurité", "bullets": ["Issues de secours", "Compartimentage", "Désenfumage", "Point de rassemblement" ] }
+
     ],
     "right": [
-      { "title": "Mise en Sécurité", "bullets": ["Issues de secours", "Compartimentage", "Désenfumage" ] },
-      { "title": "Organisation", "bullets": ["Consignes de sécurité", "Formation du personnel", "Exercices d'évacuation", "Maintenance préventive", "Gestion des anomalies"] },
-    ]
-  },
-
-  "deliverable": {
-    "title": "Livrable : Rapport d’audit détaillé",
-    "bullets": [
-      "État des lieux détaillé des installations",
-      "Liste des non-conformités identifiées",
-      "Plan d’actions priorisé",
-      "Recommandations techniques",
-      "Estimation budgétaire des travaux"
+      { "title": "Équipements de sécurité", "bullets": ["Extincteurs / RIA", "Asservissements du SSI","Signalétiques", "Éclairage de sécurité", "Arrêts d'urgence"] },
+      { "title": "Organisation d'exploitation", "bullets": ["Consignes de sécurité","Consignes spécifiques", "Formation du personnel", "Exercices d'évacuation"] }
     ]
   },
 
   "contact": {
-    "title": "Demandez votre audit",
-    "text": "Contactez Jean LEBLANC pour planifier un audit de sécurité incendie de votre établissement.",
+        "title": "Demandez votre audit",
+    "text": "Contactez Jean pour planifier un audit de sécurité incendie de votre établissement.",
     "phoneDisplay": "06.85.75.27.75",
     "phoneHref": "tel:0685752775",
     "buttonText": "Demander un audit",
@@ -90,8 +80,8 @@
   "keywords": ["Audit SSI","Diagnostic sécurité incendie","Conformité ERP","IGH","ERT/ICPE","Rapport d’audit","Plan d’actions"],
 
   "cta": {
-    "title": "Ne laissez pas la vétusté compromettre votre sécurité",
-    "text": "Faites expertiser vos installations SSI par un professionnel qualifié SSIAP3.",
+    "title": "Un bâtiment conforme contribue à sauver des vies en cas d'incendie" ,
+    "text": "Assurez la conformité de vos installations SSI grâce à l’expertise d’un professionnel qualifié.",
     "buttonText": "Planifier un audit",
     "buttonHref": "/contact"
   }

@@ -36,21 +36,22 @@
         "title": "Notice de Sécurité Incendie",
         "text": "<p><strong>Elle est exigée par l'article R.143-22 du code de la construction et de l'habitation.</strong>  La notice de sécurité permet aux autorités (notamment la commission de sécurité) de vérifier que le projet respecte les normes en vigueur en matière de Sécurité Incendie, d'évacuation, d'intervention des secours et d'accessibilité.</p> <p><center>Contenu de la notice</center></p>",
         "bullets": [
-          "Classement",
-          "Implantation",
-          "Construction",
-          "Dégagements",
-          "Ventilation, Désenfumage",
-          "Eclairage",
-          "Risques particuliers",
-          "Moyens de secours",
-          "Dérogations éventuelles"
+          "Classement (CL)",
+          "Implantation et Isolement (I)",
+          "Construction (C)",
+          "Dégagements (D)",
+          "Ventilation & Désenfumage (V)",
+          "Chauffage & Climatisation (C)",
+          "Risques particuliers (R)",
+          "Electricité & Eclairage de sécurité (E)",
+          "Moyens de secours (M)",
+          "(Dérogations éventuelles)"
         ]
       },
       {
         "badge": "Notice d'Accessibilité",
         "title": "Notice d’Accessibilité",
-        "text": "<p>Elle est exigée par la règlemntation issue de la loi n°2005-102 du <strong>11 février 2005.</strong> Elle démontre que le projet respecte les règles d'accessibilité pour les personnes en situation de Handicap.</p> <p><center>Contenu de la notice</center></p>",
+        "text": "<p>Elle est exigée par la règlemntation issue de la loi n°2005-102 du <strong>11 février 2005 modifiée.</strong> Elle démontre que le projet respecte les règles d'accessibilité pour les personnes en situation de Handicap.</p> <p><center>Contenu de la notice</center></p>",
         "bullets": [
           "Cheminnements extérieurs",
           "Accès au bâtiment",
