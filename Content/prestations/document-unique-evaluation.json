@@ -2,7 +2,7 @@
   "slug": "duerp",
   "seo": {
     "metaTitle": "Document Unique d'Évaluation des Risques Professionnels (DUERP) | COOSSI",
-    "metaDescription": "COOSSI rédige et met à jour votre DUERP : inventaire des risques, évaluation, plan d’actions et prévention. Intervention nationale.",
+    "metaDescription": "COOSSI rédige et met à jour votre DUERP : inventaire des risques, évaluation, plan d'actions et prévention. Intervention nationale.",
     "ogImage": "images/og-prestations.webp"
   },
   "hero": {
@@ -14,9 +14,18 @@
   "intro": {
     "title": "Qu'est-ce que le DUERP ?",
     "paragraphs": [
-      "Le document unique d'évaluation des risques professionnels (DUERP) est un document obligatoire dans toutes les entreprises dès l'embauche du premier salarié." ,
-     // "Pour réaliser le DUERP, COOSSI recense d'abord les risques présents dans l'entreprise au cours de réunions avec les salariés et la Commission Santé Sécurité et Conditions de Travail (CSSCT) si existante.",
-      "Formés à lé rédaction du DUERP quel que soit le type d'activité de votre établissement, nous mettons nos compétences à votre service pour la rédaction de ce document."
+      "Le document unique d'évaluation des risques professionnels (DUERP) est un document obligatoire dans toutes les entreprises dès l'embauche du premier salarié.",
+      "Formés à la rédaction du DUERP quel que soit le type d'activité de votre établissement, nous mettons nos compétences à votre service pour la rédaction de ce document."
+    ]
+  },
+
+  "butEnjeux": {
+    "title": "But et enjeux",
+    "items": [
+      "Préserver la sécurité et la santé physique et mentale des travailleurs.",
+      "Contribuer à l'élaboration du programme annuel de prévention des risques professionnels prévus à l'article L. 4612-16.",
+      "Contribuer au dialogue social au sein de l'entreprise.",
+      "Mettre l'employeur face à son obligation de sécurité de moyens renforcés."
     ]
   },
 
@@ -31,6 +40,57 @@
     }
   },
 
+  "obligationsTravailleur": {
+    "title": "Obligations du travailleur",
+    "reference": "Article L.4122-1 du Code du Travail",
+    "text": "« (...) il incombe à chaque travailleur de prendre soin, en fonction de sa formation et selon ses possibilités, de sa santé et de sa sécurité ainsi que de celles des autres personnes concernées par ses actes ou ses omissions au travail. »",
+    "note": "Le principe de responsabilité du travailleur indiquée contre est sans incidence sur le principe de la responsabilité de l'employeur"
+  },
+
+  "obligationsEmployeur": {
+    "title": "Obligations de l'employeur",
+    "reference": "Article L.4121-2 du Code du Travail",
+    "subtitle": "9 PRINCIPES de la PRÉVENTION",
+    "principes": [
+      {
+        "ordre": 1,
+        "text": "Éviter les risques"
+      },
+      {
+        "ordre": 2,
+        "text": "Évaluer les risques qui ne peuvent pas être évités"
+      },
+      {
+        "ordre": 3,
+        "text": "Combattre les risques à la source"
+      },
+      {
+        "ordre": 4,
+        "text": "Remplacer ce qui est dangereux par ce qui l'est pas ou moins"
+      },
+      {
+        "ordre": 5,
+        "text": "Tenir compte de l'état de la technique"
+      },
+      {
+        "ordre": 6,
+        "text": "Adapter le travail à l'homme"
+      },
+      {
+        "ordre": 7,
+        "text": "Planifier la prévention"
+      },
+      {
+        "ordre": 8,
+        "text": "Prendre des mesures de protection collective"
+      },
+      {
+        "ordre": 9,
+        "text": "Donner les instructions appropriées aux travailleurs"
+      }
+    ]
+  },
+
   "contenu": {
     "title": "Contenu du Document Unique",
     "lead": "De manière manuscrite ou digitalisée, le DUERP doit comporter l'inventaire des risques par unité de travail. On y retrouve :",
@@ -43,7 +103,7 @@
       {
         "icon": "fas fa-chart-line",
         "title": "Évaluation des Risques",
-        "text": "Estimation de la gravité et de la probabilité d’occurrence pour chaque risque."
+        "text": "Estimation de la gravité et de la probabilité d'occurrence pour chaque risque."
       },
       {
         "icon": "fas fa-shield-alt",
@@ -52,7 +112,7 @@
       },
       {
         "icon": "fas fa-tasks",
-        "title": "Plan d’Actions",
+        "title": "Plan d'Actions",
         "text": "Priorités, responsables et calendrier de mise en œuvre."
       }
     ]
@@ -102,7 +162,7 @@
       "Aménagement de nouveaux locaux",
       "Acquisition de nouveaux équipements",
       "Suite à un AT/MP",
-      "Nouvelles informations concernant l’évaluation d’un risque"
+      "Nouvelles informations concernant l'évaluation d'un risque"
     ]
   },
 
@@ -133,7 +193,7 @@
 
   "citiesIntro": "COOSSI rédige et met à jour votre DUERP partout en France",
   "cities": [ "Valenciennes", "Lille", "Roubaix", "Tourcoing", "Dunkerque", "Maubeuge", "Lens", "Arras", "Cambrai", "Amiens", "Paris", "Lyon", "Marseille", "Bordeaux", "Toulouse", "Nantes" ],
-  "keywords": [ "DUERP", "Document Unique", "Évaluation des risques", "Prévention", "Plan d’actions", "Santé et sécurité au travail" ],
+  "keywords": [ "DUERP", "Document Unique", "Évaluation des risques", "Prévention", "Plan d'actions", "Santé et sécurité au travail" ],
 
   "cta": {
     "title": "Protégez Vos Employés avec un DUERP Conforme",
