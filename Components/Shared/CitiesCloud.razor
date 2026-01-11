@@ -1,0 +1,93 @@
+@code {
+    [Parameter] public List<string> Villes { get; set; } = [];
+    [Parameter] public List<string> MotsCles { get; set; } = [];
+    [Parameter] public string TitreSection { get; set; } = "";
+    [Parameter] public string SousTitreSection { get; set; } = "";
+
+    [Parameter] public string LienHref { get; set; } = "";
+    [Parameter] public string LienIcon { get; set; } = "";
+    [Parameter] public string LienText { get; set; } = "";
+    [Parameter] public bool AfficherBouton { get; set; } = false;
+    [Parameter] public bool AfficherMotsCles { get; set; } = false;
+}
+
+
+
+
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="cities-cloud">
+            <h3 class="fw-bold"><i class="fas fa-map-marker-alt me-2"></i>@TitreSection</h3>
+            <p class="lead mb-4">@SousTitreSection</p>
+            <div>
+                @for (var i = 0; i < Villes.Count; i++)
+                {
+                    var isRed = i % 2 == 0;
+                    if (isRed)
+                    {
+                        <span class="badge bg-danger fs-6 py-2 px-3">@Villes[i]</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">@Villes[i]</span>
+                    }
+                }
+                
+                @* @foreach (var c in Villes) *@
+                @* { *@
+                @*     <a class="city-link" href="#">@c</a> *@
+                @* } *@
+            </div>
+        @if (AfficherMotsCles)
+            {
+                <div class="mt-4">
+                    <small class="text-muted"><strong>Mots-clés :</strong> @string.Join(", ", MotsCles)</small>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@* <section class="section-padding bg-light"> *@
+@*     <div class="container"> *@
+@*         <div class="row"> *@
+@*             <div class="col-lg-8 mx-auto text-center mb-4"> *@
+@*                 <h2 class="display-6 fw-bold mb-3">@TitreSection</h2> *@
+@*                 <p class="lead">@SousTitreSection</p> *@
+@*             </div> *@
+@*         </div> *@
+@* *@
+@*         <div class="text-center"> *@
+@*             <div class="d-flex flex-wrap justify-content-center gap-2"> *@
+@*                 @for (var i = 0; i < Villes.Count; i++) *@
+@*                 { *@
+@*                     var isRed = i % 2 == 0; *@
+@*                     if (isRed) *@
+@*                     { *@
+@*                         <span class="badge bg-danger fs-6 py-2 px-3">@Villes[i]</span> *@
+@*                     } *@
+@*                     else *@
+@*                     { *@
+@*                         <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">@Villes[i]</span> *@
+@*                     } *@
+@*                 } *@
+@*             </div> *@
+@*             @if (AfficherBouton) *@
+@*             { *@
+@*                 <div class="mt-4"> *@
+@*                     <a href="@LienHref" class="btn btn-outline-dark"> *@
+@*                         <i class="fas @LienIcon me-2"></i>@LienText *@
+@*                     </a> *@
+@*                 </div>     *@
+@*             } *@
+@*         </div> *@
+@*          *@
+@*         @if (AfficherMotsCles) *@
+@*         { *@
+@*             <div class="mt-4"> *@
+@*                 <small class="text-muted"><strong>Mots-clés :</strong> @string.Join(", ", MotsCles)</small> *@
+@*             </div> *@
+@*         } *@
+@*          *@
+@*     </div> *@
+@* </section> *@

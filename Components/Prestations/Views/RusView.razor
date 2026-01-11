@@ -189,7 +189,7 @@ else {
                 </div>
             </div>
 
-            <!-- ZONES D'INTERVENTION -->
+            <!-- ZONES D'INTERVENTION 
             <div class="row mt-4">
                 <div class="col-lg-12">
                     <h2 class="section-title">Nos zones d'intervention</h2>
@@ -201,10 +201,14 @@ else {
                         }
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </section>
-
+  
+    <CitiesCloud Villes="@Model.Cities"
+                 TitreSection="Zones d'intervention - Coordination SSI"
+                 SousTitreSection="@Model.CitiesIntro" />
+        
     <!-- CTA FINALE -->
     <section class="cta-section">
         <div class="container text-center">

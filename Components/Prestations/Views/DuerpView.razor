@@ -209,7 +209,7 @@ else {
                 </div>
             </div>
 
-            <!-- CONTACT -->
+            <!-- CONTACT 
             <div class="row">
                 <div class="col-12">
                     <div class="info-card text-center">
@@ -227,11 +227,11 @@ else {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </section>
 
-    <!-- ZONES + MOTS-CLÉS -->
+    <!-- ZONES + MOTS-CLÉS 
     <section class="section-padding bg-light">
         <div class="container">
             <div class="cities-cloud">
@@ -253,7 +253,20 @@ else {
             </div>
         </div>
     </section>
-
+-->
+    
+    <CitiesCloud Villes="@Model.Cities"
+                 AfficherMotsCles="true"
+                 MotsCles="@Model.Keywords"
+                 TitreSection="Zones d'intervention - DUERP"
+                 SousTitreSection="@Model.CitiesIntro" />
+        
+    <CtaBar Title="@Model.Cta.Title" 
+            Text="@Model.Cta.Text" 
+            Phone="06 85 75 27 75" 
+            PhoneHref="tel:0685752775" 
+            ContactHref="/contact" Dark="true" />
+    
     <!-- CTA FINAL -->
     <section class="cta-section">
         <div class="container text-center">
