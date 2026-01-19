@@ -2,17 +2,85 @@
 @using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
-@using Microsoft.AspNetCore.Components.Forms
 @inject IContentStore ContentStore
+@inject IEmailService EmailService
+@inject ILogger<Contact> Logger
 
 @code {
     private ContactPage? Page;
-    private EditContext? EditCtx;
+
+     private EditContext? editContext;
+
+    [SupplyParameterFromForm]
+    private ContactFormModel FormModel {get; set; }
+
+    private ValidationMessageStore? messageStore;
+
+    private bool IsSubmitting = false;
+    private bool ShowSuccessMessage = false;
+    private bool ShowErrorMessage = false;
+
+
+    
     protected override async Task OnInitializedAsync()
     {
         Page = await ContentStore.GetAsync<ContactPage>("contact");
-        // EditForm a besoin d'un modèle ou d'un EditContext ; on lui donne un contexte "neutre"
-        EditCtx = new EditContext(new object());
+        
+        FormModel ??= new();
+   //     editContext = new(FormModel);
+       // editContext.OnValidationRequested += HandleValidationRequested;
+      //  messageStore = new(editContext);
+    }
+
+
+
+    private void HandleValidationRequested(object? sender,
+        ValidationRequestedEventArgs args)
+    {
+        messageStore?.Clear();
+
+        // Custom validation logic
+        if (!string.IsNullOrWhiteSpace(FormModel!.Email))
+        {
+            messageStore?.Add(() => FormModel.Email, "Saisir un email valide");
+        }
+    }
+    private async Task OnSubmit()
+    {
+        // Réinitialiser les messages
+        ShowSuccessMessage = false;
+        ShowErrorMessage = false;
+        IsSubmitting = true;
+
+        try
+        {
+            Logger.LogInformation("Début de soumission du formulaire pour {Email}", FormModel.Email);
+            
+            // Envoyer l'email
+            var success = await EmailService.SendContactEmailAsync(FormModel);
+
+            if (success)
+            {
+                Logger.LogInformation("Email envoyé avec succès");
+                ShowSuccessMessage = true;
+                // Réinitialiser le formulaire
+                FormModel = new ContactFormModel();
+            }
+            else
+            {
+                Logger.LogWarning("Échec de l'envoi de l'email");
+                ShowErrorMessage = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Erreur lors de la soumission du formulaire");
+            ShowErrorMessage = true;
+        }
+        finally
+        {
+            IsSubmitting = false;
+        }
     }
 }
 
@@ -30,18 +98,7 @@
 }
 else
 {
-    @* <section class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-4">@Page.Title</h1>
-                    <p class="lead">@Page.Lead</p>
-                </div>
-            </div>
-        </div>
-    </section> *@
     <PageHeader Title="@Page!.Title" Lead="@Page.Lead" />
-
 
     <!-- Highlights -->
     <section class="section-padding">
@@ -100,65 +157,115 @@ else
                 <div class="col-lg-7">
                     <div class="contact-form">
                         <h3 class="fw-bold mb-4"><i class="fas fa-envelope text-danger me-3"></i>@Page.Form.Title</h3>
-                        <EditForm EditContext="EditCtx" FormName="ContactForm" OnValidSubmit="@OnSubmit">
+
+                        @if (ShowSuccessMessage)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <i class="fas fa-check-circle me-2"></i>
+                                <strong>Message envoyé avec succès !</strong> Nous vous répondrons dans les plus brefs délais.
+                                <button type="button" class="btn-close" @onclick="@(() => ShowSuccessMessage = false)"></button>
+                            </div>
+                        }
+
+                        @if (ShowErrorMessage)
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                <strong>Erreur lors de l'envoi.</strong> Veuillez réessayer ou nous contacter par téléphone.
+                                <button type="button" class="btn-close" @onclick="@(() => ShowErrorMessage = false)"></button>
+                            </div>
+                        }
+
+                       <EditForm Model="@FormModel" OnValidSubmit="@OnSubmit" FormName="ContactForm" EditContext="editContext">
+                            <DataAnnotationsValidator />
+
                             <div class="row g-3">
-                                @foreach (var f in Page.Form.Fields.Where(x => x.Type == "text" || x.Type == "email" || x.Type == "tel").Chunk(2))
-                                {
-                                    <div class="col-md-6">
-                                        @foreach (var field in f)
-                                        {
-                                            <div class="form-floating mb-3">
-                                                <input type="@field.Type" class="form-control" id="@field.Id" placeholder="@field.Label" required="@field.Required" />
-                                                <label for="@field.Id">@field.Label</label>
-                                            </div>
-                                        }
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <InputText @bind-Value="FormModel.Nom" class="form-control" id="nom" placeholder="Nom" />
+                                        <label for="nom">Nom *</label>
+                                        <ValidationMessage For="@(() => FormModel.Nom)" class="text-danger small" />
                                     </div>
-                                }
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <InputText @bind-Value="FormModel.Prenom" class="form-control" id="prenom" placeholder="Prénom" />
+                                        <label for="prenom">Prénom *</label>
+                                        <ValidationMessage For="@(() => FormModel.Prenom)" class="text-danger small" />
+                                    </div>
+                                </div>
                             </div>
 
-                            @foreach (var field in Page.Form.Fields.Where(x => x.Type == "select"))
-                            {
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="@field.Id" required="@field.Required">
-                                        <option value="">Choisissez le type de projet</option>
-                                        @if (field.Options is not null)
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <InputText @bind-Value="FormModel.Email" type="email" class="form-control" id="email" placeholder="Email" />
+                                        <label for="email">Email *</label>
+                                        <ValidationMessage For="@(() => FormModel.Email)" class="text-danger small" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <InputText @bind-Value="FormModel.Telephone" type="tel" class="form-control" id="telephone" placeholder="Téléphone" />
+                                        <label for="telephone">Téléphone *</label>
+                                        <ValidationMessage For="@(() => FormModel.Telephone)" class="text-danger small" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <InputSelect @bind-Value="FormModel.TypeProjet" class="form-select" id="typeprojet">
+                                    <option value="">Choisissez le type de projet</option>
+                                    @if (Page.Form.Fields.FirstOrDefault(f => f.Type == "select")?.Options is { } options)
+                                    {
+                                        foreach (var opt in options)
                                         {
-                                            foreach (var opt in field.Options)
-                                            {
-                                                <option value="@opt.ToLowerInvariant().Replace(' ', '-')">@opt</option>
-                                            }
+                                            <option value="@opt">@opt</option>
                                         }
-                                    </select>
-                                    <label for="@field.Id">@field.Label</label>
-                                </div>
-                            }
+                                    }
+                                </InputSelect>
+                                <label for="typeprojet">Type de projet *</label>
+                                <ValidationMessage For="@(() => FormModel.TypeProjet)" class="text-danger small" />
+                            </div>
 
-                            @foreach (var field in Page.Form.Fields.Where(x => x.Type == "textarea"))
-                            {
-                                <div class="form-floating mb-4">
-                                    <textarea class="form-control" id="@field.Id" style="height:@($"{(field.Rows ?? 5) * 24}px")" placeholder="@field.Label" required="@field.Required"></textarea>
-                                    <label for="@field.Id">@field.Label</label>
-                                </div>
-                            }
+                            <div class="form-floating mb-4">
+                                <InputTextArea @bind-Value="FormModel.Message" class="form-control" id="message" style="height:150px" placeholder="Message" />
+                                <label for="message">Votre message *</label>
+                                <ValidationMessage For="@(() => FormModel.Message)" class="text-danger small" />
+                            </div>
 
-                            @foreach (var field in Page.Form.Fields.Where(x => x.Type == "checkbox"))
-                            {
-                                <div class="form-check mb-4">
-                                    <input class="form-check-input" type="checkbox" id="@field.Id" required="@field.Required" />
-                                    <label class="form-check-label text-muted" for="@field.Id">@field.Label</label>
-                                </div>
-                            }
+                            <div class="form-check mb-4">
+                                <InputCheckbox @bind-Value="FormModel.AccepteConfidentialite" class="form-check-input" id="confidentialite" />
+                                <label class="form-check-label text-muted" for="confidentialite">
+                                    J'accepte que mes données soient utilisées pour me recontacter *
+                                </label>
+                                <ValidationMessage For="@(() => FormModel.AccepteConfidentialite)" class="text-danger small d-block" />
+                            </div>
 
-                            <button type="submit" class="btn btn-custom btn-lg w-100">
-                                <i class="fas fa-paper-plane me-2"></i>@Page.Form.SubmitText
+                            @* <!-- Champs honeypot (cachés pour piéger les bots) -->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <InputText @bind-Value="FormModel.Company" placeholder="Company" tabindex="-1" autocomplete="off" />
+                            </div> *@
+
+                            <button type="submit" class="btn btn-custom btn-lg w-100" disabled="@IsSubmitting">
+                                @if (IsSubmitting)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                    <span>Envoi en cours...</span>
+                                }
+                                else
+                                {
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    <span>@Page.Form.SubmitText</span>
+                                }
                             </button>
 
-                            <div class="text-center mt-3">
+                            @* <div class="text-center mt-3">
                                 <small class="text-muted">
                                     @Page.Form.FallbackPhoneText
                                     <a href="@Page.Form.FallbackPhoneHref" class="text-danger fw-bold">@Page.Form.FallbackPhone</a>
                                 </small>
-                            </div>
+                            </div> *@
                         </EditForm>
                     </div>
                 </div>
@@ -231,10 +338,4 @@ else
         "dark" => "service-hours",
         _ => "contact-highlight"
     };
-
-    private void OnSubmit()
-    {
-        // Ici tu brancheras l’envoi réel (API / email).
-        // Pour l’instant, on laisse l’UI telle quelle.
-    }
 }

@@ -1,24 +1,108 @@
 {
   "title": "Témoignages clients",
   "lead": "Ils parlent de notre travail",
+  "averageRating": 5,
+  "totalReviews": 10,
   "items": [
     {
       "rating": 5,
-      "content": "Très professionnel et efficace. Avis favorable obtenu sans remarque.",
+      "content": "La mission a été réalisée avec professionnalisme. Personne rigoureuse.",
       "clientName": "Mr Stéphane THEAUD",
-      "clientCompany": "RUS (Responsable Unique de Sécurité)"
+      "clientTitle": "Propriétaire et Responsable Unique de Sécurité",
+      "clientCompany": "GROUPEMENT \"La FOSSE AUX CERISIERS\" à Hirson 02500",
+      "mission": "Audit sécurité incendie + Montage dossier Autorisation de Travaux + Mission de Coordination SSI",
+      "date": "",
+      "details": "Dans le cadre de l'ouverture de \"Optical Center\" et la mise en conformité du groupement. Notes : Accueil 4/5, Professionnalisme 5/5, Compétences 5/5, Sérieux 5/5, Disponibilité 4/5, Résultat obtenu 5/5. Total : 28/30"
     },
     {
       "rating": 5,
-      "content": "Coordination SSI impeccable, réactivité au top.",
-      "clientName": "Client ERP",
-      "clientCompany": "Ouverture magasin"
+      "content": "Professionnel.",
+      "clientName": "Directeur de l'EHPAD",
+      "clientTitle": "",
+      "clientCompany": "EHPAD MARIE BLAISE à Signy-le-Petit 08380",
+      "mission": "Mission de Coordination SSI",
+      "date": "20/06/2023",
+      "details": "Mission de Coordination SSI dans le cadre de l'installation et l'asservissement du désenfumage. Appréciations : Accueil 5/5, Professionnalisme 5/5, Compétences 5/5, Sérieux 5/5, Disponibilité 5/5, Résultat obtenu 5/5. Recommandation : OUI"
     },
     {
       "rating": 5,
-      "content": "Audit clair, préconisations précises, résultats.",
-      "clientName": "Client EHPAD",
-      "clientCompany": "Mise en conformité"
+      "content": "La commission communale de sécurité n'ayant formulé aucune remarque sur le travail du coordinateur SSI a donc validé le travail de M Leblanc. L'éloignement géographique a naturellement engendré quelques incompréhensions sur des points de détails. Mais au final le résultat est très satisfaisant.",
+      "clientName": "Mr Lejars",
+      "clientTitle": "Responsable du SSI",
+      "clientCompany": "Château de Paris-Jardins, 91210 Draveil",
+      "mission": "Levée des réserves concernées par le SSI",
+      "date": "",
+      "details": "Levée des réserves concernées par le SSI, création des plans d'évacuation de la partie ERP et Création du Dossier d'identité SSI suite aux travaux dans la partie de l'Etablissement Recevant du Public"
+    },
+    {
+      "rating": 5,
+      "content": "Très satisfait du travail de Mr Leblanc. Très sérieux. Bon travail.",
+      "clientName": "Mr Chouya",
+      "clientTitle": "Gérant",
+      "clientCompany": "Hôtel du Centre, 59100 Roubaix",
+      "mission": "Mission de Coordination SSI pour la levée d'un avis défavorable",
+      "date": "09/09/2022",
+      "details": "Nous avons connu la société COOSSI par le bouche à oreille"
+    },
+    {
+      "rating": 5,
+      "content": "Je recommande fortement l'entreprise COOSSI et son représentant Mr Jean LEBLANC pour sa rapidité son efficacité et surtout le plus important son sérieux.",
+      "clientName": "Mr GUR UMIT",
+      "clientTitle": "Gérant",
+      "clientCompany": "GUR KEBAB LEZENNES 59650",
+      "mission": "",
+      "date": "30/08/2022",
+      "details": "Nous avons connu la société COOSSI par le bouche à oreille. Contact : 06 74 19 50 26"
+    },
+    {
+      "rating": 5,
+      "content": "Nous avons fait appel à cette entreprise, et tout particulièrement à M.Leblanc, pour la constitution de la notice de sécurité (dans le cadre de l'ouverture d'un ERP) et nous en sommes vraiment très satisfaits. Notre demande a été traitée en urgence en une seule journée. M. Leblanc a été très professionnel et réactif et nous lui en sommes très reconnaissants. Il a consacré sa journée entière y compris la soirée à la rédaction de cette notice pour que notre dossier puisse passer en commission ce mois-ci. Un énorme merci ! Pour les personnes qui recherchent un professionnel pour la constitution d'un dossier ERP, nous vous le recommandons vivement.",
+      "clientName": "",
+      "clientTitle": "",
+      "clientCompany": "RESTAURANT À L'OCÉAN (Vendeville)",
+      "mission": "Constitution de la notice de sécurité (ouverture ERP)",
+      "date": "",
+      "details": "Demande traitée en urgence en une seule journée"
+    },
+    {
+      "rating": 5,
+      "content": "Rapidité d'exécution, de bons conseils, joignable facilement. À recommander.",
+      "clientName": "Mr le Maire LEONARD",
+      "clientTitle": "Maire",
+      "clientCompany": "MAIRIE DE LIGNY EN CAMBRAISIS",
+      "mission": "Montage du dossier de demande de travaux (notices de sécurité + accessibilité) + mission CSSI",
+      "date": "",
+      "details": ""
+    },
+    {
+      "rating": 5,
+      "content": "Mission correctement remplie, je recommande.",
+      "clientName": "",
+      "clientTitle": "",
+      "clientCompany": "Mairie de Féchain 59247",
+      "mission": "Montage du Dossier de demande de travaux de changement du SSI + Mission de Coordination SSI",
+      "date": "21/06/2021",
+      "details": "Nous avons connu Mr LEBLANC de la SASU COOSSI par la réputation de son sérieux, ses compétences, sa notoriété."
+    },
+    {
+      "rating": 5,
+      "content": "Accueillant, professionnel, réactif, un résultat au rendez-vous, je recommande !",
+      "clientName": "",
+      "clientTitle": "",
+      "clientCompany": "CARGLASS - Saint Denis les Ponts",
+      "mission": "",
+      "date": "03/03/2021",
+      "details": ""
+    },
+    {
+      "rating": 5,
+      "content": "Parfait, rien à signaler. Accueillant, très professionnel, très compétent, très sérieux, très disponible, résultat très satisfaisant. Je recommande.",
+      "clientName": "Eric BLANC",
+      "clientTitle": "",
+      "clientCompany": "EHPAD Marie Blaise",
+      "mission": "",
+      "date": "04/11/2020",
+      "details": ""
     }
   ]
 }

@@ -17,7 +17,7 @@ builder.Services.AddSingleton<IPrestationIndex, FilePrestationIndex>();
 builder.Services.AddScoped<IKeywordStore, FileKeywordStore>();
 builder.Services.AddScoped<ILegalStore, FileLegalStore>();
 builder.Services.AddSingleton<IContentStore, FileContentStore>();
-
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddResponseCompression(opts =>
 {
@@ -80,8 +80,8 @@ app.MapGet("/prestation/{id:int}", (int id) =>
     // Table de correspondance ancienne ID -> nouveau slug
     var redirects = new Dictionary<int, string>
     {
-        // À adapter selon ton ancien site
-        // Exemples à titre indicatif :
+        // ï¿½ adapter selon ton ancien site
+        // Exemples ï¿½ titre indicatif :
         { 5, "coordination-ssi" },
         { 6, "creation-dossier-ssi" },
         { 7, "audit-diagnostic" },
