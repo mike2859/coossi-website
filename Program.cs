@@ -60,7 +60,7 @@ var rewrite = new RewriteOptions()
     .AddRedirect("Images//Partners/partenaire_6.png", "images/partners/partenaire-6.webp", 301);
 app.UseRewriter(rewrite);
 
-// Legacy /prestation/{id} - redirections SEO
+// Legacy /prestation/{id} - redirections SEO (mappings du site actuel)
 app.MapGet("/prestation/{id:int}", (int id) =>
 {
     var redirects = new Dictionary<int, string>
@@ -68,11 +68,11 @@ app.MapGet("/prestation/{id:int}", (int id) =>
         { 5, "coordination-ssi" },
         { 6, "creation-dossier-ssi" },
         { 7, "audit-diagnostic" },
-        { 8, "duerp" },
-        { 9, "notice-securite-accessibilite" },
-        { 10, "signaletique" },
-        { 11, "assistance-moe" },
-        { 12, "responsable-unique-securite" }
+        { 8, "assistance-moe" },
+        { 9, "notices-securite-accessibilite" },
+        { 10, "document-unique-evaluation" },
+        { 11, "responsable-unique-securite" },
+        { 12, "signaletique" }
     };
 
     if (!redirects.TryGetValue(id, out var slug))
@@ -83,6 +83,9 @@ app.MapGet("/prestation/{id:int}", (int id) =>
     return Results.Redirect($"/prestation/{slug}", permanent: true);
 });
 
+// Legacy /temoignages -> /references
+app.MapGet("/temoignages", () => Results.Redirect("/references", permanent: true));
+
 // robots.txt
 app.MapGet("/robots.txt", (HttpContext ctx) =>
 {
@@ -91,6 +94,49 @@ app.MapGet("/robots.txt", (HttpContext ctx) =>
     sb.AppendLine("Allow: /");
     sb.AppendLine("Sitemap: " + $"{ctx.Request.Scheme}://{ctx.Request.Host}/sitemap.xml");
     return Results.Text(sb.ToString(), "text/plain");
+});
+
+// sitemap.xml
+app.MapGet("/sitemap.xml", (HttpContext ctx) =>
+{
+    var baseUrl = $"{ctx.Request.Scheme}://{ctx.Request.Host}";
+    var lastmod = DateTime.UtcNow.ToString("yyyy-MM-dd");
+
+    var routes = new List<(string url, string priority)>
+    {
+        ("/", "1.0"),
+        ("/prestations", "0.9"),
+        ("/services", "0.8"),
+        ("/references", "0.8"),
+        ("/ils-nous-font-confiance", "0.7"),
+        ("/contact", "0.8"),
+        ("/prestation/coordination-ssi", "0.8"),
+        ("/prestation/creation-dossier-ssi", "0.8"),
+        ("/prestation/audit-diagnostic", "0.8"),
+        ("/prestation/document-unique-evaluation", "0.8"),
+        ("/prestation/notices-securite-accessibilite", "0.8"),
+        ("/prestation/signaletique", "0.8"),
+        ("/prestation/assistance-moe", "0.8"),
+        ("/prestation/responsable-unique-securite", "0.8"),
+        ("/mentions-legales", "0.3"),
+        ("/confidentialite", "0.3")
+    };
+
+    var xml = new StringBuilder();
+    xml.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+    xml.AppendLine("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
+
+    foreach (var (url, priority) in routes)
+    {
+        xml.AppendLine("  <url>");
+        xml.AppendLine($"    <loc>{baseUrl}{url}</loc>");
+        xml.AppendLine($"    <lastmod>{lastmod}</lastmod>");
+        xml.AppendLine($"    <priority>{priority}</priority>");
+        xml.AppendLine("  </url>");
+    }
+
+    xml.AppendLine("</urlset>");
+    return Results.Text(xml.ToString(), "application/xml", Encoding.UTF8);
 });
 
 app.UseHttpsRedirection();
