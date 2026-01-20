@@ -11,7 +11,7 @@
         "COOSSI — M Jean LEBLANC",
         "1908 chaussée Brunehaut, 59530 Villers Pol",
         "SIRET : 84077416000013",
-        "Email : contact@coossi-securite-incendie.eu",
+        "Email : contact@coossi-securite-incendie.fr",
         "Tél. : 06 85 75 27 75"
       ]
     },
@@ -50,7 +50,7 @@
       "kind": "section",
       "icon": "fa-shield-alt",
       "heading": "Loi informatique et libertés",
-      "html": "<p>Conformément à la loi du 6 janvier 1978, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression des données vous concernant. Pour exercer vos droits : <a href='mailto:contact@coossi-securite-incendie.eu' class='text-danger'>contact@coossi-securite-incendie.com</a>.</p>"
+      "html": "<p>Conformément à la loi du 6 janvier 1978, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression des données vous concernant. Pour exercer vos droits : <a href='mailto:contact@coossi-securite-incendie.fr' class='text-danger'>contact@coossi-securite-incendie.fr</a>.</p>"
     },
     {
       "kind": "section",
@@ -78,7 +78,7 @@
       "icon": "fa-question-circle",
       "heading": "Contact",
       "lines": [
-        "Email : contact@coossi-securite-incendie.eu",
+        "Email : contact@coossi-securite-incendie.fr",
         "Téléphone : 06 85 75 27 75",
         "Adresse : 1908 chaussée Brunehaut, 59530 Villers Pol"
       ]
