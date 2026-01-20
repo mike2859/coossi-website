@@ -26,7 +26,7 @@ public sealed class FileKeywordStore : IKeywordStore
 
     public Task<string[]> ListIdsAsync(CancellationToken ct = default)
         => Task.FromResult(Directory.Exists(_root)
-            ? Directory.GetFiles(_root, "*.json").Select(Path.GetFileNameWithoutExtension).ToArray()
+            ? Directory.GetFiles(_root, "*.json").Select(Path.GetFileNameWithoutExtension).Where(x => x is not null).Cast<string>().ToArray()
             : Array.Empty<string>());
 
   

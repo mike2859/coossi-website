@@ -9,41 +9,17 @@
 @code {
     private ContactPage? Page;
 
-     private EditContext? editContext;
-
     [SupplyParameterFromForm]
-    private ContactFormModel FormModel {get; set; }
-
-    private ValidationMessageStore? messageStore;
+    private ContactFormModel FormModel { get; set; } = new();
 
     private bool IsSubmitting = false;
     private bool ShowSuccessMessage = false;
     private bool ShowErrorMessage = false;
 
-
-    
     protected override async Task OnInitializedAsync()
     {
         Page = await ContentStore.GetAsync<ContactPage>("contact");
-        
         FormModel ??= new();
-   //     editContext = new(FormModel);
-       // editContext.OnValidationRequested += HandleValidationRequested;
-      //  messageStore = new(editContext);
-    }
-
-
-
-    private void HandleValidationRequested(object? sender,
-        ValidationRequestedEventArgs args)
-    {
-        messageStore?.Clear();
-
-        // Custom validation logic
-        if (!string.IsNullOrWhiteSpace(FormModel!.Email))
-        {
-            messageStore?.Add(() => FormModel.Email, "Saisir un email valide");
-        }
     }
     private async Task OnSubmit()
     {
@@ -176,7 +152,7 @@ else
                             </div>
                         }
 
-                       <EditForm Model="@FormModel" OnValidSubmit="@OnSubmit" FormName="ContactForm" EditContext="editContext">
+                       <EditForm Model="@FormModel" OnValidSubmit="@OnSubmit" FormName="ContactForm">
                             <DataAnnotationsValidator />
 
                             <div class="row g-3">
