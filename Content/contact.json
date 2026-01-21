@@ -2,17 +2,32 @@
   "id": "contact",
   "title": "Contactez COOSSI",
   "lead": "Pour prendre rendez-vous ou un complément d'information",
-  "highlights": [
-    { "icon": "fa-phone", "title": "Contactez Jean LEBLANC", "text": "Appel gratuit - Réponse rapide", "phone": "06.85.75.27.75", "phoneHref": "tel:0685752775", "variant": "primary" },
-    { "icon": "fa-exclamation-triangle", "title": "Interventions d'Urgence", "text": "Disponible 7j/7", "phone": "06.85.75.27.75", "phoneHref": "tel:0685752775", "variant": "warning" },
-    { "icon": "fa-clock", "title": "Horaires", "lines": ["Lun - Ven : 8h - 18h", "Samedi : 8h - 12h", "Urgences : 24h/24"], "variant": "dark" }
-  ],
-  "cards": [
-    { "icon": "fa-map-marker-alt", "title": "Adresse", "html": "<strong>Villers-Pol</strong><br>Nord (59)<br><small class='text-muted'>Près de Valenciennes</small>" },
-    { "icon": "fa-phone", "title": "Téléphone", "html": "<a href='tel:0685752775' class='text-decoration-none text-dark fw-bold'>06.85.75.27.75</a><br><small class='text-muted'>Appel gratuit</small>" },
-    { "icon": "fa-envelope", "title": "Email", "html": "<a href='mailto:contact@coossi-securite-incendie.fr' class='text-decoration-none text-dark'>contact@coossi-securite-incendie.fr</a><br><small class='text-muted'>Réponse sous 24h</small>" },
-    { "icon": "fa-handshake", "title": "Rendez-vous", "html": "Sur site ou en agence<br><small class='text-muted'>Déplacement inclus</small>" }
-  ],
+  "contactInfo": {
+    "phone": {
+      "icon": "fa-phone",
+      "title": "Jean LEBLANC",
+      "number": "06.85.75.27.75",
+      "href": "tel:0685752775",
+      "note": "Urgences 7j/7"
+    },
+    "email": {
+      "icon": "fa-envelope",
+      "address": "contact@coossi-securite-incendie.fr",
+      "href": "mailto:contact@coossi-securite-incendie.fr",
+      "note": "Réponse sous 24h"
+    },
+    "location": {
+      "icon": "fa-map-marker-alt",
+      "city": "Villers-Pol",
+      "region": "Nord (59)",
+      "note": "Près de Valenciennes"
+    },
+    "hours": {
+      "icon": "fa-clock",
+      "lines": ["Lun - Ven : 8h - 18h", "Sam : 8h - 12h"],
+      "note": "Urgences : 24h/24"
+    }
+  },
   "form": {
     "title": "Demande de renseignements",
     "submitText": "Envoyer ma demande",

@@ -158,7 +158,7 @@ else {
                 </div>
             </div>
 
-            <!-- CONTACT BLOc -->
+            <!-- CONTACT BLOc
             <div class="row mb-5">
                 <div class="col-lg-12">
                     <div class="info-card text-center">
@@ -176,7 +176,7 @@ else {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- ZONES D'INTERVENTION
             <div class="row mt-4">
@@ -198,11 +198,17 @@ else {
     </section>
   
     <CitiesCloud Villes="@Model.Cities"
-            
                  TitreSection="Zones d'intervention - Coordination SSI"
                  SousTitreSection="@Model.CitiesIntro" />
         
+    
     <!-- CTA FINALE -->
+    <CtaBar Title="@Model.Cta.Title" 
+            Text="@Model.Cta.Text" 
+            Phone="06 85 75 27 75" 
+            PhoneHref="tel:0685752775" 
+            ContactHref="/contact" Dark="true" />
+    <!-- CTA FINALE 
     <section class="cta-section">
         <div class="container text-center">
             <h2 class="mb-4">@Model.Cta.Title</h2>
@@ -212,6 +218,6 @@ else {
             </a>
         </div>
     </section>
-
+-->
   @* <CtaBar Title="@Model.Cta.Title" Text="@Model.Cta.Text" CtaText="@Model.Cta.ButtonText" CtaHref="@Model.Cta.ButtonHref" IconClass="fas fa-comments" /> *@
 }

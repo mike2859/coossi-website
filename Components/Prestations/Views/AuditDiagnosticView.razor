@@ -16,7 +16,7 @@
 @if (Model is null) { <section class="content-section"><div class="container text-muted">Chargement…</div></section> }
 else {
   <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
-  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
+  @* <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" /> *@
 
  
     <!-- HERO -->
