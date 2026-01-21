@@ -56,7 +56,7 @@
         "title": "Phase Réception",
         "icon": "fas fa-check-circle",
         "bullets": [
-          "Récollement des documents d'ouvrage éxecuté (DOE)",
+          "Récollement des documents d'ouvrage exécuté (DOE)",
           "Essais fonctionnels",
           "Rapport de réception technique",
           "Création du dossier d'identité SSI",
@@ -68,13 +68,13 @@
         "icon": "fas fa-file-alt",
         "bullets": [
           "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
+          "Phase APS : Avant Projet Sommaire",
+          "Phase APD : Avant Projet Définitif",
+          "Phase PRO : Projet",
+          "Phase ACT/DCE : Dossier de Consultation & Analyse des Offres",
+          "Phase VISA : Visa des plans et documents techniques",
+          "Phase DET : Direction de l'Exécution des Travaux",
+          "Phase AOR : Assistance aux Opérations de Réception"
         ]
       }
     ]
@@ -82,114 +82,34 @@
 
   "methodo": {
     "title": "Détail de la mission complémentaire",
-    "lead": "COOSSI vous accompagne tout au long du projet avec une approche structurée en 3 phases principales :",
+    "lead": "COOSSI vous accompagne tout au long du projet avec une approche structurée selon les phases de la loi MOP :",
     "steps": [
       {
-        "title": "ESQ",
+        "title": "Études",
         "icon": "fas fa-pencil-ruler",
         "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
+          "Phase ESQ : Esquisse",
+          "Phase APS : Avant Projet Sommaire",
+          "Phase APD : Avant Projet Définitif",
+          "Phase PRO : Projet"
         ]
       },
       {
-        "title": "APS",
+        "title": "Consultation",
+        "icon": "fas fa-file-signature",
+        "bullets": [
+          "Phase ACT/DCE : Dossier de Consultation des Entreprises",
+          "Analyse des offres",
+          "Assistance à la passation des marchés"
+        ]
+      },
+      {
+        "title": "Exécution",
         "icon": "fas fa-hard-hat",
         "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
-        ]
-      },
-      {
-        "title": "3. Réception",
-        "icon": "fas fa-handshake",
-        "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
-        ]
-      },
-      {
-        "title": "1. Conception",
-        "icon": "fas fa-pencil-ruler",
-        "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
-        ]
-      },
-      {
-        "title": "2. Réalisation",
-        "icon": "fas fa-hard-hat",
-        "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
-        ]
-      },
-      {
-        "title": "3. Réception",
-        "icon": "fas fa-handshake",
-        "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet"
-        ]
-      },
-      {
-        "title": "1. Conception",
-        "icon": "fas fa-pencil-ruler",
-        "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
-        ]
-      },
-      {
-        "title": "2. Réalisation",
-        "icon": "fas fa-hard-hat",
-        "bullets": [
-          "Phase ESQUISSE",
-          "Phase APS: Avant Projet Sommaire",
-          "Phase APD:Avant Projet Définitif",
-          "Phase PRO: Projet",
-          "Phase ACT/DCE: Dossier de Consultation & Analyse des Offres",
-          "Phase VISA: Visa des plans et documents techniques",
-          "Phase DET: Direction de l'Exécution des Travaux",
-          "Phase AOR: Assistance aux Opérations de Réception"
+          "Phase VISA : Visa des plans et documents techniques",
+          "Phase DET : Direction de l'Exécution des Travaux",
+          "Phase AOR : Assistance aux Opérations de Réception"
         ]
       }
     ]

@@ -8,7 +8,7 @@
     { "icon": "fa-clock", "title": "Horaires", "lines": ["Lun - Ven : 8h - 18h", "Samedi : 8h - 12h", "Urgences : 24h/24"], "variant": "dark" }
   ],
   "cards": [
-    { "icon": "fa-map-marker-alt", "title": "Adresse", "html": "<strong>Villers Pol</strong><br>Nord (59)<br><small class='text-muted'>Près de Valenciennes</small>" },
+    { "icon": "fa-map-marker-alt", "title": "Adresse", "html": "<strong>Villers-Pol</strong><br>Nord (59)<br><small class='text-muted'>Près de Valenciennes</small>" },
     { "icon": "fa-phone", "title": "Téléphone", "html": "<a href='tel:0685752775' class='text-decoration-none text-dark fw-bold'>06.85.75.27.75</a><br><small class='text-muted'>Appel gratuit</small>" },
     { "icon": "fa-envelope", "title": "Email", "html": "<a href='mailto:contact@coossi-securite-incendie.fr' class='text-decoration-none text-dark'>contact@coossi-securite-incendie.fr</a><br><small class='text-muted'>Réponse sous 24h</small>" },
     { "icon": "fa-handshake", "title": "Rendez-vous", "html": "Sur site ou en agence<br><small class='text-muted'>Déplacement inclus</small>" }
@@ -35,7 +35,7 @@
     "fallbackPhoneHref": "tel:0685752775"
   },
   "map": {
-    "title": "Villers Pol, Nord (59)",
+    "title": "Villers-Pol, Nord (59)",
     "subtitle": "Proche de Valenciennes",
     "small": "Bureau d'études en sécurité incendie",
     "icon": "fa-map-marked-alt"
