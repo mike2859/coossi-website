@@ -5,25 +5,24 @@ public record ContactPage(
     string Id,
     string Title,
     string Lead,
-    List<ContactHighlight> Highlights,
-    List<ContactCard> Cards,
+    ContactInfo ContactInfo,
     ContactForm Form,
     ContactMap Map,
     ContactZone Zone,
     ContactFaq Faq
 );
 
-public record ContactHighlight(
-    string Icon,
-    string Title,
-    string? Text,
-    string? Phone,
-    string? PhoneHref,
-    string Variant,
-    List<string>? Lines
+public record ContactInfo(
+    PhoneInfo Phone,
+    EmailInfo Email,
+    LocationInfo Location,
+    HoursInfo Hours
 );
 
-public record ContactCard(string Icon, string Title, string Html);
+public record PhoneInfo(string Icon, string Title, string Number, string Href, string Note);
+public record EmailInfo(string Icon, string Address, string Href, string Note);
+public record LocationInfo(string Icon, string City, string Region, string Note);
+public record HoursInfo(string Icon, List<string> Lines, string Note);
 
 public record ContactForm(
     string Title,

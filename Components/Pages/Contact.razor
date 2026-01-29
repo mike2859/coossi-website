@@ -76,52 +76,45 @@ else
 {
     <PageHeader Title="@Page!.Title" Lead="@Page.Lead" />
 
-    <!-- Highlights -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row g-4 mb-5">
-                @foreach (var h in Page.Highlights)
-                {
-                    <div class="col-md-4">
-                        <div class="@HighlightClass(h.Variant)">
-                            <i class="fas @h.Icon display-4 mb-3"></i>
-                            <h5 class="fw-bold">@h.Title</h5>
-                            @if (!string.IsNullOrWhiteSpace(h.Phone) && !string.IsNullOrWhiteSpace(h.PhoneHref))
-                            {
-                                <a href="@h.PhoneHref" class="@(h.Variant == "warning" ? "text-white" : "text-white") text-decoration-none fw-bold fs-5">@h.Phone</a>
-                            }
-                            @if (!string.IsNullOrWhiteSpace(h.Text))
-                            {
-                                <p class="mt-2 mb-0 small">@h.Text</p>
-                            }
-                            @if (h.Lines is not null)
-                            {
-                                foreach (var line in h.Lines)
-                                {
-                                    <p class="mb-1">@line</p>
-                                }
-                            }
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </section>
-
-    <!-- Cards -->
+    <!-- Contact Info -->
     <section class="section-padding bg-light">
         <div class="container">
             <div class="row g-4">
-                @foreach (var c in Page.Cards)
-                {
-                    <div class="col-lg-3 col-md-6">
-                        <div class="contact-card">
-                            <div class="contact-icon"><i class="fas @c.Icon"></i></div>
-                            <h5 class="fw-bold">@c.Title</h5>
-                            @((MarkupString)c.Html)
-                        </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas @Page.ContactInfo.Phone.Icon"></i></div>
+                        <h5 class="fw-bold">@Page.ContactInfo.Phone.Title</h5>
+                        <a href="@Page.ContactInfo.Phone.Href" class="text-decoration-none text-dark fw-bold fs-5">@Page.ContactInfo.Phone.Number</a>
+                        <small class="d-block text-muted mt-1">@Page.ContactInfo.Phone.Note</small>
                     </div>
-                }
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas @Page.ContactInfo.Email.Icon"></i></div>
+                        <h5 class="fw-bold">Email</h5>
+                        <a href="@Page.ContactInfo.Email.Href" class="text-decoration-none text-dark small">@Page.ContactInfo.Email.Address</a>
+                        <small class="d-block text-muted mt-1">@Page.ContactInfo.Email.Note</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas @Page.ContactInfo.Location.Icon"></i></div>
+                        <h5 class="fw-bold">@Page.ContactInfo.Location.City</h5>
+                        <p class="mb-0">@Page.ContactInfo.Location.Region</p>
+                        <small class="text-muted">@Page.ContactInfo.Location.Note</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas @Page.ContactInfo.Hours.Icon"></i></div>
+                        <h5 class="fw-bold">Horaires</h5>
+                        @foreach (var line in Page.ContactInfo.Hours.Lines)
+                        {
+                            <p class="mb-0 small">@line</p>
+                        }
+                        <small class="text-muted">@Page.ContactInfo.Hours.Note</small>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -305,13 +298,4 @@ else
             </div>
         </div>
     </section>
-}
-
-@code {
-    private string HighlightClass(string variant) => variant switch
-    {
-        "warning" => "urgency-contact",
-        "dark" => "service-hours",
-        _ => "contact-highlight"
-    };
 }

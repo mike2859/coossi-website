@@ -5,6 +5,7 @@
 @code {
     [Parameter] public string JsonId { get; set; } = "testimonials"; // Content/testimonials.json
     private TestimonialsPage? Data;
+    private int SlideCount => Data is null ? 0 : (int)Math.Ceiling(Data.Items.Count / 3.0);
 
     protected override async Task OnParametersSetAsync()
         => Data = await ContentStore.GetAsync<TestimonialsPage>(JsonId);
@@ -23,22 +24,59 @@ else
         </div>
     </div>
 
-    <div class="row g-4">
-        @foreach (var t in Data.Items)
-        {
-            <div class="col-lg-4">
-                <div class="testimonial-card h-100">
-                    <div class="rating-stars">
-                        @for (int i = 0; i < t.Rating; i++) { <i class="fas fa-star"></i> }
+    <div id="testimonials-carousel" class="carousel slide" data-bs-ride="false">
+        <!-- Indicators -->
+        <div class="carousel-indicators testimonials-indicators">
+            @for (int i = 0; i < SlideCount; i++)
+            {
+                var idx = i;
+                <button type="button"
+                        data-bs-target="#testimonials-carousel"
+                        data-bs-slide-to="@idx"
+                        class="@(idx == 0 ? "active" : "")"
+                        aria-label="Slide @(idx + 1)"></button>
+            }
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            @for (int slide = 0; slide < SlideCount; slide++)
+            {
+                var slideItems = Data.Items.Skip(slide * 3).Take(3).ToList();
+                <div class="carousel-item @(slide == 0 ? "active" : "")">
+                    <div class="row g-4 justify-content-center">
+                        @for (int j = 0; j < slideItems.Count; j++)
+                        {
+                            var t = slideItems[j];
+                            <div class="col-lg-4 @(j > 0 ? "testimonial-extra" : "")">
+                                <div class="testimonial-card h-100">
+                                    <div class="rating-stars">
+                                        @for (int s = 0; s < t.Rating; s++) { <i class="fas fa-star"></i> }
+                                    </div>
+                                    <p>@t.Content</p>
+                                    <div class="client-name">@t.ClientName</div>
+                                    @if (!string.IsNullOrWhiteSpace(t.ClientCompany))
+                                    {
+                                        <div class="client-company">@t.ClientCompany</div>
+                                    }
+                                </div>
+                            </div>
+                        }
                     </div>
-                    <p>@t.Content</p>
-                    <div class="client-name">@t.ClientName</div>
-                    @if (!string.IsNullOrWhiteSpace(t.ClientCompany))
-                    {
-                        <div class="client-company">@t.ClientCompany</div>
-                    }
                 </div>
-            </div>
-        }
+            }
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev testimonials-control" type="button"
+                data-bs-target="#testimonials-carousel" data-bs-slide="prev">
+            <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next testimonials-control" type="button"
+                data-bs-target="#testimonials-carousel" data-bs-slide="next">
+            <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
     </div>
 }

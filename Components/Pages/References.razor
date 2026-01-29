@@ -1,6 +1,7 @@
 @page "/references"
 @using Coossi.Blazor.Components.Shared
 @using Coossi.Blazor.Components.Testimonials
+@using Coossi.Blazor.Components.Partners
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @inject IContentStore ContentStore
@@ -100,7 +101,12 @@ else
         </section>
     }
 
-    @* 4) Zone/CTA (si présents) *@
+    @* 4) Prestataires en défilement *@
+    <Section>
+        <PartnersScroll JsonId="partners" />
+    </Section>
+
+    @* 5) Zone/CTA (si présents) *@
     @foreach (var s in Page.Sections.Where(x => x.Kind == "zone" && x.Box is not null))
     {
         <section class="section-padding">
