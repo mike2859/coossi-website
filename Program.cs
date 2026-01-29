@@ -86,6 +86,35 @@ app.MapGet("/prestation/{id:int}", (int id) =>
 // Legacy /temoignages -> /references
 app.MapGet("/temoignages", () => Results.Redirect("/references", permanent: true));
 
+// Legacy /about-us -> /
+app.MapGet("/about-us", () => Results.Redirect("/", permanent: true));
+
+// Legacy /home -> /
+app.MapGet("/home", () => Results.Redirect("/", permanent: true));
+
+// Legacy /page/{category}/{id} -> redirection vers la prestation correspondante
+app.MapGet("/page/{category}/{id:int}", (string category, int id) =>
+{
+    var categoryRedirects = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+    {
+        { "CoordinationSSI", "coordination-ssi" },
+        { "CreationDosierSSI", "creation-dossier-ssi" },
+        { "AuditDiagnostic", "audit-diagnostic" },
+        { "AssistanceMaitriseOuvrage", "assistance-moe" },
+        { "NoticesSecurity", "notices-securite-accessibilite" },
+        { "RedactionDocumentUnique", "document-unique-evaluation" },
+        { "ResponsableUniqueSecurite", "responsable-unique-securite" },
+        { "Signaletique", "signaletique" }
+    };
+
+    if (!categoryRedirects.TryGetValue(category, out var slug))
+    {
+        return Results.NotFound();
+    }
+
+    return Results.Redirect($"/prestation/{slug}", permanent: true);
+});
+
 // robots.txt
 app.MapGet("/robots.txt", (HttpContext ctx) =>
 {
