@@ -1,0 +1,58 @@
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
+
+@code {
+    [Parameter] public string JsonId { get; set; } = "partners";
+    private PartnersPage? Data;
+
+    protected override async Task OnParametersSetAsync()
+        => Data = await ContentStore.GetAsync<PartnersPage>(JsonId);
+}
+
+@if (Data is null)
+{
+    <div class="text-center text-muted"><div class="spinner-border text-danger"></div></div>
+}
+else
+{
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center mb-5">
+            <h2 class="display-6 fw-bold mb-3">@Data.Title</h2>
+            @if (!string.IsNullOrWhiteSpace(Data.Lead)) { <p class="lead">@Data.Lead</p> }
+        </div>
+    </div>
+
+    <div class="partners-marquee">
+        <div class="partners-track">
+            @* Premier jeu *@
+            @foreach (var p in Data.Items)
+            {
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas @p.Icon"></i>
+                    </div>
+                    <div class="partner-name">@p.Name</div>
+                    @if (!string.IsNullOrWhiteSpace(p.Description))
+                    {
+                        <div class="partner-desc">@p.Description</div>
+                    }
+                </div>
+            }
+            @* Doublon pour boucle infinie *@
+            @foreach (var p in Data.Items)
+            {
+                <div class="partner-card" aria-hidden="true">
+                    <div class="partner-icon">
+                        <i class="fas @p.Icon"></i>
+                    </div>
+                    <div class="partner-name">@p.Name</div>
+                    @if (!string.IsNullOrWhiteSpace(p.Description))
+                    {
+                        <div class="partner-desc">@p.Description</div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}

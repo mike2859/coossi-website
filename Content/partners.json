@@ -1,0 +1,36 @@
+{
+  "title": "Nos prestataires de confiance",
+  "lead": "Ils collaborent avec COOSSI pour garantir la sécurité de vos établissements",
+  "items": [
+    {
+      "icon": "fa-champagne-glasses",
+      "name": "Le Splendid Lille",
+      "description": "2024 — Mission de Coordination SSI"
+    },
+    {
+      "icon": "fa-car",
+      "name": "Carglass",
+      "description": "2023 — Dossier d'Autorisation de Travaux + Mission de Coordination"
+    },
+    {
+      "icon": "fa-building",
+      "name": "Sergic",
+      "description": "Mission de Coordination + Dossier AT + Responsable Unique de Sécurité"
+    },
+    {
+      "icon": "fa-hospital",
+      "name": "CMSI Cherbourg",
+      "description": "Centre Médical Soins Immédiats"
+    },
+    {
+      "icon": "fa-house-chimney",
+      "name": "Tissot Immobilier",
+      "description": "Gestion immobilière"
+    },
+    {
+      "icon": "fa-utensils",
+      "name": "Roi de Sicile",
+      "description": "Restauration"
+    }
+  ]
+}
