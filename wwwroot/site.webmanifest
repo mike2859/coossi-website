@@ -1,0 +1,13 @@
+{
+  "name": "COOSSI – Sécurité Incendie",
+  "short_name": "COOSSI",
+  "icons": [
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/favicon-180x180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#c0392b",
+  "background_color": "#ffffff",
+  "display": "browser",
+  "start_url": "/"
+}

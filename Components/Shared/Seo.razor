@@ -5,6 +5,7 @@
   [Parameter] public string? Canonical { get; set; }
   [Parameter] public string? OgImage { get; set; }
   [Parameter] public string Locale { get; set; } = "fr_FR";
+  [Parameter] public string SiteName { get; set; } = "COOSSI";
 }
 <PageTitle>@Title</PageTitle>
 <HeadContent>
@@ -15,7 +16,11 @@
   <meta property="og:title" content="@Title" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="@Locale" />
-  @if (!string.IsNullOrWhiteSpace(Canonical)) { <link rel="canonical" href="@Canonical" /> }
+  <meta property="og:site_name" content="@SiteName" />
+  @if (!string.IsNullOrWhiteSpace(Canonical)) {
+    <link rel="canonical" href="@Canonical" />
+    <meta property="og:url" content="@Canonical" />
+  }
   @if (!string.IsNullOrWhiteSpace(OgImage)) { <meta property="og:image" content="@OgImage" /> }
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="@Title" />

@@ -5,3 +5,5 @@ obj/
 *.user
 wwwroot/lib/
 node_modules/
+appsettings.Production.json
+.env
