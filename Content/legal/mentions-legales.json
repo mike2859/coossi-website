@@ -17,15 +17,6 @@
     },
     {
       "kind": "box",
-      "icon": "fa-code",
-      "heading": "Création du site internet",
-      "lines": [
-        "Le Chevalier de la Cyber",
-        "https://lechevalierdelacyber.fr"
-      ]
-    },
-    {
-      "kind": "box",
       "icon": "fa-server",
       "heading": "Hébergeur du site",
       "lines": [
