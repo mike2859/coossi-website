@@ -1,3 +1,7 @@
+@using Coossi.Blazor.Data.Interfaces
+@using Coossi.Blazor.Data.Models
+@inject IContentStore ContentStore
+
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
   <div class="container">
     @* <a class="navbar-brand text-danger" href="/">
@@ -17,7 +21,26 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><NavLink class="nav-link" href="/" Match="NavLinkMatch.All">Accueil</NavLink></li>
         @* <li class="nav-item"><NavLink class="nav-link" href="services">Services</NavLink></li> *@
-        <li class="nav-item"><NavLink class="nav-link" href="prestations">Prestations</NavLink></li>
+        <li class="nav-item dropdown">
+          <NavLink class="nav-link dropdown-toggle" href="prestations">Prestations</NavLink>
+          @if (Prestations is { Count: > 0 })
+          {
+              <ul class="dropdown-menu">
+                  @foreach (var p in Prestations)
+                  {
+                      <li>
+                          <a class="dropdown-item" href="@($"/prestation/{p.Slug}")">
+                              @if (!string.IsNullOrWhiteSpace(p.Icon))
+                              {
+                                  <i class="fas @p.Icon me-2" aria-hidden="true"></i>
+                              }
+                              @p.Title
+                          </a>
+                      </li>
+                  }
+              </ul>
+          }
+        </li>
         <li class="nav-item"><NavLink class="nav-link" href="references">Références</NavLink></li>
         <li class="nav-item"><NavLink class="nav-link" href="ils-nous-font-confiance">Nos réalisations</NavLink></li>
         <li class="nav-item"><NavLink class="nav-link" href="contact">Contact</NavLink></li>
@@ -25,3 +48,13 @@
     </div>
   </div>
 </nav>
+
+@code {
+    private List<ServiceItem>? Prestations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var index = await ContentStore.GetAsync<ServicesIndex>("prestations/_index");
+        Prestations = index?.Items;
+    }
+}
