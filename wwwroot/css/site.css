@@ -439,7 +439,7 @@ footer{background:var(--dark); color:#fff}
 /* === CONFIANCE : styles conformes au HTML statique === */
 
 /* header rouge par secteur */
-.sector-section { margin-bottom: 60px; }
+.sector-section { margin-bottom: 0; }
 .sector-section .sector-header{
   background: var(--primary);
   color: #fff;
