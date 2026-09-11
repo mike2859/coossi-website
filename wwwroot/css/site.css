@@ -63,23 +63,74 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
   padding:100px 0;
   /*border-radius:var(--radius);*/
   overflow:hidden;
-  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  background-image:url('/images/hero-bg.svg');
+  background-size:cover;
+  background-position:center;
 }
 .hero-section::before,
 .page-header::before{
   content:"";
   position:absolute; inset:0;
-  /* motif léger SVG inline, pas d'asset externe */
-  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="2" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23p)"/></svg>') repeat;
+  z-index:0;
+  /* même voile dégradé que le slider d'accueil : texture visible dessous, plus d'aplat rouge plein écran */
+  background:linear-gradient(135deg,rgba(33,37,41,.86),rgba(176,42,55,.82));
 }
 .hero-section .lead,
 .page-header .lead{opacity:.95}
-.hero-content{position:relative; z-index:1}
+.hero-content,
+.hero-section > .container,
+.page-header > .container{position:relative; z-index:1}
 
 
 .hero-section:first-child {
   margin-top: 1rem; /* ajoute auto un espace si pas de breadcrumb au-dessus */
 }
+
+/* =======================
+   HERO SLIDER (page d'accueil)
+   ======================= */
+.hero-slider{ margin-top:1rem; }
+.hero-slider .carousel-inner{ overflow:hidden; }
+/* Important : ne PAS mettre display:flex ici, ça écraserait le display:none
+   que Bootstrap applique aux slides non actives (.carousel-item) et casserait le carrousel. */
+.hero-slide{
+  position:relative;
+  color:#fff;
+  min-height:460px;
+  padding:60px 0;
+  overflow:hidden;
+  background-image:url('/images/hero-bg.svg');
+  background-size:cover;
+  background-position:center;
+}
+.hero-slide::before{
+  content:"";
+  position:absolute; inset:0;
+  z-index:0;
+}
+.hero-slide > .container{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  min-height:340px;
+}
+/* Voile de couleur semi-transparent par slide : la texture (skyline + trame) reste visible en dessous,
+   le rouge n'est plus qu'un accent/voile, jamais un aplat plein écran */
+.hero-slide-0::before{ background:linear-gradient(135deg,rgba(33,37,41,.86),rgba(176,42,55,.82)); }
+.hero-slide-1::before{ background:linear-gradient(135deg,rgba(44,62,80,.88),rgba(26,36,47,.88)); }
+.hero-slide-2::before{ background:linear-gradient(135deg,rgba(55,71,79,.88),rgba(28,38,43,.88)); }
+.hero-slide-3::before{ background:linear-gradient(135deg,rgba(176,42,55,.82),rgba(33,37,41,.86)); }
+
+.hero-slider .carousel-indicators{ margin-bottom:1rem }
+.hero-slider .carousel-indicators [data-bs-target]{
+  width:10px; height:10px; border-radius:50%;
+  background-color:rgba(255,255,255,.5);
+  opacity:1; border:0;
+}
+.hero-slider .carousel-indicators .active{ background-color:#fff; }
+.hero-slider .carousel-control-prev,
+.hero-slider .carousel-control-next{ width:5%; opacity:.8 }
 
 .badge.text-bg-light{background:#f1f3f5;color:#111;border:1px solid #e9ecef}
 /* =======================
@@ -553,12 +604,14 @@ footer{background:var(--dark); color:#fff}
 
 
 /* Boutons dans la hero section */
-.hero-section .btn-outline-custom {
+.hero-section .btn-outline-custom,
+.hero-slider .btn-outline-custom {
   color: #fff;                /* texte blanc */
   border: 2px solid #fff;     /* contour blanc */
 }
 
-.hero-section .btn-outline-custom:hover {
+.hero-section .btn-outline-custom:hover,
+.hero-slider .btn-outline-custom:hover {
   background: #fff;
   color: var(--primary);      /* au hover : texte rouge */
 }

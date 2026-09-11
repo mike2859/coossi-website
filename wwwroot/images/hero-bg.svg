@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="rgba(255,255,255,0.07)"/>
+    </pattern>
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="600" fill="#161b1f"/>
+  <rect width="1600" height="600" fill="url(#sweep)"/>
+  <rect width="1600" height="600" fill="url(#dots)"/>
+
+  <!-- silhouette de toits / bâtiments, motif générique -->
+  <g fill="#ffffff" opacity="0.06">
+    <rect x="-20" y="430" width="140" height="220"/>
+    <rect x="120" y="380" width="110" height="270"/>
+    <rect x="230" y="450" width="90" height="200"/>
+    <rect x="330" y="400" width="150" height="250"/>
+    <rect x="500" y="460" width="100" height="190"/>
+    <rect x="610" y="410" width="130" height="240"/>
+    <rect x="760" y="440" width="90" height="210"/>
+    <rect x="860" y="390" width="160" height="260"/>
+    <rect x="1040" y="450" width="110" height="200"/>
+    <rect x="1160" y="405" width="140" height="245"/>
+    <rect x="1310" y="440" width="100" height="210"/>
+    <rect x="1420" y="415" width="200" height="235"/>
+  </g>
+
+  <!-- Trame de "coordination / réseau" : lignes reliant des points, en accent rouge très discret -->
+  <g stroke="#dc3545" stroke-width="1.4" opacity="0.28" fill="none">
+    <path d="M120,180 L360,120 L640,200 L900,110 L1180,190 L1460,130"/>
+    <path d="M360,120 L500,260 M640,200 L780,90 M900,110 L1040,240 M1180,190 L1300,80"/>
+  </g>
+  <g fill="#dc3545" opacity="0.5">
+    <circle cx="120" cy="180" r="4"/>
+    <circle cx="360" cy="120" r="4"/>
+    <circle cx="640" cy="200" r="4"/>
+    <circle cx="900" cy="110" r="4"/>
+    <circle cx="1180" cy="190" r="4"/>
+    <circle cx="1460" cy="130" r="4"/>
+  </g>
+</svg>

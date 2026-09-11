@@ -1,0 +1,105 @@
+@using Coossi.Blazor.Data.Models
+
+@code {
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string? LeadStrong { get; set; }
+    [Parameter] public string? TextStrong { get; set; }
+    [Parameter] public string? Phone { get; set; }
+    [Parameter] public string? PhoneHref { get; set; }
+    [Parameter] public string? ContactHref { get; set; }
+    [Parameter] public string? ContactLabel { get; set; } = "Nous contacter";
+    [Parameter] public string? Icon { get; set; } = "fa-shield-alt";
+    [Parameter] public List<HomeServiceCard>? Slides { get; set; }
+}
+
+<div id="heroSlider" class="carousel slide hero-slider" data-bs-ride="carousel" data-bs-interval="6000">
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        @if (Slides is not null)
+        {
+            for (var i = 0; i < Slides.Count; i++)
+            {
+                var slideTo = i + 1;
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="@slideTo" aria-label="Slide @(slideTo + 1)"></button>
+            }
+        }
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active hero-slide hero-slide-0">
+            <div class="container">
+                <div class="row align-items-center hero-content">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-4">@Title</h1>
+
+                        @if (!string.IsNullOrWhiteSpace(LeadStrong))
+                        {
+                            <p class="lead mb-4 text-seo"><strong>@LeadStrong</strong></p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(TextStrong))
+                        {
+                            <p class="mb-4 text-seo"><strong>@TextStrong</strong></p>
+                        }
+
+                        <div class="d-flex flex-wrap gap-3">
+                            @if (!string.IsNullOrWhiteSpace(Phone) && !string.IsNullOrWhiteSpace(PhoneHref))
+                            {
+                                <a href="@PhoneHref" class="btn btn-custom btn-lg">
+                                    <i class="fas fa-phone me-2"></i>@Phone
+                                </a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(ContactHref))
+                            {
+                                <a href="@ContactHref" class="btn btn-outline-custom btn-lg">
+                                    <i class="fas fa-envelope me-2"></i>@ContactLabel
+                                </a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="display-1 text-white-50">
+                            <i class="fas @Icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (Slides is not null)
+        {
+            for (var i = 0; i < Slides.Count; i++)
+            {
+                var s = Slides[i];
+                var variant = (i % 3) + 1;
+                <div class="carousel-item hero-slide hero-slide-@variant">
+                    <div class="container">
+                        <div class="row align-items-center hero-content">
+                            <div class="col-lg-8">
+                                <h2 class="display-5 fw-bold mb-3">@s.Title <span class="fw-normal">— @s.Subtitle</span></h2>
+                                <p class="lead mb-4 text-seo">@s.Text</p>
+                                <a href="/services" class="btn btn-outline-custom btn-lg">
+                                    <i class="fas fa-arrow-right me-2"></i>Découvrir nos prestations
+                                </a>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <div class="display-1 text-white-50">
+                                    <i class="fas @s.Icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+    </button>
+</div>
