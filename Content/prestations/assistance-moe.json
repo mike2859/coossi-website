@@ -16,7 +16,7 @@
     "paragraphs": [
       "Au moment de la construction d'un établissement, et plus précisément dans la phase de réalisation du SSI, le coordinateur en système de sécurité incendie doit assister la maîtrise d'œuvre.",
       "La société COOSSI met son expertise au service des maîtres d'ouvrages pour accompagner la phase de conception du SSI et garantir la mise en conformité du bâtiment avec les normes en vigueur.",
-      "Pour faire appel à un professionnel de la coordination SSI en phase de conception, contactez Jean LEBLANC au 06.85.75.27.75."
+      "Pour faire appel à un professionnel de la coordination SSI en phase de conception, contactez COOSSI au 06.85.75.27.75."
     ]
   },
 
@@ -64,7 +64,7 @@
 
   "expertises": {
     "title": "Nos Expertises",
-    "intro": "Vous prévoyez la construction d'un établissement recevant du public ? La société COOSSI est qualifiée niveau SSIAP3 depuis 2012 et vous offre les meilleurs conseils en termes de sécurité incendie et d'accessibilité en phase de conception. Jean LEBLANC travaille sur tous types de projets :",
+    "intro": "Vous prévoyez la construction d'un établissement recevant du public ? La société COOSSI est qualifiée niveau SSIAP3 depuis 2012 et vous offre les meilleurs conseils en termes de sécurité incendie et d'accessibilité en phase de conception. COOSSI travaille sur tous types de projets :",
     "items": [
       {
         "icon": "fas fa-building",
@@ -110,7 +110,7 @@
     "text": "Pour toute demande d'assistance à maîtrise d'ouvrage SSI, de la conception à la réception.",
     "phoneDisplay": "06.85.75.27.75",
     "phoneHref": "tel:0685752775",
-    "buttonText": "Contacter Jean LEBLANC",
+    "buttonText": "Contacter COOSSI",
     "buttonHref": "/contact"
   },
 

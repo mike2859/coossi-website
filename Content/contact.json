@@ -5,7 +5,7 @@
   "contactInfo": {
     "phone": {
       "icon": "fa-phone",
-      "title": "Jean LEBLANC",
+      "title": "COOSSI",
       "number": "06.85.75.27.75",
       "href": "tel:0685752775",
       "note": "Urgences 7j/7"
@@ -58,8 +58,8 @@
   "zone": {
     "title": "Zone d'Intervention",
     "areas": {
-      "principale": ["Nord", "Pas-de-Calais", "Somme", "Aisne"],
-      "villes": ["Valenciennes", "Maubeuge", "Cambrai", "Lille"]
+      "principale": ["Les hauts de France", "Ile de France et sa banlieue"],
+      "villes": ["Valenciennes", "Maubeuge", "Cambrai", "Lille", "Paris"]
     },
     "note": "Projets d'envergure : Toute la France selon le projet"
   },
