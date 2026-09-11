@@ -948,3 +948,51 @@ footer{background:var(--dark); color:#fff}
   .partner-card { flex: 0 0 180px; padding: 18px 14px; }
   .partner-icon { width: 52px; height: 52px; font-size: 1.3rem; }
 }
+
+/* =======================
+   BADGE FLOTTANT — AVIS GOOGLE (QR code)
+   ======================= */
+.google-review-badge{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:1030;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:var(--shadow-lg);
+  padding:10px 14px;
+  text-decoration:none;
+  color:var(--dark);
+  border:1px solid rgba(0,0,0,.06);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.google-review-badge:hover{
+  transform:translateY(-3px);
+  box-shadow:0 24px 54px rgba(0,0,0,.18);
+  color:var(--primary);
+}
+.google-review-badge img{
+  width:56px;
+  height:56px;
+  border-radius:8px;
+  flex-shrink:0;
+}
+.google-review-badge-text{
+  font-size:.8rem;
+  font-weight:700;
+  line-height:1.25;
+  white-space:nowrap;
+}
+.google-review-badge-text i{
+  color:#4285F4;
+  margin-right:4px;
+}
+
+@media (max-width:575.98px){
+  .google-review-badge{ right:12px; bottom:12px; padding:8px 10px; gap:8px; }
+  .google-review-badge img{ width:42px; height:42px; }
+  .google-review-badge-text{ font-size:.7rem; white-space:normal; }
+}
