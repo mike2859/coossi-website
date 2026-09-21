@@ -5,6 +5,7 @@
 @inject IContentStore ContentStore
 @inject IEmailService EmailService
 @inject ILogger<Contact> Logger
+@inject IJSRuntime JS
 
 @code {
     private ContactPage? Page;
@@ -39,6 +40,7 @@
             {
                 Logger.LogInformation("Email envoyé avec succès");
                 ShowSuccessMessage = true;
+                await JS.InvokeVoidAsync("coossiAnalytics.trackLead", "contact");
                 // Réinitialiser le formulaire
                 FormModel = new ContactFormModel();
             }
