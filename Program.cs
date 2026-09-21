@@ -116,7 +116,7 @@ app.MapGet("/page/{category}/{id:int}", (string category, int id) =>
 });
 
 // robots.txt
-app.MapGet("/robots.txt", (HttpContext ctx) =>
+app.MapMethods("/robots.txt", new[] { "GET", "HEAD" }, (HttpContext ctx) =>
 {
     var sb = new StringBuilder();
     sb.AppendLine("User-agent: *");
@@ -126,7 +126,7 @@ app.MapGet("/robots.txt", (HttpContext ctx) =>
 });
 
 // sitemap.xml
-app.MapGet("/sitemap.xml", (HttpContext ctx) =>
+app.MapMethods("/sitemap.xml", new[] { "GET", "HEAD" }, (HttpContext ctx) =>
 {
     var baseUrl = $"{ctx.Request.Scheme}://{ctx.Request.Host}";
     var lastmod = DateTime.UtcNow.ToString("yyyy-MM-dd");
