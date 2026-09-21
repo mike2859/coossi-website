@@ -1,6 +1,7 @@
 bin/
 obj/
 publish/
+publish-net9/
 .vs/
 .idea/
 *.user
