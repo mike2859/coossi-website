@@ -40,7 +40,9 @@
             {
                 Logger.LogInformation("Email envoyé avec succès");
                 ShowSuccessMessage = true;
-                await JS.InvokeVoidAsync("coossiAnalytics.trackLead", "contact");
+
+                // Pas de tracking JS sur l'hébergement mutualisé (conversions suivies via GTM)
+
                 // Réinitialiser le formulaire
                 FormModel = new ContactFormModel();
             }
