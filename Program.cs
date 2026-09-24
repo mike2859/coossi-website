@@ -36,6 +36,23 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Domaine sans www -> www (un seul domaine indexé par Google : canonical, sitemap, robots cohérents)
+var canonicalHost = app.Configuration["CanonicalHost"];
+if (!string.IsNullOrWhiteSpace(canonicalHost) && canonicalHost.StartsWith("www."))
+{
+    var apexHost = canonicalHost["www.".Length..];
+    app.Use(async (ctx, next) =>
+    {
+        if (string.Equals(ctx.Request.Host.Host, apexHost, StringComparison.OrdinalIgnoreCase))
+        {
+            var target = $"https://{canonicalHost}{ctx.Request.PathBase}{ctx.Request.Path}{ctx.Request.QueryString}";
+            ctx.Response.Redirect(target, permanent: true);
+            return;
+        }
+        await next();
+    });
+}
+
 app.UseResponseCompression();
 
 // Static files + cache long
@@ -57,7 +74,9 @@ app.UseStaticFiles(new StaticFileOptions
 var rewrite = new RewriteOptions()
     .AddRedirect("^Images/(.*)$", "images/$1", 301)
     .AddRedirect("^images/slider_Images/(.*)$", "images/slider-images/$1", 301)
-    .AddRedirect("Images//Partners/partenaire_6.png", "images/partners/partenaire-6.webp", 301);
+    .AddRedirect("Images//Partners/partenaire_6.png", "images/partners/partenaire-6.webp", 301)
+    // Ancien site statique : /index.html -> /
+    .AddRedirect("^index\\.html$", "/", 301);
 app.UseRewriter(rewrite);
 
 // Legacy /prestation/{id} - redirections SEO (mappings du site actuel)
@@ -92,8 +111,9 @@ app.MapGet("/about-us", () => Results.Redirect("/", permanent: true));
 // Legacy /home -> /
 app.MapGet("/home", () => Results.Redirect("/", permanent: true));
 
-// Legacy /page/{category}/{id} -> redirection vers la prestation correspondante
-app.MapGet("/page/{category}/{id:int}", (string category, int id) =>
+// Legacy /page/{category}/{id} et /page/{category}/index.html (ancien site statique)
+// -> redirection vers la prestation correspondante
+app.MapGet("/page/{category}/{**rest}", (string category) =>
 {
     var categoryRedirects = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
