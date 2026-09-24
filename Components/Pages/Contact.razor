@@ -40,7 +40,18 @@
             {
                 Logger.LogInformation("Email envoyé avec succès");
                 ShowSuccessMessage = true;
-                await JS.InvokeVoidAsync("coossiAnalytics.trackLead", "contact");
+
+                // Page rendue statiquement : pas d'interop JS possible ici,
+                // l'échec du tracking ne doit pas masquer le succès de l'envoi
+                try
+                {
+                    await JS.InvokeVoidAsync("coossiAnalytics.trackLead", "contact");
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Logger.LogDebug(ex, "Tracking JS indisponible (rendu statique)");
+                }
+
                 // Réinitialiser le formulaire
                 FormModel = new ContactFormModel();
             }
