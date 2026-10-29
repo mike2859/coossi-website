@@ -1,0 +1,39 @@
+services:
+  app:
+    build:
+      context: ..
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      # Derrière Caddy : récupère le schéma (https) et l'IP réelle du visiteur
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+      EmailSettings__Password: ${SMTP_PASSWORD:?SMTP_PASSWORD manquant dans .env}
+    volumes:
+      - dataprotection-keys:/home/app/.aspnet/DataProtection-Keys
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  caddy:
+    image: caddy:2.10
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      SITE_DOMAINS: ${SITE_DOMAINS:?SITE_DOMAINS manquant dans .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    logging: *logging
+
+volumes:
+  dataprotection-keys:
+  caddy-data:
+  caddy-config:

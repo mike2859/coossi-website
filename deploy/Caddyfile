@@ -1,0 +1,7 @@
+# Les domaines servis viennent de SITE_DOMAINS (fichier .env), séparés par des virgules.
+# Caddy obtient et renouvelle seul les certificats Let's Encrypt.
+# La redirection sans www -> www est faite par l'application (CanonicalHost).
+{$SITE_DOMAINS} {
+	encode zstd gzip
+	reverse_proxy app:8080
+}

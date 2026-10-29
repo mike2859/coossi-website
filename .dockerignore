@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+publish/
+publish-net9/
+.git/
+.idea/
+.vs/
+tools/
+docs/
+deploy/
+appsettings.Production.json
+appsettings.Development.json
+.env
+Dockerfile
+.dockerignore
