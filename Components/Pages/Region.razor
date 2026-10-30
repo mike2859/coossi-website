@@ -1,0 +1,200 @@
+@page "/coordination-ssi/{Slug}"
+@using Coossi.Blazor.Components.Shared
+@using Coossi.Blazor.Data.Models
+@inject RegionStore Regions
+@inject NavigationManager Nav
+
+@code {
+    [Parameter] public string Slug { get; set; } = "";
+    [CascadingParameter] private HttpContext? HttpContext { get; set; }
+
+    private RegionDto? Model;
+
+    protected override void OnParametersSet()
+    {
+        Model = Regions.Get(Slug);
+        if (Model is null && HttpContext is { Response.HasStarted: false })
+            HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+    }
+
+    // Brouillon : toutes les régions (pour la relecture) ; publiée : seulement les autres régions publiées
+    private IEnumerable<RegionDto> AutresRegions =>
+        (Model!.Brouillon ? Regions.Toutes : Regions.Publiees).Where(r => r.Slug != Model.Slug);
+
+    private string Canonical => $"{Nav.BaseUri.TrimEnd('/')}{RegionStore.Url(Model!)}";
+
+    private static readonly (string Href, string Icone, string Libelle)[] Prestations =
+    [
+        ("/prestation/coordination-ssi", "fa-project-diagram", "Coordination SSI"),
+        ("/prestation/creation-dossier-ssi", "fa-folder-open", "Dossier d'identité SSI"),
+        ("/prestation/audit-diagnostic", "fa-search", "Audit et diagnostic SSI"),
+        ("/prestation/assistance-moe", "fa-hard-hat", "Assistance à maîtrise d'ouvrage"),
+        ("/prestation/responsable-unique-securite", "fa-user-shield", "Responsable unique de sécurité"),
+        ("/prestation/notices-securite-accessibilite", "fa-file-alt", "Notices de sécurité et d'accessibilité"),
+        ("/prestation/signaletique", "fa-sign", "Signalétique de sécurité incendie"),
+        ("/prestation/document-unique-evaluation", "fa-clipboard-list", "Document unique (DUERP)"),
+    ];
+}
+
+@if (Model is null)
+{
+    <section class="content-section" style="margin-top: 76px;">
+        <div class="container text-center py-5">
+            <h1 class="mb-3">Page introuvable</h1>
+            <a href="/prestation/coordination-ssi" class="btn btn-danger">Notre prestation de coordination SSI</a>
+        </div>
+    </section>
+}
+else
+{
+    <Seo Title="@Model.MetaTitle" Description="@Model.MetaDescription" Canonical="@Canonical" OgImage="images/og-prestations.webp" NoIndex="Model.Brouillon" />
+
+    <section class="breadcrumb-nav" style="margin-top: 76px;">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="/prestation/coordination-ssi">Coordination SSI</a></li>
+                    <li class="breadcrumb-item active">@Model.Nom</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <h1 class="display-5 fw-bold mb-2"><i class="fas fa-map-marker-alt me-2"></i>@Model.Titre</h1>
+                    <p class="lead mb-0">@Model.SousTitre</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+
+            @if (Model.Brouillon)
+            {
+                <div class="alert alert-warning mb-5">
+                    <h2 class="h5 fw-bold"><i class="fas fa-pen me-2"></i>Brouillon à relire — page invisible pour Google et sans lien sur le site</h2>
+                    <p class="mb-0">
+                        À valider : le texte, la liste des villes, les démarches locales et les missions réalisées dans la région.
+                        <a href="/relecture" class="alert-link ms-1">Toutes les pages à relire</a>
+                    </p>
+                </div>
+            }
+
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="info-card">
+                        @foreach (var p in Model.Intro) { <p>@p</p> }
+                        <p class="mb-0">
+                            <strong>Villes desservies :</strong> @string.Join(", ", Model.Villes) et l'ensemble de la région.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">Nos prestations @Model.Lieu</h2>
+                    <div class="row g-3">
+                        @foreach (var (href, icone, libelle) in Prestations)
+                        {
+                            <div class="col-md-6 col-lg-3">
+                                <a href="@href" class="info-card d-block h-100 text-decoration-none text-dark">
+                                    <i class="fas @icone text-danger me-2"></i><strong>@libelle</strong>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            @if (Model.Missions.Count > 0)
+            {
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h2 class="section-title">Missions réalisées @Model.Lieu</h2>
+                        <div class="row g-3">
+                            @foreach (var m in Model.Missions)
+                            {
+                                <div class="col-md-6">
+                                    <div class="info-card h-100">
+                                        <h3 class="h6 fw-bold mb-1">@m.Etablissement</h3>
+                                        <p class="text-muted small mb-2"><i class="fas fa-map-marker-alt me-1"></i>@m.Ville · @m.Annee</p>
+                                        <p class="mb-0">@m.Description</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">Vos démarches @Model.Lieu</h2>
+                    <div class="info-card">
+                        @foreach (var p in Model.Specificites) { <p>@p</p> }
+                        <p class="mb-0">
+                            <strong>Départements :</strong>
+                            @string.Join(", ", Model.Departements.Select(d => $"{d.Nom} ({d.Numero})")).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            @if (!Model.Siege)
+            {
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="section-title">Comment nous intervenons à distance de nos bureaux</h2>
+                    <div class="info-card">
+                        <p>
+                            COOSSI est basée à Villers-Pol (Nord) et intervient dans toute la France. Nous nous déplaçons
+                            sur site aux étapes clés de votre projet : visite initiale, réunions de conception et de chantier,
+                            essais et réception du SSI, et accompagnement lors du passage de la commission de sécurité.
+                        </p>
+                        <p class="mb-0">
+                            Entre deux déplacements, le suivi se fait à distance : échanges de plans, relecture des documents
+                            et réunions en visioconférence avec la maîtrise d'œuvre et les entreprises.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+
+            @if (AutresRegions.Any())
+            {
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h2 class="section-title">Nous intervenons aussi</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var r in AutresRegions)
+                            {
+                                <a href="@RegionStore.Url(r)" class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border text-decoration-none">
+                                    @r.Nom@(r.Brouillon ? " (brouillon)" : "")
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="info-card highlight-box text-center">
+                        <h2 class="h4 fw-bold">Un projet @Model.Lieu ?</h2>
+                        <p>Parlons-en : nous vous indiquons rapidement si une mission de coordination SSI est nécessaire et comment nous pouvons intervenir.</p>
+                        <a href="@Coordonnees.TelephoneLien" class="btn btn-danger btn-lg me-2 mb-2"><i class="fas fa-phone me-2"></i>@Coordonnees.Telephone</a>
+                        <a href="/contact" class="btn btn-outline-danger btn-lg mb-2"><i class="fas fa-envelope me-2"></i>Nous écrire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+}

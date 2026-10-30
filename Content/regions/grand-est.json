@@ -1,0 +1,72 @@
+{
+  "brouillon": true,
+  "slug": "grand-est",
+  "nom": "Grand Est",
+  "lieu": "dans le Grand Est",
+  "metaTitle": "Coordinateur SSI à Reims, Strasbourg, Metz et dans le Grand Est | COOSSI",
+  "metaDescription": "Coordination SSI dans le Grand Est : Reims, Strasbourg, Metz, Nancy… Conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Reims, Strasbourg, Metz et dans le Grand Est",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout dans le Grand Est.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public dans le Grand Est, notamment à Reims et Strasbourg.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Reims",
+    "Strasbourg",
+    "Metz",
+    "Nancy",
+    "Mulhouse",
+    "Colmar",
+    "Troyes",
+    "Charleville-Mézières",
+    "Épinal"
+  ],
+  "departements": [
+    {
+      "numero": "08",
+      "nom": "Ardennes"
+    },
+    {
+      "numero": "10",
+      "nom": "Aube"
+    },
+    {
+      "numero": "51",
+      "nom": "Marne"
+    },
+    {
+      "numero": "52",
+      "nom": "Haute-Marne"
+    },
+    {
+      "numero": "54",
+      "nom": "Meurthe-et-Moselle"
+    },
+    {
+      "numero": "55",
+      "nom": "Meuse"
+    },
+    {
+      "numero": "57",
+      "nom": "Moselle"
+    },
+    {
+      "numero": "67",
+      "nom": "Bas-Rhin"
+    },
+    {
+      "numero": "68",
+      "nom": "Haut-Rhin"
+    },
+    {
+      "numero": "88",
+      "nom": "Vosges"
+    }
+  ],
+  "specificites": [
+    "Chaque département de la région Grand Est dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

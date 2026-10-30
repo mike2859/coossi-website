@@ -1,0 +1,53 @@
+{
+  "brouillon": true,
+  "slug": "centre-val-de-loire",
+  "nom": "Centre-Val de Loire",
+  "lieu": "en Centre-Val de Loire",
+  "metaTitle": "Coordinateur SSI à Tours, Orléans et en Centre-Val de Loire | COOSSI",
+  "metaDescription": "Coordination SSI en Centre-Val de Loire : Tours, Orléans, Bourges, Blois… Conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Tours, Orléans et en Centre-Val de Loire",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout en Centre-Val de Loire.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public en Centre-Val de Loire, notamment à Tours et Orléans.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Tours",
+    "Orléans",
+    "Bourges",
+    "Blois",
+    "Chartres",
+    "Châteauroux"
+  ],
+  "departements": [
+    {
+      "numero": "18",
+      "nom": "Cher"
+    },
+    {
+      "numero": "28",
+      "nom": "Eure-et-Loir"
+    },
+    {
+      "numero": "36",
+      "nom": "Indre"
+    },
+    {
+      "numero": "37",
+      "nom": "Indre-et-Loire"
+    },
+    {
+      "numero": "41",
+      "nom": "Loir-et-Cher"
+    },
+    {
+      "numero": "45",
+      "nom": "Loiret"
+    }
+  ],
+  "specificites": [
+    "Chaque département de la région Centre-Val de Loire dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

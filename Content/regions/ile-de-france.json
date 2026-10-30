@@ -1,0 +1,66 @@
+{
+  "brouillon": true,
+  "slug": "ile-de-france",
+  "nom": "Île-de-France",
+  "lieu": "en Île-de-France",
+  "metaTitle": "Coordinateur SSI à Paris et en Île-de-France | COOSSI",
+  "metaDescription": "Coordination SSI à Paris et en Île-de-France : conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets franciliens.",
+  "titre": "Coordinateur SSI à Paris et en Île-de-France",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, à Paris et dans toute l'Île-de-France.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public à Paris, où nous sommes déjà intervenus, et dans toute l'Île-de-France.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Paris",
+    "Boulogne-Billancourt",
+    "Saint-Denis",
+    "Nanterre",
+    "Créteil",
+    "Versailles",
+    "Argenteuil",
+    "Montreuil",
+    "Cergy",
+    "Évry-Courcouronnes",
+    "Melun"
+  ],
+  "departements": [
+    {
+      "numero": "75",
+      "nom": "Paris"
+    },
+    {
+      "numero": "77",
+      "nom": "Seine-et-Marne"
+    },
+    {
+      "numero": "78",
+      "nom": "Yvelines"
+    },
+    {
+      "numero": "91",
+      "nom": "Essonne"
+    },
+    {
+      "numero": "92",
+      "nom": "Hauts-de-Seine"
+    },
+    {
+      "numero": "93",
+      "nom": "Seine-Saint-Denis"
+    },
+    {
+      "numero": "94",
+      "nom": "Val-de-Marne"
+    },
+    {
+      "numero": "95",
+      "nom": "Val-d'Oise"
+    }
+  ],
+  "specificites": [
+    "À Paris et dans les Hauts-de-Seine, la Seine-Saint-Denis et le Val-de-Marne, la sécurité incendie des établissements recevant du public relève de la Préfecture de police, et les secours sont assurés par la Brigade de sapeurs-pompiers de Paris (BSPP). En Seine-et-Marne, dans les Yvelines, l'Essonne et le Val-d'Oise, ce sont la préfecture et le SDIS du département.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

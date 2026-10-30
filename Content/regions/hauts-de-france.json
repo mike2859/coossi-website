@@ -1,0 +1,62 @@
+{
+  "brouillon": true,
+  "slug": "hauts-de-france",
+  "nom": "Hauts-de-France",
+  "lieu": "dans les Hauts-de-France",
+  "siege": true,
+  "metaTitle": "Coordinateur SSI à Lille, Valenciennes et dans les Hauts-de-France | COOSSI",
+  "metaDescription": "Coordination SSI dans les Hauts-de-France : Valenciennes, Lille, Maubeuge, Cambrai… Conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Lille, Valenciennes et dans les Hauts-de-France",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout dans les Hauts-de-France.",
+  "intro": [
+    "COOSSI est basée à Villers-Pol, près de Valenciennes : les Hauts-de-France sont notre région. Nous accompagnons les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public dans le Nord, le Pas-de-Calais, la Somme, l'Oise et l'Aisne, avec une grande réactivité.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Valenciennes",
+    "Lille",
+    "Maubeuge",
+    "Cambrai",
+    "Arras",
+    "Lens",
+    "Douai",
+    "Dunkerque",
+    "Calais",
+    "Boulogne-sur-Mer",
+    "Roubaix",
+    "Tourcoing",
+    "Villeneuve d'Ascq",
+    "Armentières",
+    "Amiens",
+    "Beauvais",
+    "Saint-Quentin",
+    "Compiègne"
+  ],
+  "departements": [
+    {
+      "numero": "02",
+      "nom": "Aisne"
+    },
+    {
+      "numero": "59",
+      "nom": "Nord"
+    },
+    {
+      "numero": "60",
+      "nom": "Oise"
+    },
+    {
+      "numero": "62",
+      "nom": "Pas-de-Calais"
+    },
+    {
+      "numero": "80",
+      "nom": "Somme"
+    }
+  ],
+  "specificites": [
+    "Chaque département de la région Hauts-de-France dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

@@ -1,0 +1,48 @@
+@page "/relecture"
+@using Coossi.Blazor.Components.Shared
+@inject RegionStore Regions
+
+@* Page de relecture pour le père : liste des pages en brouillon. Noindex, hors sitemap, sans lien. *@
+
+<Seo Title="Pages à relire | COOSSI" NoIndex="true" />
+
+<section class="content-section" style="margin-top: 76px;">
+    <div class="container">
+        <div class="row"><div class="col-lg-10 mx-auto">
+
+            <h1 class="h2 fw-bold mb-3"><i class="fas fa-pen me-2 text-danger"></i>Pages à relire</h1>
+            <p class="lead">
+                Ces pages sont en ligne mais invisibles : Google ne les indexe pas et aucun lien du site n'y mène.
+                Pour chacune : la valider telle quelle, ou noter les corrections, et ajouter si possible 2 à 4 missions
+                réalisées (type d'établissement, ville, année, ce qui a été fait).
+            </p>
+
+            <h2 class="h4 fw-bold mt-5 mb-3">Article</h2>
+            <ul class="list-group mb-4">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/coordinateur-ssi-obligatoire" target="_blank" class="text-danger">Coordinateur SSI : quand est-il obligatoire ?</a>
+                    <span class="badge bg-warning text-dark">Brouillon</span>
+                </li>
+            </ul>
+
+            <h2 class="h4 fw-bold mt-5 mb-3">Pages régionales</h2>
+            <ul class="list-group mb-4">
+                @foreach (var r in Regions.Toutes)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="@RegionStore.Url(r)" target="_blank" class="text-danger">@r.Titre</a>
+                        @if (r.Brouillon)
+                        {
+                            <span class="badge bg-warning text-dark">Brouillon</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-success">Publiée</span>
+                        }
+                    </li>
+                }
+            </ul>
+
+        </div></div>
+    </div>
+</section>

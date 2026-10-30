@@ -1,0 +1,46 @@
+{
+  "brouillon": true,
+  "slug": "bretagne",
+  "nom": "Bretagne",
+  "lieu": "en Bretagne",
+  "metaTitle": "Coordinateur SSI à Rennes et en Bretagne | COOSSI",
+  "metaDescription": "Coordination SSI en Bretagne : Rennes, Brest, Quimper, Lorient… Conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Rennes et en Bretagne",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout en Bretagne.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public en Bretagne, notamment à Rennes et Brest.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Rennes",
+    "Brest",
+    "Quimper",
+    "Lorient",
+    "Vannes",
+    "Saint-Brieuc",
+    "Saint-Malo"
+  ],
+  "departements": [
+    {
+      "numero": "22",
+      "nom": "Côtes-d'Armor"
+    },
+    {
+      "numero": "29",
+      "nom": "Finistère"
+    },
+    {
+      "numero": "35",
+      "nom": "Ille-et-Vilaine"
+    },
+    {
+      "numero": "56",
+      "nom": "Morbihan"
+    }
+  ],
+  "specificites": [
+    "Chaque département de la région Bretagne dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

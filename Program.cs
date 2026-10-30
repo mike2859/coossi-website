@@ -16,6 +16,7 @@ builder.Services.AddSingleton<IPrestationIndex, FilePrestationIndex>();
 builder.Services.AddScoped<IKeywordStore, FileKeywordStore>();
 builder.Services.AddScoped<ILegalStore, FileLegalStore>();
 builder.Services.AddSingleton<IContentStore, FileContentStore>();
+builder.Services.AddSingleton<RegionStore>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddResponseCompression(opts =>
@@ -152,7 +153,7 @@ app.MapMethods("/robots.txt", new[] { "GET", "HEAD" }, (HttpContext ctx) =>
 });
 
 // sitemap.xml
-app.MapMethods("/sitemap.xml", new[] { "GET", "HEAD" }, (HttpContext ctx) =>
+app.MapMethods("/sitemap.xml", new[] { "GET", "HEAD" }, (HttpContext ctx, RegionStore regions) =>
 {
     var baseUrl = $"{ctx.Request.Scheme}://{ctx.Request.Host}";
     var lastmod = DateTime.UtcNow.ToString("yyyy-MM-dd");
@@ -176,6 +177,7 @@ app.MapMethods("/sitemap.xml", new[] { "GET", "HEAD" }, (HttpContext ctx) =>
         ("/mentions-legales", "0.3"),
         ("/confidentialite", "0.3")
     };
+    routes.AddRange(regions.Publiees.Select(r => (RegionStore.Url(r), "0.7")));
 
     var xml = new StringBuilder();
     xml.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");

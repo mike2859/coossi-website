@@ -1,0 +1,50 @@
+{
+  "brouillon": true,
+  "slug": "pays-de-la-loire",
+  "nom": "Pays de la Loire",
+  "lieu": "en Pays de la Loire",
+  "metaTitle": "Coordinateur SSI à Nantes et en Pays de la Loire | COOSSI",
+  "metaDescription": "Coordination SSI en Pays de la Loire : Nantes, Angers, Le Mans, Saint-Nazaire… Conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Nantes et en Pays de la Loire",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout en Pays de la Loire.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public en Pays de la Loire, notamment à Nantes et Angers.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Nantes",
+    "Angers",
+    "Le Mans",
+    "Saint-Nazaire",
+    "La Roche-sur-Yon",
+    "Laval",
+    "Cholet"
+  ],
+  "departements": [
+    {
+      "numero": "44",
+      "nom": "Loire-Atlantique"
+    },
+    {
+      "numero": "49",
+      "nom": "Maine-et-Loire"
+    },
+    {
+      "numero": "53",
+      "nom": "Mayenne"
+    },
+    {
+      "numero": "72",
+      "nom": "Sarthe"
+    },
+    {
+      "numero": "85",
+      "nom": "Vendée"
+    }
+  ],
+  "specificites": [
+    "Chaque département de la région Pays de la Loire dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

@@ -1,0 +1,84 @@
+{
+  "brouillon": true,
+  "slug": "occitanie",
+  "nom": "Occitanie",
+  "lieu": "en Occitanie",
+  "metaTitle": "Coordinateur SSI à Toulouse et en Occitanie | COOSSI",
+  "metaDescription": "Coordination SSI en Occitanie : Toulouse, Montpellier, Perpignan, Nîmes… Conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Toulouse et en Occitanie",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout en Occitanie.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public en Occitanie, notamment à Toulouse et Montpellier.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Toulouse",
+    "Montpellier",
+    "Perpignan",
+    "Nîmes",
+    "Béziers",
+    "Narbonne",
+    "Albi",
+    "Tarbes",
+    "Carcassonne"
+  ],
+  "departements": [
+    {
+      "numero": "09",
+      "nom": "Ariège"
+    },
+    {
+      "numero": "11",
+      "nom": "Aude"
+    },
+    {
+      "numero": "12",
+      "nom": "Aveyron"
+    },
+    {
+      "numero": "30",
+      "nom": "Gard"
+    },
+    {
+      "numero": "31",
+      "nom": "Haute-Garonne"
+    },
+    {
+      "numero": "32",
+      "nom": "Gers"
+    },
+    {
+      "numero": "34",
+      "nom": "Hérault"
+    },
+    {
+      "numero": "46",
+      "nom": "Lot"
+    },
+    {
+      "numero": "48",
+      "nom": "Lozère"
+    },
+    {
+      "numero": "65",
+      "nom": "Hautes-Pyrénées"
+    },
+    {
+      "numero": "66",
+      "nom": "Pyrénées-Orientales"
+    },
+    {
+      "numero": "81",
+      "nom": "Tarn"
+    },
+    {
+      "numero": "82",
+      "nom": "Tarn-et-Garonne"
+    }
+  ],
+  "specificites": [
+    "Chaque département de la région Occitanie dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

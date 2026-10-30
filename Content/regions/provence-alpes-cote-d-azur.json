@@ -1,0 +1,55 @@
+{
+  "brouillon": true,
+  "slug": "provence-alpes-cote-d-azur",
+  "nom": "Provence-Alpes-Côte d'Azur",
+  "lieu": "en Provence-Alpes-Côte d'Azur",
+  "metaTitle": "Coordinateur SSI à Marseille et en Provence-Alpes-Côte d'Azur | COOSSI",
+  "metaDescription": "Coordination SSI en Provence-Alpes-Côte d'Azur : Marseille, Nice, Toulon, Aix-en-Provence… Conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Marseille et en Provence-Alpes-Côte d'Azur",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout en Provence-Alpes-Côte d'Azur.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public en Provence-Alpes-Côte d'Azur, notamment à Marseille et Nice.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Marseille",
+    "Nice",
+    "Toulon",
+    "Aix-en-Provence",
+    "Avignon",
+    "Cannes",
+    "Antibes"
+  ],
+  "departements": [
+    {
+      "numero": "04",
+      "nom": "Alpes-de-Haute-Provence"
+    },
+    {
+      "numero": "05",
+      "nom": "Hautes-Alpes"
+    },
+    {
+      "numero": "06",
+      "nom": "Alpes-Maritimes"
+    },
+    {
+      "numero": "13",
+      "nom": "Bouches-du-Rhône"
+    },
+    {
+      "numero": "83",
+      "nom": "Var"
+    },
+    {
+      "numero": "84",
+      "nom": "Vaucluse"
+    }
+  ],
+  "specificites": [
+    "Chaque département de la région Provence-Alpes-Côte d'Azur dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "À Marseille, les secours sont assurés par le Bataillon de marins-pompiers de Marseille (BMPM) ; dans le reste de la région, par le SDIS de chaque département.",
+    "Le coordinateur SSI prépare les éléments attendus lors du passage de la commission de sécurité : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}

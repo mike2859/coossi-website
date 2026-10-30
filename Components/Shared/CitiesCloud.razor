@@ -1,3 +1,5 @@
+@inject RegionStore Regions
+
 @code {
     [Parameter] public List<string> Villes { get; set; } = [];
     [Parameter] public List<string> MotsCles { get; set; } = [];
@@ -22,14 +24,16 @@
             <div>
                 @for (var i = 0; i < Villes.Count; i++)
                 {
-                    var isRed = i % 2 == 0;
-                    if (isRed)
+                    var classe = i % 2 == 0
+                        ? "badge bg-danger fs-6 py-2 px-3"
+                        : "badge bg-outline-danger fs-6 py-2 px-3 text-dark border";
+                    if (Regions.LienPourVille(Villes[i]) is { } lien)
                     {
-                        <span class="badge bg-danger fs-6 py-2 px-3">@Villes[i]</span>
+                        <a class="@($"{classe} text-decoration-none")" href="@lien">@Villes[i]</a>
                     }
                     else
                     {
-                        <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">@Villes[i]</span>
+                        <span class="@classe">@Villes[i]</span>
                     }
                 }
                 
@@ -38,6 +42,16 @@
                 @*     <a class="city-link" href="#">@c</a> *@
                 @* } *@
             </div>
+        @if (Regions.Publiees.Any())
+            {
+                <p class="mt-4 mb-0">
+                    <i class="fas fa-map-marked-alt me-2 text-danger"></i><strong>Coordination SSI par région :</strong>
+                    @foreach (var (r, i) in Regions.Publiees.Select((r, i) => (r, i)))
+                    {
+                        @(i > 0 ? " · " : " ")<a class="text-danger" href="@RegionStore.Url(r)">@r.Nom</a>
+                    }
+                </p>
+            }
         @if (AfficherMotsCles)
             {
                 <div class="mt-4">

@@ -1,0 +1,52 @@
+{
+  "brouillon": true,
+  "slug": "normandie",
+  "nom": "Normandie",
+  "lieu": "en Normandie",
+  "metaTitle": "Coordinateur SSI à Rouen et en Normandie | COOSSI",
+  "metaDescription": "Coordination SSI à Rouen, Le Havre, Caen et dans toute la Normandie : conception, suivi de chantier, réception du SSI et dossier d'identité. COOSSI se déplace sur vos projets.",
+  "titre": "Coordinateur SSI à Rouen et en Normandie",
+  "sousTitre": "Coordination des systèmes de sécurité incendie, de la conception à la réception, partout en Normandie.",
+  "intro": [
+    "COOSSI accompagne les maîtres d'ouvrage, architectes et exploitants d'établissements recevant du public dans toute la Normandie, notamment à Rouen où nous sommes déjà intervenus.",
+    "Hôtels, établissements de soins, EHPAD, établissements scolaires avec internat, immeubles de grande hauteur : dès qu'un système de sécurité incendie de catégorie A ou B est installé, modifié ou étendu, une mission de coordination SSI est nécessaire. Nous l'assurons de la conception jusqu'à la réception."
+  ],
+  "villes": [
+    "Rouen",
+    "Le Havre",
+    "Caen",
+    "Cherbourg-en-Cotentin",
+    "Évreux",
+    "Dieppe",
+    "Alençon",
+    "Lisieux",
+    "Saint-Lô"
+  ],
+  "departements": [
+    {
+      "numero": "14",
+      "nom": "Calvados"
+    },
+    {
+      "numero": "27",
+      "nom": "Eure"
+    },
+    {
+      "numero": "50",
+      "nom": "Manche"
+    },
+    {
+      "numero": "61",
+      "nom": "Orne"
+    },
+    {
+      "numero": "76",
+      "nom": "Seine-Maritime"
+    }
+  ],
+  "specificites": [
+    "Chaque département normand dispose de son service départemental d'incendie et de secours (SDIS) et de sa commission de sécurité, placée sous l'autorité du préfet. C'est elle qui examine les dossiers de vos établissements et rend un avis avant l'ouverture au public.",
+    "Le coordinateur SSI prépare les éléments attendus pour ce passage : cohérence du système de sécurité incendie avec le projet, procès-verbaux d'essais, réception technique et dossier d'identité SSI remis à l'exploitant."
+  ],
+  "missions": []
+}
