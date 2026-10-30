@@ -3,6 +3,7 @@
 @using Coossi.Blazor.Data.Interfaces
 @using Coossi.Blazor.Data.Models
 @inject IContentStore ContentStore
+@inject RegionStore Regions
 
 @code {
     private HomePage? Page;
@@ -187,14 +188,17 @@ else
                 <div class="d-flex flex-wrap justify-content-center gap-2">
                     @for (var i = 0; i < Page.Zones.Badges.Count; i++)
                     {
-                        var isRed = i % 2 == 0;
-                        if (isRed)
+                        var classe = i % 2 == 0
+                            ? "badge bg-danger fs-6 py-2 px-3"
+                            : "badge bg-outline-danger fs-6 py-2 px-3 text-dark border";
+                        @* Lien vers la page régionale de la ville, une fois celle-ci publiée *@
+                        if (Regions.LienPourVille(Page.Zones.Badges[i]) is { } lien)
                         {
-                            <span class="badge bg-danger fs-6 py-2 px-3">@Page.Zones.Badges[i]</span>
+                            <a class="@($"{classe} text-decoration-none")" href="@lien">@Page.Zones.Badges[i]</a>
                         }
                         else
                         {
-                            <span class="badge bg-outline-danger fs-6 py-2 px-3 text-dark border">@Page.Zones.Badges[i]</span>
+                            <span class="@classe">@Page.Zones.Badges[i]</span>
                         }
                     }
                 </div>
