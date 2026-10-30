@@ -5,7 +5,16 @@
 @code {
     [Parameter] public string Slug { get; set; } = "";
 
+    // Vrai code 404 (sinon Google signale une « soft 404 »)
+    [CascadingParameter] private HttpContext? HttpContext { get; set; }
+
     private string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/prestation/{Slug}";
+
+    protected override void OnInitialized()
+    {
+        if (HttpContext is { Response.HasStarted: false })
+            HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+    }
 }
 
 <Seo Title="Prestation introuvable | COOSSI"

@@ -111,6 +111,11 @@ app.MapGet("/about-us", () => Results.Redirect("/", permanent: true));
 // Legacy /home -> /
 app.MapGet("/home", () => Results.Redirect("/", permanent: true));
 
+// Legacy /rus et anciens slugs de prestations (signalés en 404 / soft 404 par la Search Console)
+app.MapGet("/rus", () => Results.Redirect("/prestation/responsable-unique-securite", permanent: true));
+app.MapGet("/prestation/coordination-ssi-service", () => Results.Redirect("/prestation/coordination-ssi", permanent: true));
+app.MapGet("/prestation/service-signaletique", () => Results.Redirect("/prestation/signaletique", permanent: true));
+
 // Legacy /page/{category}/{id} et /page/{category}/index.html (ancien site statique)
 // -> redirection vers la prestation correspondante
 app.MapGet("/page/{category}/{**rest}", (string category) =>
@@ -119,6 +124,7 @@ app.MapGet("/page/{category}/{**rest}", (string category) =>
     {
         { "CoordinationSSI", "coordination-ssi" },
         { "CreationDosierSSI", "creation-dossier-ssi" },
+        { "CreationDossierSSI", "creation-dossier-ssi" },
         { "AuditDiagnostic", "audit-diagnostic" },
         { "AssistanceMaitriseOuvrage", "assistance-moe" },
         { "NoticesSecurity", "notices-securite-accessibilite" },
