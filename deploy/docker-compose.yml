@@ -8,6 +8,10 @@ services:
       # Derrière Caddy : récupère le schéma (https) et l'IP réelle du visiteur
       ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
       EmailSettings__Password: ${SMTP_PASSWORD:?SMTP_PASSWORD manquant dans .env}
+      # Relais SMTP : Ikoula par défaut, Brevo une fois le domaine authentifié (voir .env)
+      EmailSettings__Host: ${SMTP_HOST:-winheb02.ikoula.com}
+      EmailSettings__Port: ${SMTP_PORT:-587}
+      EmailSettings__Username: ${SMTP_USERNAME:-contact@coossi-securite-incendie.eu}
     volumes:
       - dataprotection-keys:/home/app/.aspnet/DataProtection-Keys
     logging: &logging
