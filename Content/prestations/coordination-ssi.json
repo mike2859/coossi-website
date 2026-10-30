@@ -164,8 +164,8 @@
   "contact": {
     "title": "Besoin d'un Coordinateur SSI ?",
     "text": "Contactez COOSSI pour tous vos besoins en coordination de Systèmes de Sécurité Incendie.",
-    "phoneDisplay": "06.85.75.27.75",
-    "phoneHref": "tel:0685752775",
+    "phoneDisplay": "{{TEL}}",
+    "phoneHref": "{{TEL_LIEN}}",
     "buttonText": "Demander un Devis",
     "buttonHref": "/contact"
   },
@@ -205,7 +205,7 @@
     }
   ],
 
-  "contactText": "Besoin d’une coordination SSI ? COOSSI coordonne vos systèmes avec expertise et réactivité. Tél. : 06 85 75 27 75.",
+  "contactText": "Besoin d’une coordination SSI ? COOSSI coordonne vos systèmes avec expertise et réactivité. Tél. : {{TEL}}.",
   "citiesIntro": "Notre seul objectif: Votre satisfaction avec un avis favorable à l'exploitation de votre (vos) bâtiment (s), par les autorités compétentes.",
   "cities": [
     "Valenciennes",

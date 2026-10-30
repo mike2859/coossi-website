@@ -12,7 +12,7 @@
         "1908 chaussée Brunehaut, 59530 Villers-Pol",
         "SIRET : 84077416000013",
         "Email : contact@coossi-securite-incendie.eu",
-        "Tél. : 06 85 75 27 75"
+        "Tél. : {{TEL}}"
       ]
     },
     {
@@ -70,7 +70,7 @@
       "heading": "Contact",
       "lines": [
         "Email : contact@coossi-securite-incendie.eu",
-        "Téléphone : 06 85 75 27 75",
+        "Téléphone : {{TEL}}",
         "Adresse : 1908 chaussée Brunehaut, 59530 Villers-Pol"
       ]
     }

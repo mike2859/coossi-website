@@ -160,8 +160,8 @@
   "contactBlock": {
     "title": "Nous confier le rôle de RUS",
     "text": "Contactez COOSSI pour discuter de la mise en place d'un Responsable Unique de Sécurité pour votre groupement d'ERP.",
-    "phoneDisplay": "06.85.75.27.75",
-    "phoneHref": "tel:0685752775",
+    "phoneDisplay": "{{TEL}}",
+    "phoneHref": "{{TEL_LIEN}}",
     "buttonText": "Demander des informations",
     "buttonHref": "/contact"
   },

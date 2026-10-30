@@ -6,8 +6,8 @@
     "phone": {
       "icon": "fa-phone",
       "title": "COOSSI",
-      "number": "06.85.75.27.75",
-      "href": "tel:0685752775",
+      "number": "{{TEL}}",
+      "href": "{{TEL_LIEN}}",
       "note": "Urgences 7j/7"
     },
     "email": {
@@ -46,8 +46,8 @@
       { "type": "checkbox", "id": "rgpd", "label": "J'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma demande *", "required": true }
     ],
     "fallbackPhoneText": "Ou appelez directement :",
-    "fallbackPhone": "06.85.75.27.75",
-    "fallbackPhoneHref": "tel:0685752775"
+    "fallbackPhone": "{{TEL}}",
+    "fallbackPhoneHref": "{{TEL_LIEN}}"
   },
   "map": {
     "title": "Villers-Pol, Nord (59)",

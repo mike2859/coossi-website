@@ -5,7 +5,7 @@
   "name": "COOSSI",
   "description": "Bureau d'études et coordination SSI : conception, réalisation, réception. Spécialiste sécurité incendie pour ERP, ERT, IGH dans les Hauts-de-France.",
   "image": "https://www.coossi-securite-incendie.eu/images/og-home.webp",
-  "telephone": "+33685752775",
+  "telephone": "{{TEL_INTL}}",
   "email": "contact@coossi-securite-incendie.eu",
   "url": "https://www.coossi-securite-incendie.eu/",
   "address": {

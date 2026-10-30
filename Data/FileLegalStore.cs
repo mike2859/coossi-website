@@ -17,7 +17,7 @@ public sealed class FileLegalStore : ILegalStore
         var file = Path.Combine(_root, id + ".json");
         if (!File.Exists(file)) return null;
 
-        var json = await File.ReadAllTextAsync(file, ct);
+        var json = Coordonnees.Remplacer(await File.ReadAllTextAsync(file, ct));
         if (string.IsNullOrWhiteSpace(json)) return null;
 
         try { return JsonSerializer.Deserialize<LegalPageDto>(json, _opts); }

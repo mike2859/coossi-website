@@ -16,7 +16,7 @@
     "paragraphs": [
       "Au moment de la construction d'un établissement, et plus précisément dans la phase de réalisation du SSI, le coordinateur en système de sécurité incendie doit assister la maîtrise d'œuvre.",
       "La société COOSSI met son expertise au service des maîtres d'ouvrages pour accompagner la phase de conception du SSI et garantir la mise en conformité du bâtiment avec les normes en vigueur.",
-      "Pour faire appel à un professionnel de la coordination SSI en phase de conception, contactez COOSSI au 06.85.75.27.75."
+      "Pour faire appel à un professionnel de la coordination SSI en phase de conception, contactez COOSSI au {{TEL}}."
     ]
   },
 
@@ -92,7 +92,7 @@
       "Plans de Système de Management de la Sécurité de l'Information (SMSI)",
       "Synoptiques"
     ],
-    "closingText": "Contactez le 06.85.75.27.75 pour prendre rendez-vous ou pour obtenir davantage d'informations."
+    "closingText": "Contactez le {{TEL}} pour prendre rendez-vous ou pour obtenir davantage d'informations."
   },
 
   "doe": {
@@ -108,8 +108,8 @@
   "contact": {
     "title": "Nous joindre",
     "text": "Pour toute demande d'assistance à maîtrise d'ouvrage SSI, de la conception à la réception.",
-    "phoneDisplay": "06.85.75.27.75",
-    "phoneHref": "tel:0685752775",
+    "phoneDisplay": "{{TEL}}",
+    "phoneHref": "{{TEL_LIEN}}",
     "buttonText": "Contacter COOSSI",
     "buttonHref": "/contact"
   },

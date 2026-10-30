@@ -133,8 +133,8 @@
   //"contact": {
   //  "title": "Contactez un Expert",
   //  "text": "Pour en savoir plus ou pour obtenir un rendez-vous avec Jean LEBLANC, spécialiste en sécurité et accessibilité des ERP, IGH ou IPCE.",
-  //  "phoneDisplay": "06.85.75.27.75",
-  //  "phoneHref": "tel:0685752775",
+  //  "phoneDisplay": "{{TEL}}",
+  //  "phoneHref": "{{TEL_LIEN}}",
   //  "buttonText": "Formulaire de Contact",
   //  "buttonHref": "/contact"
   //},

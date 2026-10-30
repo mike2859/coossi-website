@@ -26,8 +26,8 @@
       "kind": "cta",
       "title": "Vous voulez rejoindre nos références ?",
       "text": "Parlons de votre projet",
-      "phone": "06 85 75 27 75",
-      "phoneHref": "tel:0685752775",
+      "phone": "{{TEL}}",
+      "phoneHref": "{{TEL_LIEN}}",
       "contactHref": "/contact"
     }
   ]

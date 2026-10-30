@@ -5,7 +5,7 @@
     "leadStrong": "COOSSI (COOrdinateur en Système de Sécurité Incendie) est un Bureau d'études basé à Villers-Pol, dans le département du Nord, à proximité de Valenciennes.",
     "textStrong": "Notre seul objectif: Votre satisfaction avec un avis favorable à l'exploitation de votre (vos) bâtiment (s), par les autorités compétentes.",
     "buttons": [
-      { "kind": "primary", "href": "tel:0685752775", "icon": "fa-phone", "label": "06 85 75 27 75" },
+      { "kind": "primary", "href": "{{TEL_LIEN}}", "icon": "fa-phone", "label": "{{TEL}}" },
       { "kind": "outline", "href": "/contact", "icon": "fa-envelope", "label": "Nous contacter" }
     ],
     "rightIcon": "fa-shield-alt"
@@ -83,7 +83,7 @@
     "title": "Pour prendre rendez-vous ou un complément d'information",
     "subtitle": "Contactez COOSSI dès aujourd'hui pour votre projet de sécurité incendie",
     "buttons": [
-      { "kind": "primary", "href": "tel:0685752775", "icon": "fa-phone", "label": "06 85 75 27 75" },
+      { "kind": "primary", "href": "{{TEL_LIEN}}", "icon": "fa-phone", "label": "{{TEL}}" },
       { "kind": "outline", "href": "/contact", "icon": "fa-envelope", "label": "Formulaire" }
     ]
   }

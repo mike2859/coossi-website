@@ -144,8 +144,8 @@
       "kind": "cta",
       "title": "Besoin d'un expert en sécurité incendie ?",
       "text": "Contactez COOSSI par mail ou par téléphone pour un accompagnement personnalisé",
-      "phone": "06 85 75 27 75",
-      "phoneHref": "tel:0685752775",
+      "phone": "{{TEL}}",
+      "phoneHref": "{{TEL_LIEN}}",
       "contactHref": "/contact"
     }
   ]

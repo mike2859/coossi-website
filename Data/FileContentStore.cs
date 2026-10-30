@@ -19,7 +19,7 @@ public sealed class FileContentStore : IContentStore
         var file = Path.Combine(folder, id + ".json");
         if (!File.Exists(file)) return default;
 
-        var json = await File.ReadAllTextAsync(file, ct);
+        var json = Coordonnees.Remplacer(await File.ReadAllTextAsync(file, ct));
         if (string.IsNullOrWhiteSpace(json)) return default;
 
         try { return JsonSerializer.Deserialize<T>(json, _opts); }
@@ -32,7 +32,7 @@ public sealed class FileContentStore : IContentStore
         var path = Path.Combine(folder, id + ".json");
         if (!File.Exists(path)) return null;
 
-        return await File.ReadAllTextAsync(path, ct);
+        return Coordonnees.Remplacer(await File.ReadAllTextAsync(path, ct));
     }
     
 }

@@ -91,8 +91,8 @@
       "kind": "cta",
       "title": "Rejoignez nos clients satisfaits",
       "text": "Faites confiance à COOSSI pour votre projet de sécurité incendie",
-      "phone": "06 85 75 27 75",
-      "phoneHref": "tel:0685752775",
+      "phone": "{{TEL}}",
+      "phoneHref": "{{TEL_LIEN}}",
       "contactHref": "/contact"
     }
   ]

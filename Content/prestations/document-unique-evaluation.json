@@ -185,8 +185,8 @@
   "contact": {
     "title": "Contactez-nous",
     "text": "Pour faire appel à nos services ou prendre rendez-vous près de Valenciennes pour la rédaction de votre DUERP.",
-    "phoneDisplay": "06.85.75.27.75",
-    "phoneHref": "tel:0685752775",
+    "phoneDisplay": "{{TEL}}",
+    "phoneHref": "{{TEL_LIEN}}",
     "buttonText": "Formulaire en Ligne",
     "buttonHref": "/contact"
   },
