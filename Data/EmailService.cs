@@ -25,7 +25,7 @@ public class EmailService : IEmailService
             
             // Expéditeur (l'email configuré dans appsettings)
             var fromAddress = _configuration["EmailSettings:FromEmail"] ?? "noreply@coossi.fr";
-            var fromName = _configuration["EmailSettings:Username"] ?? "COOSSI Contact";
+            var fromName = _configuration["EmailSettings:FromName"] ?? "COOSSI Contact";
             message.From.Add(new MailboxAddress(fromName, fromAddress));
 
             // DESTINATAIRES MULTIPLES - Les 3 emails
