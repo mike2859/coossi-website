@@ -24,22 +24,10 @@ else
     <Seo Title="@Model.Seo.MetaTitle" Description="@Model.Seo.MetaDescription" Canonical="@Canonical" OgImage="@(Model.Seo.OgImage ?? "images/og-prestations.webp")" />
    @*  <PageHeader Title="@Model.Hero.Title" Lead="@Model.Hero.Subtitle" />
  *@
-    <!-- BREADCRUMB -->
-    <section class="breadcrumb-nav" style="margin-top: 76px;">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                    <li class="breadcrumb-item"><a href="/prestations">Prestations</a></li>
-                    <li class="breadcrumb-item active">Coordination SSI</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
-
     <!-- HERO -->
     <section class="hero-section" style="margin-top:76px;">
         <div class="container">
+            <FilAriane Parents="@([("/prestations", "Prestations")])" Current="@Model.Hero.Title" />
             <div class="row align-items-center">
                 <div class="col-lg-10">
                     <h1 class="display-5 fw-bold mb-2">

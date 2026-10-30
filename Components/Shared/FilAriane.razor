@@ -1,0 +1,17 @@
+@* Fil d'Ariane affiché en haut du bandeau (hero / page-header) de chaque page *@
+@code {
+    [Parameter] public string Current { get; set; } = "";
+    [Parameter] public (string Href, string Label)[] Parents { get; set; } = [];
+    [Parameter] public bool Centre { get; set; }
+}
+
+<nav aria-label="Fil d'Ariane" class="fil-ariane mb-3">
+    <ol class="breadcrumb mb-0 @(Centre ? "justify-content-center" : "")">
+        <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+        @foreach (var (href, label) in Parents)
+        {
+            <li class="breadcrumb-item"><a href="@href">@label</a></li>
+        }
+        <li class="breadcrumb-item active" aria-current="page">@Current</li>
+    </ol>
+</nav>

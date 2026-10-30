@@ -5,12 +5,14 @@
     [Parameter] public string Variant { get; set; } = "light"; // light | dark
     [Parameter] public string? BgClass { get; set; } // ex: "bg-light", "bg-dark text-white"
     [Parameter] public RenderFragment? Extra { get; set; }     // boutons etc.
+    [Parameter] public string? Ariane { get; set; }            // libellé de la page dans le fil d'Ariane
 }
 
 <section class="@($"page-header {(BgClass ?? "")}")">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
+        @if (!string.IsNullOrWhiteSpace(Ariane)) { <FilAriane Current="@Ariane" Centre="true" /> }
         @if (!string.IsNullOrWhiteSpace(Icon))
         {
           <div class="display-5 mb-3"><i class="fas @Icon"></i></div>

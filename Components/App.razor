@@ -29,7 +29,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     @* <link rel="stylesheet" href="@Assets["Coossi.Blazor.styles.css"]" /> *@
-    <link rel="stylesheet" href="css/site.css" />
+    @* ?v= : force le rechargement de la feuille de style après chaque publication *@
+    <link rel="stylesheet" href="css/site.css?v=@CssVersion" />
     @* <link rel="icon" type="image/png" href="favicon.png" /> *@
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -53,3 +54,9 @@
 </body>
 
 </html>
+
+@code {
+    [Inject] private IWebHostEnvironment Env { get; set; } = default!;
+
+    private string CssVersion => File.GetLastWriteTimeUtc(Path.Combine(Env.WebRootPath, "css", "site.css")).Ticks.ToString();
+}

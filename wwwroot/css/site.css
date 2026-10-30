@@ -996,3 +996,13 @@ footer{background:var(--dark); color:#fff}
   .google-review-badge img{ width:42px; height:42px; }
   .google-review-badge-text{ font-size:.7rem; white-space:normal; }
 }
+
+/* =======================
+   FIL D'ARIANE (dans le hero)
+   ======================= */
+.fil-ariane .breadcrumb{ font-size:.9rem; }
+.fil-ariane .breadcrumb-item,
+.fil-ariane .breadcrumb-item a{ color:rgba(255,255,255,.85); text-decoration:none; }
+.fil-ariane .breadcrumb-item a:hover{ color:#fff; text-decoration:underline; }
+.fil-ariane .breadcrumb-item.active{ color:#fff; }
+.fil-ariane .breadcrumb-item + .breadcrumb-item::before{ color:rgba(255,255,255,.6); }
