@@ -6,9 +6,12 @@
   [Parameter] public string? OgImage { get; set; }
   [Parameter] public string Locale { get; set; } = "fr_FR";
   [Parameter] public string SiteName { get; set; } = "COOSSI";
+  // Une seule HeadContent est rendue par page : le noindex doit passer par ici
+  [Parameter] public bool NoIndex { get; set; }
 }
 <PageTitle>@Title</PageTitle>
 <HeadContent>
+  @if (NoIndex) { <meta name="robots" content="noindex, nofollow" /> }
   @if (!string.IsNullOrWhiteSpace(Description)) {
     <meta name="description" content="@Description" />
     <meta property="og:description" content="@Description" />

@@ -1,0 +1,235 @@
+@page "/coordinateur-ssi-obligatoire"
+@using Coossi.Blazor.Components.Shared
+@inject NavigationManager Nav
+
+@code {
+    // BROUILLON : page hors sitemap, sans lien et en noindex, le temps de la relecture.
+    // Pour la publier : passer à false, retirer les badges « À vérifier »,
+    // ajouter "/coordinateur-ssi-obligatoire" au sitemap (Program.cs) et un lien depuis la page Coordination SSI.
+    private const bool Brouillon = true;
+
+    private string Canonical => $"{Nav.BaseUri.TrimEnd('/')}/coordinateur-ssi-obligatoire";
+
+    private static string Legi(string id) => $"https://www.legifrance.gouv.fr/loda/article_lc/{id}";
+}
+
+<Seo Title="Coordinateur SSI obligatoire : dans quels cas ? | COOSSI"
+     Description="Quand la mission de coordination SSI est-elle obligatoire ? Catégories de SSI concernées, établissements, textes de référence (règlement ERP, NF S 61-931) et rôle du coordinateur SSI."
+     Canonical="@Canonical"
+     OgImage="images/og-prestations.webp"
+     NoIndex="Brouillon" />
+
+<section class="breadcrumb-nav" style="margin-top: 76px;">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="/prestation/coordination-ssi">Coordination SSI</a></li>
+                <li class="breadcrumb-item active">Quand est-elle obligatoire ?</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <h1 class="display-5 fw-bold mb-2">
+                    <i class="fas fa-balance-scale me-2"></i>Coordinateur SSI : quand est-il obligatoire ?
+                </h1>
+                <p class="lead mb-0">Catégories de SSI concernées, établissements, textes de référence et rôle du coordinateur.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+
+        @if (Brouillon)
+        {
+            <div class="alert alert-warning mb-5">
+                <h2 class="h5 fw-bold"><i class="fas fa-pen me-2"></i>Brouillon à relire — page invisible pour Google et sans lien sur le site</h2>
+                <p class="mb-2">Les passages marqués <span class="badge bg-warning text-dark">À vérifier</span> sont à confirmer ou corriger :</p>
+                <ol class="mb-0">
+                    <li>Le § 5.3 de la NF S 61-931 vise-t-il les SSI de catégorie A <em>et</em> B, ou tout SSI comportant une fonction de mise en sécurité en plus de l'évacuation ?</li>
+                    <li>Les phases de la mission (conception, réalisation, réception) et les documents remis (dossier d'identité SSI, procès-verbal de réception technique) sont-ils bien décrits ?</li>
+                    <li>Le coordinateur doit-il être indépendant de l'installateur ? Quelle formation ou qualification mettre en avant ?</li>
+                    <li>Que se passe-t-il concrètement sans coordination (avis de la commission de sécurité, réception, assurance) ?</li>
+                </ol>
+            </div>
+        }
+
+        <!-- EN BREF -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <div class="info-card highlight-box">
+                    <h2 class="h3"><i class="fas fa-bolt me-2"></i>En bref</h2>
+                    <p>
+                        Une <strong>mission de coordination SSI</strong> est nécessaire dès qu'un
+                        <strong>système de sécurité incendie (SSI) de catégorie A ou B</strong> est installé, modifié ou étendu
+                        @if (Brouillon) { <span class="badge bg-warning text-dark ms-1">À vérifier</span> }.
+                        Elle commence <strong>dès la conception</strong> et se poursuit jusqu'à la réception de l'installation.
+                    </p>
+                    <p class="mb-0">
+                        Or le règlement de sécurité impose un SSI de catégorie A dans de nombreux établissements :
+                        hôtels, établissements de soins avec hébergement, structures pour personnes âgées ou handicapées,
+                        internats, immeubles de grande hauteur… Dans tous ces cas, il faut prévoir un coordinateur SSI.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEXTES -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h2 class="section-title">Ce que disent les textes</h2>
+
+                <div class="info-card mb-4">
+                    <h3 class="h5 fw-bold">Norme NF S 61-931 — § 5.3 @if (Brouillon) { <span class="badge bg-warning text-dark ms-1">À vérifier</span> }</h3>
+                    <p>
+                        La norme qui fixe les dispositions générales des SSI prévoit qu'une mission de coordination
+                        doit présider à l'analyse des besoins de sécurité et à la conception du SSI. Cette mission doit
+                        également exister lors de la réalisation, et lors d'une modification ou d'une extension.
+                    </p>
+                </div>
+
+                <div class="info-card mb-4">
+                    <h3 class="h5 fw-bold">Règlement de sécurité ERP — article MS 53</h3>
+                    <p>Il définit le SSI et ses catégories :</p>
+                    <blockquote class="blockquote fs-6 border-start border-3 border-danger ps-3">
+                        « Le système de sécurité incendie d'un établissement est constitué de l'ensemble des matériels servant à
+                        collecter toutes les informations ou ordres liés à la seule sécurité incendie, à les traiter et à effectuer
+                        les fonctions nécessaires à la mise en sécurité de l'établissement. »
+                    </blockquote>
+                    <p>
+                        La mise en sécurité peut comporter le compartimentage, l'évacuation des personnes, le désenfumage,
+                        l'extinction automatique et la mise à l'arrêt de certaines installations techniques. Les SSI sont classés
+                        en cinq catégories, <strong>de A (la plus exigeante) à E</strong>.
+                    </p>
+                    <a href="@Legi("LEGIARTI000020317726")" target="_blank" rel="noopener" class="text-danger">Lire l'article MS 53 sur Légifrance</a>
+                </div>
+
+                <div class="info-card mb-4">
+                    <h3 class="h5 fw-bold">Petits établissements avec locaux à sommeil — article PE 32</h3>
+                    <p>Pour les établissements de 5<sup>e</sup> catégorie avec hébergement, le texte est explicite :</p>
+                    <blockquote class="blockquote fs-6 border-start border-3 border-danger ps-3">
+                        « Seules l'installation, la modification ou l'extension d'un système de sécurité incendie de catégorie A,
+                        dans les établissements dont la mise en sécurité comporte au moins une fonction de mise en sécurité en
+                        supplément de la fonction évacuation, font l'objet d'une mission de coordination. Cette mission est assurée
+                        dès la phase de conception par une personne ou un organisme compétent et qualifié. »
+                    </blockquote>
+                    <a href="@Legi("LEGIARTI000024770703")" target="_blank" rel="noopener" class="text-danger">Lire l'article PE 32 sur Légifrance</a>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="h5 fw-bold">Et après la mise en service</h3>
+                    <ul class="mb-0">
+                        <li>
+                            Les SSI de catégories A et B sont vérifiés par une personne ou un organisme <strong>agréé</strong>
+                            avant leur mise en service, puis <strong>tous les trois ans</strong>
+                            (<a href="@Legi("LEGIARTI000020317755")" target="_blank" rel="noopener" class="text-danger">article MS 73</a>).
+                        </li>
+                        <li>
+                            Ils doivent toujours faire l'objet d'un <strong>contrat d'entretien</strong>
+                            (<a href="@Legi("LEGIARTI000020317749")" target="_blank" rel="noopener" class="text-danger">article MS 68</a>).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÉTABLISSEMENTS -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h2 class="section-title">Quels établissements sont concernés ?</h2>
+                <div class="info-card">
+                    <p>Exemples d'établissements pour lesquels le règlement de sécurité impose un SSI de catégorie A :</p>
+                    <div class="table-responsive">
+                        <table class="table table-sm align-middle mb-3">
+                            <thead><tr><th>Établissement</th><th>Article</th></tr></thead>
+                            <tbody>
+                                <tr><td>Hôtels et autres établissements d'hébergement (type O)</td><td><a href="@Legi("LEGIARTI000024760448")" target="_blank" rel="noopener">O 19</a></td></tr>
+                                <tr><td>Établissements de soins abritant des locaux à sommeil (type U)</td><td><a href="@Legi("LEGIARTI000024807867")" target="_blank" rel="noopener">U 44</a></td></tr>
+                                <tr><td>Structures d'accueil pour personnes âgées et personnes handicapées (type J)</td><td><a href="@Legi("LEGIARTI000042316044")" target="_blank" rel="noopener">J 36</a></td></tr>
+                                <tr><td>Établissements d'enseignement comportant des locaux à sommeil — internats (type R)</td><td><a href="@Legi("LEGIARTI000025134149")" target="_blank" rel="noopener">R 31</a></td></tr>
+                                <tr><td>Établissements comportant, par destination, des locaux à sommeil</td><td><a href="@Legi("LEGIARTI000020304246")" target="_blank" rel="noopener">CO 24</a></td></tr>
+                                <tr><td>Hôtels-restaurants d'altitude (type OA)</td><td><a href="@Legi("LEGIARTI000024833594")" target="_blank" rel="noopener">OA 25</a></td></tr>
+                                <tr><td>Salles de danse et salles de jeux de 1<sup>re</sup> catégorie (type P)</td><td><a href="@Legi("LEGIARTI000025000822")" target="_blank" rel="noopener">P 22</a></td></tr>
+                                <tr><td>Bibliothèques et centres d'archives de 1<sup>re</sup> catégorie (type S)</td><td><a href="@Legi("LEGIARTI000025173730")" target="_blank" rel="noopener">S 16</a></td></tr>
+                                <tr><td>Salles de spectacles avec dessous ou fosse technique, 1<sup>re</sup> à 3<sup>e</sup> catégorie (type L)</td><td><a href="@Legi("LEGIARTI000024766672")" target="_blank" rel="noopener">L 15</a></td></tr>
+                                <tr><td>Petits hôtels de 5<sup>e</sup> catégorie (selon conditions)</td><td><a href="@Legi("LEGIARTI000024771149")" target="_blank" rel="noopener">PO 13</a></td></tr>
+                                <tr><td>Immeubles de grande hauteur (SSI de catégorie A, option IGH)</td><td><a href="@Legi("LEGIARTI000025170231")" target="_blank" rel="noopener">GH 49</a></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mb-0">
+                        D'autres établissements peuvent être concernés selon leur configuration, ou lorsque la commission de
+                        sécurité l'exige. En cas de doute, la catégorie de SSI à retenir se détermine dès l'étude du projet.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RÔLE -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h2 class="section-title">Le rôle du coordinateur SSI</h2>
+                <div class="info-card">
+                    <p>
+                        Désigné par le maître d'ouvrage, le coordinateur SSI veille à ce que le système de sécurité incendie
+                        réponde aux besoins de mise en sécurité du bâtiment, d'un bout à l'autre du projet
+                        @if (Brouillon) { <span class="badge bg-warning text-dark ms-1">À vérifier</span> } :
+                    </p>
+                    <ul>
+                        <li><strong>Conception</strong> : analyse des risques et des besoins, définition des zones de mise en sécurité, choix de la catégorie de SSI, rédaction du cahier des charges fonctionnel.</li>
+                        <li><strong>Réalisation</strong> : suivi des travaux, cohérence entre les différents corps d'état (détection, désenfumage, portes, ventilation, ascenseurs…).</li>
+                        <li><strong>Réception</strong> : essais fonctionnels, réception technique du SSI et constitution du <strong>dossier d'identité SSI</strong>, remis à l'exploitant.</li>
+                    </ul>
+                    <p class="mb-0">
+                        Le règlement demande que cette mission soit confiée à <strong>« une personne ou un organisme compétent et qualifié »</strong> (article PE 32).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h2 class="section-title">Questions fréquentes</h2>
+
+                <div class="info-card mb-3">
+                    <h3 class="h6 fw-bold">Faut-il un coordinateur SSI pour une simple extension ou modification ?</h3>
+                    <p class="mb-0">Oui : la coordination ne concerne pas seulement les installations neuves. Une modification ou une extension d'un SSI de catégorie A ou B en relève aussi.</p>
+                </div>
+                <div class="info-card mb-3">
+                    <h3 class="h6 fw-bold">Qui désigne le coordinateur SSI ?</h3>
+                    <p class="mb-0">Le maître d'ouvrage, idéalement dès les premières études, puisque la mission commence à la conception.</p>
+                </div>
+                <div class="info-card mb-3">
+                    <h3 class="h6 fw-bold">L'installateur du SSI peut-il être coordinateur ? @if (Brouillon) { <span class="badge bg-warning text-dark ms-1">À vérifier</span> }</h3>
+                    <p class="mb-0">Le coordinateur doit pouvoir porter un regard global et objectif sur l'ensemble de l'installation : il est recommandé qu'il soit indépendant des entreprises qui réalisent les travaux.</p>
+                </div>
+                <div class="info-card">
+                    <h3 class="h6 fw-bold">Et si aucun coordinateur n'est désigné ? @if (Brouillon) { <span class="badge bg-warning text-dark ms-1">À vérifier</span> }</h3>
+                    <p class="mb-0">Sans coordination, il manque les documents attendus à la réception (notamment le dossier d'identité SSI), ce qui peut retarder l'avis favorable de la commission de sécurité et donc l'ouverture au public.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="info-card highlight-box text-center">
+                    <h2 class="h4 fw-bold">Votre projet nécessite-t-il un coordinateur SSI ?</h2>
+                    <p>COOSSI vous aide à le déterminer et assure la mission de coordination, de la conception à la réception.</p>
+                    <a href="@Coordonnees.TelephoneLien" class="btn btn-danger btn-lg me-2 mb-2"><i class="fas fa-phone me-2"></i>@Coordonnees.Telephone</a>
+                    <a href="/contact" class="btn btn-outline-danger btn-lg mb-2"><i class="fas fa-envelope me-2"></i>Nous écrire</a>
+                    <p class="mt-3 mb-0"><a href="/prestation/coordination-ssi" class="text-danger">Découvrir notre prestation de coordination SSI</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
