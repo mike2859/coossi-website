@@ -21,7 +21,8 @@
         <div class="cities-cloud">
             <h3 class="fw-bold"><i class="fas fa-map-marker-alt me-2"></i>@TitreSection</h3>
             <p class="lead mb-4">@SousTitreSection</p>
-            <div>
+            @* gap-2 : espace régulier entre les étiquettes (sinon elles se touchent) *@
+            <div class="d-flex flex-wrap justify-content-center gap-2">
                 @for (var i = 0; i < Villes.Count; i++)
                 {
                     var classe = i % 2 == 0
