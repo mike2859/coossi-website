@@ -14,7 +14,7 @@
   "intro": {
     "title": "Qu'est-ce que la Coordination SSI ?",
     "paragraphs": [
-      "La coordination SSI consiste à l'analyse et la conception de l'architecture du système de Sécurité Incendie permettant la mise en sécurité d'un établissement"
+      "La coordination SSI consiste à l'analyse et la conception de l'architecture du système de Sécurité Incendie permettant la mise en sécurité d'un établissement : ERP (Établissement Recevant du Public) ou ERT (Établissement Recevant des Travailleurs)."
     ]
   },
 
@@ -22,7 +22,7 @@
     "title": "Mission de Coordination SSI Obligatoire",
     "paragraphs": [
       "En application de l'article § 5.3 de la norme NF S 61-931, une mission de coordination des Systèmes de Sécurité Incendie (SSI) doit nécessairement présider à l'analyse des besoins de sécurité et à la conception du SSI.",
-      "Cette mission doit également exister lors de la réalisation et lors de modifications ou extension éventuelle."
+      "Cette mission doit également exister lors de la réalisation et lors de modifications ou extensions éventuelles. Elle implique la réalisation des tâches énumérées ci-après."
 
       //  "La réglementation incendie pour les ERP vise à protéger les personnes face aux risques d’incendie. Elle concerne la construction (voies d’accès, issues de secours) et l’installation d’équipements assurant la sécurité au quotidien.",
       //  "La mission de coordination consiste à analyser les besoins de SSI (cat. A, B, C, D) et à garantir la cohérence des installations aux phases de conception, réalisation et réception."
@@ -31,36 +31,126 @@
   },
 
   "missions": {
-    "title": "Déroulement de la mission de base",
+    "title": "Déroulement de la mission de Coordination SSI",
     "items": [
       {
         "title": "Phase Conception",
         "icon": "fas fa-clipboard-check",
-        "bullets": [
-          "Élaboration du concept de mise en sécurité",
-          "Rédaction du Cahier des Charges Fonctionnel",
-          "Organisation des zones de détection et des zones de sécurité",
-          "Création des tableaux de corrélation"
+        "reference": "NF S 61-931 – § 5.3.2.1",
+        "sections": [
+          {
+            "paragraphs": [
+              "Le coordinateur SSI définit les fonctionnalités du SSI.",
+              "La conception du SSI implique de la part du coordinateur SSI l'élaboration des pièces écrites et graphiques ci-après :"
+            ]
+          },
+          {
+            "title": "1°) Le concept de mise en sécurité",
+            "paragraphs": [
+              "Ce document permet de répondre aux besoins exprimés, décrit les principes de mise en sécurité et l'organisation du SSI prévus pour le bâtiment en fonction :"
+            ],
+            "bullets": [
+              "de la réglementation en vigueur ;",
+              "du respect des normes ;",
+              "des demandes spécifiques du maître d'ouvrage et de celles liées à l'exploitation du bâtiment ;",
+              "des matériels utilisés."
+            ]
+          },
+          {
+            "title": "2°) Le cahier des charges fonctionnel SSI",
+            "paragraphs": [
+              "Il reprend le concept de mise en sécurité et comprend, au minimum :"
+            ],
+            "bullets": [
+              "la catégorie du SSI et le type d'équipement d'alarme pour l'évacuation (EA) ;",
+              "le niveau de surveillance au sens de la norme NF S 61-970 ;",
+              "la définition des zones de détection et des zones de mise en sécurité (ZD et ZS) ;",
+              "les scénarios types de mise en sécurité ;",
+              "le tableau définissant la corrélation entre chaque ZD et les ZS ;",
+              "le positionnement des matériels centraux et d'exploitation ainsi que leurs conditions d'implantation ;",
+              "les fonctionnalités de l'UAE conformément aux normes NF S 61-932 et NF S 61-970 ;",
+              "les modalités d'exploitation définies par le maître d'ouvrage et la définition des moyens techniques mis en œuvre en conséquence (alarme restreinte, générale et/ou générale sélective, temporisation, tableaux répétiteurs…) ;",
+              "la définition des modes de fonctionnement des DCT, des options de sécurité des DAS et des réarmements pour tous les différents constituants du SSI ;",
+              "les éventuelles particularités d'exploitation du site ;",
+              "la procédure de réception technique du SSI."
+            ],
+            "note": "Le cahier des charges fonctionnel doit préciser explicitement les dispositions retenues dans le cadre du projet concerné, y compris celles concernant les éventuels ensembles indépendants."
+          },
+          {
+            "title": "3°) Les plans des zones de mise en sécurité",
+            "paragraphs": [
+              "Les plans définissant les limites géographiques des zones de mise en sécurité (ZS)."
+            ]
+          },
+          {
+            "title": "4°) L'avis sur la cohérence des documents de consultation",
+            "paragraphs": [
+              "L'avis portant sur l'examen de la cohérence des descriptifs techniques (hors quantitatifs) et des pièces graphiques relatifs aux équipements du SSI établis pour la consultation des entreprises de travaux."
+            ]
+          }
         ]
       },
       {
         "title": "Phase Réalisation",
         "icon": "fas fa-tools",
-        "bullets": [
-          "Réunion avant démarrage des travaux avec les différents intervenants",
-          "Suivi de chantier"
-          //"Suivi des travaux",
+        "reference": "NF S 61-931 – § 5.3.2.2",
+        "sections": [
+          {
+            "paragraphs": [
+              "Le coordinateur SSI veille au respect des exigences définies pendant la phase conception lors de la mise en œuvre des équipements."
+            ]
+          },
+          {
+            "title": "Suivi de la cohérence entre les différents équipements du SSI mis en œuvre par :",
+            "bullets": [
+              "l'examen des plans et documents d'exécution au regard du cahier des charges fonctionnel SSI ;",
+              "l'examen non exhaustif des conditions d'implantation des équipements et des liaisons."
+            ]
+          },
+          {
+            "bullets": [
+              "Création ou mise à jour du dossier d'identité SSI conformément aux normes NF S 61-932 et, le cas échéant, NF S 61-970, sur la base de la collecte auprès des entreprises ou de la maîtrise d'œuvre des documents nécessaires à sa constitution.",
+              "Création ou mise à jour des tableaux de corrélations précisant pour chaque zone de mise en sécurité (ZS) la liste exhaustive des dispositifs commandés terminaux (DCT) qui la compose.",
+              "Examen de la cohérence des éventuelles particularités d'exploitation du site avec les conditions ayant présidé à l'élaboration du concept de mise en sécurité."
+            ]
+          }
         ]
       },
       {
         "title": "Phase Réception",
         "icon": "fas fa-check-circle",
-        "bullets": [
-          "Récollement des documents d'ouvrage exécuté (DOE)",
-          "Essais fonctionnels",
-          "Rapport de réception technique",
-          "Création du dossier d'identité SSI",
-          "Participation à la commission de sécurité"
+        "reference": "NF S 61-931 – § 5.3.2.3",
+        "sections": [
+          {
+            "title": "Autocontrôle",
+            "paragraphs": [
+              "Préalablement à la réception technique, chaque installateur :"
+            ],
+            "bullets": [
+              "réalise, pour chaque matériel qui le concerne, l'ensemble des essais par autocontrôle tels que définis dans les normes NF S 61-970 et NF S 61-932 ;",
+              "établit un document indiquant les résultats obtenus lors des essais par autocontrôle."
+            ]
+          },
+          {
+            "title": "Réception technique du SSI",
+            "paragraphs": [
+              "La réception technique, telle que définie dans les normes NF S 61-932 et NF S 61-970, doit prendre en compte la constitution complète du SSI comprenant le SMSI et l'éventuel SDI.",
+              "La réception technique est conclue par le rapport de réception technique, rédigé par le coordinateur SSI, portant :"
+            ],
+            "bullets": [
+              "sur les documents administratifs et techniques du dossier d'identité ;",
+              "sur le résultat des essais ;",
+              "sur le respect des principes du cahier des charges fonctionnel SSI."
+            ],
+            "note": "Ce document doit lister la totalité des essais réalisés et comporter une conclusion argumentée sur la réception de l'installation. La réception technique du SSI ne constitue pas la réception de l'ouvrage limitée au SSI au sens de l'article 1792-6 du Code civil."
+          },
+          {
+            "title": "Dossier d'identité du SSI",
+            "paragraphs": [
+              "Le coordinateur SSI finalise le dossier d'identité du SSI à remettre au maître d'ouvrage. Ce dossier d'identité SSI doit être unique."
+            ],
+            "note": "Cette disposition n'interdit pas la transmission de copies du dossier à d'autres acteurs (maître d'œuvre, commission de sécurité, contrôleur technique, etc.)."
+          }
         ]
       },
       {

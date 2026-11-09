@@ -40,7 +40,21 @@ public sealed record MissionsBlock(
     string Lead,
     List<MissionItem> Items
 );
-public sealed record MissionItem(string Title, string Icon, List<string> Bullets);
+// Une carte de mission : soit une simple liste à puces (Bullets),
+// soit un texte détaillé en sous-parties (Sections), affiché alors en pleine largeur.
+public sealed record MissionItem(
+    string Title,
+    string Icon,
+    List<string>? Bullets = null,
+    string? Reference = null,
+    List<MissionSection>? Sections = null
+);
+public sealed record MissionSection(
+    string? Title = null,
+    List<string>? Paragraphs = null,
+    List<string>? Bullets = null,
+    string? Note = null
+);
 
 public sealed record MethodoBlock(
     string Title,

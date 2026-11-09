@@ -73,12 +73,42 @@ else
                     <div class="row">
                         @foreach (var it in Model.Missions.Items)
                         {
-                            <div class="col-lg-6 mb-4">
+                            var detaille = it.Sections is { Count: > 0 };
+                            <div class="col-12 mb-4">
                                 <div class="info-card h-100">
                                     <h3><i class="@it.Icon me-2"></i>@it.Title</h3>
-                                    <ul>
-                                        @foreach (var b in it.Bullets) { <li>@b</li> }
-                                    </ul>
+                                    @if (!string.IsNullOrWhiteSpace(it.Reference))
+                                    {
+                                        <p class="small text-muted mb-3">@it.Reference</p>
+                                    }
+                                    @if (detaille)
+                                    {
+                                        @foreach (var s in it.Sections!)
+                                        {
+                                            @if (!string.IsNullOrWhiteSpace(s.Title))
+                                            {
+                                                <h4 class="h6 fw-bold mt-3">@s.Title</h4>
+                                            }
+                                            @foreach (var p in s.Paragraphs ?? []) { <p class="mb-2">@p</p> }
+                                            @if (s.Bullets is { Count: > 0 })
+                                            {
+                                                <ul>
+                                                    @foreach (var b in s.Bullets) { <li>@b</li> }
+                                                </ul>
+                                            }
+                                            @if (!string.IsNullOrWhiteSpace(s.Note))
+                                            {
+                                                <p class="small fst-italic text-muted">@s.Note</p>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @* Pleine largeur : la liste se répartit sur deux colonnes sur grand écran *@
+                                        <ul class="mission-liste-2col">
+                                            @foreach (var b in it.Bullets ?? []) { <li>@b</li> }
+                                        </ul>
+                                    }
                                 </div>
                             </div>
                         }
